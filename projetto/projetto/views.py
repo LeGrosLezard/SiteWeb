@@ -1,22 +1,20 @@
 from django.shortcuts import render
 
 
-
 def home(request):
     return render(request, 'home.html')
 
-
-
+GLOBAL_CONNEXION = []
 from .compte.compte import inscription
 from .compte.compte import connexion
 def compte(request):
 
     if request.method == "POST":
 
-        inscription = request.POST.get('inscription')
-        connexion = request.POST.get('connexion')
+        inscription_user = request.POST.get('inscription')
+        connexion_user = request.POST.get('connexion')
 
-        if inscription:
+        if inscription_user:
         
             pseudo = request.POST.get('pseudo')
             nom = request.POST.get('nom')
@@ -27,15 +25,15 @@ def compte(request):
             portable = request.POST.get('portable')
             fixe = request.POST.get('fixe')
             adresse = request.POST.get('adresse')
-            mot_de_passe = request.POST.get('mot_de_passe')
+            password = request.POST.get('mot_de_passe')
 
             info_inscription = inscription(pseudo, nom, prenom,
                                             date, sexe, email,
                                             portable, fixe,
-                                            adresse, mot_de_passe)
+                                            adresse, password)
 
 
-        if connexion:
+        if connexion_user:
 
             password_connexion = request.POST.get('password_connexion')
             pseudo_connexion = request.POST.get('pseudo_connexion')
