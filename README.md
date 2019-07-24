@@ -2,4 +2,4 @@
 
 Un site Web pour la recherche d'emploi
 
-sauf que mtn je fais comment pour afficher des trucks sur le template si le mec est connecté ou pas ? je force le user is authenticate ? on peut faire ca ?
+et tu perds le current user et tu dois faire js + python pour ca mais c ok faut juste demandé et ce que c'est ok ? si oui affiche ca sinon affiche ca ok c ok
