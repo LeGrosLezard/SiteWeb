@@ -29,10 +29,10 @@ def compte(request):
             adresse = request.POST.get('adresse')
             mot_de_passe = request.POST.get('mot_de_passe')
 
-            inscription(pseudo, nom, prenom,
-                        date, sexe, email,
-                        portable, fixe,
-                        adresse, mot_de_passe)
+            info_inscription = inscription(pseudo, nom, prenom,
+                                            date, sexe, email,
+                                            portable, fixe,
+                                            adresse, mot_de_passe)
 
 
         if connexion:
