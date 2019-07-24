@@ -1,7 +1,7 @@
 from .base_de_donnee.info_table import donnee_user
 from .base_de_donnee.info_table import donnee_email
 from .base_de_donnee.info_table import donnee_telephone_portable
-from .base_de_donnee.info_table import insertion_user
+from .base_de_donnee.remplissage_user import insertion_user
 
 
 
@@ -18,6 +18,8 @@ def condition1(pseudo):
     else:
         out = ""
 
+    return out
+
 
 def condition2(email):
     """Verification l'email n'existe pas deja. Vérifiez s'il vous plait """
@@ -31,6 +33,9 @@ def condition2(email):
 
     else:
         out = ""
+
+    return out
+
 
 
 def condition3(portable):
@@ -46,12 +51,13 @@ def condition3(portable):
     else:
         out = ""
 
+    return out
 
 
 
 
 def inscription(pseudo, nom, prenom, date, sexe, email,
-                portable, fixe, adresse, mot_de_passe):
+                portable, fixe, adresse, password):
     
     verif1 = condition1(pseudo)
     verif2 = condition2(email)
@@ -62,16 +68,27 @@ def inscription(pseudo, nom, prenom, date, sexe, email,
     if verif1 != "":
         liste.append(verif1)
 
-    elif verif2 != "":
+    if verif2 != "":
         liste.append(verif2)
 
-    elif verif3 != "":
+    if verif3 != "":
         liste.append(verif3)
 
-    else:
-        insertion_user(nom, prenom, prenom1, prenom2, prenom3,
-                        date, sexe, email, fixe, password,
-                        pseudo, lieu_habitation, portable)
+    
+    if verif1 == "" and verif2 == "" and verif3 == "":
+
+        insertion_user(nom, prenom, date, sexe, email,
+                       fixe, password, pseudo, adresse,
+                       portable)
+
+        user = form.save(commit=False)
+        password = form.cleaned_data.get('password')
+        user.set_password(password)
+        user.save()
+        new_user = authenticate(username=user.username, password=password)
+
+
+
 
     if liste == []:
         return "Enregistrement effectué avec Succes !"
@@ -82,12 +99,17 @@ def inscription(pseudo, nom, prenom, date, sexe, email,
 
 
 
-
+from .base_de_donnee.connexion import verifier_connexion
+from .base_de_donnee.connexion import connexion_database
 def connexion(password_connexion, pseudo_connexion):
+    
+    pseudo, password = verifier_connexion(pseudo_connexion, password_connexion)
+    connexion_database(pseudo, password)
+
+
+
+def deconnexion(pseudo, password):
     pass
-
-
-
 
 
 
