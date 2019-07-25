@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import JsonResponse
-
+from django.http import HttpResponse
 
 #FAUT FAIRE LA DECONNEXTION ET DONC LA GLOBAL
 
@@ -29,6 +29,12 @@ def home(request):
     #On essais de voir si l'utilisateur est connecter ou pas.
 
 
+
+
+
+
+
+
 from .compte.compte import inscription
 from .compte.compte import connexion
 from .compte.base_de_donnee.connexion import verifier_connexion
@@ -46,6 +52,12 @@ def compte(request):
         connexion_user = request.POST.get('connexion')
         verification_user_connexion = request.POST.get('verification_user_connexion')
         deconnexion_user = request.POST.get('deconnexion_user')
+        
+        demande_de_cv = request.POST.get('demande_de_cv')
+        demande_de_motivation = request.POST.get('demande_de_motivation')
+        demande_de_message = request.POST.get('demande_de_message')
+
+
 
 
         if inscription_user:
@@ -114,6 +126,36 @@ def compte(request):
 
 
 
+
+        if demande_de_cv:
+            return JsonResponse({"a":"connected"})
+
+
+        if demande_de_message:
+            pass
+
+
+        if demande_de_motivation:
+            pass
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     try:
         return render(request, 'compte.html', {"user":GLOBAL[0][0]})
     except IndexError:
@@ -146,3 +188,19 @@ def le_questionnaire_troisieme_partie(request):
 
 def le_questionnaire_quatrieme_partie(request):
     return render(request, 'le_questionnaire_quatrieme_partie.html')
+
+def mon_cv(request):
+    return render(request, 'mon_cv.html')
+
+def ma_lettre(request):
+    return render(request, 'ma_lettre.html')
+
+def mon_message(request):
+    return render(request, 'mon_message.html')
+
+
+
+
+
+
+
