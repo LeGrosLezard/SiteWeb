@@ -2,7 +2,7 @@
 
 Un site Web pour la recherche d'emploi
 
-wowowo calme toi, j'ai eu envie d'acheter un t-shirt avec du code dessus comme le bébé de fb merde
+non j'aurai du garder l'ancien github, 123test pourrais grave m'aider, par contre stop faire les test psycho le truk m'a dit de consulté pcque mon travail me bouffer la vie sacré délire/fiabilité leur test 
 
 finir les verifications si ya cv ou non motiv ou non ectéra ect...
 
