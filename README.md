@@ -2,13 +2,6 @@
 
 Un site Web pour la recherche d'emploi
 
-et tu perds le current user et tu dois faire js + python pour ca mais c ok faut juste demandé et ce que c'est ok ? si oui affiche ca sinon affiche ca ok c ok
+du coup on va mesurer le qi emotion, le qi et les question d'internet sur le mec, bien sur on donne pas de score MAIS on dit le type a eu 15/20 donc ca montre que si le mec a 0/20 on le met pas et on fait un resum
 
-comme ca je galere et je ferai plus jamais le chaud ^^
-
-
-ok tu pourras pas directe envoyé au recruteur ou réfléchis.... du coup tu l'envoie directe a pole emploi.... merde sté cool un site pour faire un cv nik c nul sinon appel chaque truk qui font postuler et demande leur si c possible  de faire un truk...
-
-hihihi directement sur pole emploi jrécupere le mail ok pause jvai devoir faire un truk code postal et scrapper les ville a 10 km du pts 
-
-ou alors, ca va le la venere et elle filera a un mec qui la suce
+pour pas que le mec tchok on valide page par page et le mec a la possibilité de sarreter
