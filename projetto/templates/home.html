@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -207,7 +208,9 @@
       <h2 class="mx-auto mb-5">Faites
         <em>le questionnaire,</em>
         nous nous occupons du reste!</h2>
-      <a class="btn btn-primary btn-xl" href="https://startbootstrap.com/template-overviews/stylish-portfolio/">Le passer!</a>
+      <a class="btn btn-primary btn-xl"
+        onclick="redirection_questionnaire()">Le passer!</a>
+
       <br><br><em>Attention vous ne pouvez le remplir qu'une seule fois par semaine.<br>
       <strong>Le bilan du questionnaire est visible depuis votre compte</strong><br></em><br><br>
       <h3>Soyez surpris de vous-meme!</h3>
@@ -234,7 +237,7 @@
 
       
         <h3 class="text-secondary mb-0">Vos Documents</h3>
-        <h2 class="mb-5">L'essentiel de votre compte {{user}}</h2>
+        <h2 class="mb-5">L'essentiel de votre compte AnonymousUser</h2>
 
         
       </div>
@@ -450,22 +453,32 @@
 //Ici en gros on verifie que l'utilisateur est connecté.
 //Si oui on lui montre ces info
 //Sinon on lui dis connecte toi
-if('{{user}}' != "AnonymousUser"){
+if("{{user}}" != "AnonymousUser"){     //conected
     document.getElementById('info_connected').style.display = "block";
     document.getElementById('info_not_connected').style.display = "none";
     document.getElementById('essentiel_connected').style.display = "block";
     document.getElementById('essentiel_not_connected').style.display = "none";
+    document.getElementById('essentiel_connected').style.display = "block";
+    
 }
 else{
     document.getElementById('info_connected').style.display = "none";
     document.getElementById('info_not_connected').style.display = "block";
     document.getElementById('essentiel_connected').style.display = "none";
     document.getElementById('essentiel_not_connected').style.display = "block";
+    document.getElementById('essentiel_connected').style.display = "none";
 };
 
 
 
-
+function redirection_questionnaire(){
+  if("{{user}}" == "AnonymousUser"){
+    document.location.href="compte";
+  }
+  else{
+    document.location.href="le_questionnaire";
+  };
+};
 
 
 
@@ -495,7 +508,7 @@ jQuery("#icone_bilan").on("click", function(e){
   jQuery.ajax({
       data:{
           "verification":"verification",
-          'csrfmiddlewaretoken': '{{csrf_token}}' , 
+          'csrfmiddlewaretoken': '67Zs93WHwg1lP2hxFExN2VYjG6HTQo6SgZX8ZReu9J5KDsQ6YcAOWjFFrYyLfuHk' , 
       },
       type:"POST",
       url:"/"
