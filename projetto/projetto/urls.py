@@ -31,7 +31,9 @@ urlpatterns = [
     path('le_questionnaire_seconde_partie', views.le_questionnaire_seconde_partie),
     path('le_questionnaire_troisieme_partie', views.le_questionnaire_troisieme_partie),
     path('le_questionnaire_quatrieme_partie', views.le_questionnaire_quatrieme_partie),
-
+    path('mon_cv', views.mon_cv),
+    path('ma_lettre', views.ma_lettre),
+    path('mon_message', views.mon_message),
 ]
 
 
