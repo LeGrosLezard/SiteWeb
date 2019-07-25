@@ -15,8 +15,8 @@ def donnee_user(pseudo):
 
     cur = conn.cursor()
     
-    cur.execute("""SELECT * from user
-                WHERE pseudo LIKE '%%s%'""", (pseudo, ))
+    cur.execute("""SELECT pseudo from users
+                WHERE pseudo LIKE '%{}%'""".format(pseudo))
                        
     
     rows = cur.fetchall()
@@ -39,8 +39,8 @@ def donnee_email(email):
 
     cur = conn.cursor()
     
-    cur.execute("""SELECT * from user
-                WHERE email LIKE '%%s%'""", (email))
+    cur.execute("""SELECT email from users
+                WHERE email LIKE '%{}%'""".format(email))
                        
     
     rows = cur.fetchall()
@@ -61,8 +61,8 @@ def donnee_telephone_portable(portable):
 
     cur = conn.cursor()
     
-    cur.execute("""SELECT * from user
-                WHERE portable LIKE '%%s%'""", (portable))
+    cur.execute("""SELECT portable from users
+                WHERE portable = {}""".format(portable))
                        
     
     rows = cur.fetchall()
