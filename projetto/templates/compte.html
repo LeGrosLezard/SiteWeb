@@ -69,6 +69,7 @@
   <!-- Masthead -->
 
   {% if user.authenticate %}
+  
   <header class="masthead text-white text-center"
       style="background: no-repeat url('/static/home/img/bg-callout.jpg');">
       
@@ -80,19 +81,7 @@
     <div class="container">
       <div class="row">
         <div class="col-xl-9 mx-auto">
-          <h1 class="mb-5">Build a landing page for your business or project and generate more leads!</h1>
-        </div>
-        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-          <form>
-            <div class="form-row">
-              <div class="col-12 col-md-9 mb-2 mb-md-0">
-                <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
-              </div>
-              <div class="col-12 col-md-3">
-                <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button>
-              </div>
-            </div>
-          </form>
+          <h1 class="mb-5">Construisez vos outils afin de construire votre avenir</h1>
         </div>
       </div>
     </div>
@@ -100,10 +89,30 @@
   {% endif %}
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- PARTIE MON COMPTE -->
+
   {% if user.authenticate %}
 
-  
-  <!-- Icons Grid -->
+
   <section class="features-icons bg-light text-center">
     <div class="container">
       <div class="row">
@@ -241,9 +250,45 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- PARTIE CONNECTION OU INSCRIPTION -->
+
+
   {% else %}
+
+
+
     
-  <!-- Icons Grid -->
+
   <section class="features-icons bg-light text-center">
     <div class="container">
       <div class="row">
@@ -312,7 +357,7 @@
                         <input type="email" class="input" id="email""
                             placeholder="Email"><br><br>
 
-                        
+
                         <input type="button"
                             value="Ton adresse mail n'est pas professionel ?"><br><br>
 
@@ -382,6 +427,21 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <!-- Footer -->
   <footer class="footer bg-light">
     <div class="container">
@@ -443,6 +503,7 @@
 
 
 <script>
+
     function inscription(){
         document.getElementById("div_inscription").style.display = "none";
         document.getElementById("div_connexion").style.display = "none";
@@ -463,6 +524,8 @@
     };
 
 </script>
+
+
 
 
 <style>
@@ -525,6 +588,9 @@ function recup_connexion(){
     
 };
 
+
+
+
 jQuery("#valider_inscription").on("click", function(e){
 
  pseudo, nom, prenom, date, sexe, email, portable, fixe, adresse, mot_de_passe = recup_inscription()
@@ -576,6 +642,7 @@ jQuery("#valider_connexion").on("click", function(e){
           'connexion':'connexion',
           'password_connexion':password_connexion,
           'pseudo_connexion':pseudo_connexion,
+          'csrfmiddlewaretoken': '{{csrf_token}}' , 
       },
       type:"POST",
       url:"compte"
