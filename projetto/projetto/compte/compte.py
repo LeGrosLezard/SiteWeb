@@ -107,19 +107,8 @@ def connexion(password_connexion, pseudo_connexion):
     connexion_database(pseudo, password)
 
 
-
+from .base_de_donnee.connexion import deconnexion_database
 def deconnexion(pseudo, password):
-    pass
-
-
-
-
-
-
-
-
-
-
-
+    deconnexion_database(pseudo, password)
 
 
