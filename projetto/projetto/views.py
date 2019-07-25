@@ -1,12 +1,18 @@
 from django.shortcuts import render
+from django.http import JsonResponse
+
 
 
 def home(request):
     return render(request, 'home.html')
 
+
+
 GLOBAL_CONNEXION = []
 from .compte.compte import inscription
 from .compte.compte import connexion
+from .compte.base_de_donnee.connexion import verifier_connexion
+from .compte.base_de_donnee.connexion import user_connected
 def compte(request):
 
     if request.method == "POST":
@@ -37,8 +43,30 @@ def compte(request):
 
             password_connexion = request.POST.get('password_connexion')
             pseudo_connexion = request.POST.get('pseudo_connexion')
-        
-            connexion(password_connexion, pseudo_connexion)
+
+
+            pseudo_verif, password_verif = verifier_connexion(pseudo, password)
+
+            if pseudo_verif == pseudo_connexion and\
+               password_connexion == password_verif:
+                connexion(password_connexion, pseudo_connexion, GLOBAL_CONNEXION)
+                
+
+
+
+        if verification_user_connexion:
+
+            pseudo_connected, password_connected = user_connected(GLOBAL_CONNEXION)
+            if pseudo_connected and password_connected:
+                return JsonResponse("connected")
+
+
+
+
+        if deconnexion_user:
+            
+            GLOBAL_CONNEXION = []
+
 
 
 
