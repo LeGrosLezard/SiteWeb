@@ -10,3 +10,5 @@ comme ca je galere et je ferai plus jamais le chaud ^^
 ok tu pourras pas directe envoyé au recruteur ou réfléchis.... du coup tu l'envoie directe a pole emploi.... merde sté cool un site pour faire un cv nik c nul sinon appel chaque truk qui font postuler et demande leur si c possible  de faire un truk...
 
 hihihi directement sur pole emploi jrécupere le mail ok pause jvai devoir faire un truk code postal et scrapper les ville a 10 km du pts 
+
+ou alors, ca va le la venere et elle filera a un mec qui la suce
