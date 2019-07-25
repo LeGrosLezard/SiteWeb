@@ -80,20 +80,32 @@
         <div class="col-lg-10 mx-auto">
 
         
-        {% if user.authenticate %}
+        
+        <div id="info_connected">
+            Bonjour <strong>{{user}}</strong> Voici les nouvelles:<br><br>
+                ICI VA FALLOIR INTERROGER LA TABLE SITE CONSULTER
+                ET METTRE LES MESSAGES ENVOYEE BIEN SUR ON ENVOIE ET
+                AU RECRUTEUR ET AU MEC
+        </div>
 
-        {% else %}
-          {{user}}
+
+
+        <div id="info_not_connected">
           <h2>Inscris-toi si ce n'est pas deja fait ! Connecte-toi</h2>
           <p class="lead mb-5">Ici on met toute les nouveautés, genre et jb on t'as trouvé du taff!
           <a href="compte">Je m'inscris ou me connecte!</a></p>
-        {% endif %}
+        </div>
 
           
         </div>
       </div>
     </div>
   </section>
+
+
+
+
+
 
 
 
@@ -131,7 +143,8 @@
           <h4>
             <strong>Mon CV</strong>
           </h4>
-          <p class="text-faded mb-0">Freshly redesigned for Bootstrap 4.</p>
+          <p class="text-faded mb-0">Composez un Curriculum Vitae
+          à l'aide de nos conseilles</p>
         </div>
 
         
@@ -269,7 +282,11 @@
   </section>
 
 
+
+
   {% else %}
+
+
 
 
   <!-- Portfolio -->
@@ -407,11 +424,68 @@
 
 
 
+
+
 <style>
     #explication{
         color:white;
     }
 </style>
+
+
+
+
+
+<script>
+
+
+//Ici en gros on verifie que l'utilisateur est connecté.
+//Si oui on lui montre ces info
+//Sinon on lui dis connecte toi
+if('{{user}}'){
+    document.getElementById('info_connected').style.display = "block";
+    document.getElementById('info_not_connected').style.display = "none";
+
+}
+else{
+    document.getElementById('info_connected').style.display = "none";
+    document.getElementById('info_not_connected').style.display = "block";
+};
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
