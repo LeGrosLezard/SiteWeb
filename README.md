@@ -2,6 +2,8 @@
 
 Un site Web pour la recherche d'emploi
 
+wowowo calme toi, j'ai eu envie d'acheter un t-shirt avec du code dessus comme le bébé de fb merde
+
 finir les verifications si ya cv ou non motiv ou non ectéra ect...
 
 oublie pas les update du genre poru les sites de plus (10 000 lignes du coup fou tout dans une ligne avec un séparation
