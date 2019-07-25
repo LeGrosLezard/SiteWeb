@@ -2,7 +2,7 @@
 
 Un site Web pour la recherche d'emploi
 
-nonnnn j'ai envoyé un mail nul jvois pas pourquoi ca marquait implusivité
+Ce site web ne donne en aucun cas le qi d'une personne ou les aspect négatif de sa personnalité, nous disons juste les qualités ainsi que les capacités cognitives dans lequel il est bon 105-120 de qi et dieu sait que jme suis donnée putin j'aurai du dire ca...
 
 finir les verifications si ya cv ou non motiv ou non ectéra ect...
 
