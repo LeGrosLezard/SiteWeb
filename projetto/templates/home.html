@@ -26,6 +26,8 @@
 
 <body id="page-top">
 
+
+
   <!-- Navigation -->
   <a class="menu-toggle rounded" href="#">
     <i class="fas fa-bars"></i>
@@ -53,6 +55,10 @@
     </ul>
   </nav>
 
+
+
+
+
   <!-- Header -->
   <header class="masthead d-flex" style="background: no-repeat url('/static/home/img/premiere.jpg');">
     <div class="container text-center my-auto">
@@ -77,6 +83,7 @@
         {% if user.authenticate %}
 
         {% else %}
+          {{user}}
           <h2>Inscris-toi si ce n'est pas deja fait ! Connecte-toi</h2>
           <p class="lead mb-5">Ici on met toute les nouveautés, genre et jb on t'as trouvé du taff!
           <a href="compte">Je m'inscris ou me connecte!</a></p>
@@ -184,7 +191,7 @@
   <!-- Callout -->
   <section class="callout">
     <div class="container text-center">
-      <h2 class="mx-auto mb-5">Passez
+      <h2 class="mx-auto mb-5">Faites
         <em>le questionnaire,</em>
         nous nous occupons du reste!</h2>
       <a class="btn btn-primary btn-xl" href="https://startbootstrap.com/template-overviews/stylish-portfolio/">Le passer!</a>
