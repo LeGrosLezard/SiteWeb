@@ -26,30 +26,50 @@ def verifier_connexion(pseudo, password):
     rows = cur.fetchall()
     liste = [i for i in rows]
 
-
-    return liste
-
-
-def connexion_database(pseudo, password, GLOBAL_CONNEXION):
-
-    conn = psycopg2.connect(database=DATABASE,
-                            user=USER,
-                            host=HOST,
-                            password=PASSWORD) 
-
-    cur = conn.cursor()
     
-    cur.execute("""INSERT INTO connexion
-                (pseudo, password)
-                values(%s, %s);""",
-                (pseudo, password))
-                       
-
-    conn.commit()
+    return liste[0][0], liste[0][1]
 
 
 
-def user_connected(GLOBAL_CONNEXION):
+
+
+    
+
+
+def connexion_database(pseudo, password):
+    """Ici on connecte le mec dans la table connexion"""
+
+    already = user_connected(pseudo, password)
+    #sous forme de liste
+
+    if already == "no":
+
+        conn = psycopg2.connect(database=DATABASE,
+                                user=USER,
+                                host=HOST,
+                                password=PASSWORD) 
+
+        cur = conn.cursor()
+        
+        cur.execute("""INSERT INTO connexion
+                    (pseudo, password)
+                    values(%s, %s);""",
+                    (pseudo, password))
+                           
+
+        conn.commit()
+
+    else:
+        pass
+
+    
+
+
+
+
+
+
+def user_connected(pseudo, password):
 
     conn = psycopg2.connect(database=DATABASE,
                             user=USER,
@@ -68,31 +88,17 @@ def user_connected(GLOBAL_CONNEXION):
     rows = cur.fetchall()
     liste = [i for i in rows]
 
-
-    return liste
-
-
-
-
+    try:
+        return [liste[0][0], liste[0][1]]
+    except IndexError:
+        return "no"
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+#ICI FAUT EFFACER
 def deconnexion_database(pseudo, password):
 
     conn = psycopg2.connect(database=DATABASE,
