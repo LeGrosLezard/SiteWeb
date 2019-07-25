@@ -2,23 +2,35 @@ from django.shortcuts import render
 from django.http import JsonResponse
 
 
+GLOBAL = []
 
 def home(request):
-    return render(request, 'home.html')
+    global GLOBAL
+    print(GLOBAL, "UTILISATEUR CONNECTE")
+
+    try:
+        return render(request, 'home.html', {"user":GLOBAL[0][0]})
+    except IndexError:
+        return render(request, 'home.html')
 
 
 
-GLOBAL_CONNEXION = []
 from .compte.compte import inscription
 from .compte.compte import connexion
 from .compte.base_de_donnee.connexion import verifier_connexion
 from .compte.base_de_donnee.connexion import user_connected
+from .compte.compte import deconnexion
 def compte(request):
+    global GLOBAL
 
+    print(GLOBAL, "UTILISATEUR CONNECTE")
     if request.method == "POST":
 
         inscription_user = request.POST.get('inscription')
         connexion_user = request.POST.get('connexion')
+        verification_user_connexion = request.POST.get('verification_user_connexion')
+        deconnexion_user = request.POST.get('deconnexion_user')
+
 
         if inscription_user:
         
@@ -39,24 +51,41 @@ def compte(request):
                                             adresse, password)
 
 
+
+
         if connexion_user:
+            #donc si on requete la connexion
 
             password_connexion = request.POST.get('password_connexion')
             pseudo_connexion = request.POST.get('pseudo_connexion')
+            #on récupere le mdp et le pseudo
 
-
-            pseudo_verif, password_verif = verifier_connexion(pseudo, password)
+            pseudo_verif, password_verif = verifier_connexion(pseudo_connexion,
+                                                              password_connexion)
+            #on va dans la table users y'a un match ?
+    
 
             if pseudo_verif == pseudo_connexion and\
                password_connexion == password_verif:
-                connexion(password_connexion, pseudo_connexion, GLOBAL_CONNEXION)
+                #Si y'a un match
                 
+                connexion(password_connexion, pseudo_connexion)
+                GLOBAL.append([pseudo_verif, password_verif])
+                #Si y'a un match, on ajoute les identifiants
+                #dans la table connexion
+                #mais aussi a global pour les pages
+                """Ptetre pas la meilleur soluce"""
+
 
 
 
         if verification_user_connexion:
-
-            pseudo_connected, password_connected = user_connected(GLOBAL_CONNEXION)
+            #On verifie la global et la table connection
+            print(GLOBAL, "000000000000000000000000000000000000000000")
+            pseudo_connected, password_connected = user_connected(GLOBAL[0][0],
+                                                                  GLOBAL[0][1])
+            
+            #On verifie la table connexion mtn !
             if pseudo_connected and password_connected:
                 return JsonResponse("connected")
 
@@ -64,11 +93,8 @@ def compte(request):
 
 
         if deconnexion_user:
-            
-            GLOBAL_CONNEXION = []
-
-
-
+            deconnexion(pseudo, password)
+            GLOBAL = []
 
 
 
