@@ -25,9 +25,13 @@ urlpatterns = [
     path('compte', views.compte),
     path('questionnaire', views.questionnaire),
     path('comment_faire_mon_cv', views.comment_faire_mon_cv),
-    path('mon_apparence', views.mon_apparence),
     path('ma_demarche', views.ma_demarche),
     path('le_questionnaire', views.le_questionnaire),
+    path('le_questionnaire_premiere_partie', views.le_questionnaire_premiere_partie),
+    path('le_questionnaire_seconde_partie', views.le_questionnaire_seconde_partie),
+    path('le_questionnaire_troisieme_partie', views.le_questionnaire_troisieme_partie),
+    path('le_questionnaire_quatrieme_partie', views.le_questionnaire_quatrieme_partie),
+
 ]
 
 
