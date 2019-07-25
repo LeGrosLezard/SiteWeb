@@ -149,13 +149,12 @@
 
         
         <div class="col-lg-3 col-md-6">
-          <span class="service-icon rounded-circle mx-auto mb-3" id="icone_hover"
-              onclick="document.location.href='mon_apparence'">
+          <span class="service-icon rounded-circle mx-auto mb-3" id="icone_bilan">
               
             <i class="icon-mustache"></i>
           </span>
           <h4>
-            <strong>Votre apparence</strong>
+            <strong>Mon bilan</strong>
           </h4>
           <p class="text-faded mb-0">I mustache you a question...</p>
         </div>
@@ -182,6 +181,7 @@
   </section>
 
   <style>
+      #icone_bilan:hover,
       #icone_hover:hover{
           background:#ECB807
       }
@@ -219,16 +219,22 @@
 
 
 
-  {% if user.authenticate %}
+
+
+
+
+
+
+ 
 
   <!-- Portfolio -->
-  <section class="content-section" id="portfolio">
+  <section class="content-section" id="essentiel_connected">
     <div class="container">
       <div class="content-section-heading text-center">
 
       
         <h3 class="text-secondary mb-0">Vos Documents</h3>
-        <h2 class="mb-5">L'essentielll</h2>
+        <h2 class="mb-5">L'essentiel de votre compte {{user}}</h2>
 
         
       </div>
@@ -284,13 +290,15 @@
 
 
 
-  {% else %}
+
+
+
 
 
 
 
   <!-- Portfolio -->
-  <section class="content-section" id="portfolio">
+  <section class="content-section" id="essentiel_not_connected">
     <div class="container">
       <div class="content-section-heading text-center">
       
@@ -349,7 +357,7 @@
   </section>
     
 
-  {% endif %}
+
 
 
 
@@ -442,15 +450,22 @@
 //Ici en gros on verifie que l'utilisateur est connecté.
 //Si oui on lui montre ces info
 //Sinon on lui dis connecte toi
-if('{{user}}'){
+if('{{user}}' != "AnonymousUser"){
     document.getElementById('info_connected').style.display = "block";
     document.getElementById('info_not_connected').style.display = "none";
-
+    document.getElementById('essentiel_connected').style.display = "block";
+    document.getElementById('essentiel_not_connected').style.display = "none";
 }
 else{
     document.getElementById('info_connected').style.display = "none";
     document.getElementById('info_not_connected').style.display = "block";
+    document.getElementById('essentiel_connected').style.display = "none";
+    document.getElementById('essentiel_not_connected').style.display = "block";
 };
+
+
+
+
 
 
 
@@ -468,6 +483,38 @@ else{
 
 
 
+
+
+<script>
+
+
+jQuery("#icone_bilan").on("click", function(e){
+
+
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+          "verification":"verification",
+          'csrfmiddlewaretoken': '{{csrf_token}}' , 
+      },
+      type:"POST",
+      url:"/"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+          document.location.href = '/'
+          
+          
+      };
+      
+  });
+});
+
+
+</script>
 
 
 
