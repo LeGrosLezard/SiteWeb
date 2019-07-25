@@ -112,10 +112,11 @@
         <div class="col-lg-4">
           <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
             <div class="features-icons-icon d-flex">
-              <i class="icon-screen-desktop m-auto text-primary"></i>
+              <i class="icon-screen-desktop m-auto text-primary" id="cv_icone"></i>
             </div>
             <h3>Visualisez votre Curriculum Vitae</h3>
-            <p class="lead mb-0">This theme will look great on any device, no matter the size!</p>
+            <p class="lead mb-0">Votre CV un document impératif pour connaitre vos expériences.
+            Vous n'en avez pas ? Le bilan peut vous aider.</p>
           </div>
         </div>
 
@@ -123,7 +124,7 @@
         <div class="col-lg-4">
           <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
             <div class="features-icons-icon d-flex">
-              <i class="icon-layers m-auto text-primary"></i>
+              <i class="icon-layers m-auto text-primary" id="motivation_icone"></i>
             </div>
             <h3>Visualisez votre lettre de Motivation</h3>
             <p class="lead mb-0">Featuring the latest build of the new Bootstrap 4 framework!</p>
@@ -134,7 +135,7 @@
         <div class="col-lg-4">
           <div class="features-icons-item mx-auto mb-0 mb-lg-3">
             <div class="features-icons-icon d-flex">
-              <i class="icon-check m-auto text-primary"></i>
+              <i class="icon-check m-auto text-primary" id="message_icone"></i>
             </div>
             <h3>Visualisez votre message à l'employeur</h3>
             <p class="lead mb-0">Ready to use with your own content, or customize the source files!</p>
@@ -705,6 +706,101 @@ function recup_connexion(){
     return password_connexion, pseudo_connexion
     
 };
+
+
+
+
+
+
+//----------------------------------------------------------------cv
+jQuery("#cv_icone").on("click", function(e){
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+          'demande_de_cv': 'demande_de_cv',
+          'csrfmiddlewaretoken': '{{csrf_token}}' , 
+      },
+      type:"POST",
+      url:"compte"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+          alert(JSON.stringify(data["a"]))
+          
+          
+      };
+      
+  });
+});
+//---------------------------------------------------------------cv
+
+
+
+
+//------------------------------------------------------------motvcation
+jQuery("#motivation_icone").on("click", function(e){
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+          'demande_de_motivation': 'demande_de_motivation',
+          'csrfmiddlewaretoken': '{{csrf_token}}' , 
+      },
+      type:"POST",
+      url:"compte"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+          document.location.href = '/'
+
+      };
+      
+  });
+});
+//------------------------------------------------------------motvcation
+
+
+
+
+
+//-----------------------------------------------------------------message
+jQuery("#message_icone").on("click", function(e){
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+          'demande_de_message':'demande_de_message',
+          'csrfmiddlewaretoken': '{{csrf_token}}' , 
+      },
+      type:"POST",
+      url:"compte"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+          alert(data);
+          
+          
+          
+      };
+      
+  });
+});
+
+//----------------------------------------------------------------message
+
+
+
+
+
+
+
 
 
 
