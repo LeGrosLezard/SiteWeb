@@ -1,17 +1,17 @@
 import psycopg2
 
 
-from .CONFIG import DATABASE
-from .CONFIG import USER
-from .CONFIG import HOST
-from .CONFIG import PASSWORD
+from CONFIG import DATABASE
+from CONFIG import USER
+from CONFIG import HOST
+from CONFIG import PASSWORD
 
 
 
 class Table:
 
 
-    def creation_table_donnee(self):
+    def creation_table_donnee():
         """un mec a ses info sur lui
         sa lettre de motivation,
         son cv,
@@ -29,14 +29,11 @@ class Table:
 
 
 
-        cur.execute("""create table user(
+        cur.execute("""create table users(
                     id serial PRIMARY KEY,
                     nom VARCHAR(100),
                     prenom VARCHAR(100),
-                    prenom1 VARCHAR(100),
-                    prenom2 VARCHAR(100),
-                    prenom3 VARCHAR(100),
-                    date_naissance INT,
+                    date_naissance DATE,
                     sexe VARCHAR(10),
                     email VARCHAR(100),
                     fixe INT,
@@ -53,7 +50,7 @@ class Table:
 
         cur.execute("""create table motivation(
                     id serial PRIMARY KEY,
-                    id_user integer REFERENCES user (id),
+                    id_user integer REFERENCES users (id),
                     lettre_motivation TEXT);""")
         
         conn.commit()
@@ -64,30 +61,36 @@ class Table:
 
         cur.execute("""create table cv(
                     id serial PRIMARY KEY,
-                    id_user integer REFERENCES user (id),
+                    id_user integer REFERENCES users (id),
                     cv TEXT);""")
         
         conn.commit()
 
 
 
-
-
-        cur.execute("""create table bilan(
+        cur.execute("""create table message(
                     id serial PRIMARY KEY,
-                    bilan TEXT,
-                    id_user integer REFERENCES user (id));""")
+                    id_user integer REFERENCES users (id),
+                    lettre_motivation TEXT);""")
         
         conn.commit()
 
 
 
+        cur.execute("""create table bilan(
+                    id serial PRIMARY KEY,
+                    bilan TEXT,
+                    id_user integer REFERENCES users (id));""")
+        
+        conn.commit()
+
 
 
         cur.execute("""create table site_emploie(
                     id serial PRIMARY KEY,
-                    id_user integer REFERENCES user (id),
-                    poste_demandee VARCHAR(100));""")
+                    id_user integer REFERENCES users (id),
+                    poste_demandee VARCHAR(100),
+                    date VARCHAR(100));""")
         
         conn.commit()
 
