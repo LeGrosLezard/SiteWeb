@@ -2,17 +2,31 @@ from django.shortcuts import render
 from django.http import JsonResponse
 
 
+#FAUT FAIRE LA DECONNEXTION ET DONC LA GLOBAL
+
+
 GLOBAL = []
 
 def home(request):
     global GLOBAL
     print(GLOBAL, "UTILISATEUR CONNECTE")
 
+    if request.method == "POST":
+        verification = request.POST.get('verification')
+
+        if verification:
+            print("000000000000000000000000000000000000000000000000")
+
+            #FAUT CHECK SI LE MEC A UN BILAN SI OUI RENVOYER OUI ET DONC
+            #SUR COMPTE
+            #SINON ON LENVOIE SUR LA PAGE BILAN
+    
     try:
         return render(request, 'home.html', {"user":GLOBAL[0][0]})
     except IndexError:
         return render(request, 'home.html')
 
+    #On essais de voir si l'utilisateur est connecter ou pas.
 
 
 from .compte.compte import inscription
@@ -21,9 +35,11 @@ from .compte.base_de_donnee.connexion import verifier_connexion
 from .compte.base_de_donnee.connexion import user_connected
 from .compte.compte import deconnexion
 def compte(request):
-    global GLOBAL
 
+    global GLOBAL
     print(GLOBAL, "UTILISATEUR CONNECTE")
+
+
     if request.method == "POST":
 
         inscription_user = request.POST.get('inscription')
@@ -98,9 +114,10 @@ def compte(request):
 
 
 
-
-    return render(request, 'compte.html')
-
+    try:
+        return render(request, 'compte.html', {"user":GLOBAL[0][0]})
+    except IndexError:
+        return render(request, 'compte.html')
 
 
 
@@ -112,11 +129,20 @@ def questionnaire(request):
 def comment_faire_mon_cv(request):
     return render(request, 'comment_faire_mon_cv.html')
 
-def mon_apparence(request):
-    return render(request, 'mon_apparence.html')
-
 def ma_demarche(request):
     return render(request, 'ma_demarche.html')
 
 def le_questionnaire(request):
     return render(request, 'le_questionnaire.html')
+
+def le_questionnaire_premiere_partie(request):
+    return render(request, 'le_questionnaire_premiere_partie.html')
+
+def le_questionnaire_seconde_partie(request):
+    return render(request, 'le_questionnaire_seconde_partie.html')
+
+def le_questionnaire_troisieme_partie(request):
+    return render(request, 'le_questionnaire_troisieme_partie.html')
+
+def le_questionnaire_quatrieme_partie(request):
+    return render(request, 'le_questionnaire_quatrieme_partie.html')
