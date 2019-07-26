@@ -2,10 +2,13 @@
 
 Un site Web pour la recherche d'emploi
 
-mettre un - pour le négatif alors qu'on "attend du positif" (je n'ame pas la poesie) merde j'ai oubolié ca
+par contre je sais pas si jpourrais revenir dessus sans tout effacer bon database !
 
-faut faire la mise en database
+en gros la on enregistre a chaque passage de page en page et puis nik la ou y'a du score on dit
 
+ah oui du coup faut faire l'analyse
+
+ok fini ca, 2 semaines environs, ensuite cours, ensuite en cherchant du taff fais ia pense pleins de manga popo!!! et ptetre une console mais j'aime pas trop les consoles 
 
 
 # A LA FIN des parti mettre un partie 1 
