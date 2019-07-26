@@ -2,7 +2,7 @@
 
 Un site Web pour la recherche d'emploi
 
-ok réfléchir a comment récuperer les valeurs des radio input ?????? et commencer a associer les truk avec les phrases(5*24) faut 5 question de chaque <- réfléchis mieux
+on loop la liste, si y'a question 1 a et ensuite question 1 b -> on update. par conte c le score qui m'embete... jcomprend pas
 
 faire lassociation entre question et catégorie et choper toutes les définitions !!!!
 
