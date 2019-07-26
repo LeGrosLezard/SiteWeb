@@ -1,12 +1,8 @@
-
-
-
-
-
 from .CONFIG import QUESTION
 def question_reponse(questionnaire):
 
-
+    questionnaire = questionnaire + "[]"
+    
     nb = ""
     liste1 = []
     add = False
@@ -36,7 +32,6 @@ def question_reponse(questionnaire):
         c1 += 1
         
     return liste2
-
 
 
 
