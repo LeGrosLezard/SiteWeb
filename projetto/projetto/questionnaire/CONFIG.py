@@ -6,7 +6,7 @@ QUESTION = {"1": "Anxiete",
             "6": "Colere_et_hostilite",
             "7": "Sociabilite",
             "8": "Interets_artistiques",
-            "9": "Indolence ",
+            "9": "Indolence",
             "10": "Autodiscipline",
             "11": "Morosite_contentement",
             "12": "Sens_des_competences",
@@ -39,14 +39,13 @@ QUESTION = {"1": "Anxiete",
             "39": "Indolence",
             "40": "Ordre",
             "41": "Morosite_contentement",
-            "41" : "-emotions_positives"
+            "41" : "-emotions_positives",
             "42": "Combativite_Recherche_de_resultats",
             "43": "Sympathie",
             "44": "Sympathie",
             "45": "Sincerite",
             "46": "Anxiete",
-            "47": "-Sociabilite",
-            "47": "Volonte_experimenter ",
+            "47": "Recherche_de_stimulation ",
             "48": "-Recherche_de_stimulation",
             "49": "Colere_et_hostilite",
             "50": "Conformite",
@@ -131,7 +130,46 @@ QUESTION = {"1": "Anxiete",
 
 
 
+Ouverture_a_l_experience = ["Imagination",
+                            "Interets_artistiques",
+                            "Profondeur_des_emotions",
+                            "Volonte_experimenter",
+                            "Curiosite_intellectuelle",
+                            "Tolerance_a_la_diversite",
+                            ]
 
+
+Conscience_professionnelle = ["Sens_des_competences",
+                              "Ordre",
+                              "Sens_des_responsabilites",
+                              "Combativite_Recherche_de_resultats",
+                              "Autodiscipline",
+                              "Circonspection",
+                             ]
+
+Extraversion = ["Amenite",
+                "Sociabilite",
+                "Assertivite",
+                "Niveau_d_activite",
+                "Recherche_de_stimulation",
+                "emotions_positives",
+                ]
+
+Agreabilite = ["Confiance_en_autre",
+               "Sincerite",
+               "Altruisme",
+               "Conformite",
+               "Modestie",
+               "Sympathie",
+              ]
+
+Reactions_naturelles = ["Anxiete",
+                        "Colere_et_hostilite",
+                        "Morosite_contentement",
+                        "Affectation", 
+                        "Indolence", 
+                        "Sensibilite_au_stress",
+                        ]
 
 
 
