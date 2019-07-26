@@ -178,8 +178,23 @@ def ma_demarche(request):
 def le_questionnaire(request):
     return render(request, 'le_questionnaire.html')
 
+
+
+from .questionnaire.questionnaire import question_reponse
+from .questionnaire.analyse import analyse_questionnaire
 def le_questionnaire_premiere_partie(request):
+
+    if request.method == "POST":
+
+        questionnaire = request.POST.get('questionnaire')
+        print(questionnaire,"00000000000000000000000000000000000000")
+        questionnaire_traitee = question_reponse(questionnaire)
+        analyse_questionnaire(questionnaire)
     return render(request, 'le_questionnaire_premiere_partie.html')
+
+
+
+
 
 def le_questionnaire_seconde_partie(request):
     return render(request, 'le_questionnaire_seconde_partie.html')
