@@ -2,13 +2,7 @@
 
 Un site Web pour la recherche d'emploi
 
-faire a coup de +1 -1 les scores, et faire une interprétation de tout les hauts catégorie (imagination 10/15 alors on met :il peut imaginer par exemple)
-
-faire le meme truk avec visuo, dictée, mémoire, logique ect...
-
-l'utilisateur a une bonne visuo ect, il a une bonne mémoire ect... pour voir nos test ici, nous n'avons aucun diplome nous permettant de tiré des conclusions <strong>précises</strong> ect dire que le mec peut aussi mentir ect... mais d'apres nos questionnaires ect
-
-ensuite faut mendier et sucer
+ok réfléchir a comment récuperer les valeurs des radio input ?????? et commencer a associer les truk avec les phrases(5*24) faut 5 question de chaque 
 
 a chaque validation de la lettre exectéra mettre un coup de reverso enregistrer et genre le mec peu le faire sur plusieurs jours
 du coup 
