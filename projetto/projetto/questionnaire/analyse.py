@@ -7,40 +7,38 @@ from .CONFIG import Reactions_naturelles
 
 
 def analyse_questionnaire(questionnaire):
-    Imagination = 0
-    Interets_artistiques = 0
-    Profondeur_des_emotions = 0
-    Volonte_experimenter = 0
-    Curiosite_intellectuelle = 0
-    Tolerance_a_la_diversite = 0
-
-    Sens_des_competences = 0
-    Ordre = 0
-    Sens_des_responsabilites = 0
-    Combativite_Recherche_de_resultats = 0
-    Autodiscipline = 0
-    Circonspection = 0
-
-    Amenite = 0
-    Sociabilite = 0
-    Assertivite = 0
-    Niveau_d_activite = 0
-    Recherche_de_stimulation = 0
-    emotions_positives = 0
-
-    Confiance_en_autre  = 0
-    Sincerite = 0
-    Altruisme = 0
-    Conformite = 0
-    Modestie = 0
-    Sympathie = 0
-
-    Anxiete  = 0
-    Colere_et_hostilite = 0
-    Morosite_contentement  = 0
-    Affectation = 0
-    Indolence = 0
-    Sensibilite_au_stress = 0
+    dico = {
+        "Imagination": 0,
+        "Interets_artistiques": 0,
+        "Profondeur_des_emotions" : 0,
+        "Volonte_experimenter" : 0,
+        "Curiosite_intellectuelle" : 0,
+        "Tolerance_a_la_diversite" : 0,
+        "Sens_des_competences" : 0,
+        "Ordre" : 0,
+        "Sens_des_responsabilites" : 0,
+        "Combativite_Recherche_de_resultats" : 0,
+        "Autodiscipline" : 0,
+        "Circonspection" : 0,
+        "Amenite" : 0,
+        "Sociabilite" : 0,
+        "Assertivite" : 0,
+        "Niveau_d_activite" : 0,
+        "Recherche_de_stimulation" : 0,
+        "emotions_positives" : 0,
+        "Confiance_en_autre"  : 0,
+        "Sincerite" : 0,
+        "Altruisme" : 0,
+        "Conformite" : 0,
+        "Modestie" : 0,
+        "Sympathie" : 0,
+        "Anxiete"  : 0,
+        "Colere_et_hostilite" : 0,
+        "Morosite_contentement"  : 0,
+        "Affectation" : 0,
+        "Indolence" : 0,
+        "Sensibilite_au_stress" : 0,
+    }
 
     dico_pts = {"a": 1, "b": 0.5, "c": 0, "d": -0.5, "e": -1}
 
