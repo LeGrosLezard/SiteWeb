@@ -2,7 +2,9 @@
 
 Un site Web pour la recherche d'emploi
 
-mettre un - pour le négatif alors qu'on "attend du positif" (je n'ame pas la poesie)
+mettre un - pour le négatif alors qu'on "attend du positif" (je n'ame pas la poesie) merde j'ai oubolié ca
+
+faut faire la mise en database
 
 
 
