@@ -42,6 +42,7 @@ from .compte.base_de_donnee.connexion import user_connected
 from .compte.compte import deconnexion
 def compte(request):
 
+
     global GLOBAL
     print(GLOBAL, "UTILISATEUR CONNECTE")
 
