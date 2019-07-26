@@ -2,9 +2,7 @@
 
 Un site Web pour la recherche d'emploi
 
-on loop la liste, si y'a question 1 a et ensuite question 1 b -> on update. par conte c le score qui m'embete... jcomprend pas
-
-faire lassociation entre question et catégorie et choper toutes les définitions !!!!
+mettre un - pour le négatif alors qu'on "attend du positif" (je n'ame pas la poesie)
 
 
 
