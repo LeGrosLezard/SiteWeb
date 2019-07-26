@@ -60,6 +60,11 @@
 
 
 
+
+
+
+
+
   <!-- Header -->
   <header class="masthead d-flex" style="background: no-repeat url('/static/home/img/premiere.jpg');">
     <div class="container text-center my-auto">
@@ -102,6 +107,8 @@
       </div>
     </div>
   </section>
+
+
 
 
 
@@ -237,7 +244,7 @@
 
       
         <h3 class="text-secondary mb-0">Vos Documents</h3>
-        <h2 class="mb-5">L'essentiel de votre compte AnonymousUser</h2>
+        <h2 class="mb-5">L'essentiel de votre compte <strong>{{user}}</strong></h2>
 
         
       </div>
@@ -501,6 +508,8 @@ function redirection_questionnaire(){
 <script>
 
 
+
+//---------------------------------------------------------------------Bilan
 jQuery("#icone_bilan").on("click", function(e){
 
 
@@ -508,7 +517,7 @@ jQuery("#icone_bilan").on("click", function(e){
   jQuery.ajax({
       data:{
           "verification":"verification",
-          'csrfmiddlewaretoken': '67Zs93WHwg1lP2hxFExN2VYjG6HTQo6SgZX8ZReu9J5KDsQ6YcAOWjFFrYyLfuHk' , 
+          'csrfmiddlewaretoken': '{{csrf_token}}',
       },
       type:"POST",
       url:"/"
@@ -525,6 +534,9 @@ jQuery("#icone_bilan").on("click", function(e){
       
   });
 });
+
+
+//---------------------------------------------------------------------Bilan
 
 
 </script>
