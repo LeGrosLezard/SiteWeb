@@ -182,6 +182,7 @@ def le_questionnaire(request):
 
 from .questionnaire.questionnaire import question_reponse
 from .questionnaire.analyse import analyse_questionnaire
+from .questionnaire.analyse import association_definition
 def le_questionnaire_premiere_partie(request):
 
     if request.method == "POST":
@@ -189,7 +190,9 @@ def le_questionnaire_premiere_partie(request):
         questionnaire = request.POST.get('questionnaire')
         print(questionnaire,"00000000000000000000000000000000000000")
         questionnaire_traitee = question_reponse(questionnaire)
-        analyse_questionnaire(questionnaire)
+        analyse = analyse_questionnaire(questionnaire_traitee)
+        reponse = association_definition(analyse)
+
     return render(request, 'le_questionnaire_premiere_partie.html')
 
 
