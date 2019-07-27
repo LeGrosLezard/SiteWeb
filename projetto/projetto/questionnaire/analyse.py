@@ -99,8 +99,7 @@ def analyse_questionnaire(questionnaire):
     return SOUS_CAT
 
 def association_definition(dico):
-    print(dico)
-    print("ICIIIIIIIIIIIIIII")
+
     liste_supp = []
     liste_inf = []
 
@@ -117,13 +116,44 @@ def association_definition(dico):
     return liste_supp, liste_inf
 
 
-
+from .CONFIG import SOUS_CLASSE
 def association_definition1(liste_supp, liste_inf):
+    
+    liste_qualite = []
+    liste_a_w = []
+    
     for i in liste_supp:
-        print(i)
+        for cle, valeur in SOUS_CLASSE.items():
+            if cle == i:
+                liste_qualite.append(valeur)
+
+
 
     for i in liste_inf:
-        print(i)
+        for cle, valeur in SOUS_CLASSE.items():
+            if cle == i:
+                liste_a_w.append(valeur)
+
+
+    print(liste_qualite, liste_a_w)
+    return liste_qualite, liste_a_w
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
