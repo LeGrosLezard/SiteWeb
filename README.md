@@ -2,13 +2,11 @@
 
 Un site Web pour la recherche d'emploi
 
-par contre je sais pas si jpourrais revenir dessus sans tout effacer bon database !
+partie cv, lettre et message + assoc ojd
 
-en gros la on enregistre a chaque passage de page en page et puis nik la ou y'a du score on dit
-
-ah oui du coup faut faire l'analyse
-
-ok fini ca, 2 semaines environs, ensuite cours, ensuite en cherchant du taff fais ia pense pleins de manga popo!!! et ptetre une console mais j'aime pas trop les consoles 
+et serieux ca te fera faire ta lettre.... j'a icommencé les emploie mais... gros le cv jle retrouve plus et putin que c chiant a faire
+la premiere fois sté jouissif, la deuxieme ok t'as fais des boulots en plus... la troisieme c léa qui l'a fait ^^
+la c torp chiant a re-re-refaire
 
 
 # A LA FIN des parti mettre un partie 1 
