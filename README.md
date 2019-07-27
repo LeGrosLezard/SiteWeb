@@ -2,50 +2,15 @@
 
 Un site Web pour la recherche d'emploi
 
-partie cv, lettre et message + assoc ojd
+bon petite pause, mtn faire le remplissage de div cv + lettre
 
-et serieux ca te fera faire ta lettre.... j'a icommencé les emploie mais... gros le cv jle retrouve plus et putin que c chiant a faire
-la premiere fois sté jouissif, la deuxieme ok t'as fais des boulots en plus... la troisieme c léa qui l'a fait ^^
-la c torp chiant a re-re-refaire et entre temps met pas que tu parles le verlan dans langue parlé ca le fait pas trop et si tu fais une messagerie evite les message de con au cas ou
+refaire le systeme de connexion ca tiendra jamais
 
+ensuite tu dis a oc: gros et si jte disais que tu pouvais gagner de la thune ? mais ca niquerait les mentors, et y te dirai chai pas qui t'es gros va chier
 
-# A LA FIN des parti mettre un partie 1 
-
-Et quand tu colles le tout # ENLEVER PARTIE 1
+du coup, tu fais juste ce projet et tu le met dans portefolio point nique sa race en vrai le plus important c'est quoi ? se faire plaisir ou a etre combatif - recherche de résultat et se faire chier ? jcommence a comprendre la psycho
 
 
 
-faire le cv sous forme de cv et pas de texte et ca va falloire chopper un patron,
-et test de mettre dans la div 1 tu met ce texte ect...
 
-faire les questionnaires et sous plusieurs versions (d'internet)
 
-finir les différents truks connection non connexion
-
-finir la deconnexion
-
-faire le truk addresse
-
-faire les textes
-
-faire les href navebarre
-
-trouver des icones bleux adéquates
-
-faire la comparaison ancien nouveau bilan
-
-l'essayer ^^
-
-pep 8
-
-les tests
-
-les documents
-
-sucer des blogueurs
-
-faire les dernrei cours
-
-continuer les reseaux
-
-n'hsite pas a refaire le systeme de connexion
