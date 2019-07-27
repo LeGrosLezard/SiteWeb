@@ -6,8 +6,19 @@ from .CONFIG import Reactions_naturelles
 
 
 
+
+
+#TOLERENCE A LA DIVERSITEEE PROBLEEME (les haut score sont grave défiant de loto)
+#ANXIETE AUSSI (score bas == cool)
+#Colère et hostilité
+#Morosité/contentement:
+#Indolencen, Sensibilité, Affectation
+
+
+from .CONFIG import QUESTION
 def analyse_questionnaire(questionnaire):
-    dico = {
+
+    SOUS_CAT = {
         "Imagination": 0,
         "Interets_artistiques": 0,
         "Profondeur_des_emotions" : 0,
@@ -38,24 +49,12 @@ def analyse_questionnaire(questionnaire):
         "Affectation" : 0,
         "Indolence" : 0,
         "Sensibilite_au_stress" : 0,
-    }
+        }
 
     dico_pts = {"a": 1, "b": 0.5, "c": 0, "d": -0.5, "e": -1}
 
-
-    c1 = 0
-    liste2 = []
+ 
     for i in questionnaire:
-        
-        try:
-            liste2.append([liste1[c1], liste1[c1 + 1]])
-        except IndexError:
-            pass
-        
-        c1 += 2
-
-
-    for i in liste2:
         #On parcours la liste nettoyé
 
         for cle, valeur in QUESTION.items():
@@ -66,7 +65,7 @@ def analyse_questionnaire(questionnaire):
                 #on comapre le numéro de la question avec le numéro de la
                 #le type a répondu a la 52 -> la 52 = Ordre
 
-                for cle1, valeur1 in dico.items():
+                for cle1, valeur1 in SOUS_CAT.items():
                     if valeur == cle1:
                         #Mtn on va scoriser
                         #Du genre on cherche Ordre (global variable)
@@ -76,25 +75,55 @@ def analyse_questionnaire(questionnaire):
                                 #on a la réponse sous forme a,b,c,d,e
                                 #ou a = 1 et e = -1
                                 
-                                dico[cle1] += int(valeur2)
+                                SOUS_CAT[cle1] += int(valeur2)
                                 #On l'ajoute au dico
         
 
 
+                    elif valeur[1:] == cle1:
+                        #Sinon si la phrase est tournée du genre
+                        #Je n'aime pas la poesie
+                        #Conteste curiosité art
+                        #si le mec dit oui tout a fait dac
+                        #on met -1 a ce truk
+                        #par contre s'il dit non pas du tout
+                        #a la base c du -1 donc ca devient du + 1 pour art
+                        for cle2, valeur2 in dico_pts.items():
+                            if i[1] == cle2:
+                                #on a la réponse sous forme a,b,c,d,e
+                                #ou a = 1 et e = -1
+                                
+                                SOUS_CAT[cle1] -= int(valeur2)
+                                #On l'ajoute au dico
+
+    return SOUS_CAT
+
+def association_definition(dico):
+    print(dico)
+    print("ICIIIIIIIIIIIIIII")
+    liste_supp = []
+    liste_inf = []
 
 
 
+    for cle, valeur in dico.items():
+        if valeur > 0:
+            liste_supp.append(cle)
+        elif valeur < 0:
+            liste_inf.append(cle)
 
 
 
+    return liste_supp, liste_inf
 
 
 
+def association_definition1(liste_supp, liste_inf):
+    for i in liste_supp:
+        print(i)
 
-
-
-
-
+    for i in liste_inf:
+        print(i)
 
 
 
