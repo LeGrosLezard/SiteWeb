@@ -6,7 +6,7 @@ partie cv, lettre et message + assoc ojd
 
 et serieux ca te fera faire ta lettre.... j'a icommencé les emploie mais... gros le cv jle retrouve plus et putin que c chiant a faire
 la premiere fois sté jouissif, la deuxieme ok t'as fais des boulots en plus... la troisieme c léa qui l'a fait ^^
-la c torp chiant a re-re-refaire
+la c torp chiant a re-re-refaire et entre temps met pas que tu parles le verlan dans langue parlé ca le fait pas trop et si tu fais une messagerie evite les message de con au cas ou
 
 
 # A LA FIN des parti mettre un partie 1 
