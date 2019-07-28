@@ -33,16 +33,6 @@
 
 <body>
 
-    {% if user.authenticate %}
-        salit
-    {% else %}
-        fefz
-    {% endif %}
-
-
-
-
-
 
   <!-- Navigation -->
   <a class="menu-toggle rounded" href="#">
@@ -79,7 +69,8 @@
 
  
   
-  <header class="masthead text-white text-center" id="connected_picture">
+  <header class="masthead text-white text-center"
+    style="background: no-repeat url('/static/home/img/premiere.jpg');">
       
     <div class="overlay"></div>
     <div class="container">
@@ -105,67 +96,35 @@
   <section class="features-icons bg-light text-center">
     <div class="container">
       <div class="row">
-    {% if user.is_authenticated %}
-    oui
-    {% else %}
-    non
-    {% endif %}
+
+        <div class="col-lg-12">
+            
+          <input type="button" id="retour" value="Retour"
+              onclick="document.location.href = '../../compte'"><br><br>
+
+          <h2>Inscription</h2><br><br>
+                
+          <div>
+
+            <form method="POST">
+              {% csrf_token %}
+                <center>
+
+                  {{form.username}}<br><br>
+                  {{form.password}}<br><br>
+                  {{form.email}}<br><br>
+                  {{form.email2}}<br><br>
 
 
-                <div class="col-lg-12">
-                    
-                        <input type="button" id="retour" value="Retour"
-                            onclick="document.location.href = 'compte'"><br><br>
-
-                        <h2>Inscription</h2><br><br>
+                  <input type="submit" value="Valider" id="validation">
                         
-                        <div>
+                </center>
+                {% csrf_token %}
+            </form>
 
-                        <form method="POST">
-                        {% csrf_token%}
-                            <center>
+        </div>
 
-                            {{form.username}}<br><br>
-                            {{form.password}}<br><br>
-                            {{form.email}}<br><br>
-                            {{form.email2}}<br><br>
-                            
-                    
-                        <input type="text" class="input" id="nom"
-                            placeholder="Nom"><br><br>
-                             
-                        <input type="text" class="input" id="prenom"
-                            placeholder="Prénom"><br><br>
-                        
-                        <input type="date" class="input" id="date"
-                            data-date-format="yyyy-MM-dd"><br><br>
-                            
-                        <input type="text" class="input" id="sexe""
-                            placeholder="Sexe"><br><br>
-
-                        <input type="button"
-                            value="Ton adresse mail n'est pas professionel ?"><br><br>
-
-                        
-                        <input type="text" class="input" id="portable"
-                            placeholder="Télephone Portable"><br><br>
-                            
-                        <input type="text" class="input" id="fixe"
-                            placeholder="Télephone Fixe"><br><br>
-
-                        <input type="text" class="input" id="adresse"
-                            placeholder="Adresse"><br><br>
-
-
-                        <input type="submit" value="Valider">
-                            
-                            <input type="submit" value="Valider">
-                            </center>
-                        </form>
-                    </div>
-                </div>
-
-        
+  
       </div>
     </div>
   </section>
@@ -197,63 +156,6 @@
       </div>
     </div>
   </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -314,15 +216,6 @@
 </html>
 
 
-
-
-
-
-
-
-
-
-
 <style>
     #connexion_champs,
     #inscription_champs{
@@ -334,6 +227,7 @@
     #retour{
         float:left;
     }
+
 </style>
 
 
@@ -344,103 +238,6 @@
 
 
 <script>
-
-
-function recup_inscription(){
-    nom = document.getElementById("nom").value;
-    prenom = document.getElementById("prenom").value;
-    date = document.getElementById("date").value;
-    sexe = document.getElementById("sexe").value;
-    email = document.getElementById("email").value;
-    portable = document.getElementById("portable").value;
-    fixe = document.getElementById("fixe").value;
-    adresse = document.getElementById("adresse").value;
-
-    return nom, prenom, date, sexe, email, portable, fixe, adresse
-};
-
-
-
-
-
-
-//----------------------------------------------------------------inscription
-
-jQuery("#valider_inscription").on("click", function(e){
-
- nom, prenom, date, sexe, email, portable, fixe, adresse = recup_inscription()
-
- e.preventDefault();
-  jQuery.ajax({
-      data:{
-          'inscriptionn':'inscriptionn',
-          'nom':nom,
-          'prenom':prenom,
-          'date':date,
-          'sexe':sexe,
-          'email':email,
-          'portable':portable,
-          'fixe':fixe,
-          'email': email,
-          'adresse':adresse,
-          'csrfmiddlewaretoken': '{{csrf_token}}' , 
-      },
-      type:"POST",
-      url:"register"
-  })
-  .done(function(data){
-      if (data.error){
-          document.getElementById("#Alert").inner.html = "aie"; 
-      }
-      else{
-          document.getElementById("boutton").click()
-          
-          
-      };
-      
-  });
-});
-
-
-
-
-
-jQuery("#valider_connexion").on("click", function(e){
-
-    
-    password_connexion = document.getElementById("id_password").value;
-    pseudo_connexion = document.getElementById("id_pseudo").value;
-    
-    alert(password_connexion);
-    alert(pseudo_connexion);
-
-
- e.preventDefault();
-  jQuery.ajax({
-      data:{
-          'connexion':'connexion',
-          'password_connexion':password_connexion,
-          'pseudo_connexion':pseudo_connexion,
-          'csrfmiddlewaretoken': '{{csrf_token}}' , 
-      },
-      type:"POST",
-      url:"/compte"
-  })
-  .done(function(data){
-      if (data.error){
-          document.getElementById("#Alert").inner.html = "aie"; 
-      }
-      else{
-          document.location.href = '/'
-          
-          
-      };
-      
-  });
-});
-
-
-
 
 
 
