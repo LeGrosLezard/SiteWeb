@@ -40,7 +40,7 @@ def login_view(request):
         
         if next:
             return redirect(next)
-        return redirect('/')
+        return redirect('../../compte')
 
     context = {
         'form':form
