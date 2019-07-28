@@ -12,8 +12,12 @@ User = get_user_model()
 class UserLoginForm(forms.Form):
     """this is form for login and run session"""
 
-    username = forms.CharField()
-    password = forms.CharField(widget=forms.PasswordInput)
+    username = forms.CharField(label='Pseudo', 
+                    widget=forms.TextInput(attrs={'placeholder': 'Pseudo'}))
+    
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Password'}),
+                               label='Password')
+
 
     def clean(self, *args, **kwargs):
         """cleanning entrance"""
@@ -35,10 +39,23 @@ class UserLoginForm(forms.Form):
 class UserRegisterForm(forms.ModelForm):
     """This is form for register"""
 
-    username = forms.CharField()
-    email = forms.EmailField()
-    email2 = forms.EmailField()
-    password = forms.CharField(widget=forms.PasswordInput)
+
+
+    username = forms.CharField(label='Pseudo', 
+                    widget=forms.TextInput(attrs={'placeholder': 'Pseudo'}))
+    
+    email = forms.EmailField(label='Email', 
+                    widget=forms.TextInput(attrs={'placeholder': 'Email'}))
+    
+    email2 = forms.EmailField(label='Confirmer Email', 
+                    widget=forms.TextInput(attrs={'placeholder': 'Confirmer Email'}))
+    
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Password'}),
+                               label='Password')
+                               
+
+
+
 
     class Meta:
         """We call username email and password from meta class"""
