@@ -101,22 +101,24 @@ def questionnaire(request):
 
 
 from .cv.database.recuperation_document import recuperation_nom
-from .cv.database.recuperation_document import recuperation_cv
 from .cv.database.recuperation_document import recuperation_bilan
 from .cv.database.recuperation_document import recuperation_motivation
+
+from .cv.traitement_cv import traitement_cv
 
 from .cv.database.insertion_document import insertion_part
 def comment_faire_mon_cv(request):
 
 
     pseudo = request.user
+    cv = traitement_cv(pseudo)
+    print(cv)
     
     nom, prenom = recuperation_nom(pseudo)
-    cv = recuperation_cv(pseudo)
     bilan = recuperation_bilan(pseudo)
     motivation = recuperation_motivation(pseudo)
 
-
+    
 
     if request.method == "POST":
         
@@ -126,28 +128,33 @@ def comment_faire_mon_cv(request):
         
         deux = request.POST.get('deux')
         if deux:
-            pass
+            insertion_part(pseudo, deux)
         
         trois = request.POST.get('trois')
         if trois:
-            pass
+            insertion_part(pseudo, trois)
         
         quattre = request.POST.get('quattre')
         if quattre:
-            pass
+            insertion_part(pseudo, quattre)
         
         cinq = request.POST.get('cinq')
         if cinq:
-            pass
+            insertion_part(pseudo, cinq)
         
         six = request.POST.get('six')
         if six:
-            pass
+            insertion_part(pseudo, six)
         
 
     return render(request, 'comment_faire_mon_cv.html', {"nom" : nom,
-                                                         "prenon": prenon,
-                                                         "cv": cv,
+                                                         "prenom": prenom,
+                                                         "cv1": cv[0][0][0],
+                                                         "cv2": cv[1][0][0],
+                                                         "cv3": cv[2][0][0],
+                                                         "cv4": cv[3][0][0],
+                                                         "cv5": cv[4][0][0],
+                                                         "cv6": cv[5][0][0],
                                                          "bilan": bilan,
                                                          "motivation": motivation,
                                                          })
