@@ -179,7 +179,7 @@
       <div class="row no-gutters">
 
         <div class="col-lg-6 order-lg-2">
-            <TEXTAREA name="nom" style="width:100%;height:100%;" id="first"></TEXTAREA>
+            <TEXTAREA name="nom" style="width:100%;height:100%;" id="first">{{cv1}}</TEXTAREA>
         </div>
             
         <div class="col-lg-6 order-lg-1 my-auto showcase-text" style="background:#f5ec42">
@@ -194,7 +194,7 @@
 
 
           <div id="first_validation"></div>
-          <div id="deja1">{{deja1}}</div>
+   
         </div>
       </div>
 
@@ -202,7 +202,7 @@
       
       <div class="row no-gutters">
         <div class="col-lg-6">
-            <TEXTAREA name="nom" style="width:100%;height:100%;" id="second"></TEXTAREA>
+            <TEXTAREA name="nom" style="width:100%;height:100%;" id="second">{{cv2}}</TEXTAREA>
         </div>
             
         <div class="col-lg-6 my-auto showcase-text" style="background:#f54242">
@@ -218,14 +218,14 @@
 
 
           <div id="second_validation"></div>
-          <div id="deja2">{{deja2}}</div>
+       
         </div>
       </div>
 
       
       <div class="row no-gutters">
         <div class="col-lg-6 order-lg-2">
-            <TEXTAREA name="nom" style="width:100%;height:100%;" id="third"></TEXTAREA>
+            <TEXTAREA name="nom" style="width:100%;height:100%;" id="third">{{cv3}}</TEXTAREA>
         </div>
             
         <div class="col-lg-6 order-lg-1 my-auto showcase-text" style="background:#4296f5">
@@ -241,7 +241,7 @@
 
 
           <div id="third_validation"></div>
-          <div id="deja3">{{deja3}}</div>
+    
         </div>
       </div>
 
@@ -249,7 +249,7 @@
 
       <div class="row no-gutters">
         <div class="col-lg-6">
-            <TEXTAREA name="nom" style="width:100%;height:100%;" id="fourth"></TEXTAREA>
+            <TEXTAREA name="nom" style="width:100%;height:100%;" id="fourth">{{cv4}}</TEXTAREA>
         </div>
             
         <div class="col-lg-6 my-auto showcase-text" style="background:#f54242">
@@ -263,7 +263,7 @@
           </p>
 
           <div id="fourth_validation"></div>
-          <div id="deja4">{{deja4}}</div>          
+       
         </div>
       </div>
 
@@ -271,7 +271,7 @@
 
       <div class="row no-gutters">
         <div class="col-lg-6 order-lg-2">
-            <TEXTAREA name="nom" style="width:100%;height:100%;" id="fifty"></TEXTAREA>
+            <TEXTAREA name="nom" style="width:100%;height:100%;" id="fifty">{{cv5}}</TEXTAREA>
         </div>
             
         <div class="col-lg-6 order-lg-1 my-auto showcase-text" style="background:#4296f5">
@@ -285,7 +285,7 @@
           </p>
 
           <div id="fifty_validation"></div>
-          <div id="deja5">{{deja5}}</div> 
+
           
         </div>
       </div>
@@ -293,7 +293,7 @@
 
       <div class="row no-gutters">
         <div class="col-lg-6">
-            <TEXTAREA name="nom" style="width:100%;height:100%;" id="sixty"></TEXTAREA>
+            <TEXTAREA name="nom" style="width:100%;height:100%;" id="sixty">{{cv6}}</TEXTAREA>
         </div>
             
         <div class="col-lg-6 my-auto showcase-text" style="background:#f54242">
@@ -307,7 +307,7 @@
           </p>
 
           <div id="sixty_validation"></div>
-          <div id="deja6">{{deja6}}</div>  
+
         </div>
       </div>
 
@@ -340,7 +340,7 @@
       <div class="row no-gutters">
 
         <div class="col-lg-6 order-lg-2">
-            <TEXTAREA name="nom" style="width:100%;height:100%;"></TEXTAREA>
+            <TEXTAREA name="nom" style="width:100%;height:100%;" id="motivation_text1"></TEXTAREA>
         </div>
             
         <div class="col-lg-6 order-lg-1 my-auto showcase-text" style="background:#f5ec42">
@@ -348,6 +348,10 @@
           
           <p class="lead mb-0">
               Ici on se met à la place du recruteur.
+              
+              <input type="button" value="Valider" id="valider1_motivation">
+              <div id="motivation1"></div>
+              
           </p>
           
         </div>
@@ -357,24 +361,38 @@
       
       <div class="row no-gutters">
         <div class="col-lg-6">
-            <TEXTAREA name="nom" style="width:100%;height:100%;"></TEXTAREA>
+            <TEXTAREA name="nom" style="width:100%;height:100%;" id="motivation_text2"></TEXTAREA>
         </div>
             
         <div class="col-lg-6 my-auto showcase-text" style="background:#f54242">
           <h2>Deuxième étape</h2>
-          <p class="lead mb-0">Newly improved, and full of great utility classes, Bootstrap 4 is leading the way in mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 4!</p>
+          <p class="lead mb-0">Newly improved, and full of great utility classes,
+              Bootstrap 4 is leading the way in mobile responsive web development!
+              All of the themes on Start Bootstrap are now using Bootstrap 4!
+        
+              <input type="button" value="Valider" id="valider2_motivation">
+              <div id="motivation2"></div>
+          </p>
         </div>
       </div>
 
       
       <div class="row no-gutters">
         <div class="col-lg-6 order-lg-2">
-            <TEXTAREA name="nom" style="width:100%;height:100%;"></TEXTAREA>
+            <TEXTAREA name="nom" style="width:100%;height:100%;" id="motivation_text3"></TEXTAREA>
         </div>
             
         <div class="col-lg-6 order-lg-1 my-auto showcase-text" style="background:#4296f5">
           <h2>Easy to Use &amp; Customize</h2>
-          <p class="lead mb-0">Landing Page is just HTML and CSS with a splash of SCSS for users who demand some deeper customization options. Out of the box, just add your content and images, and your new landing page will be ready to go!</p>
+          <p class="lead mb-0">Landing Page is just HTML and CSS with
+              a splash of SCSS for users who demand some deeper
+              customization options. Out of the box, just add
+              your content and images, and your new landing page will be ready to go!
+              
+              <input type="button" value="Valider" id="valider3_motivation">
+              <div id="motivation3"></div>
+          </p>
+          
         </div>
       </div>
 
@@ -382,12 +400,19 @@
 
       <div class="row no-gutters">
         <div class="col-lg-6">
-            <TEXTAREA name="nom" style="width:100%;height:100%;"></TEXTAREA>
+            <TEXTAREA name="nom" style="width:100%;height:100%;" id="motivation_text4"></TEXTAREA>
         </div>
             
         <div class="col-lg-6 my-auto showcase-text" style="background:#f54242">
           <h2>Deuxième étape</h2>
-          <p class="lead mb-0">Newly improved, and full of great utility classes, Bootstrap 4 is leading the way in mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 4!</p>
+          <p class="lead mb-0">Newly improved, and full of great
+              utility classes, Bootstrap 4 is leading the way in mobile
+              responsive web development! All of the themes on Start
+              Bootstrap are now using Bootstrap 4!
+
+             <input type="button" value="Valider" id="valider4_motivation">
+             <div id="motivation4"></div>
+          </p>
         </div>
       </div>
 
@@ -395,24 +420,40 @@
 
       <div class="row no-gutters">
         <div class="col-lg-6 order-lg-2">
-            <TEXTAREA name="nom" style="width:100%;height:100%;"></TEXTAREA>
+            <TEXTAREA name="nom" style="width:100%;height:100%;" id="motivation_text5"></TEXTAREA>
         </div>
             
         <div class="col-lg-6 order-lg-1 my-auto showcase-text" style="background:#4296f5">
           <h2>Easy to Use &amp; Customize</h2>
-          <p class="lead mb-0">Landing Page is just HTML and CSS with a splash of SCSS for users who demand some deeper customization options. Out of the box, just add your content and images, and your new landing page will be ready to go!</p>
+          <p class="lead mb-0">Landing Page is just HTML and CSS with
+              a splash of SCSS for users who demand some deeper
+              customization options. Out of the box, just add your
+              content and images, and your new landing page will be ready to go!
+    
+              <input type="button" value="Valider" id="valider5_motivation">
+              <div id="motivation5"></div>
+          </p>
         </div>
       </div>
 
 
       <div class="row no-gutters">
         <div class="col-lg-6">
-            <TEXTAREA name="nom" style="width:100%;height:100%;"></TEXTAREA>
+            <TEXTAREA name="nom" style="width:100%;height:100%;" id="motivation_text6"></TEXTAREA>
         </div>
             
         <div class="col-lg-6 my-auto showcase-text" style="background:#f54242">
           <h2>Deuxième étape</h2>
-          <p class="lead mb-0">Newly improved, and full of great utility classes, Bootstrap 4 is leading the way in mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 4!</p>
+          <p class="lead mb-0">Newly improved, and full of great
+              utility classes, Bootstrap 4 is leading the way in mobile
+              responsive web development! All of the themes on Start
+              Bootstrap are now using Bootstrap 4!
+
+              <input type="button" value="Valider" id="valider6_motivation">
+              <div id="motivation6"></div>
+          </p>
+
+          
         </div>
       </div>
 
@@ -468,7 +509,12 @@
             
         <div class="col-lg-6 my-auto showcase-text" style="background:#f54242">
           <h2>Deuxième étape</h2>
-          <p class="lead mb-0">Newly improved, and full of great utility classes, Bootstrap 4 is leading the way in mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 4!</p>
+          <p class="lead mb-0">Newly improved, and full of great utility classes,
+              Bootstrap 4 is leading the way in mobile responsive web development!
+              All of the themes on Start Bootstrap are now using Bootstrap 4!
+
+             <input type="button" value="Valider" id="">
+          </p>
         </div>
       </div>
 
@@ -719,6 +765,79 @@
     };
 
     
+
+
+
+
+    function function_bouton(){
+        var a = document.getElementById('motivation_text1').value;
+        if (a != ""){
+            document.getElementById('valider1_motivation').value = "Modifier"
+        }
+        var b = document.getElementById('motivation_text2').value;
+        if (b != ""){
+            document.getElementById('valider2_motivation').value = "Modifier"
+        }
+        var c = document.getElementById('motivation_text3').value;
+        if (c != ""){
+            document.getElementById('valider3_motivation').value = "Modifier"
+        }
+        var d = document.getElementById('motivation_text4').value;
+        if (d != ""){
+            document.getElementById('valider4_motivation').value = "Modifier"
+        }
+        var e = document.getElementById('motivation_text5').value;
+        if (e != ""){
+            document.getElementById('valider5_motivation').value = "Modifier"
+        }
+        var f = document.getElementById('motivation_text6').value;
+        if (f != ""){
+            document.getElementById('valider6_motivation').value = "Modifier"
+        }
+
+
+        
+        
+        var g = document.getElementById('first').value;
+        if (g != ""){
+            document.getElementById('valider_premiere').value = "Modifier"
+        }
+        
+        var h = document.getElementById('second').value;
+        if (h != ""){
+            document.getElementById('valider_deuxieme').value = "Modifier"
+        }
+        
+        var i = document.getElementById('third').value;
+        if (i != ""){
+            document.getElementById('valider_troisieme').value = "Modifier"
+        }
+        
+        var j = document.getElementById('fourth').value;
+        if (j != ""){
+            document.getElementById('valider_quatrieme').value = "Modifier"
+        }
+        
+        var k = document.getElementById('fifty').value;
+        if (k != ""){
+            document.getElementById('valider_cinquieme').value = "Modifier"
+        }
+        
+        var l = document.getElementById('sixty').value;
+
+        if (l != ""){
+            document.getElementById('valider_sixieme').value = "Modifier"
+        }
+
+        
+    };
+
+    function_bouton()
+
+
+
+
+
 
 </script>
 
