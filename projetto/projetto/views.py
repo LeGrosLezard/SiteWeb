@@ -141,17 +141,40 @@ def le_questionnaire_quatrieme_partie(request):
 from .cv.cv import recuperation_info
 def page_cv(request):
 
-    pseudo = request.user
-    nom, prenom, bilan, motivation = recuperation_info(pseudo)
-    data = {"nom": nom,
-            "prenom": prenom,
-            "bilan": bilan,
-            "motivation": motivation
-            }
+##    pseudo = request.user
+##    nom, prenom, bilan, motivation = recuperation_info(pseudo)
+##    data = {"nom": nom,
+##            "prenom": prenom,
+##            "bilan": bilan,
+##            "motivation": motivation
+##            }
+
+
+
+##    deja1 = ""
+##    deja2 = ""
+##    deja3 = ""
+##    deja4 = ""
+##    deja5 = ""
+##    deja6 = ""
+##    premier = ""
+##    deuxieme = ""
+##    troisieme = ""
+##    quatrieme = ""
+##    cinquieme =""
+##    sixieme =  ""
     
-    return render(request, 'page_cv.html', data)
 
 
+
+
+
+
+
+    
+    ##return render(request, 'page_cv.html', data)
+
+    return render(request, 'page_cv.html')
 
 
 def ma_lettre(request):
