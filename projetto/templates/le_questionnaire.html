@@ -64,9 +64,17 @@
       <h2 class="mx-auto mb-5">
         <em>le questionnaire</em>
       </h2>
-      <a class="btn btn-primary btn-xl"
-          href="le_questionnaire_premiere_partie">Commencons
-      </a><br><br>
+
+      {% if user.is_authenticated %}
+        <a class="btn btn-primary btn-xl"
+            href="le_questionnaire_premiere_partie">Commencons
+        </a><br><br>
+        
+      {% else %}
+        <a class="btn btn-primary btn-xl"
+            href="compte">Connecctez-vous
+        </a><br><br>
+      {% endif %}
 
           
       <br><br><em>Attention vous ne pouvez le remplir qu'une seule fois toutes les 2 semaines.<br>
@@ -79,9 +87,8 @@
       finir le reste du questionnaire un autre jour si vous le voulez. Une fois la page
       commencée vous devrez la finir.</strong></em><br><br>
       <strong>La Première partie</strong> est une serie de question sur vous. Soyez le plus honnete possible.<br>
-      <strong>La Seconde partie</strong> porte sur l'aspect de l'émotionel. Soyez le plus honnete possible.<br>
-      <strong>La Troisième partie</strong> est dirigée vers vos aspects cognitifs.<br>
-      <strong>La Quatrième partie</strong> est sur votre personnalité.<br><br>
+      <strong>La Seconde partie</strong> est dirigée vers vos aspects cognitifs.<br>
+      <strong>La Troisième partie</strong> est sur votre personnalité.<br><br>
       Vous n'avez rien a perdre tout à gagner. Nous envoyons votre bilan aux recruteurs mais ne prenons que les aspects
       positifs. Vous et uniquement vous avez la possiblité de choisir d'envoyer le bilan. Ce bilan
       ne vous portera jamais défault.
