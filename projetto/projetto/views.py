@@ -2,6 +2,26 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from django.http import HttpResponse
 
+
+from django import forms
+
+from django.contrib.auth import login as lo 
+from django.contrib.auth.models import User
+
+from django.contrib.auth import logout
+from django.contrib.auth import authenticate
+from django.contrib.auth import get_user_model
+from django.contrib.auth import login
+from django.contrib.auth import logout
+
+from django.shortcuts import render, redirect
+
+from .forms import compte_utilisateur_form
+from .forms import userloginform
+from .forms import userregisterform
+
+from .models import compte
+
 #FAUT FAIRE LA DECONNEXTION ET DONC LA GLOBAL
 
 
@@ -9,7 +29,8 @@ GLOBAL = []
 
 def home(request):
     global GLOBAL
-    print(GLOBAL, "UTILISATEUR CONNECTE")
+    user = request.user
+    print(user)
 
     if request.method == "POST":
         verification = request.POST.get('verification')
@@ -34,98 +55,16 @@ def home(request):
 
 
 
-
-from .compte.compte import inscription
-from .compte.compte import connexion
-from .compte.base_de_donnee.connexion import verifier_connexion
-from .compte.base_de_donnee.connexion import user_connected
-from .compte.compte import deconnexion
 def compte(request):
-
-
     global GLOBAL
-    print(GLOBAL, "UTILISATEUR CONNECTE")
 
+    
 
     if request.method == "POST":
-
-        inscription_user = request.POST.get('inscription')
-        connexion_user = request.POST.get('connexion')
-        verification_user_connexion = request.POST.get('verification_user_connexion')
-        deconnexion_user = request.POST.get('deconnexion_user')
         
         demande_de_cv = request.POST.get('demande_de_cv')
         demande_de_motivation = request.POST.get('demande_de_motivation')
         demande_de_message = request.POST.get('demande_de_message')
-
-
-
-
-        if inscription_user:
-        
-            pseudo = request.POST.get('pseudo')
-            nom = request.POST.get('nom')
-            prenom = request.POST.get('prenom')
-            date = request.POST.get('date')
-            sexe = request.POST.get('sexe')
-            email = request.POST.get('email')
-            portable = request.POST.get('portable')
-            fixe = request.POST.get('fixe')
-            adresse = request.POST.get('adresse')
-            password = request.POST.get('mot_de_passe')
-
-            info_inscription = inscription(pseudo, nom, prenom,
-                                            date, sexe, email,
-                                            portable, fixe,
-                                            adresse, password)
-
-
-
-
-        if connexion_user:
-            #donc si on requete la connexion
-
-            password_connexion = request.POST.get('password_connexion')
-            pseudo_connexion = request.POST.get('pseudo_connexion')
-            #on récupere le mdp et le pseudo
-
-            pseudo_verif, password_verif = verifier_connexion(pseudo_connexion,
-                                                              password_connexion)
-            #on va dans la table users y'a un match ?
-    
-
-            if pseudo_verif == pseudo_connexion and\
-               password_connexion == password_verif:
-                #Si y'a un match
-                
-                connexion(password_connexion, pseudo_connexion)
-                GLOBAL.append([pseudo_verif, password_verif])
-                #Si y'a un match, on ajoute les identifiants
-                #dans la table connexion
-                #mais aussi a global pour les pages
-                """Ptetre pas la meilleur soluce"""
-
-
-
-
-        if verification_user_connexion:
-            #On verifie la global et la table connection
-            print(GLOBAL, "000000000000000000000000000000000000000000")
-            pseudo_connected, password_connected = user_connected(GLOBAL[0][0],
-                                                                  GLOBAL[0][1])
-            
-            #On verifie la table connexion mtn !
-            if pseudo_connected and password_connected:
-                return JsonResponse("connected")
-
-
-
-
-        if deconnexion_user:
-            deconnexion(pseudo, password)
-            GLOBAL = []
-
-
 
 
         if demande_de_cv:
@@ -147,20 +86,7 @@ def compte(request):
 
 
 
-
-
-
-
-
-
-
-
-
-
-    try:
-        return render(request, 'compte.html', {"user":GLOBAL[0][0]})
-    except IndexError:
-        return render(request, 'compte.html')
+    return render(request, 'compte.html')
 
 
 
