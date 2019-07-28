@@ -87,21 +87,23 @@
 
         
         
-        <div id="info_connected">
-            Bonjour <strong>{{user}}</strong> Voici les nouvelles:<br><br>
-                ICI VA FALLOIR INTERROGER LA TABLE SITE CONSULTER
-                ET METTRE LES MESSAGES ENVOYEE BIEN SUR ON ENVOIE ET
-                AU RECRUTEUR ET AU MEC
-        </div>
+            {% if user.is_authenticated %}
+                Bonjour <strong>{{user}}</strong> Voici les nouvelles:<br><br>
+                    ICI VA FALLOIR INTERROGER LA TABLE SITE CONSULTER
+                    ET METTRE LES MESSAGES ENVOYEE BIEN SUR ON ENVOIE ET
+                    AU RECRUTEUR ET AU MEC
+            {% else %}
 
 
-
-        <div id="info_not_connected">
-          <h2>Inscris-toi si ce n'est pas deja fait ! Connecte-toi</h2>
-          <p class="lead mb-5">Ici on met toute les nouveautés, genre et jb on t'as trouvé du taff!
-          <a href="compte">Je m'inscris ou me connecte!</a></p>
-        </div>
-
+              <h2>Inscris-toi si ce n'est pas deja fait ! Connecte-toi</h2>
+              <p class="lead mb-5">Ici on met toute les nouveautés, genre et jb on t'as trouvé du taff!
+              <a href="compte">Je m'inscris ou me connecte!</a></p>
+              <br><br>
+              Ce site web a pour but de vous aider. Nous enverrons après validation de votre CV
+              de votre Lettre de motivation d'un message au recruteur et de votre bilan
+              sur votre bon vouloir d'envoyer des demande aux recruteurs pole emploie.
+    
+            {% endif %}
           
         </div>
       </div>
@@ -115,7 +117,7 @@
 
 
 
-
+  {% if user.is_authenticated %}
 
   <!-- Services -->
   <section class="content-section bg-primary text-white text-center" id="services">
@@ -182,11 +184,98 @@
             Start Bootstrap!</p>
         </div>
 
-
-        
       </div>
     </div>
   </section>
+
+
+
+
+    {% else %}
+
+
+  <!-- Services -->
+  <section class="content-section bg-primary text-white text-center" id="services">
+    <div class="container">
+    
+      <div class="content-section-heading">
+        <h3 class="text-secondary mb-0">Nous vous proposons</h3>
+        <h2 class="mb-5"></h2>
+      </div>
+      
+      <div class="row">
+
+      
+        <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+          <span class="service-icon rounded-circle mx-auto mb-3" id="icone_hover"
+              onclick="document.location.href='compte'">
+          
+            <i class="icon-screen-smartphone"></i>
+          </span>
+          <h4>
+            <strong>Créer un compte</strong>
+          </h4>
+          <p class="text-faded mb-0">Looks great on any screen size!</p>
+        </div>
+
+        
+        <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+          <span class="service-icon rounded-circle mx-auto mb-3" id="icone_hover"
+              onclick="document.location.href='comment_faire_mon_cv'">
+              
+            <i class="icon-pencil"></i>
+          </span>
+          <h4>
+            <strong>Créer un CV</strong>
+          </h4>
+          <p class="text-faded mb-0">Composez un Curriculum Vitae
+          à l'aide de nos conseilles</p>
+        </div>
+
+        
+        <div class="col-lg-3 col-md-6">
+          <span class="service-icon rounded-circle mx-auto mb-3" id="icone_bilan">
+              
+            <i class="icon-mustache"></i>
+          </span>
+          <h4>
+            <strong>Créer un bilan</strong>
+          </h4>
+          <p class="text-faded mb-0">I mustache you a question...</p>
+        </div>
+
+        
+        <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+          <span class="service-icon rounded-circle mx-auto mb-3" id="icone_hover"
+              onclick="document.location.href='ma_demarche'">
+              
+            <i class="icon-like"></i>
+          </span>
+          <h4>
+            <strong>Créer une démarche</strong>
+          </h4>
+          <p class="text-faded mb-0">Millions of users
+            <i class="fas fa-heart"></i>
+            Start Bootstrap!</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  {% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
 
   <style>
       #icone_bilan:hover,
@@ -215,9 +304,18 @@
       <h2 class="mx-auto mb-5">Faites
         <em>le questionnaire,</em>
         nous nous occupons du reste!</h2>
-      <a class="btn btn-primary btn-xl"
-        onclick="redirection_questionnaire()">Le passer!</a>
 
+      {% if user.is_authenticated %}
+      
+          <a class="btn btn-primary btn-xl"
+            onclick="redirection_questionnaire()">Le passer!</a>
+
+      {% else %}
+      
+         <a class="btn btn-primary btn-xl"
+            onclick="document.location.href='compte'">Se connecter</a>
+
+      {% endif %}
       <br><br><em>Attention vous ne pouvez le remplir qu'une seule fois par semaine.<br>
       <strong>Le bilan du questionnaire est visible depuis votre compte</strong><br></em><br><br>
       <h3>Soyez surpris de vous-meme!</h3>
@@ -233,7 +331,7 @@
 
 
 
-
+  {% if user.is_authenticated %}
 
  
 
@@ -245,6 +343,81 @@
       
         <h3 class="text-secondary mb-0">Vos Documents</h3>
         <h2 class="mb-5">L'essentiel de votre compte <strong>{{user}}</strong></h2>
+
+        
+      </div>
+
+      
+      <div class="row no-gutters">
+        <div class="col-lg-6">
+          <a class="portfolio-item" href="comment_faire_mon_cv">
+            <span class="caption">
+              <span class="caption-content">
+                <h2>Curiculum Vitae</h2>
+                <p class="mb-0">Mon cv !</p>
+              </span>
+            </span>
+            <img class="img-fluid" src="/static/home/img/portfolio-1.jpg" alt="">
+          </a>
+        </div>
+
+        
+        <div class="col-lg-6">
+          <a class="portfolio-item" href="comment_faire_mon_cv">
+            <span class="caption">
+              <span class="caption-content">
+                <h2>Lettre de Motivation</h2>
+                <p class="mb-0">A dark blue background with a colored pencil, a clip, and a tiny ice cream cone!</p>
+              </span>
+            </span>
+            <img class="img-fluid" src="/static/home/img/portfolio-2.jpg" alt="">
+          </a>
+        </div>
+
+        
+        <div class="col-lg-6">
+          <a class="portfolio-item" href="comment_faire_mon_cv">
+            <span class="caption">
+              <span class="caption-content">
+                <h2>Message aux recruteurs</h2>
+                <p class="mb-0">Strawberries are such a tasty snack, especially with a little sugar on top!</p>
+              </span>
+            </span>
+            <img class="img-fluid" src="/static/home/img/portfolio-3.jpg" alt="">
+          </a>
+        </div>
+
+        
+        <div class="col-lg-6">
+          <a class="portfolio-item" href="questionnaire">
+            <span class="caption">
+              <span class="caption-content">
+                <h2>Le questionnaire</h2>
+                <p class="mb-0">A yellow workspace with some scissors, pencils, and other objects.</p>
+              </span>
+            </span>
+            <img class="img-fluid" src="/static/home/img/portfolio-4.jpg" alt="">
+          </a>
+        </div>
+      </div>
+
+      
+    </div>
+  </section>
+
+  {% else %}
+
+
+
+
+  <!-- Portfolio -->
+  <section class="content-section" id="essentiel_connected">
+    <div class="container">
+      <div class="content-section-heading text-center">
+
+      
+        <h3 class="text-secondary mb-0">Vos Documents</h3>
+        <h2 class="mb-5">Modèle de CV, lettre de motivation, Bilan, message aux recruteurs</h2>
 
         
       </div>
@@ -300,6 +473,7 @@
 
 
 
+  {% endif %}
 
 
 
@@ -307,65 +481,7 @@
 
 
 
-  <!-- Portfolio -->
-  <section class="content-section" id="essentiel_not_connected">
-    <div class="container">
-      <div class="content-section-heading text-center">
-      
-        <h3 class="text-secondary mb-0">Documents</h3>
-        <h2 class="mb-5">L'essentiel</h2>
 
-        
-      </div>
-      <div class="row no-gutters">
-        <div class="col-lg-6">
-          <a class="portfolio-item" href="#">
-            <span class="caption">
-              <span class="caption-content">
-                <h2>Curriculum Vitae</h2>
-                <p class="mb-0">Voici un modèle! Connecte-toi et personnalise le tien!</p>
-              </span>
-            </span>
-            <img class="img-fluid" src="/static/home/img/portfolio-1.jpg" alt="">
-          </a>
-        </div>
-        <div class="col-lg-6">
-          <a class="portfolio-item" href="#">
-            <span class="caption">
-              <span class="caption-content">
-                <h2>Lettre de Motication</h2>
-                <p class="mb-0">Voici un modèle! Connecte-toi et fais la tienne!</p>
-              </span>
-            </span>
-            <img class="img-fluid" src="/static/home/img/portfolio-2.jpg" alt="">
-          </a>
-        </div>
-        <div class="col-lg-6">
-          <a class="portfolio-item" href="#">
-            <span class="caption">
-              <span class="caption-content">
-                <h2>Lettre de Motication</h2>
-                <p class="mb-0">Voici un modèle! Connecte-toi et fais la tienne!</p>
-              </span>
-            </span>
-            <img class="img-fluid" src="/static/home/img/portfolio-3.jpg" alt="">
-          </a>
-        </div>
-        <div class="col-lg-6">
-          <a class="portfolio-item" href="#">
-            <span class="caption">
-              <span class="caption-content">
-                <h2>Curriculum Vitae</h2>
-                <p class="mb-0">Voici un modèle! Connecte-toi et personnalise le tien!</p>
-              </span>
-            </span>
-            <img class="img-fluid" src="/static/home/img/portfolio-4.jpg" alt="">
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-    
 
 
 
