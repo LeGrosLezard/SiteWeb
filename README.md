@@ -3,14 +3,12 @@
 Un site Web pour la recherche d'emploi
 
 
-faire les requete pour si le mec a deja fais ou pas
+faire message aux recruteurs
 
-refaire les requetes
+mettre les truks sur la fiche cv
 
-le truk mtn c les saut de ligne est ce que ca va mettre br ou un espace blanc ou /n petite pause
+faire une belle fiche cv
 
-faut le faire pour la lettre et le message au recruteur 
+faire le debut de recherche emploie via une page (quoi ou)
 
-si le mec met son cv faire un truk pour dire que le bilan sera une piece jointe a par
-
-et que le mec veut ou pas envoyer le bilan
+faire le scappage (juste l'id parait que ca marche (url sur bureau de la vidéo)) bah non mais ca doit marché juste l'id
