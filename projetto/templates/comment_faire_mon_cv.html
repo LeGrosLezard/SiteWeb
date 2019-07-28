@@ -113,6 +113,10 @@
             Prenez votre temps! Etallez cela sur plusieurs jours si nécéssaire.
             Nous nous chargeons du reste en envoyant
             toutes vos informations à de potentiels recruteurs !</p>
+            Visualisez le ! Il ne vous conviens pas ? télécharger le!
+            <br><br>
+            Télécharger<br>
+            <a href="page_cv">Mon cv</a>
           </div>
         </div>
 
@@ -175,7 +179,7 @@
       <div class="row no-gutters">
 
         <div class="col-lg-6 order-lg-2">
-            <TEXTAREA name="nom" style="width:100%;height:100%;">
+            <TEXTAREA name="nom" style="width:100%;height:100%;" id="first">
             </TEXTAREA>
         </div>
             
@@ -186,8 +190,12 @@
               Ici on se met à la place du recruteur.
               
               <input type="button" Value="Valider" id="valider_premiere">
+              
           </p>
-          
+
+
+          <div id="first_validation"></div>
+          <div id="deja1">{{deja1}}</div>
         </div>
       </div>
 
@@ -195,7 +203,7 @@
       
       <div class="row no-gutters">
         <div class="col-lg-6">
-            <TEXTAREA name="nom" style="width:100%;height:100%;">
+            <TEXTAREA name="nom" style="width:100%;height:100%;" id="second">
             </TEXTAREA>
         </div>
             
@@ -204,25 +212,39 @@
           <p class="lead mb-0">Newly improved, and full of great utility classes,
               Bootstrap 4 is leading the way in mobile responsive
               web development! All of the themes on
-              Start Bootstrap are now using Bootstrap 4!</p>
+              Start Bootstrap are now using Bootstrap 4!
+         
             <input type="button" Value="Valider" id="valider_deuxieme">
+            
+        </p>
+
+
+          <div id="second_validation"></div>
+          <div id="deja2">{{deja2}}</div>
         </div>
       </div>
 
       
       <div class="row no-gutters">
         <div class="col-lg-6 order-lg-2">
-            <TEXTAREA name="nom" style="width:100%;height:100%;">
+            <TEXTAREA name="nom" style="width:100%;height:100%;" id="third">
             </TEXTAREA>
         </div>
             
         <div class="col-lg-6 order-lg-1 my-auto showcase-text" style="background:#4296f5">
           <h2>Easy to Use &amp; Customize</h2>
           <p class="lead mb-0">Landing Page is just HTML and CSS with a
-          splash of SCSS for users who demand some deeper customization
-          options. Out of the box, just add your content and images,
-          and your new landing page will be ready to go!</p>
-          <input type="button" Value="Valider" id="valider_deuxieme">
+              splash of SCSS for users who demand some deeper customization
+              options. Out of the box, just add your content and images,
+              and your new landing page will be ready to go!
+              
+              <input type="button" Value="Valider" id="valider_troisieme">
+
+          </p>
+
+
+          <div id="third_validation"></div>
+          <div id="deja3">{{deja3}}</div>
         </div>
       </div>
 
@@ -230,17 +252,22 @@
 
       <div class="row no-gutters">
         <div class="col-lg-6">
-            <TEXTAREA name="nom" style="width:100%;height:100%;">
+            <TEXTAREA name="nom" style="width:100%;height:100%;" id="fourth">
             </TEXTAREA>
         </div>
             
         <div class="col-lg-6 my-auto showcase-text" style="background:#f54242">
           <h2>Deuxième étape</h2>
           <p class="lead mb-0">Newly improved, and full of
-          great utility classes, Bootstrap 4 is leading the
-          way in mobile responsive web development! All of the
-          themes on Start Bootstrap are now using Bootstrap 4!</p>
-          <input type="button" Value="Valider" id="valider_troisieme">
+              great utility classes, Bootstrap 4 is leading the
+              way in mobile responsive web development! All of the
+              themes on Start Bootstrap are now using Bootstrap 4!
+              
+              <input type="button" Value="Valider" id="valider_quatrieme">
+          </p>
+
+          <div id="fourth_validation"></div>
+          <div id="deja4">{{deja4}}</div>          
         </div>
       </div>
 
@@ -248,33 +275,45 @@
 
       <div class="row no-gutters">
         <div class="col-lg-6 order-lg-2">
-            <TEXTAREA name="nom" style="width:100%;height:100%;">
+            <TEXTAREA name="nom" style="width:100%;height:100%;" id="fifty">
             </TEXTAREA>
         </div>
             
         <div class="col-lg-6 order-lg-1 my-auto showcase-text" style="background:#4296f5">
           <h2>Easy to Use &amp; Customize</h2>
           <p class="lead mb-0">Landing Page is just HTML and CSS with a splash
-          of SCSS for users who demand some deeper customization options. Out
-          of the box, just add your content and images, and your new landing
-          page will be ready to go!</p>
-          <input type="button" Value="Valider" id="valider_deuxieme">
+              of SCSS for users who demand some deeper customization options. Out
+              of the box, just add your content and images, and your new landing
+              page will be ready to go!
+              <input type="button" Value="Valider" id="valider_cinquieme">
+
+          </p>
+
+          <div id="fifty_validation"></div>
+          <div id="deja5">{{deja5}}</div> 
+          
         </div>
       </div>
 
 
       <div class="row no-gutters">
         <div class="col-lg-6">
-            <TEXTAREA name="nom" style="width:100%;height:100%;">
+            <TEXTAREA name="nom" style="width:100%;height:100%;" id="sixty">
             </TEXTAREA>
         </div>
             
         <div class="col-lg-6 my-auto showcase-text" style="background:#f54242">
           <h2>Deuxième étape</h2>
           <p class="lead mb-0">Newly improved, and full of great utility classes,
-          Bootstrap 4 is leading the way in mobile responsive web development!
-          All of the themes on Start Bootstrap are now using Bootstrap 4!</p>
-          <input type="button" Value="Valider" id="valider_deuxieme">
+              Bootstrap 4 is leading the way in mobile responsive web development!
+              All of the themes on Start Bootstrap are now using Bootstrap 4!
+              
+              <input type="button" Value="Valider" id="valider_sixieme">
+
+          </p>
+
+          <div id="sixty_validation"></div>
+          <div id="deja6">{{deja6}}</div>  
         </div>
       </div>
 
@@ -497,7 +536,9 @@
             
         <div class="col-lg-6 my-auto showcase-text" style="background:#f54242">
           <h2>Deuxième étape</h2>
-          <p class="lead mb-0">Newly improved, and full of great utility classes, Bootstrap 4 is leading the way in mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 4!</p>
+          <p class="lead mb-0">Newly improved, and full of great utility
+          classes, Bootstrap 4 is leading the way in mobile responsive web
+          development! All of the themes on Start Bootstrap are now using Bootstrap 4!</p>
         </div>
       </div>
 
@@ -662,7 +703,40 @@
 
     };
     
+    function function_deja1(){
+        var a = document.getElementById('deja1').innerHTML;
+        modifier_input = "<input type='button' value='Modifier' id='modification_premiere'>";
+        if(a == "deja"){
+            document.getElementById('valider_premiere').innerHTML = modifier_input;
 
+        };
+
+    };
+
+    function function_deja2(){
+        var a = document.getElementById('deja2').innerHTML;
+
+    };
+    function function_deja3(){
+        var a = document.getElementById('deja3').innerHTML;
+
+    };
+
+    function function_deja4(){
+        var a = document.getElementById('deja4').innerHTML;
+
+    };
+    function function_deja5(){
+        var a = document.getElementById('deja5').innerHTML;
+
+    };
+
+    function function_deja6(){
+        var a = document.getElementById('deja6').innerHTML;
+
+    };
+
+    
 
 </script>
 
@@ -680,6 +754,18 @@
     input:hover{
         border:1px solid black;
     }
+
+
+    #deja8,
+    #deja7,
+    #deja6,
+    #deja5,
+    #deja4,
+    #deja3,
+    #deja2,
+    #deja1{
+        display:none;
+    }
 </style>
 
 
@@ -687,7 +773,214 @@
 <script>
 
 
+//-----------------------------------------------------------------1
 
+jQuery("#valider_premiere").on("click", function(e){
+    
+ premiere_partie = document.getElementById("first").value;
+ alert(premiere_partie)
+ 
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+          "un":"un",
+          'csrfmiddlewaretoken': '{{csrf_token}}' , 
+      },
+      type:"POST",
+      url:"comment_faire_mon_cv"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+          document.getElementById("first_validation").innerHTML = "Première partie effectué";
+          
+          
+      };
+      
+  });
+ });
+//-----------------------------------------------------------------1
+
+
+
+
+
+
+
+
+//-----------------------------------------------------------------2
+
+
+jQuery("#valider_deuxieme").on("click", function(e){
+    
+ deuxieme_partie = document.getElementById("second").value;
+ alert(deuxieme_partie)
+ 
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+          "deux":"deux",
+          'csrfmiddlewaretoken': '{{csrf_token}}' , 
+      },
+      type:"POST",
+      url:"comment_faire_mon_cv"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+          document.getElementById("second_validation").innerHTML = "Seconde partie effectué";
+          
+          
+      };
+      
+  });
+ });
+//-----------------------------------------------------------------2
+
+
+
+
+
+
+
+
+
+
+//-----------------------------------------------------------------3
+jQuery("#valider_troisieme").on("click", function(e){
+    
+ troisieme_partie = document.getElementById("third").value;
+ alert(troisieme_partie)
+ 
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+          "trois":"trois",
+          'csrfmiddlewaretoken': '{{csrf_token}}' , 
+      },
+      type:"POST",
+      url:"comment_faire_mon_cv"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+          document.getElementById("third_validation").innerHTML = "Troisième partie effectué";
+          
+          
+      };
+      
+  });
+ });
+//-----------------------------------------------------------------3
+
+
+
+//-----------------------------------------------------------------4
+
+jQuery("#valider_quatrieme").on("click", function(e){
+    
+ quatrieme_partie = document.getElementById("fourth").value;
+ alert(quatrieme_partie)
+ 
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+          "quattre":"quattre",
+          'csrfmiddlewaretoken': '{{csrf_token}}' , 
+      },
+      type:"POST",
+      url:"comment_faire_mon_cv"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+          document.getElementById("fourth_validation").innerHTML = "Quatrième partie effectué";
+          
+          
+      };
+      
+  });
+ });
+//-----------------------------------------------------------------4
+
+
+
+
+
+
+
+
+//-----------------------------------------------------------------5
+jQuery("#valider_cinquieme").on("click", function(e){
+    
+ cinquieme_partie = document.getElementById("fifty").value;
+ alert(cinquieme_partie)
+ 
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+          "cinq":"cinq",
+          'csrfmiddlewaretoken': '{{csrf_token}}' , 
+      },
+      type:"POST",
+      url:"comment_faire_mon_cv"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+          document.getElementById("fifty_validation").innerHTML = "Cinquième partie effectué";
+          
+          
+      };
+      
+  });
+ });
+
+//-----------------------------------------------------------------5
+
+
+
+
+
+//-----------------------------------------------------------------6
+jQuery("#valider_sixieme").on("click", function(e){
+    
+ sixieme_partie = document.getElementById("sixty").value;
+ alert(sixieme_partie)
+ 
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+          "six":"six",
+          'csrfmiddlewaretoken': '{{csrf_token}}' , 
+      },
+      type:"POST",
+      url:"comment_faire_mon_cv"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+          document.getElementById("sixty_validation").innerHTML = "Sixième partie effectué";
+          
+          
+      };
+      
+  });
+ });
+
+//-----------------------------------------------------------------6
 
 
 </script>
