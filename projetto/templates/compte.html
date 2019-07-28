@@ -99,7 +99,7 @@
 
 
 
-
+  {% if user.is_authenticated %}
 
   <!-- PARTIE MON COMPTE -->
 
@@ -153,26 +153,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <!-- PARTIE CONNECTION OU INSCRIPTION -->
+  {% else %}
 
 
 
@@ -187,7 +168,7 @@
               
                 <div class="features-icons-icon d-flex">
                   <i class="icon-screen-desktop m-auto text-primary"
-                      onclick="inscription()"></i>
+                      onclick="document.location.href='/account/register'"></i>
                 </div>
 
                 
@@ -205,7 +186,7 @@
               
                 <div class="features-icons-icon d-flex">
                   <i class="icon-check m-auto text-primary"
-                      onclick="connexion()"></i>
+                      onclick="document.location.href='/account/login'"></i>
                 </div>
        
                 <h3>Se connecter</h3>
@@ -215,99 +196,13 @@
             </div>
 
 
-
-
-                <div class="col-lg-12" id="inscription_champs">
-
-                    <input type="button" id="retour" value="Retour"
-                        onclick="retour_champs_to_div('inscription_champs')"><br><br>
-
-                    <h2>Inscription</h2><br><br>
-                    
-                    <div>
-                        <center>
-                        <input type="text" class="input" id="pseudo"
-                            placeholder="Pseudo"><br><br>
-                    
-                        <input type="text" class="input" id="nom"
-                            placeholder="Nom"><br><br>
-                             
-                        <input type="text" class="input" id="prenom"
-                            placeholder="Prénom"><br><br>
-                        
-                        <input type="date" class="input" id="date"
-                            value="Date de Naissance"><br><br>
-                            
-                        <input type="text" class="input" id="sexe""
-                            placeholder="Sexe"><br><br>
-                            
-                        <input type="email" class="input" id="email""
-                            placeholder="Email"><br><br>
-
-
-                        <input type="button"
-                            value="Ton adresse mail n'est pas professionel ?"><br><br>
-
-                        
-                        <input type="text" class="input" id="portable"
-                            placeholder="Télephone Portable"><br><br>
-                            
-                        <input type="text" class="input" id="fixe"
-                            placeholder="Télephone Fixe"><br><br>
-
-                        <input type="text" class="input" id="adresse"
-                            placeholder="Adresse"><br><br>
-
-                        <input type="password" class="input" id="mot_de_passe"
-                            placeholder="Mot de passe"><br><br><br>
-
-
-
-                        
-                        <input type="button" value="Valider" id="valider_inscription">
-                        
-                    </div>
-                </div>
-
-
-
-
-
-
-                <div class="col-lg-12" id="connexion_champs">
-
-                    <input type="button" id="retour" value="Retour"
-                        onclick="retour_champs_to_div('connexion_champs')"><br><br>
-                
-                    <h2>Connexion</h2><br><br>
-
-                    <div>
-                        <input type="text" id="pseudo_connexion"
-                            placeholder="Pseudo"><br><br>
-                            
-                        <input type="password" id="password_connexion"
-                            placeholder="Mot de passe"><br><br><br>
-
-                            
-                        <input type="button" value="Valider" id="valider_connexion">
-                    </div>
-                </div>
-
-
-
-
-
-
-
-
-
         
       </div>
     </div>
   </section>
 
 
-
+  {% endif %}
 
   
 
@@ -324,7 +219,7 @@
 
 
 
-
+  {% if user.is_authenticated %}
 
 
   <!-- Image Showcases -->
@@ -434,8 +329,9 @@
   </section>
 
 
+ {% else %}
 
-
+ {% endif %}
   <!-- Call to Action -->
   <section class="call-to-action text-white text-center">
     <div class="overlay"></div>
@@ -459,61 +355,6 @@
       </div>
     </div>
   </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
