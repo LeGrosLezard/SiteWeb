@@ -202,8 +202,7 @@
       
       <div class="row no-gutters">
         <div class="col-lg-6">
-            <TEXTAREA name="nom" style="width:100%;height:100%;" id="second">
-            </TEXTAREA>
+            <TEXTAREA name="nom" style="width:100%;height:100%;" id="second"></TEXTAREA>
         </div>
             
         <div class="col-lg-6 my-auto showcase-text" style="background:#f54242">
@@ -250,8 +249,7 @@
 
       <div class="row no-gutters">
         <div class="col-lg-6">
-            <TEXTAREA name="nom" style="width:100%;height:100%;" id="fourth">
-            </TEXTAREA>
+            <TEXTAREA name="nom" style="width:100%;height:100%;" id="fourth"></TEXTAREA>
         </div>
             
         <div class="col-lg-6 my-auto showcase-text" style="background:#f54242">
@@ -465,8 +463,7 @@
       
       <div class="row no-gutters">
         <div class="col-lg-6">
-            <TEXTAREA name="nom" style="width:100%;height:100%;">
-            </TEXTAREA>
+            <TEXTAREA name="nom" style="width:100%;height:100%;"></TEXTAREA>
         </div>
             
         <div class="col-lg-6 my-auto showcase-text" style="background:#f54242">
@@ -478,8 +475,7 @@
       
       <div class="row no-gutters">
         <div class="col-lg-6 order-lg-2">
-            <TEXTAREA name="nom" style="width:100%;height:100%;">
-            </TEXTAREA>
+            <TEXTAREA name="nom" style="width:100%;height:100%;"></TEXTAREA>
         </div>
             
         <div class="col-lg-6 order-lg-1 my-auto showcase-text" style="background:#4296f5">
@@ -492,8 +488,7 @@
 
       <div class="row no-gutters">
         <div class="col-lg-6">
-            <TEXTAREA name="nom" style="width:100%;height:100%;">
-            </TEXTAREA>
+            <TEXTAREA name="nom" style="width:100%;height:100%;"></TEXTAREA>
         </div>
             
         <div class="col-lg-6 my-auto showcase-text" style="background:#f54242">
@@ -506,8 +501,7 @@
 
       <div class="row no-gutters">
         <div class="col-lg-6 order-lg-2">
-            <TEXTAREA name="nom" style="width:100%;height:100%;">
-            </TEXTAREA>
+            <TEXTAREA name="nom" style="width:100%;height:100%;"></TEXTAREA>
         </div>
             
         <div class="col-lg-6 order-lg-1 my-auto showcase-text" style="background:#4296f5">
@@ -519,8 +513,7 @@
 
       <div class="row no-gutters">
         <div class="col-lg-6">
-            <TEXTAREA name="nom" style="width:100%;height:100%;">
-            </TEXTAREA>
+            <TEXTAREA name="nom" style="width:100%;height:100%;"></TEXTAREA>
         </div>
             
         <div class="col-lg-6 my-auto showcase-text" style="background:#f54242">
@@ -767,12 +760,12 @@
 jQuery("#valider_premiere").on("click", function(e){
     
  premiere_partie = document.getElementById("first").value;
- alert(premiere_partie)
+
  
  e.preventDefault();
   jQuery.ajax({
       data:{
-          "un":"un",
+          "un":premiere_partie,
           'csrfmiddlewaretoken': '{{csrf_token}}' , 
       },
       type:"POST",
@@ -805,12 +798,12 @@ jQuery("#valider_premiere").on("click", function(e){
 jQuery("#valider_deuxieme").on("click", function(e){
     
  deuxieme_partie = document.getElementById("second").value;
- alert(deuxieme_partie)
+
  
  e.preventDefault();
   jQuery.ajax({
       data:{
-          "deux":"deux",
+          "deux":deuxieme_partie,
           'csrfmiddlewaretoken': '{{csrf_token}}' , 
       },
       type:"POST",
@@ -843,12 +836,12 @@ jQuery("#valider_deuxieme").on("click", function(e){
 jQuery("#valider_troisieme").on("click", function(e){
     
  troisieme_partie = document.getElementById("third").value;
- alert(troisieme_partie)
+
  
  e.preventDefault();
   jQuery.ajax({
       data:{
-          "trois":"trois",
+          "trois":troisieme_partie,
           'csrfmiddlewaretoken': '{{csrf_token}}' , 
       },
       type:"POST",
@@ -875,12 +868,12 @@ jQuery("#valider_troisieme").on("click", function(e){
 jQuery("#valider_quatrieme").on("click", function(e){
     
  quatrieme_partie = document.getElementById("fourth").value;
- alert(quatrieme_partie)
+
  
  e.preventDefault();
   jQuery.ajax({
       data:{
-          "quattre":"quattre",
+          "quattre":quatrieme_partie,
           'csrfmiddlewaretoken': '{{csrf_token}}' , 
       },
       type:"POST",
@@ -911,12 +904,12 @@ jQuery("#valider_quatrieme").on("click", function(e){
 jQuery("#valider_cinquieme").on("click", function(e){
     
  cinquieme_partie = document.getElementById("fifty").value;
- alert(cinquieme_partie)
+
  
  e.preventDefault();
   jQuery.ajax({
       data:{
-          "cinq":"cinq",
+          "cinq":cinquieme_partie,
           'csrfmiddlewaretoken': '{{csrf_token}}' , 
       },
       type:"POST",
@@ -945,12 +938,12 @@ jQuery("#valider_cinquieme").on("click", function(e){
 jQuery("#valider_sixieme").on("click", function(e){
     
  sixieme_partie = document.getElementById("sixty").value;
- alert(sixieme_partie)
+
  
  e.preventDefault();
   jQuery.ajax({
       data:{
-          "six":"six",
+          "six":sixieme_partie,
           'csrfmiddlewaretoken': '{{csrf_token}}' , 
       },
       type:"POST",
