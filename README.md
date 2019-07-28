@@ -2,12 +2,7 @@
 
 Un site Web pour la recherche d'emploi
 
-bon refaire la base et ensuite ca devrait allé
 
-faire un jolie cv
+faire les requete pour si le mec a deja fais ou pas
 
-finir le cv lettre motiv et message recruteur (+ faire la tienne....)
-
-ou  finir les tests
-
-arrete de regarder des emissions sur les hacker
+le truk mtn c les saut de ligne est ce que ca va mettre br ou un espace blanc ou /n petite pause
