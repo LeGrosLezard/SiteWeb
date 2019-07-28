@@ -95,8 +95,66 @@ def compte(request):
 def questionnaire(request):
     return render(request, 'questionnaire.html')
 
+
+
+
+
+
+from .cv.database.recuperation_document import recuperation_nom
+from .cv.database.recuperation_document import recuperation_cv
+from .cv.database.recuperation_document import recuperation_bilan
+from .cv.database.recuperation_document import recuperation_motivation
+
+from .cv.database.insertion_document import insertion_part
 def comment_faire_mon_cv(request):
-    return render(request, 'comment_faire_mon_cv.html')
+
+
+    pseudo = request.user
+    
+    nom, prenom = recuperation_nom(pseudo)
+    cv = recuperation_cv(pseudo)
+    bilan = recuperation_bilan(pseudo)
+    motivation = recuperation_motivation(pseudo)
+
+
+
+    if request.method == "POST":
+        
+        un = request.POST.get('un')
+        if un:
+            insertion_part(pseudo, un)
+        
+        deux = request.POST.get('deux')
+        if deux:
+            pass
+        
+        trois = request.POST.get('trois')
+        if trois:
+            pass
+        
+        quattre = request.POST.get('quattre')
+        if quattre:
+            pass
+        
+        cinq = request.POST.get('cinq')
+        if cinq:
+            pass
+        
+        six = request.POST.get('six')
+        if six:
+            pass
+        
+
+    return render(request, 'comment_faire_mon_cv.html', {"nom" : nom,
+                                                         "prenon": prenon,
+                                                         "cv": cv,
+                                                         "bilan": bilan,
+                                                         "motivation": motivation,
+                                                         })
+
+
+
+
 
 def ma_demarche(request):
     return render(request, 'ma_demarche.html')
@@ -138,7 +196,7 @@ def le_questionnaire_quatrieme_partie(request):
 
 
 
-from .cv.cv import recuperation_info
+
 def page_cv(request):
 
 ##    pseudo = request.user
