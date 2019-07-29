@@ -100,13 +100,12 @@ def questionnaire(request):
 
 
 
-from .cv.database.recuperation_document import recuperation_nom
-from .cv.database.recuperation_document import recuperation_bilan
-from .cv.database.recuperation_document import recuperation_motivation
+
 
 from .cv.traitement_cv import traitement_cv
+from .cv.database.insertion_document_cv import insertion_part_cv
+from .cv.database.insertion_document_motivation import insertion_part_motivation
 
-from .cv.database.insertion_document import insertion_part
 def comment_faire_mon_cv(request):
 
 
@@ -121,30 +120,66 @@ def comment_faire_mon_cv(request):
 
 
     if request.method == "POST":
+        
+        
+        motive = request.POST.get('motive')
 
-        un = request.POST.get('un')
-        if un:
-            insertion_part(pseudo, un, "un")
+        if motive:
+            #PARTIE LETTRE DE MOTIVATION
+            if un:
+                insertion_part_motivation(pseudo, un, "un")
+            
+            deux = request.POST.get('deux')
+            if deux:
+                insertion_part_motivation(pseudo, deux, "deux")
+            
+            trois = request.POST.get('trois')
+            if trois:
+                insertion_part_motivation(pseudo, trois, "trois")
+            
+            quattre = request.POST.get('quattre')
+            if quattre:
+                insertion_part_motivation(pseudo, quattre, "quattre")
+            
+            cinq = request.POST.get('cinq')
+            if cinq:
+                insertion_part_motivation(pseudo, cinq, "cinq")
+            
+            six = request.POST.get('six')
+            if six:
+                insertion_part_motivation(pseudo, six, "six")
+
+
+
         
-        deux = request.POST.get('deux')
-        if deux:
-            insertion_part(pseudo, deux, "deux")
-        
-        trois = request.POST.get('trois')
-        if trois:
-            insertion_part(pseudo, trois, "trois")
-        
-        quattre = request.POST.get('quattre')
-        if quattre:
-            insertion_part(pseudo, quattre, "quattre")
-        
-        cinq = request.POST.get('cinq')
-        if cinq:
-            insertion_part(pseudo, cinq, "cinq")
-        
-        six = request.POST.get('six')
-        if six:
-            insertion_part(pseudo, six, "six")
+        else:
+            #PARTIE CURRICULUM VITAE
+            #On récupere l'étape qui correspond au cv
+            #et on l'insert dans la database cv, cv1, cv2 ect...
+            #Par contre blem : si le mec commence a l'étape 2 ?
+            un = request.POST.get('un')
+            if un:
+                insertion_part_cv(pseudo, un, "un")
+            
+            deux = request.POST.get('deux')
+            if deux:
+                insertion_part_cv(pseudo, deux, "deux")
+            
+            trois = request.POST.get('trois')
+            if trois:
+                insertion_part_cv(pseudo, trois, "trois")
+            
+            quattre = request.POST.get('quattre')
+            if quattre:
+                insertion_part_cv(pseudo, quattre, "quattre")
+            
+            cinq = request.POST.get('cinq')
+            if cinq:
+                insertion_part_cv(pseudo, cinq, "cinq")
+            
+            six = request.POST.get('six')
+            if six:
+                insertion_part_cv(pseudo, six, "six")
 
 
 
