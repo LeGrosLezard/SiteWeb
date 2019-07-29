@@ -2,6 +2,12 @@
 
 Un site Web pour la recherche d'emploi
 
+ATTENTION ------------------------------------
+
+recherche d'emploie marche pas en database transforme ca
+
+-------------------------------------------------
+
 
 faire message aux recruteurs
 
@@ -13,10 +19,4 @@ faire le debut de recherche emploie via une page (quoi ou)
 
 faire le scappage (juste l'id parait que ca marche (url sur bureau de la vidéo)) bah non mais ca doit marché juste l'id
 
-bon dieu y'a des mecs qui vendent leur site 1M
 
-bon dieu y'a aucun magasin de mon bled qui a un site web jvai les faire raquer merde faut que j'aille chez le coiffeur et que jprenne des chiffres et que jmonte un serveur ect ect ect
-
-tu fais le site web sur heroku tu leur montre ca vous donnerai ca tu le transfer et bingo !!!
-
-mais c nul  depuis 2/3 ans on me met une tete faut bien commencer quelque part ici c pour la conception ouais ben sinon c l'autre connasse d'ia^^
