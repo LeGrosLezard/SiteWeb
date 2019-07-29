@@ -29,7 +29,7 @@ def recuperation_id_pseudo(pseudo):
 
 
 
-def insertion_part(pseudo, part, mode):
+def insertion_part_cv(pseudo, part, mode):
 
     id_user = recuperation_id_pseudo(pseudo)
     id_user = id_user[0][0]
