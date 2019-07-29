@@ -45,9 +45,9 @@ def insertion_part_message(pseudo, part, mode):
 
     if mode == "un":
 
-        cur.execute("""INSERT INTO message
-                    (id_user, lettre_motivation)
-                    VALUES('{0}', '{1}');""".format(id_user, part))
+        cur.execute("""UPDATE message
+                    SET lettre_motivation = '{1}'
+                    WHERE id_user = '{0}';""".format(id_user, part))
                            
 
         conn.commit() 
