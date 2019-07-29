@@ -30,6 +30,7 @@ def recuperation_id_pseudo(pseudo):
 
 
 def insertion_part_cv(pseudo, part, mode):
+    """Here we insert into database the part cv."""
 
     id_user = recuperation_id_pseudo(pseudo)
     id_user = id_user[0][0]
@@ -44,9 +45,9 @@ def insertion_part_cv(pseudo, part, mode):
 
     if mode == "un":
 
-        cur.execute("""INSERT INTO cv
-                    (id_user, cv)
-                    VALUES('{0}', '{1}');""".format(id_user, part))
+        cur.execute("""UPDATE cv
+                    SET cv = '{1}'
+                    WHERE id_user = '{0}';""".format(id_user, part))
                            
 
         conn.commit() 
