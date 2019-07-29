@@ -118,43 +118,46 @@ def comment_faire_mon_cv(request):
     bilan = recuperation_bilan(pseudo)
     motivation = recuperation_motivation(pseudo)
 
-    
+
 
     if request.method == "POST":
-        
+
         un = request.POST.get('un')
         if un:
-            insertion_part(pseudo, un)
+            insertion_part(pseudo, un, "un")
         
         deux = request.POST.get('deux')
         if deux:
-            insertion_part(pseudo, deux)
+            insertion_part(pseudo, deux, "deux")
         
         trois = request.POST.get('trois')
         if trois:
-            insertion_part(pseudo, trois)
+            insertion_part(pseudo, trois, "trois")
         
         quattre = request.POST.get('quattre')
         if quattre:
-            insertion_part(pseudo, quattre)
+            insertion_part(pseudo, quattre, "quattre")
         
         cinq = request.POST.get('cinq')
         if cinq:
-            insertion_part(pseudo, cinq)
+            insertion_part(pseudo, cinq, "cinq")
         
         six = request.POST.get('six')
         if six:
-            insertion_part(pseudo, six)
-        
+            insertion_part(pseudo, six, "six")
+
+
+
+
 
     return render(request, 'comment_faire_mon_cv.html', {"nom" : nom,
                                                          "prenom": prenom,
-                                                         "cv1": cv[0][0][0],
-                                                         "cv2": cv[1][0][0],
-                                                         "cv3": cv[2][0][0],
-                                                         "cv4": cv[3][0][0],
-                                                         "cv5": cv[4][0][0],
-                                                         "cv6": cv[5][0][0],
+                                                         "cv1": cv[0],
+                                                         "cv2": cv[1],
+                                                         "cv3": cv[2],
+                                                         "cv4": cv[3],
+                                                         "cv5": cv[4],
+                                                         "cv6": cv[5],
                                                          "bilan": bilan,
                                                          "motivation": motivation,
                                                          })
