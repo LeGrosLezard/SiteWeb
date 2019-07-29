@@ -74,19 +74,14 @@ def compte(request):
         if demande_de_message:
             pass
 
-
         if demande_de_motivation:
             pass
 
 
-
-
-
-
-
-
-
     return render(request, 'compte.html')
+
+
+
 
 
 
@@ -101,71 +96,48 @@ def questionnaire(request):
 
 
 
+#We insert document into database here
+from .cv.traitement_document import traitement_cv
+from .cv.traitement_document import traitement_motivation
+from .cv.traitement_document import traitement_message
 
-from .cv.traitement_cv import traitement_cv
+#
 from .cv.database.insertion_document_cv import insertion_part_cv
 from .cv.database.insertion_document_motivation import insertion_part_motivation
 from .cv.database.insertion_document_message import insertion_part_message
 
-
-
+#We recup traitment data
 from .cv.database.recuperation_document import recuperation_bilan
 from .cv.database.recuperation_document import recuperation_nom
 from .cv.database.recuperation_document import recuperation_bilan
 from .cv.database.recuperation_document import recuperation_motivation
 
+
 def comment_faire_mon_cv(request):
 
-
     pseudo = request.user
-    cv = traitement_cv(pseudo)
-    print(cv)
-    
-    nom, prenom = recuperation_nom(pseudo)
-    bilan = recuperation_bilan(pseudo)
-    motivation = recuperation_motivation(pseudo)
 
+    nom, prenom = recuperation_nom(pseudo)
+    cv = traitement_cv(pseudo)
+    motivation = traitement_motivation(pseudo)
+
+
+    
+    message = traitement_message(pseudo)
+    bilan = recuperation_bilan(pseudo)
 
 
     if request.method == "POST":
         
         
         motive = request.POST.get('motive')
-        message = request.POST.get('message')
+        message_requete = request.POST.get('message')
 
 
 
-        if message:
+        if message_requete:
             #PARTIE MESSAGE RECRUTEUR
-            if un:
-                insertion_part_motivation(pseudo, un, "un")
-            
-            deux = request.POST.get('deux')
-            if deux:
-                insertion_part_motivation(pseudo, deux, "deux")
-            
-            trois = request.POST.get('trois')
-            if trois:
-                insertion_part_motivation(pseudo, trois, "trois")
-            
-            quattre = request.POST.get('quattre')
-            if quattre:
-                insertion_part_motivation(pseudo, quattre, "quattre")
-            
-            cinq = request.POST.get('cinq')
-            if cinq:
-                insertion_part_motivation(pseudo, cinq, "cinq")
-            
-            six = request.POST.get('six')
-            if six:
-                insertion_part_motivation(pseudo, six, "six")
-
-
-
-
-
-        if motive:
-            #PARTIE LETTRE DE MOTIVATION
+            un = request.POST.get('un')
             if un:
                 insertion_part_message(pseudo, un, "un")
             
@@ -188,6 +160,36 @@ def comment_faire_mon_cv(request):
             six = request.POST.get('six')
             if six:
                 insertion_part_message(pseudo, six, "six")
+
+
+
+
+
+        if motive:
+            #PARTIE LETTRE DE MOTIVATION
+            un = request.POST.get('un')
+            if un:
+                insertion_part_motivation(pseudo, un, "un")
+            
+            deux = request.POST.get('deux')
+            if deux:
+                insertion_part_motivation(pseudo, deux, "deux")
+            
+            trois = request.POST.get('trois')
+            if trois:
+                insertion_part_motivation(pseudo, trois, "trois")
+            
+            quattre = request.POST.get('quattre')
+            if quattre:
+                insertion_part_motivation(pseudo, quattre, "quattre")
+            
+            cinq = request.POST.get('cinq')
+            if cinq:
+                insertion_part_motivation(pseudo, cinq, "cinq")
+            
+            six = request.POST.get('six')
+            if six:
+                insertion_part_motivation(pseudo, six, "six")
 
 
 
@@ -234,7 +236,19 @@ def comment_faire_mon_cv(request):
                                                          "cv5": cv[4],
                                                          "cv6": cv[5],
                                                          "bilan": bilan,
-                                                         "motivation": motivation,
+                                                         "motiv1": motivation[0],
+                                                         "motiv2": motivation[1],
+                                                         "motiv3": motivation[2],
+                                                         "motiv4": motivation[3],
+                                                         "motiv5": motivation[4],
+                                                         "motiv6": motivation[5],
+                                                         "mess1": message[0],
+                                                         "mess2": message[1],
+                                                         "mess3": message[2],
+                                                         "mess4": message[3],
+                                                         "mess5": message[4],
+                                                         "mess6": message[5],
+                                                         
                                                          })
 
 
