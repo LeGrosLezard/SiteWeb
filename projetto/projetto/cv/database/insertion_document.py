@@ -29,7 +29,7 @@ def recuperation_id_pseudo(pseudo):
 
 
 
-def insertion_part(pseudo, part):
+def insertion_part(pseudo, part, mode):
 
     id_user = recuperation_id_pseudo(pseudo)
     id_user = id_user[0][0]
@@ -41,25 +41,70 @@ def insertion_part(pseudo, part):
 
     cur = conn.cursor()
 
-    cur.execute("""INSERT INTO cv
-                (id_user, cv)
-                VALUES('{0}', '{1}');""".format(id_user, part))
-                       
 
-    conn.commit() 
+    if mode == "un":
 
+        cur.execute("""INSERT INTO cv
+                    (id_user, cv)
+                    VALUES('{0}', '{1}');""".format(id_user, part))
+                           
 
-
-
-
+        conn.commit() 
 
 
 
+    if mode == "deux":
+
+        cur.execute("""UPDATE cv
+                    SET cv1 = '{1}'
+                    WHERE id_user = '{0}';""".format(id_user, part))
+                           
+
+        conn.commit() 
 
 
 
+    if mode == "trois":
+
+        cur.execute("""UPDATE cv
+                    SET cv2 = '{1}'
+                    WHERE id_user = '{0}';""".format(id_user, part))
+                           
+
+        conn.commit() 
 
 
+
+    if mode == "quattre":
+
+        cur.execute("""UPDATE cv
+                    SET cv3 = '{1}'
+                    WHERE id_user = '{0}';""".format(id_user, part))
+                           
+
+        conn.commit() 
+
+
+
+    if mode == "cinq":
+
+        cur.execute("""UPDATE cv
+                    SET cv4 = '{1}'
+                    WHERE id_user = '{0}';""".format(id_user, part))
+                           
+
+        conn.commit() 
+
+
+
+    if mode == "six":
+
+        cur.execute("""UPDATE cv
+                    SET cv5 = '{1}'
+                    WHERE id_user = '{0}';""".format(id_user, part))
+                           
+
+        conn.commit() 
 
 
 
