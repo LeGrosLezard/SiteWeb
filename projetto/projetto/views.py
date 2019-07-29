@@ -295,43 +295,54 @@ def le_questionnaire_quatrieme_partie(request):
 
 
 
+from .cv.traitement_document import traitement_cv
+from .cv.traitement_document import traitement_motivation
+from .cv.traitement_document import traitement_message
 
+from .cv.database.recuperation_info import recuperation_info
 def page_cv(request):
 
-##    pseudo = request.user
-##    nom, prenom, bilan, motivation = recuperation_info(pseudo)
-##    data = {"nom": nom,
-##            "prenom": prenom,
-##            "bilan": bilan,
-##            "motivation": motivation
-##            }
+
+    pseudo = request.user
+
+    cv = traitement_cv(pseudo)
+    motivation = traitement_motivation(pseudo)
+    mesasge = traitement_message(pseudo)
+    nom, prenom, addresse, fixe, portable, email = recuperation_info(pseudo)
 
 
 
-##    deja1 = ""
-##    deja2 = ""
-##    deja3 = ""
-##    deja4 = ""
-##    deja5 = ""
-##    deja6 = ""
-##    premier = ""
-##    deuxieme = ""
-##    troisieme = ""
-##    quatrieme = ""
-##    cinquieme =""
-##    sixieme =  ""
-    
+    #addresse num ect
+    return render(request, 'page_cv.html',
+                  {"cv1" : cv[0],
+                   "cv2" : cv[1],
+                   "cv3" : cv[2],
+                   "cv4" : cv[3],
+                   "cv5" : cv[4],
+                   "cv6" : cv[5],
+                   "motvation1" : motivation[0],
+                   "motvation2" : motivation[1],
+                   "motvation3" : motivation[2],
+                   "motvation4" : motivation[3],
+                   "motvation5" : motivation[4],
+                   "motvation6" : motivation[5],
+                   "message1" : mesasge[0],
+                   "message2" : mesasge[1],
+                   "message3" : mesasge[2],
+                   "message4" : mesasge[3],
+                   "message5" : mesasge[4],
+                   "message6" : mesasge[5],
+                   "nom": nom,
+                   "prenom": prenom,
+                   "addresse": addresse,
+                   "fixe": fixe,
+                   "portable": portable,
+                   "email": email}
 
 
+                  )
 
 
-
-
-
-    
-    ##return render(request, 'page_cv.html', data)
-
-    return render(request, 'page_cv.html')
 
 
 def ma_lettre(request):
