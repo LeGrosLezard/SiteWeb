@@ -105,6 +105,14 @@ def questionnaire(request):
 from .cv.traitement_cv import traitement_cv
 from .cv.database.insertion_document_cv import insertion_part_cv
 from .cv.database.insertion_document_motivation import insertion_part_motivation
+from .cv.database.insertion_document_message import insertion_part_message
+
+
+
+from .cv.database.recuperation_document import recuperation_bilan
+from .cv.database.recuperation_document import recuperation_nom
+from .cv.database.recuperation_document import recuperation_bilan
+from .cv.database.recuperation_document import recuperation_motivation
 
 def comment_faire_mon_cv(request):
 
@@ -123,9 +131,12 @@ def comment_faire_mon_cv(request):
         
         
         motive = request.POST.get('motive')
+        message = request.POST.get('message')
 
-        if motive:
-            #PARTIE LETTRE DE MOTIVATION
+
+
+        if message:
+            #PARTIE MESSAGE RECRUTEUR
             if un:
                 insertion_part_motivation(pseudo, un, "un")
             
@@ -148,6 +159,35 @@ def comment_faire_mon_cv(request):
             six = request.POST.get('six')
             if six:
                 insertion_part_motivation(pseudo, six, "six")
+
+
+
+
+
+        if motive:
+            #PARTIE LETTRE DE MOTIVATION
+            if un:
+                insertion_part_message(pseudo, un, "un")
+            
+            deux = request.POST.get('deux')
+            if deux:
+                insertion_part_message(pseudo, deux, "deux")
+            
+            trois = request.POST.get('trois')
+            if trois:
+                insertion_part_message(pseudo, trois, "trois")
+            
+            quattre = request.POST.get('quattre')
+            if quattre:
+                insertion_part_message(pseudo, quattre, "quattre")
+            
+            cinq = request.POST.get('cinq')
+            if cinq:
+                insertion_part_message(pseudo, cinq, "cinq")
+            
+            six = request.POST.get('six')
+            if six:
+                insertion_part_message(pseudo, six, "six")
 
 
 
