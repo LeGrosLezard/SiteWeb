@@ -2,6 +2,7 @@
 
 Un site Web pour la recherche d'emploi
 
+oui ben ca marchera pas mais au pire ca fait un portefolio
 
 --------------------------------------------------
 
