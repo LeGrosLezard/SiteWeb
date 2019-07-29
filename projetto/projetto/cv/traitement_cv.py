@@ -4,18 +4,16 @@ from .database.recuperation_document import recuperation_cv
 def traitement_cv(pseudo):
     cv = recuperation_cv(pseudo)
 
-    liste = [[],[],[],[],[],[]]
+    liste = []
 
-    c = 0
-    for i in cv:
-        liste[c].append(i)
-        c += 1
+    for i in cv[0]:
+        if i == None:
+            pass
+        else:
+            liste.append(i)
 
-    c = 0
-    for i in liste:
-        if liste[c] == []:
-            liste[c].append([""])
-        c += 1
+    if len(liste) < 6:
+        a = ['','','','','','']
+        liste += a
 
- 
     return liste
