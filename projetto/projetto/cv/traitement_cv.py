@@ -1,4 +1,4 @@
-from .database.recuperation_document import recuperation_cv
+from .database.recuperation_document_cv import recuperation_cv
 
 
 def traitement_cv(pseudo):
