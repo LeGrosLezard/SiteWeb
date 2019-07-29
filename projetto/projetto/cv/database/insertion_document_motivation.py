@@ -45,9 +45,9 @@ def insertion_part_motivation(pseudo, part, mode):
 
     if mode == "un":
 
-        cur.execute("""INSERT INTO motivation
-                    (id_user, lettre_motivation)
-                    VALUES('{0}', '{1}');""".format(id_user, part))
+        cur.execute("""UPDATE motivation
+                    SET lettre_motivation = '{1}'
+                    WHERE id_user = '{0}';""".format(id_user, part))
                            
 
         conn.commit() 
