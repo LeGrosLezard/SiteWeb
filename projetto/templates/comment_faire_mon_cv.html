@@ -487,7 +487,7 @@
       <div class="row no-gutters">
 
         <div class="col-lg-6 order-lg-2">
-            <TEXTAREA name="nom" style="width:100%;height:100%;"></TEXTAREA>
+            <TEXTAREA name="nom" style="width:100%;height:100%;" id="text_message1"></TEXTAREA>
         </div>
             
         <div class="col-lg-6 order-lg-1 my-auto showcase-text" style="background:#f5ec42">
@@ -495,6 +495,8 @@
           
           <p class="lead mb-0">
               Ici on se met à la place du recruteur.
+              <input type="button" value="Valider" id="message1">
+              <div id="message_recru1"></div>
           </p>
           
         </div>
@@ -504,7 +506,7 @@
       
       <div class="row no-gutters">
         <div class="col-lg-6">
-            <TEXTAREA name="nom" style="width:100%;height:100%;"></TEXTAREA>
+            <TEXTAREA name="nom" style="width:100%;height:100%;" id="text_message2"></TEXTAREA>
         </div>
             
         <div class="col-lg-6 my-auto showcase-text" style="background:#f54242">
@@ -513,7 +515,8 @@
               Bootstrap 4 is leading the way in mobile responsive web development!
               All of the themes on Start Bootstrap are now using Bootstrap 4!
 
-             <input type="button" value="Valider" id="">
+             <input type="button" value="Valider" id="message2">
+             <div id="message_recru2"></div>
           </p>
         </div>
       </div>
@@ -521,12 +524,20 @@
       
       <div class="row no-gutters">
         <div class="col-lg-6 order-lg-2">
-            <TEXTAREA name="nom" style="width:100%;height:100%;"></TEXTAREA>
+            <TEXTAREA name="nom" style="width:100%;height:100%;" id="text_message3"></TEXTAREA>
         </div>
             
         <div class="col-lg-6 order-lg-1 my-auto showcase-text" style="background:#4296f5">
           <h2>Easy to Use &amp; Customize</h2>
-          <p class="lead mb-0">Landing Page is just HTML and CSS with a splash of SCSS for users who demand some deeper customization options. Out of the box, just add your content and images, and your new landing page will be ready to go!</p>
+          <p class="lead mb-0">Landing Page is just HTML and CSS with a
+              splash of SCSS for users who demand some deeper customization
+              options. Out of the box, just add your content and images,
+              and your new landing page will be ready to go!
+
+              <input type="button" value="Valider" id="message3">
+              <div id="message_recru3"></div>
+
+          </p>
         </div>
       </div>
 
@@ -534,12 +545,18 @@
 
       <div class="row no-gutters">
         <div class="col-lg-6">
-            <TEXTAREA name="nom" style="width:100%;height:100%;"></TEXTAREA>
+            <TEXTAREA name="nom" style="width:100%;height:100%;" id="text_message4"></TEXTAREA>
         </div>
             
         <div class="col-lg-6 my-auto showcase-text" style="background:#f54242">
           <h2>Deuxième étape</h2>
-          <p class="lead mb-0">Newly improved, and full of great utility classes, Bootstrap 4 is leading the way in mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 4!</p>
+          <p class="lead mb-0">Newly improved, and full of great utility classes,
+              Bootstrap 4 is leading the way in mobile responsive web development! All
+              of the themes on Start Bootstrap are now using Bootstrap 4!
+
+            <input type="button" value="Valider" id="message4">
+            <div id="message_recru4"></div>
+          </p>
         </div>
       </div>
 
@@ -547,26 +564,38 @@
 
       <div class="row no-gutters">
         <div class="col-lg-6 order-lg-2">
-            <TEXTAREA name="nom" style="width:100%;height:100%;"></TEXTAREA>
+            <TEXTAREA name="nom" style="width:100%;height:100%;" id="text_message5"></TEXTAREA>
         </div>
             
         <div class="col-lg-6 order-lg-1 my-auto showcase-text" style="background:#4296f5">
           <h2>Easy to Use &amp; Customize</h2>
-          <p class="lead mb-0">Landing Page is just HTML and CSS with a splash of SCSS for users who demand some deeper customization options. Out of the box, just add your content and images, and your new landing page will be ready to go!</p>
+          <p class="lead mb-0">Landing Page is just HTML and CSS with a splash of
+              SCSS for users who demand some deeper customization options. Out of
+              the box, just add your content and images, and your new landing page
+              will be ready to go!
+              
+              <input type="button" value="Valider" id="message5">
+              <div id="message_recru5"></div>
+
+          </p>
         </div>
       </div>
 
 
       <div class="row no-gutters">
         <div class="col-lg-6">
-            <TEXTAREA name="nom" style="width:100%;height:100%;"></TEXTAREA>
+            <TEXTAREA name="nom" style="width:100%;height:100%;" id="text_message6"></TEXTAREA>
         </div>
             
         <div class="col-lg-6 my-auto showcase-text" style="background:#f54242">
           <h2>Deuxième étape</h2>
           <p class="lead mb-0">Newly improved, and full of great utility
-          classes, Bootstrap 4 is leading the way in mobile responsive web
-          development! All of the themes on Start Bootstrap are now using Bootstrap 4!</p>
+              classes, Bootstrap 4 is leading the way in mobile responsive web
+              development! All of the themes on Start Bootstrap are now using Bootstrap 4!
+
+              <input type="button" value="Valider" id="message6">
+              <div id="message_recru6"></div>
+          </p>
         </div>
       </div>
 
@@ -741,28 +770,7 @@
 
     };
 
-    function function_deja2(){
-        var a = document.getElementById('deja2').innerHTML;
-
-    };
-    function function_deja3(){
-        var a = document.getElementById('deja3').innerHTML;
-
-    };
-
-    function function_deja4(){
-        var a = document.getElementById('deja4').innerHTML;
-
-    };
-    function function_deja5(){
-        var a = document.getElementById('deja5').innerHTML;
-
-    };
-
-    function function_deja6(){
-        var a = document.getElementById('deja6').innerHTML;
-
-    };
+ 
 
     
 
@@ -829,6 +837,45 @@
             var modifier = document.getElementById('valider_sixieme').value = "Modifier";
         }
 
+
+
+        var m = document.getElementById('text_message1').value;
+
+        if (m != ""){
+            var modifier = document.getElementById('message1').value = "Modifier";
+        }
+
+        var n = document.getElementById('text_message2').value;
+
+        if (n != ""){
+            var modifier = document.getElementById('message2').value = "Modifier";
+        }
+
+        var o = document.getElementById('text_message3').value;
+
+        if (o != ""){
+            var modifier = document.getElementById('message3').value = "Modifier";
+        }
+
+        var p = document.getElementById('text_message4').value;
+
+        if (p != ""){
+            var modifier = document.getElementById('message4').value = "Modifier";
+        }
+
+        var q = document.getElementById('text_message5').value;
+
+        if (q != ""){
+            var modifier = document.getElementById('message5').value = "Modifier";
+        }
+
+        var r = document.getElementById('text_message6').value;
+
+        if (r != ""){
+            var modifier = document.getElementById('message6').value = "Modifier";
+        }
+
+
         
     };
 
@@ -874,6 +921,461 @@
 
 
 <script>
+
+//-----------------------------------------------------------------PARTIE 
+//-----------------------------------------------------------------MESSAGE
+//-----------------------------------------------------------------RECRUTEUR
+
+
+//-----------------------------------------------------------------1
+jQuery("#message1").on("click", function(e){
+    
+ un = document.getElementById("text_message1").value;
+
+ 
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+          "message":"message",
+          "un":un,
+          'csrfmiddlewaretoken': '{{csrf_token}}' , 
+      },
+      type:"POST",
+      url:"comment_faire_mon_cv"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+          document.getElementById("message_recru1").innerHTML = "Sixième partie effectué";
+          
+          
+      };
+      
+  });
+ });
+
+
+
+
+//-----------------------------------------------------------------1
+
+
+
+
+
+//-----------------------------------------------------------------2
+jQuery("#message2").on("click", function(e){
+    
+ un = document.getElementById("text_message2").value;
+
+ 
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+          "message":"message",
+          "un":un,
+          'csrfmiddlewaretoken': '{{csrf_token}}' , 
+      },
+      type:"POST",
+      url:"comment_faire_mon_cv"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+          document.getElementById("message_recru2").innerHTML = "Sixième partie effectué";
+          
+          
+      };
+      
+  });
+ });
+
+//-----------------------------------------------------------------2
+
+
+
+
+//-----------------------------------------------------------------3
+jQuery("#message3").on("click", function(e){
+    
+ un = document.getElementById("text_message3").value;
+
+ 
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+          "message":"message",
+          "un":un,
+          'csrfmiddlewaretoken': '{{csrf_token}}' , 
+      },
+      type:"POST",
+      url:"comment_faire_mon_cv"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+          document.getElementById("message_recru3").innerHTML = "Sixième partie effectué";
+          
+          
+      };
+      
+  });
+ });
+
+//-----------------------------------------------------------------3
+
+
+//-----------------------------------------------------------------4
+jQuery("#message4").on("click", function(e){
+    
+ un = document.getElementById("text_message4").value;
+
+ 
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+          "message":"message",
+          "un":un,
+          'csrfmiddlewaretoken': '{{csrf_token}}' , 
+      },
+      type:"POST",
+      url:"comment_faire_mon_cv"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+          document.getElementById("message_recru4").innerHTML = "Sixième partie effectué";
+          
+          
+      };
+      
+  });
+ });
+
+//-----------------------------------------------------------------4
+
+
+//-----------------------------------------------------------------5
+jQuery("#message5").on("click", function(e){
+    
+ un = document.getElementById("text_message5").value;
+
+ 
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+          "message":"message",
+          "un":un,
+          'csrfmiddlewaretoken': '{{csrf_token}}' , 
+      },
+      type:"POST",
+      url:"comment_faire_mon_cv"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+          document.getElementById("message_recru5").innerHTML = "Sixième partie effectué";
+          
+          
+      };
+      
+  });
+ });
+
+//-----------------------------------------------------------------5
+
+
+
+//-----------------------------------------------------------------6
+jQuery("#message6").on("click", function(e){
+    
+ un = document.getElementById("text_message6").value;
+
+ 
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+          "message":"message",
+          "un":un,
+          'csrfmiddlewaretoken': '{{csrf_token}}' , 
+      },
+      type:"POST",
+      url:"comment_faire_mon_cv"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+          document.getElementById("message_recru6").innerHTML = "Sixième partie effectué";
+          
+          
+      };
+      
+  });
+ });
+
+//-----------------------------------------------------------------6
+
+
+
+
+
+//-----------------------------------------------------------------PARTIE 
+//-----------------------------------------------------------------MESSAGE
+//-----------------------------------------------------------------RECRUTEUR
+
+
+
+
+
+
+
+
+//-----------------------------------------------------------------PARTIE 
+//-----------------------------------------------------------------LETTRE
+//-----------------------------------------------------------------MOTIVATION
+
+
+
+
+
+
+//-----------------------------------------------------------------1
+jQuery("#valider1_motivation").on("click", function(e){
+    
+ un = document.getElementById("motivation_text1").value;
+
+ 
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+          "motive":"motive",
+          "un":un,
+          'csrfmiddlewaretoken': '{{csrf_token}}' , 
+      },
+      type:"POST",
+      url:"comment_faire_mon_cv"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+          document.getElementById("motivation1").innerHTML = "Sixième partie effectué";
+          
+          
+      };
+      
+  });
+ });
+
+//-----------------------------------------------------------------1
+
+
+
+
+//-----------------------------------------------------------------2
+
+jQuery("#valider2_motivation").on("click", function(e){
+    
+ deux = document.getElementById("motivation_text2").value;
+
+ 
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+          "motive":"motive",
+          "deux":deux,
+          'csrfmiddlewaretoken': '{{csrf_token}}' , 
+      },
+      type:"POST",
+      url:"comment_faire_mon_cv"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+          document.getElementById("motivation2").innerHTML = "Sixième partie effectué";
+          
+          
+      };
+      
+  });
+ });
+
+//-----------------------------------------------------------------2
+
+
+
+
+
+//-----------------------------------------------------------------3
+
+jQuery("#valider3_motivation").on("click", function(e){
+    
+ trois = document.getElementById("motivation_text3").value;
+
+ 
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+          "motive":"motive",
+          "trois":trois,
+          'csrfmiddlewaretoken': '{{csrf_token}}' , 
+      },
+      type:"POST",
+      url:"comment_faire_mon_cv"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+          document.getElementById("motivation3").innerHTML = "Sixième partie effectué";
+          
+          
+      };
+      
+  });
+ });
+
+//-----------------------------------------------------------------3
+
+
+
+
+//-----------------------------------------------------------------4
+jQuery("#valider4_motivation").on("click", function(e){
+    
+ quattre = document.getElementById("motivation_text4").value;
+
+ 
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+          "motive":"motive",
+          "quattre":quattre,
+          'csrfmiddlewaretoken': '{{csrf_token}}' , 
+      },
+      type:"POST",
+      url:"comment_faire_mon_cv"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+          document.getElementById("motivation4").innerHTML = "Sixième partie effectué";
+          
+          
+      };
+      
+  });
+ });
+
+//-----------------------------------------------------------------4
+
+
+
+
+//-----------------------------------------------------------------5
+
+jQuery("#valider5_motivation").on("click", function(e){
+    
+ cinq = document.getElementById("motivation_text5").value;
+
+ 
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+          "motive":"motive",
+          "cinq":cinq,
+          'csrfmiddlewaretoken': '{{csrf_token}}' , 
+      },
+      type:"POST",
+      url:"comment_faire_mon_cv"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+          document.getElementById("motivation5").innerHTML = "Sixième partie effectué";
+          
+          
+      };
+      
+  });
+ });
+//-----------------------------------------------------------------5
+
+
+
+
+//-----------------------------------------------------------------6
+
+jQuery("#valider6_motivation").on("click", function(e){
+    
+ six = document.getElementById("motivation_text6").value;
+
+ 
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+          "motive":"motive",
+          "six":six,
+          'csrfmiddlewaretoken': '{{csrf_token}}' , 
+      },
+      type:"POST",
+      url:"comment_faire_mon_cv"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+          document.getElementById("motivation6").innerHTML = "Sixième partie effectué";
+          
+          
+      };
+      
+  });
+ });
+
+
+//-----------------------------------------------------------------6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//-----------------------------------------------------------------PARTIE 
+//-----------------------------------------------------------------LETTRE
+//-----------------------------------------------------------------MOTIVATION
+
+
+
 
 
 //-----------------------------------------------------------------1
@@ -1089,6 +1591,22 @@ jQuery("#valider_sixieme").on("click", function(e){
  });
 
 //-----------------------------------------------------------------6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </script>
