@@ -81,7 +81,12 @@ class Table:
         cur.execute("""create table message(
                     id serial PRIMARY KEY,
                     id_user integer REFERENCES users (id),
-                    lettre_motivation TEXT);""")
+                    lettre_motivation TEXT,
+                    lettre_motivation1 TEXT,
+                    lettre_motivation2 TEXT,
+                    lettre_motivation3 TEXT,
+                    lettre_motivation4 TEXT,
+                    lettre_motivation5 TEXT,);""")
         
         conn.commit()
 
