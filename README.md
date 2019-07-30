@@ -13,6 +13,9 @@ ATTENTION
 
 recherche d'emploie marche pas en database transforme ca
 
+Rajouter envoyer votre truk a une adresse, comme ca imagine, t'envoie ce truk avec le message a la fin nous sommes ect...
+a un recruteur le mec y va sur le site ca sera cool
+
 -------------------------------------------------
 
 
