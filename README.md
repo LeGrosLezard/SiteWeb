@@ -2,13 +2,10 @@
 
 Un site Web pour la recherche d'emploi
 
-ok... on fais du href jusqu'a obtenir le nom de l'entreprise,
+livrable pour vendredi
 
-on scrap on google
 
-cherche un mail on envoie
-
-(pole emploie, meteojob, page postuler, l'etablissement, google etablissement contact, recup mail, envoie)
+et ensuite finir function email
 
 --------------------------------------------------
 
