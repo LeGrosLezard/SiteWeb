@@ -350,21 +350,6 @@ def recherche_CARRERBUILDER(path):
 
 
 
-def recherche_CARRERBUILDER(path):
-    """On cherche qui a posté cette anonce"""
-    #CARRERBUILDER
-    
-    request_html = requests.get(path)
-    page = request_html.content
-    soup_html = BeautifulSoup(page, "html.parser")
-    propriete = soup_html.findAll("div",{"class":"dann2015_infosrecruteur"})
-
-    liste_propriete = []
-    liste_propriete.append(str(propriete))
-
-    #if info recruteur
-    #else:
-    #click image
 
 
 
@@ -649,14 +634,24 @@ def recherche_INZEJOB(path):
     request_html = requests.get(path)
     page = request_html.content
     soup_html = BeautifulSoup(page, "html.parser")
-    propriete = soup_html.findAll("h2",{"class":"dann2015_infosrecruteur"})
+    propriete = soup_html.find_all("span", {"class":"info"})
 
-    liste_propriete = []
-    liste_propriete.append(str(propriete))
 
-    #if info recruteur
-    #else:
-    #click image
+ 
+
+
+    liste = [[],[],[],[]]
+    
+    c = 0
+    for i in propriete:
+        liste[c].append(str(i.get_text()))
+        c+=1
+
+    for i in liste:
+        if i == []:
+            out = None
+        else:
+            return liste[2][0]
 
 
 def recherche_1TAF_COM(path):
@@ -668,17 +663,52 @@ def recherche_1TAF_COM(path):
     request_html = requests.get(path)
     page = request_html.content
     soup_html = BeautifulSoup(page, "html.parser")
-    propriete = soup_html.findAll("h2",{"class":"dann2015_infosrecruteur"})
+    propriete = soup_html.findAll("blockquote",{"id":"conditions-part"})
 
-    liste_propriete = []
-    liste_propriete.append(str(propriete))
+    liste = []
+    liste.append(str(propriete))
 
-    #if info recruteur
-    #else:
-    #click image
+    url = ""
+    c = 0
+    ok = False
+    liste1 = []
+    for i in liste:
+        for j in i:
+
+            if i[c] == "h" and\
+               i[c + 1] == "t" and\
+               i[c + 2] == "t" and\
+               i[c + 3] == "p":
+                ok = True
+                
+            if ok is True:
+                url += i[c]
+                
+            if i[c] == " ":
+                ok = False
+                liste1.append(url)
+                url = ""
+                
+                
+            c += 1
+
+    liste2 = []
+
+    for i in liste1:
+        if i == "":
+            pass
+        else:
+            liste2.append(i)
+
+    return liste2[0][:-2]
 
 
+def recherche_1TAF_COM1(path):
+    pass
 
+def recherche_INTERIM(path):
+    pass
+#google ca
 
 def recherche_entreprise_via_google(nom, ville):
     pass
