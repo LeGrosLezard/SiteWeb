@@ -381,9 +381,117 @@ def recherche_CARRERONLINE(path):
     liste_propriete = []
     liste_propriete.append(str(propriete))
 
-    #if info recruteur
-    #else:
-    #click image
+    liste_propriete1 = []
+    c = 0
+    ok = False
+    entreprise = ""
+    for i in liste_propriete:
+        for j in i:
+            if i[c] == "R" and\
+               i[c + 1] == "e" and\
+               i[c + 2] == "c" and\
+               i[c + 3] == "r" and\
+               i[c + 4] == "u" and\
+               i[c + 5] == "t" and\
+               i[c + 6] == "e" and\
+               i[c + 7] == "u" and\
+               i[c + 8] == "r" and\
+               i[c + 9] == " " and\
+               i[c + 10] == ":" and\
+               i[c + 11] == " ":
+                ok = True
+                
+            if ok is True:
+                entreprise += i[c]
+
+            if i[c] == "/":
+                ok = False
+                liste_propriete1.append(entreprise)
+                entreprise = ""
+                
+            c += 1
+
+    liste_propriete2 = []
+
+    for i in liste_propriete1:
+        if i == '':
+            pass
+        else:
+            liste_propriete2.append(i)
+
+    return liste_propriete2[0][20:-2]
+
+
+
+def recherche_CARRERONLINE2(liste, path):
+    """Si l'entreprise n'y est pas alors on
+    essais d'aller sur le site web demandeur"""
+    if liste == []:
+        
+        request_html = requests.get(path)
+        page = request_html.content
+        soup_html = BeautifulSoup(page, "html.parser")
+        propriete = soup_html.findAll("div",{"class":"det_col"})
+        
+        liste_propriete = []
+        liste_propriete1 = []
+
+        for i in propriete:
+            liste_propriete.append(str(i.a))
+
+     
+        c = 0
+        ok = False
+        entreprise = ""
+        liste_propriete1 = []
+        for i in liste_propriete:
+            for j in i:
+                if i[c] == "h" and\
+                   i[c + 1] == "r" and\
+                   i[c + 2] == "e" and\
+                   i[c + 3] == "f":
+                    ok = True
+
+                if ok is True:
+                    entreprise += i[c]
+
+                if i[c] == " ":
+                    ok = False
+                    liste_propriete1.append(entreprise)
+                    entreprise = ""
+                    
+                c += 1
+
+        liste_propriete2 = []
+        for i in liste_propriete1:
+            if i == '':
+                pass
+            else:
+                liste_propriete2.append(i)
+
+        out =  liste_propriete2[0][6:-2]
+        out = recherche_CARRERONLINE3(out)
+
+
+        
+    else:
+        out = liste
+
+    return out
+
+
+def recherche_CARRERONLINE3(liste):
+    request_html = requests.get(path)
+    page = request_html.content
+    soup_html = BeautifulSoup(page, "html.parser")
+    propriete = soup_html.find("div",{"class":"coord_txt"})
+
+    out = str(propriete)
+
+    return out
+#erreur si y'a rien mais nik
+
+
 
 
 def recherche_TALENTPLUG(path):
@@ -393,14 +501,23 @@ def recherche_TALENTPLUG(path):
     request_html = requests.get(path)
     page = request_html.content
     soup_html = BeautifulSoup(page, "html.parser")
-    propriete = soup_html.findAll("h2",{"class":"dann2015_infosrecruteur"})
+    propriete = soup_html.findAll("h3")
 
     liste_propriete = []
-    liste_propriete.append(str(propriete))
 
-    #if info recruteur
-    #else:
-    #click image
+    for i in propriete:
+        liste_propriete.append(str(i.get_text()))
+
+
+    entreprise = []
+    for i in liste_propriete:
+        find = str(i).find("A propos de ")
+        if find >= 0:
+            entreprise.append(i)
+
+    return str(entreprise[0][12:-2])
+
+
 
 def recherche_STEPSTONE(path):
     """On cherche qui a posté cette anonce"""
@@ -409,14 +526,14 @@ def recherche_STEPSTONE(path):
     request_html = requests.get(path)
     page = request_html.content
     soup_html = BeautifulSoup(page, "html.parser")
-    propriete = soup_html.findAll("h2",{"class":"dann2015_infosrecruteur"})
+    propriete = soup_html.findAll("h6")
 
-    liste_propriete = []
-    liste_propriete.append(str(propriete))
+    liste = []
+    for i in propriete:
+        liste.append(i.get_text())
 
-    #if info recruteur
-    #else:
-    #click image
+
+    return liste[0][1:-1]
 
 
 
@@ -507,6 +624,8 @@ def recherche_email_dans_description(path):
 
 def recherche_bas_description(path):
     pass
+
+
     
 def recherche_entreprise(liste):
     """On cherche l'entreprise mtn"""
@@ -521,20 +640,38 @@ def recherche_entreprise(liste):
         path = PATH_POLE_2.format(i[1][0])
 
 
+
+
         #description bas de page nom entreprise
         #recherche_bas_description(path)
+
 
         email, trouvee = recherche_email(path)
         #onglet info on cherche email
 
+
         if trouvee == "adresse trouvée":
             pass
         
+        elif recherche bas de page:
+            pass
+
+
+
         else:
-            recherche_par_image = recherche_via_image(path)
-            entreprise_careerbuilder = recherche_CARRERBUILDER(recherche_par_image[0])
-            #si ya pas demail ya la société qui demande
-            #on click sur le href et on cherche la société
+
+##            if site == carrieereonline:
+##                pass
+##            elif site == 
+##
+##
+##            
+##            
+##            elif site == careerbuilder:
+##                recherche_par_image = recherche_via_image(path)
+##                entreprise_careerbuilder = recherche_CARRERBUILDER(recherche_par_image[0])
+##                #si ya pas demail ya la société qui demande
+##                #on click sur le href et on cherche la société
 
 
 
