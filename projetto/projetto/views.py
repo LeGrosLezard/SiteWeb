@@ -118,12 +118,14 @@ def comment_faire_mon_cv(request):
     pseudo = request.user
 
     nom, prenom = recuperation_nom(pseudo)
+    
     cv = traitement_cv(pseudo)
     motivation = traitement_motivation(pseudo)
-
-
-    
     message = traitement_message(pseudo)
+    print(cv)
+    print("")
+    print(message)
+    
     bilan = recuperation_bilan(pseudo)
 
 
@@ -133,10 +135,11 @@ def comment_faire_mon_cv(request):
         motive = request.POST.get('motive')
         message_requete = request.POST.get('message')
 
-
+        
 
         if message_requete:
             #PARTIE MESSAGE RECRUTEUR
+            print("OUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII")
             un = request.POST.get('un')
             if un:
                 insertion_part_message(pseudo, un, "un")
@@ -165,7 +168,7 @@ def comment_faire_mon_cv(request):
 
 
 
-        if motive:
+        elif motive:
             #PARTIE LETTRE DE MOTIVATION
             un = request.POST.get('un')
             if un:
