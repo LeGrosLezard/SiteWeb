@@ -2,6 +2,8 @@
 
 Un site Web pour la recherche d'emploi
 
+toussa a cause d'un papa qui ment putin arrete de regarder n'importe quoi
+
 OUBLIE pas de récuperer l'offre de l'offre via l'url (i[1][0])
 
 nan faut le faire avec tous les sites web ca va y'en a max 10 
