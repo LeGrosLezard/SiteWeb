@@ -2,17 +2,13 @@
 
 Un site Web pour la recherche d'emploi
 
-toussa a cause d'un papa qui ment putin arrete de regarder n'importe quoi
+tafiole
+
+commencer a voir le truk email
 
 OUBLIE pas de récuperer l'offre de l'offre via l'url (i[1][0])
 
-nan faut le faire avec tous les sites web ca va y'en a max 10 
-
-ah c'est la lettre de motivation qui est chiant !
-
 finir la recherche sur google
-
-faire la recherche email si directe dans description et c bon
 
 faire la boucle... ca va prendre des heures
 
