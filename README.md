@@ -2,6 +2,9 @@
 
 Un site Web pour la recherche d'emploi
 
+OUBLIE pas de récuperer l'offre de l'offre via l'url (i[1][0])
+
+
 ah c'est la lettre de motivation qui est chiant !
 
 finir la recherche sur google
