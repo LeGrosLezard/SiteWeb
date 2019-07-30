@@ -2,20 +2,27 @@
 
 Un site Web pour la recherche d'emploi
 
-livrable pour vendredi
+ah c'est la lettre de motivation qui est chiant !
+
+finir la recherche sur google
+
+faire la recherche email si directe dans description et c bon
+
+faire la boucle... ca va prendre des heures
+
+faut une belle page cv inspire toi du tient
+
+finir les tests
+
+implémenter l'envoie via email directte
+
+et envoie le a des recruteur
 
 
-et ensuite finir function email
 
-la faut récupérer l'image se diriger vers la page de l'image
 
-récuperer le nom de l'entreprise
 
-google entreprise contact
 
-adresse mail
-
-envoie (un mail hotmail peut contrenir Mo et tous tes truk sont en ko 1Mo= 1000KO jcrois dc c bon tkt)
 
 --------------------------------------------------
 
