@@ -304,9 +304,10 @@ def recherche_via_image(path):
 
 
 
-def recherche_appuie_image(path):
+def recherche_CARRERBUILDER(path):
     """On cherche qui a posté cette anonce"""
-
+    #CARRERBUILDER
+    
     request_html = requests.get(path)
     page = request_html.content
     soup_html = BeautifulSoup(page, "html.parser")
@@ -346,15 +347,171 @@ def recherche_appuie_image(path):
 
     return entrprise[10:-1]
 
+
+
+
+def recherche_CARRERBUILDER(path):
+    """On cherche qui a posté cette anonce"""
+    #CARRERBUILDER
+    
+    request_html = requests.get(path)
+    page = request_html.content
+    soup_html = BeautifulSoup(page, "html.parser")
+    propriete = soup_html.findAll("div",{"class":"dann2015_infosrecruteur"})
+
+    liste_propriete = []
+    liste_propriete.append(str(propriete))
+
+    #if info recruteur
+    #else:
+    #click image
+
+
+
+
+def recherche_CARRERONLINE(path):
+    """On cherche qui a posté cette anonce"""
+    #CARRERONLINE
+    
+    request_html = requests.get(path)
+    page = request_html.content
+    soup_html = BeautifulSoup(page, "html.parser")
+    propriete = soup_html.findAll("div",{"class":"dann2015_infosrecruteur"})
+
+    liste_propriete = []
+    liste_propriete.append(str(propriete))
+
+    #if info recruteur
+    #else:
+    #click image
+
+
+def recherche_TALENTPLUG(path):
+    """On cherche qui a posté cette anonce"""
+    #TALENTPLUG
+    
+    request_html = requests.get(path)
+    page = request_html.content
+    soup_html = BeautifulSoup(page, "html.parser")
+    propriete = soup_html.findAll("h2",{"class":"dann2015_infosrecruteur"})
+
+    liste_propriete = []
+    liste_propriete.append(str(propriete))
+
+    #if info recruteur
+    #else:
+    #click image
+
+def recherche_STEPSTONE(path):
+    """On cherche qui a posté cette anonce"""
+    #STEPSTONE
+    
+    request_html = requests.get(path)
+    page = request_html.content
+    soup_html = BeautifulSoup(page, "html.parser")
+    propriete = soup_html.findAll("h2",{"class":"dann2015_infosrecruteur"})
+
+    liste_propriete = []
+    liste_propriete.append(str(propriete))
+
+    #if info recruteur
+    #else:
+    #click image
+
+
+
+def recherche_MONSTER(path):
+    """On cherche qui a posté cette anonce"""
+    #MONSTER
+    
+    request_html = requests.get(path)
+    page = request_html.content
+    soup_html = BeautifulSoup(page, "html.parser")
+    propriete = soup_html.findAll("h2",{"class":"dann2015_infosrecruteur"})
+
+    liste_propriete = []
+    liste_propriete.append(str(propriete))
+
+    #if info recruteur
+    #else:
+    #click image
+
+
+
+
+def recherche_JOBCOLO(path):
+    """On cherche qui a posté cette anonce"""
+    #JOBCOLO
+    #des fois y'a pas l'entreprise faut du coup scrapper le text
+    #sinon laisse tomber
+    
+    request_html = requests.get(path)
+    page = request_html.content
+    soup_html = BeautifulSoup(page, "html.parser")
+    propriete = soup_html.findAll("h2",{"class":"dann2015_infosrecruteur"})
+
+    liste_propriete = []
+    liste_propriete.append(str(propriete))
+
+    #if info recruteur
+    #else:
+    #click image
+
+
+
+def recherche_INZEJOB(path):
+    """On cherche qui a posté cette anonce"""
+    #INZEJOB
+    #des fois y'a pas l'entreprise faut du coup scrapper le text
+    #sinon laisse tomber
+    
+    request_html = requests.get(path)
+    page = request_html.content
+    soup_html = BeautifulSoup(page, "html.parser")
+    propriete = soup_html.findAll("h2",{"class":"dann2015_infosrecruteur"})
+
+    liste_propriete = []
+    liste_propriete.append(str(propriete))
+
+    #if info recruteur
+    #else:
+    #click image
+
+
+def recherche_1TAF_COM(path):
+    """On cherche qui a posté cette anonce"""
+    #1TAF.COM
+    #la faut chopper l'url qu'ils donne et ensuite
+    #aller dessus récuper le truk qui demande
+    
+    request_html = requests.get(path)
+    page = request_html.content
+    soup_html = BeautifulSoup(page, "html.parser")
+    propriete = soup_html.findAll("h2",{"class":"dann2015_infosrecruteur"})
+
+    liste_propriete = []
+    liste_propriete.append(str(propriete))
+
+    #if info recruteur
+    #else:
+    #click image
+
+
+
+
 def recherche_entreprise_via_google(nom, ville):
     pass
 
 def recherche_email_dans_description(path):
     pass
+
+def recherche_bas_description(path):
+    pass
     
 def recherche_entreprise(liste):
     """On cherche l'entreprise mtn"""
-
+     #https://candidat.pole-emploi.fr/offres/recherche/detail/9542526
+    #DOUBLE ANONCE
     recuperation_info = []
     
     for i in liste:
@@ -363,7 +520,10 @@ def recherche_entreprise(liste):
 
         path = PATH_POLE_2.format(i[1][0])
 
-        
+
+        #description bas de page nom entreprise
+        #recherche_bas_description(path)
+
         email, trouvee = recherche_email(path)
         #onglet info on cherche email
 
@@ -372,7 +532,7 @@ def recherche_entreprise(liste):
         
         else:
             recherche_par_image = recherche_via_image(path)
-            entreprise = recherche_appuie_image(recherche_par_image[0])
+            entreprise_careerbuilder = recherche_CARRERBUILDER(recherche_par_image[0])
             #si ya pas demail ya la société qui demande
             #on click sur le href et on cherche la société
 
