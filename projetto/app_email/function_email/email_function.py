@@ -19,6 +19,8 @@ def function_code_postal(lieu):
 
     return liste
 
+
+
 def code_postal(lieu):
     """Thank to the postal code we can
     call the URL of weather. Indeed,
@@ -122,7 +124,7 @@ def pole_emploi(lieu, emploi, rayon):
                 
 
 
-    return liste_w1
+    return liste_w1, lieu
 
     #ICI IL FAUT ABSOLUMENT FAIRE UN RETOUR AJAX PUIS
     #~RENVOYER UN AUTRE CALL
@@ -130,24 +132,169 @@ def pole_emploi(lieu, emploi, rayon):
 
 
 
+def titre(path):
+    """On récupere le titre"""
+    
+    request_html = requests.get(path)
+    page = request_html.content
+    soup_html = BeautifulSoup(page, "html.parser")
+    propriete = soup_html.findAll("h1",{"class":"t2 title"})
 
-pole_emploi("paris", "développeur", "20")
+    liste = []
+    for i in propriete:
+        liste.append(str(i.string.lower()))
+        
+    return liste
+    
 
 
-def second_call():
+LISTE_EMPLOI_UTILISATEUR = ["developpeur", "développeur python",
+                            "développeur backend",
+                            "déveleppeur application web python",
+                            "python django"]
+
+from CONFIG import PATH_POLE_2
+def verification_metier(liste, ville):
+    """Ici on va voir si le titre == la recherche emploie
+    de l'utilisateur
+
+    On va aussi essayer de récupérer l'entreprise qui
+    veut recruter.
+    """
+    
+    
+    global LISTE_EMPLOI_UTILISATEUR
+
+    liste_sauvegarde = []
+
+    for i in liste:
+
+        path = PATH_POLE_2.format(i)
+        recuperation1 = titre(path)
+
+        for emploi in LISTE_EMPLOI_UTILISATEUR:
+            finding_emploi = str(recuperation1).find(str(emploi.strip()))
+            if finding_emploi >= 0:
+                liste_sauvegarde.append([recuperation1, [i]])
+    
+
+
+    #print(liste_sauvegarde)
+    return liste_sauvegarde
+
+def recherche_email(path):
+
+    request_html = requests.get(path)
+    page = request_html.content
+    soup_html = BeautifulSoup(page, "html.parser")
+    propriete = soup_html.findAll("div",{"class":"modal-apply"})
+
+    liste_alpha_numeric = []
+    liste_alpha_numeric1 = []
+
+    for i in str(propriete):
+        email = str(i).find("@")
+        #On cherche dans la description si y'a une addresse mail
+        #par le @
+        
+        addresse_mail = ""
+        ok = False
+        #On initialise deux variable
+        #laddresse mail qui nous sert d'incrementation
+        #ok qui dira a la boucle si on doit incrementer ou pas
+        
+        if email >= 0:
+            #Donc si on trouve un mail
             
-##        path = PATH_POLE_2.format(suite)
-##        request_html = requests.get(path)
-##        page = request_html.content
-##        soup_html = BeautifulSoup(page, "html.parser")
-    pass
+            for i in str(propriete):
+                for j in i:
+                    #On parcourt les balise
+     
+                    if j == ">":
+                        ok = True
+                        #Dans un premier temps si on trouve une
+                        #balise fermant
+                        #on dit ok is True
+                        #Commence l'incrementation
+
+
+                    if j == "<":
+                        liste_alpha_numeric.append(addresse_mail)
+                        addresse_mail = ""
+                        ok = False
+                        #Si on trouve un balise ouvrant
+                        #On ajout la variable incrémenté
+                        #a notre liste
+                        #on dit ok est false
+                        #stop incrémentation
+                        #on vide la balise
+
+                    if ok is True:
+                        addresse_mail += j
+                        #si ok est vrai alors on incrémente la balise
+
+
+    for i in liste_alpha_numeric:
+        find = str(i).find(str("@"))
+        if find >= 0:
+            if i[:2] == ">\n":
+                liste_alpha_numeric1.append(i[2:])
+            else:
+                liste_alpha_numeric1.append(i)
+            #Dans notre liste d'incrémentation
+            #on trouve l'addresse mail
+            #et on efface le retour de ligne
+                
+    print(liste_alpha_numeric1)
+    if liste_alpha_numeric1 != []:
+        return liste_alpha_numeric1, "adresse trouvée"
+    else:
+        return "", ""
+
+
+def recherche_entreprise(liste):
+    """On cherche l'entreprise mtn"""
+
+    recuperation_info = []
+    
+    for i in liste:
+
+        #FAUT PRECISER LE NUMERO DE LOFFRE
+
+        path = PATH_POLE_2.format(i[1][0])
+
+        email, trouvee = recherche_email(path)
+        print(email, trouvee)
+        if trouvee == "adresse trouvée":
+            pass
+        
+        else:
+
+            request_html = requests.get(path)
+            page = request_html.content
+            soup_html = BeautifulSoup(page, "html.parser")
+            propriete = soup_html.findAll("div",{"class":"modal-apply"})
+
+            for i in propriete:
+                print(i)
 
 
 
 
 
+##for i in LISTE_EMPLOI_UTILISATEUR:
+##    liste, ville = pole_emploi("paris", i, "20")
+##    verification_metier_plus_details(liste, ville)
+
+#VA PRENDRE PLEIN DE TEMPS CA....
+    
+#liste, ville = pole_emploi("paris", "développeur python django", "20")
+
+liste = [[['développeur python/django h/f'],
+         ['/offres/recherche/detail/9211622']],]
 
 
+liste1 = recherche_entreprise(liste)
 
 
 
