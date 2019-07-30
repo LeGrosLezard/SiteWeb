@@ -7,6 +7,16 @@ livrable pour vendredi
 
 et ensuite finir function email
 
+la faut récupérer l'image se diriger vers la page de l'image
+
+récuperer le nom de l'entreprise
+
+google entreprise contact
+
+adresse mail
+
+envoie (un mail hotmail peut contrenir Mo et tous tes truk sont en ko 1Mo= 1000KO jcrois dc c bon tkt)
+
 --------------------------------------------------
 
 ATTENTION 
