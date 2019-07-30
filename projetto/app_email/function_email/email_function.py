@@ -544,10 +544,31 @@ def recherche_MONSTER(path):
     request_html = requests.get(path)
     page = request_html.content
     soup_html = BeautifulSoup(page, "html.parser")
-    propriete = soup_html.findAll("h2",{"class":"dann2015_infosrecruteur"})
+    propriete = soup_html.findAll("h1")
 
-    liste_propriete = []
-    liste_propriete.append(str(propriete))
+    
+    liste = []
+    liste1 = [[],[],[]]
+
+    c = 0
+    for i in propriete:
+        liste.append(str(i.get_text()))
+        
+    for i in liste:
+
+        part = ""
+        
+        for j in i:
+            if j == "-":
+                liste1[c].append(part)
+                c += 1
+                part = ""
+            else:
+                part += j
+
+    
+    liste1[c].append(part)
+    return liste1[2][0]
 
     #if info recruteur
     #else:
@@ -565,10 +586,53 @@ def recherche_JOBCOLO(path):
     request_html = requests.get(path)
     page = request_html.content
     soup_html = BeautifulSoup(page, "html.parser")
-    propriete = soup_html.findAll("h2",{"class":"dann2015_infosrecruteur"})
+    propriete = soup_html.findAll("div",{"annonce_item"})
 
-    liste_propriete = []
-    liste_propriete.append(str(propriete))
+    liste = []
+    c = 0
+    ok = False
+    for i in propriete:
+        liste.append(str(i.get_text()))
+
+    liste1 = []
+    for i in liste:
+        nom = ""
+        
+        for j in i:
+            try:
+                if i[c] == "S" and\
+                   i[c + 1] == "o" and\
+                   i[c + 2] == "c" and\
+                   i[c + 3] == "i" and\
+                   i[c + 4] == "é" and\
+                   i[c + 5] == "t" and\
+                   i[c + 6] == "é" and\
+                   i[c + 7] == " " and\
+                   i[c + 8] == ":" and\
+                   i[c + 9] == " ":
+                    ok = True
+                    
+                if ok is True: 
+                    nom += j
+
+                if i[c] == " " and i[c + 1] == "-" and\
+                   i[c + 2] == " ":
+                    ok = False
+                    liste1.append(nom)
+                    nom = ""
+                c += 1
+                
+            except IndexError:
+                pass
+  
+    liste2 = []
+    for i in liste1:
+        if i == "":
+            pass
+        else:
+            liste2.append(i)
+
+    return liste2[0][10:-2]
 
     #if info recruteur
     #else:
