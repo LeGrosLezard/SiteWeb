@@ -2,14 +2,7 @@
 
 Un site Web pour la recherche d'emploi
 
-j'ai rien lu
-
-fini vite (et push sur bobo comme ca le jury verra jsp) (push ca sur bobo a la fin de l'email et tu rajouteras les test apres)
-
-Mais, comme t'as pas d'enveloppe ni de brevet le truk nul serai qu'on te le pique donc ca sera mieux fait MAIS c quand meme classe davoir "une super idée de dingue j'ai jamais vu ca jb t'es un putin de monstre" ok "une bonne idée" ok bon push !
-
-finir recherche google + envoie email
-
+grrrrrrrrrrrrrrrrrrrrrrr on peut pas scrapper les pages google putin de merde faut trouvé une autre facon
 
 
 
