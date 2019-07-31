@@ -302,7 +302,10 @@ def recherche_entreprise_bas_de_page(path):
         else:
             out = liste[0]
 
-    return out
+    try:
+        return out
+    except IndexError:
+        return None
 
 
 def identification_du_site(path):
@@ -351,8 +354,11 @@ def identification_du_site(path):
         else:
             liste_appening1.append(i)
 
-    return liste_appening1[0][5:-1]
 
+    try:
+        return liste_appening1[0][5:-1]
+    except IndexError:
+        return None
 
 
 
@@ -398,9 +404,10 @@ def recherche_via_image(path):
         if i != "":
             liste_final_return.append(i[6:-2])
 
-
-    return liste_final_return
-
+    try:
+        return liste_final_return
+    except IndexError:
+        return None
 
 
 
@@ -449,9 +456,10 @@ def recherche_CARRERBUILDER(path):
                 liste.append(entrprise)
 
             c += 1
-
-    return entrprise[10:-1]
-
+    try:
+        return entrprise[10:-1]
+    except IndexError:
+        return None
 
 
 
@@ -509,8 +517,10 @@ def recherche_CARRERONLINE(path):
         else:
             liste_propriete2.append(i)
 
-    return liste_propriete2[0][20:-2]
-
+    try:
+        return liste_propriete2[0][20:-2]
+    except IndexError:
+        return None
 
 
 def recherche_CARRERONLINE2(liste, path):
@@ -604,9 +614,10 @@ def recherche_TALENTPLUG(path):
         find = str(i).find("A propos de ")
         if find >= 0:
             entreprise.append(i)
-
-    return str(entreprise[0][12:-2])
-
+    try:
+        return str(entreprise[0][12:-2])
+    except IndexError:
+        return None
 
 
 def recherche_STEPSTONE(path):
@@ -622,9 +633,10 @@ def recherche_STEPSTONE(path):
     for i in propriete:
         liste.append(i.get_text())
 
-
-    return liste[0][1:-1]
-
+    try:
+        return liste[0][1:-1]
+    except IndexError:
+        return None
 
 
 def recherche_MONSTER(path):
@@ -658,8 +670,12 @@ def recherche_MONSTER(path):
 
     
     liste1[c].append(part)
-    return liste1[2][0]
+    try:
+        return liste1[2][0]
+    except IndexError:
+        return None
 
+    
     #if info recruteur
     #else:
     #click image
@@ -721,9 +737,10 @@ def recherche_JOBCOLO(path):
             pass
         else:
             liste2.append(i)
-
-    return liste2[0][10:-2]
-
+    try:
+        return liste2[0][10:-2]
+    except IndexError:
+        return None
     #if info recruteur
     #else:
     #click image
@@ -805,10 +822,43 @@ def recherche_1TAF_COM(path):
         else:
             liste2.append(i)
 
-    return liste2[0][:-2]
-
+    try:
+        return liste2[0][:-2]
+    except IndexError:
+        return None
 
 def recherche_1TAF_COM1(path):
+    pass
+
+
+#---------------------------------------------------Traitement liste
+
+def traitement(liste1, liste2):
+    liste_traitee = []
+
+    for i in liste1:
+
+        finding = str(i[0]).find("\n")
+        if finding >= 0:
+            liste_traitee.append([i[0][1:-1], i[1][0]])
+        else:
+            liste_traitee.append([i[0], i[1][0]])
+
+
+
+    for i in liste2:
+
+        if i[0][0] == None:
+            pass
+        else:
+            liste_traitee.append([i[0][0], i[1][0][0]])
+
+    return liste_traitee
+
+
+#----------------------------------------------------GOOGLE RECHERCHE
+from CONFIG import PATH_BING
+def recherche_google(liste, lieu):
     pass
 
 
@@ -822,11 +872,33 @@ def recherche_1TAF_COM1(path):
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #FAUT PRECISER LE NUMERO DE LOFFRE
-
-
-
-
-
 #https://candidat.pole-emploi.fr/offres/recherche/detail/9542526
 #DOUBLE ANONCE
