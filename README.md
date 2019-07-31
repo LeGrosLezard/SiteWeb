@@ -2,7 +2,7 @@
 
 Un site Web pour la recherche d'emploi
 
-grrrrrrrrrrrrrrrrrrrrrrr on peut pas scrapper les pages google putin de merde faut trouvé une autre facon
+directement accéder au site web de l'entreprise, contact, email
 
 
 
