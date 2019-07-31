@@ -165,41 +165,41 @@ def verification_metier(liste, ville, LISTE_EMPLOI_UTILISATEUR):
     c = []
     ok = False
     
-    for element in liste:
-        recuperation1 = titre(element)
+    
+    recuperation1 = titre(liste)
 
-        for i in LISTE_EMPLOI_UTILISATEUR:
-            carac = ""
-            for j in i:
-                if j == " ":
-                    b.append(carac)
-                    carac = ""
-                    
-                carac += j
+    for i in LISTE_EMPLOI_UTILISATEUR:
+        carac = ""
+        for j in i:
+            if j == " ":
+                b.append(carac)
+                carac = ""
+                
+            carac += j
 
-            b.append(carac)
-
-
-        for i in recuperation1:
-            caractere = ""
-            for j in i:
-                if j == " ":
-                    c.append(caractere)
-                    caractere = ""
-                    
-                caractere += j
-
-        for i in c:
-            for j in b:
-                find = str(i).find(j)
-                if find >= 0:
-                    ok = True
+        b.append(carac)
 
 
-        if ok is True:
-            liste_sauvegarde.append(element)
+    for i in recuperation1:
+        caractere = ""
+        for j in i:
+            if j == " ":
+                c.append(caractere)
+                caractere = ""
+                
+            caractere += j
+
+    for i in c:
+        for j in b:
+            find = str(i).find(j)
+            if find >= 0:
+                ok = True
 
 
+    if ok is True:
+        liste_sauvegarde.append(liste)
+
+    
     return liste_sauvegarde
 
 
@@ -212,7 +212,7 @@ def recherche_email(path):
     a gauche, on cherche si ya l'adresse email dans cet onglet"""
 
 
-    request_html = requests.get(path)
+    request_html = requests.get(path[0])
     page = request_html.content
     soup_html = BeautifulSoup(page, "html.parser")
     propriete = soup_html.findAll("div",{"class":"modal-apply"})
@@ -288,7 +288,7 @@ def recherche_entreprise_bas_de_page(path):
     page = request_html.content
     soup_html = BeautifulSoup(page, "html.parser")
     propriete = soup_html.findAll("h4", {"class":"t4 title"})
-
+    saut = False
     liste = []
     for i in propriete:
         liste.append(str(i.get_text()))
@@ -296,7 +296,11 @@ def recherche_entreprise_bas_de_page(path):
     if liste == []:
         out = None
     else:
-        out = liste[0][1:-1]
+        if liste[0][:2] == "\n" and liste[0][2:] == "\n":
+            liste = liste[0][1:-1]
+            out = liste
+        else:
+            out = liste[0]
 
     return out
 
@@ -668,7 +672,7 @@ def recherche_JOBCOLO(path):
     #JOBOOLO
     #des fois y'a pas l'entreprise faut du coup scrapper le text
     #sinon laisse tomber
-    print(path[0])
+
     request_html = requests.get(path[0])
     page = request_html.content
     soup_html = BeautifulSoup(page, "html.parser")
