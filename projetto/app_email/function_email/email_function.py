@@ -25,7 +25,7 @@ def recherche_entreprise_via_google(nom, ville):
 
 
 
-def etape_UNE(lieu, metier, rayon):
+def etape_UNE(lieu, LISTE_EMPLOI_UTILISATEUR, rayon):
     """Dans un premier temps on cherche
     toutes les url de DESCRIPTION
     de pole qui match avec notre
@@ -33,6 +33,7 @@ def etape_UNE(lieu, metier, rayon):
     On aura donc la deuxieme partie du path"""
     
     for i in LISTE_EMPLOI_UTILISATEUR:
+
         liste_w1, lieu = pole_emploi(lieu, i, rayon)
 
         for i in liste_w1:
@@ -95,6 +96,18 @@ def ETAPE_QUATTRE(liste):
     return out
 
 
+from site_scrap import recherche_entreprise_bas_de_page
+def ETAPE_CINQ(path):
+    entreprise_bas_page = recherche_entreprise_bas_de_page(path)
+        
+    return entreprise_bas_page
+
+
+from site_scrap import identification_du_site
+def ETAPE_SIX(path):
+    
+    identification_site = identification_du_site(path)
+    return identification_site
 
 
 
@@ -102,6 +115,8 @@ if __name__ == "__main__":
 
 
     #def etape_mail():
+
+    ENTREPRISE = []
 
     LISTE_EMPLOI_UTILISATEUR = ["python django"]
 
@@ -112,31 +127,67 @@ if __name__ == "__main__":
 
     liste_url = etape_UNE(lieu, LISTE_EMPLOI_UTILISATEUR, rayon)
     #print(liste_url)
+
     liste_description = ETAPE_DEUX(liste_url)
     #print(liste_description)
+    
     liste_description = [liste_description[0]]#a effacer
     verification_metier_titre = ETAPE_TROIS(liste_description, lieu,
                                             LISTE_EMPLOI_UTILISATEUR)
+
     #print(verification_metier_titre)
+    
 
     email_trouvee = ETAPE_QUATTRE(verification_metier_titre)
     #print(email_trouvee)
-    if email_trouvee == None:
-        pass
-        #c parti pour la recherche inter page
-        #et on refait une fonction pour la pep
+
+
+    
+    entreprise_bas_page = ETAPE_CINQ(verification_metier_titre)
+    #print(entreprise_bas_page)
+        
+    if entreprise_bas_page != None:
+        ENTREPRISE.append(entreprise_bas_page)
+        #c'est qu'on a trouvé une entreprise
+        #en bas de page
+            
+    elif email_trouvee != None:
+        ENTREPRISE.append(email_trouvee)
+        #c'est qu'on a un email dans la description
+        
+
     else:
-        pass
-        #on cherche en bas de la page
 
+        site = ETAPE_SIX(verification_metier_titre)
+        print(site)
 
+        url = recherche_via_image(verification_metier_titre)
+        print(url)
 
-    #def etape recherche
+        if site.lower() == "careerbuilder":
+            entreprise = recherche_CARRERBUILDER(verification_metier_titre)
+        
+        elif site.lower() == "carriereonline":
+            entreprise = recherche_CARRERONLINE(url)
+            entreprise = recherche_CARRERONLINE2(entreprise, url)
+            entreprise = recherche_CARRERONLINE3(entreprise, url)
+        
+        elif site.lower() == "talentplug":
+            entreprise = recherche_TALENTPLUG(url)
+        
+        elif site.lower() == "stepstone":
+            entreprise = recherche_STEPSTONE(url)
 
+        elif site.lower() == "monster":
+            entreprise = recherche_MONSTER(url)
 
+        elif site.lower() == "joboolo":
+            entreprise = recherche_JOBCOLO(url)
 
+        elif site.lower() == "inzejob":
+            entreprise = recherche_INZEJOB(url)
 
+        print(entreprise)
 
-
-
+    print(ENTREPRISE)
 
