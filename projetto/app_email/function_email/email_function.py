@@ -263,3 +263,5 @@ if __name__ == "__main__":
     print(emails)
     print(entreprise_bas_page)
     print(ENTREPRISE)
+
+    print(lieu)
