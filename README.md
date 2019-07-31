@@ -4,6 +4,7 @@ Un site Web pour la recherche d'emploi
 
 directement accéder au site web de l'entreprise, contact, email
 
+bon, soit la partie envoie message c mort soit t'essais de chopper les adresses mails gratutiement rooo c tout un buisness enfete jcrois les entreprise paient pour etre référencé du coup le site les dirige sur le site qui sont payé par postulation nik sa race, c pour ca quya aucun mail nulle part et en plus on peut pas scrapper sur google pffffffff
 
 
 
