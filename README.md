@@ -14,6 +14,17 @@ Un site Web pour la recherche d'emploi
 
 - appuyer sur le input ce qui mettra le truk directement dans leur database
 
+- ok si on demande de télécharger le cv:
+
+  - récupérer les js https 
+  - les regrouper et esperer que ca envoie faire leur serveur en onclick boutton
+  
+- sinon juste récupérer les mail via les moteurs
+
+- repense tout tout est carrément illégal y te faudrait les adresses emails
+
+- sinon tu dis que tu savais pas que c'était illégale ^^
+
 
 
 
