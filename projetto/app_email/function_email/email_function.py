@@ -257,7 +257,7 @@ if __name__ == "__main__":
 
 
         print(entreprise)
-        ENTREPRISE.append([entreprise], url)
+        ENTREPRISE.append([[entreprise], [url]])
         
     print("")
     print(emails)
