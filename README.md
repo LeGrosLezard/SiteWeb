@@ -2,23 +2,22 @@
 
 Un site Web pour la recherche d'emploi
 
-tafiole
+finir le truk
 
-commencer a voir le truk email
+enfete faudra essayer une fois sur le serveur
 
-OUBLIE pas de récuperer l'offre de l'offre via l'url (i[1][0])
+trouve les chiffres combien coute un chercheur d'emploi par jour pour faire un truk gros
+si pas assez conséquent chercher ca par mois et encore une fois par année
 
-finir la recherche sur google
+dire pourquoi ils en ont besoin
 
-faire la boucle... ca va prendre des heures
+dire ou est ce qu'ils pourraient par exemple investir avec ce différentiel
 
-faut une belle page cv inspire toi du tient
+dire ce que ca va leur couter 
 
-finir les tests
+et lui faire une blague
 
-implémenter l'envoie via email directte
-
-et envoie le a des recruteur
+et ne pas lui demandé si c'etait bien
 
 
 
