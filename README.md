@@ -21,7 +21,9 @@ et lui faire une blague -> c ici que tout ca se jouer, s'il rigole soit c par co
 
 et ne pas lui demandé si c'etait bien
 
+quand ? apres qu'il est plu apres pas avant a l'heure de l'apéro ? midi ect ...  pas pendant digestion ou pendant digestion
 
+fini avant ! go manger
 
 
 
