@@ -2,28 +2,15 @@
 
 Un site Web pour la recherche d'emploi
 
-finir le truk
+j'ai rien lu
 
-enfete faudra essayer une fois sur le serveur
+fini vite (et push sur bobo comme ca le jury verra jsp) (push ca sur bobo a la fin de l'email et tu rajouteras les test apres)
 
-c laccroche qui faut travailler et lui expliqué comment t'as eu son numéro 
+Mais, comme t'as pas d'enveloppe ni de brevet le truk nul serai qu'on te le pique donc ca sera mieux fait MAIS c quand meme classe davoir "une super idée de dingue j'ai jamais vu ca jb t'es un putin de monstre" ok "une bonne idée" ok bon push !
 
-trouve les chiffres combien coute un chercheur d'emploi par jour pour faire un truk gros
-si pas assez conséquent chercher ca par mois et encore une fois par année
+finir recherche google + envoie email
 
-dire pourquoi ils en ont besoin
 
-dire ou est ce qu'ils pourraient par exemple investir avec ce différentiel -> vous pourriez
-
-dire ce que ca va leur couter  -> et enfete tu dis grtuit sauf pour le fussioner a votre site
-
-et lui faire une blague -> c ici que tout ca se jouer, s'il rigole soit c par communication et c qu'il est interressé, soit il prendra le dessus soit ca le fera marrer et ca joue
-
-et ne pas lui demandé si c'etait bien
-
-quand ? apres qu'il est plu apres pas avant a l'heure de l'apéro ? midi ect ...  pas pendant digestion ou pendant digestion
-
-fini avant ! go manger
 
 
 
