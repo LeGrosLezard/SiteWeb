@@ -4,7 +4,7 @@ Un site Web pour la recherche d'emploi
 
 directement accéder au site web de l'entreprise, contact, email
 
-tu m'etonnes qu'yen a qui aillent vivre dans les bois ptin
+hihihi j'ai trouvé vive la société ! ok en gros ce site sert a rien pcque pole reference et ptetre qui sont payé a faire ca
 
 
 
