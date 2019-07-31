@@ -2,9 +2,17 @@
 
 Un site Web pour la recherche d'emploi
 
-directement accéder au site web de l'entreprise, contact, email
+#-------------------------------------site interim
 
-hihihi j'ai trouvé vive la société ! ok en gros ce site sert a rien pcque pole reference et ptetre qui sont payé a faire ca
+- si on trouve pas l'email depuis un moteur de recherche 
+
+- aller directement sur le site
+
+- copier toute la page avec python + remplir les input avec les données du mec
+
+- copier le contenu dans une page html
+
+- appuyer sur le input ce qui mettra le truk directement dans leur database
 
 
 
