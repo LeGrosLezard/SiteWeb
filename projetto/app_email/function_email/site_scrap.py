@@ -60,6 +60,7 @@ def pole_emploi(lieu, emploi, rayon):
 
 
     path = PATH_POLE.format(code, emploi, rayon)
+
     request_html = requests.get(path)
     page = request_html.content
     soup_html = BeautifulSoup(page, "html.parser")
@@ -280,47 +281,24 @@ def recherche_email(path):
 
 
 
-def recherche_via_image(path):
-    
-    request_html = requests.get(path)
+
+def recherche_entreprise_bas_de_page(path):
+
+    request_html = requests.get(path[0])
     page = request_html.content
     soup_html = BeautifulSoup(page, "html.parser")
-    propriete = soup_html.findAll("div",{"class":"modal-apply"})
+    propriete = soup_html.findAll("h4", {"class":"t4 title"})
 
-    liste_propriete = []
-    liste_propriete.append(str(propriete))
+    liste = []
+    for i in propriete:
+        liste.append(str(i.get_text()))
 
-    c = 0
-    ok = False
-    url = ""
-    liste_final = []
-    
-    for i in liste_propriete:
-        
-        for j in i:
-            if i[c] == "h" and\
-               i[c + 1] == "r" and\
-               i[c + 2] == "e" and\
-               i[c + 3] == "f":
-                ok = True
+    if liste == []:
+        out = None
+    else:
+        out = liste[0][1:-1]
 
-            if ok is True:
-                url += i[c]
-
-            if i[c] == " ":
-                liste_final.append(url)
-                url = ""
-                ok = False
-            c += 1
-
-
-    liste_final_return = []
-    for i in liste_final:
-        if i != "":
-            liste_final_return.append(i[6:-2])
-
-
-    return liste_final_return
+    return out
 
 
 def identification_du_site(path):
@@ -328,7 +306,7 @@ def identification_du_site(path):
     sur laquelle on appuie s'il n'y a pas de contact email"""
 
 
-    request_html = requests.get(path)
+    request_html = requests.get(path[0])
     page = request_html.content
     soup_html = BeautifulSoup(page, "html.parser")
     propriete = soup_html.findAll("div",{"class":"modal-apply"})
@@ -373,19 +351,56 @@ def identification_du_site(path):
 
 
 
-def recherche_entreprise_bas_de_page(path):
+
+def recherche_via_image(path):
+    """Ici c'est comme si on appuyait sur
+    l'image dans la description"""
+
     
-    request_html = requests.get(path)
+    request_html = requests.get(path[0])
     page = request_html.content
     soup_html = BeautifulSoup(page, "html.parser")
-    propriete = soup_html.findAll("h4", {"class":"t4 title"})
+    propriete = soup_html.findAll("div",{"class":"modal-apply"})
 
-    liste = []
-    for i in propriete:
-        liste.append(str(i.get_text()))
+    liste_propriete = []
+    liste_propriete.append(str(propriete))
+
+    c = 0
+    ok = False
+    url = ""
+    liste_final = []
+    
+    for i in liste_propriete:
+        
+        for j in i:
+            if i[c] == "h" and\
+               i[c + 1] == "r" and\
+               i[c + 2] == "e" and\
+               i[c + 3] == "f":
+                ok = True
+
+            if ok is True:
+                url += i[c]
+
+            if i[c] == " ":
+                liste_final.append(url)
+                url = ""
+                ok = False
+            c += 1
 
 
-    return liste[0][1:-1]
+    liste_final_return = []
+    for i in liste_final:
+        if i != "":
+            liste_final_return.append(i[6:-2])
+
+
+    return liste_final_return
+
+
+
+
+
 
 
 
@@ -394,7 +409,7 @@ def recherche_CARRERBUILDER(path):
     """On cherche qui a posté cette anonce"""
     #CARRERBUILDER
     
-    request_html = requests.get(path)
+    request_html = requests.get(path[0])
     page = request_html.content
     soup_html = BeautifulSoup(page, "html.parser")
     propriete = soup_html.findAll("div",{"class":"bloc clear nm col-2 small-marge"})
@@ -444,7 +459,7 @@ def recherche_CARRERONLINE(path):
     """On cherche qui a posté cette anonce"""
     #CARRERONLINE
     
-    request_html = requests.get(path)
+    request_html = requests.get(path[0])
     page = request_html.content
     soup_html = BeautifulSoup(page, "html.parser")
     propriete = soup_html.findAll("div",{"class":"dann2015_infosrecruteur"})
@@ -499,7 +514,7 @@ def recherche_CARRERONLINE2(liste, path):
     essais d'aller sur le site web demandeur"""
     if liste == []:
         
-        request_html = requests.get(path)
+        request_html = requests.get(path[0])
         page = request_html.content
         soup_html = BeautifulSoup(page, "html.parser")
         propriete = soup_html.findAll("div",{"class":"det_col"})
@@ -551,8 +566,8 @@ def recherche_CARRERONLINE2(liste, path):
     return out
 
 
-def recherche_CARRERONLINE3(liste):
-    request_html = requests.get(path)
+def recherche_CARRERONLINE3(liste, path):
+    request_html = requests.get(path[0])
     page = request_html.content
     soup_html = BeautifulSoup(page, "html.parser")
     propriete = soup_html.find("div",{"class":"coord_txt"})
@@ -569,7 +584,7 @@ def recherche_TALENTPLUG(path):
     """On cherche qui a posté cette anonce"""
     #TALENTPLUG
     
-    request_html = requests.get(path)
+    request_html = requests.get(path[0])
     page = request_html.content
     soup_html = BeautifulSoup(page, "html.parser")
     propriete = soup_html.findAll("h3")
@@ -594,7 +609,7 @@ def recherche_STEPSTONE(path):
     """On cherche qui a posté cette anonce"""
     #STEPSTONE
     
-    request_html = requests.get(path)
+    request_html = requests.get(path[0])
     page = request_html.content
     soup_html = BeautifulSoup(page, "html.parser")
     propriete = soup_html.findAll("h6")
@@ -612,7 +627,7 @@ def recherche_MONSTER(path):
     """On cherche qui a posté cette anonce"""
     #MONSTER
     
-    request_html = requests.get(path)
+    request_html = requests.get(path[0])
     page = request_html.content
     soup_html = BeautifulSoup(page, "html.parser")
     propriete = soup_html.findAll("h1")
@@ -650,11 +665,11 @@ def recherche_MONSTER(path):
 
 def recherche_JOBCOLO(path):
     """On cherche qui a posté cette anonce"""
-    #JOBCOLO
+    #JOBOOLO
     #des fois y'a pas l'entreprise faut du coup scrapper le text
     #sinon laisse tomber
-    
-    request_html = requests.get(path)
+    print(path[0])
+    request_html = requests.get(path[0])
     page = request_html.content
     soup_html = BeautifulSoup(page, "html.parser")
     propriete = soup_html.findAll("div",{"annonce_item"})
@@ -717,7 +732,7 @@ def recherche_INZEJOB(path):
     #des fois y'a pas l'entreprise faut du coup scrapper le text
     #sinon laisse tomber
     
-    request_html = requests.get(path)
+    request_html = requests.get(path[0])
     page = request_html.content
     soup_html = BeautifulSoup(page, "html.parser")
     propriete = soup_html.find_all("span", {"class":"info"})
@@ -746,7 +761,7 @@ def recherche_1TAF_COM(path):
     #la faut chopper l'url qu'ils donne et ensuite
     #aller dessus récuper le truk qui demande
     
-    request_html = requests.get(path)
+    request_html = requests.get(path[0])
     page = request_html.content
     soup_html = BeautifulSoup(page, "html.parser")
     propriete = soup_html.findAll("blockquote",{"id":"conditions-part"})
