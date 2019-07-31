@@ -31,6 +31,9 @@ def etape_UNE(lieu, LISTE_EMPLOI_UTILISATEUR, rayon):
     de pole qui match avec notre
     recherche,
     On aura donc la deuxieme partie du path"""
+
+    print("ETAPE UNE")
+    print("")
     
     for i in LISTE_EMPLOI_UTILISATEUR:
 
@@ -54,6 +57,9 @@ def ETAPE_DEUX(liste):
     la seconde. Cela constitu la redirection vers la
     description du métier"""
 
+    print("ETAPE DEUX")
+    print("")
+
     recuperation_info = []
 
     for i in liste:
@@ -68,12 +74,27 @@ def ETAPE_DEUX(liste):
 from site_scrap import verification_metier
 def ETAPE_TROIS(liste, ville, LISTE_EMPLOI_UTILISATEUR):
 
+    print("ETAPE trois")
+    print("")
+
+    liste1 = []
+
     for i in liste:
-        verification_metier_titre = verification_metier(liste, ville,
+        print(i)
+        verification_metier_titre = verification_metier(i, ville,
                                                         LISTE_EMPLOI_UTILISATEUR)
 
+        if verification_metier_titre != []:
+            liste1.append(verification_metier_titre)
 
-    return verification_metier_titre
+    if liste1 == []:
+        out = None
+    else:
+        out = liste1
+    print(out)
+    return out
+         
+    #return verification_metier_titre
 
 
 from site_scrap import recherche_email
@@ -81,33 +102,71 @@ def ETAPE_QUATTRE(liste):
     """Maintenant on essais de chercher un
     email dans la recherche a gauche"""
 
+
+    print("ETAPE quattre")
+    print("")
+
     emails = []
+    liste_no_mail = []
+    
 
     for i in liste:
+        print(i)
         email_trouvee = recherche_email(i)
         if email_trouvee != "":
-            emails.append(email_trouvee)
+            emails.append([email_trouvee, i])
+        else:
+            liste_no_mail.append(i)
 
-    if emails != []:
-        out = emails
-    else:
-        out = None
+    return emails, liste_no_mail
 
-    return out
 
 
 from site_scrap import recherche_entreprise_bas_de_page
-def ETAPE_CINQ(path):
-    entreprise_bas_page = recherche_entreprise_bas_de_page(path)
-        
-    return entreprise_bas_page
+def ETAPE_CINQ(liste_no_mail):
+
+    print("ETAPE cinq")
+    print("")
+
+    liste = []
+    liste_non_trouvee = []
+    for i in liste_no_mail:
+        print(i)
+        entreprise_bas_page = recherche_entreprise_bas_de_page(i)
+
+        if entreprise_bas_page != None:
+            liste.append([entreprise_bas_page, i])
+        else:
+            liste_non_trouvee.append(i)
+
+    return liste, liste_non_trouvee
+
+
 
 
 from site_scrap import identification_du_site
-def ETAPE_SIX(path):
-    
-    identification_site = identification_du_site(path)
-    return identification_site
+def ETAPE_SIX(liste):
+
+    print("ETAPE six")
+    print("")
+
+
+    liste1 = []
+    for i in liste:
+        print(i)
+        try:
+            identification_site = identification_du_site(i)
+            print(identification_site)
+            if identification_site != None:
+                liste1.append([[identification_site], i])
+        except:
+            identification_site = identification_du_site(i[0])
+            print(identification_site)
+            if identification_site != None:
+                liste1.append([[identification_site], i[0]])
+
+                
+    return liste1
 
 
 
@@ -126,68 +185,81 @@ if __name__ == "__main__":
 
 
     liste_url = etape_UNE(lieu, LISTE_EMPLOI_UTILISATEUR, rayon)
-    #print(liste_url)
+    print(liste_url)
+    print("\n")
 
     liste_description = ETAPE_DEUX(liste_url)
-    #print(liste_description)
+    print(liste_description)
+    print("\n")
     
-    liste_description = [liste_description[0]]#a effacer
+    #liste_description = [liste_description[0]]#a effacer
     verification_metier_titre = ETAPE_TROIS(liste_description, lieu,
                                             LISTE_EMPLOI_UTILISATEUR)
 
-    #print(verification_metier_titre)
+    print(verification_metier_titre)
+    print("\n")
     
 
-    email_trouvee = ETAPE_QUATTRE(verification_metier_titre)
-    #print(email_trouvee)
 
 
+    emails, liste_no_mail = ETAPE_QUATTRE(verification_metier_titre)
+    print(emails)
+    print("\n")
+    print(liste_no_mail)
+
+
+
+    print("\n")
+    entreprise_bas_page, no_found = ETAPE_CINQ(liste_no_mail)
+    print(entreprise_bas_page)
+    print("")
+    print(no_found)
+    print("\n")
+
+
+
+
+    site = ETAPE_SIX(no_found)
+    print(site)
+
+    print("\n")
+    print("ETAPE SEPT")
+    print("\n")
     
-    entreprise_bas_page = ETAPE_CINQ(verification_metier_titre)
-    #print(entreprise_bas_page)
+    for i in site:
+        print(i)
         
-    if entreprise_bas_page != None:
-        ENTREPRISE.append(entreprise_bas_page)
-        #c'est qu'on a trouvé une entreprise
-        #en bas de page
-            
-    elif email_trouvee != None:
-        ENTREPRISE.append(email_trouvee)
-        #c'est qu'on a un email dans la description
-        
-
-    else:
-
-        site = ETAPE_SIX(verification_metier_titre)
-        print(site)
-
-        url = recherche_via_image(verification_metier_titre)
+        url = recherche_via_image(i[1])
         print(url)
 
-        if site.lower() == "careerbuilder":
-            entreprise = recherche_CARRERBUILDER(verification_metier_titre)
+        if i[0][0].lower() == "careerbuilder":
+            entreprise = recherche_CARRERBUILDER(url)
         
-        elif site.lower() == "carriereonline":
+        elif i[0][0].lower() == "carriereonline":
             entreprise = recherche_CARRERONLINE(url)
             entreprise = recherche_CARRERONLINE2(entreprise, url)
             entreprise = recherche_CARRERONLINE3(entreprise, url)
         
-        elif site.lower() == "talentplug":
+        elif i[0][0].lower() == "talentplug":
             entreprise = recherche_TALENTPLUG(url)
         
-        elif site.lower() == "stepstone":
+        elif i[0][0].lower() == "stepstone":
             entreprise = recherche_STEPSTONE(url)
 
-        elif site.lower() == "monster":
+        elif i[0][0].lower() == "monster":
             entreprise = recherche_MONSTER(url)
 
-        elif site.lower() == "joboolo":
+        elif i[0][0].lower() == "joboolo":
             entreprise = recherche_JOBCOLO(url)
 
-        elif site.lower() == "inzejob":
+        elif i[0][0].lower() == "inzejob":
             entreprise = recherche_INZEJOB(url)
 
+
         print(entreprise)
-
+        ENTREPRISE.append([entreprise], url)
+        
+    print("")
+    print(emails)
+    print(entreprise_bas_page)
     print(ENTREPRISE)
-
