@@ -6,16 +6,18 @@ finir le truk
 
 enfete faudra essayer une fois sur le serveur
 
+c laccroche qui faut travailler et lui expliqué comment t'as eu son numéro 
+
 trouve les chiffres combien coute un chercheur d'emploi par jour pour faire un truk gros
 si pas assez conséquent chercher ca par mois et encore une fois par année
 
 dire pourquoi ils en ont besoin
 
-dire ou est ce qu'ils pourraient par exemple investir avec ce différentiel
+dire ou est ce qu'ils pourraient par exemple investir avec ce différentiel -> vous pourriez
 
-dire ce que ca va leur couter 
+dire ce que ca va leur couter  -> et enfete tu dis grtuit sauf pour le fussioner a votre site
 
-et lui faire une blague
+et lui faire une blague -> c ici que tout ca se jouer, s'il rigole soit c par communication et c qu'il est interressé, soit il prendra le dessus soit ca le fera marrer et ca joue
 
 et ne pas lui demandé si c'etait bien
 
