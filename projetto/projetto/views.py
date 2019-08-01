@@ -1,9 +1,11 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 from django.http import HttpResponse
-
-
+from django.template.loader import get_template
 from django import forms
+from django.http import HttpResponse
+from django.views.generic import View
+
 
 from django.contrib.auth import login as lo 
 from django.contrib.auth.models import User
@@ -115,19 +117,24 @@ from .cv.database.recuperation_document import recuperation_motivation
 
 def comment_faire_mon_cv(request):
 
-    pseudo = request.user
+    try:
 
-    nom, prenom = recuperation_nom(pseudo)
-    
-    cv = traitement_cv(pseudo)
-    motivation = traitement_motivation(pseudo)
-    message = traitement_message(pseudo)
-    print(cv)
-    print("")
-    print(message)
-    
-    bilan = recuperation_bilan(pseudo)
+        pseudo = request.user
 
+        nom, prenom = recuperation_nom(pseudo)
+        
+        cv = traitement_cv(pseudo)
+        motivation = traitement_motivation(pseudo)
+        message = traitement_message(pseudo)
+        print(cv)
+        print("")
+        print(message)
+        
+        bilan = recuperation_bilan(pseudo)
+
+    except IndexError:
+        pass
+    
 
     if request.method == "POST":
         
@@ -229,33 +236,34 @@ def comment_faire_mon_cv(request):
 
 
 
+    try:
+        return render(request, 'comment_faire_mon_cv.html', {"nom" : nom,
+                                                             "prenom": prenom,
+                                                             "cv1": cv[0],
+                                                             "cv2": cv[1],
+                                                             "cv3": cv[2],
+                                                             "cv4": cv[3],
+                                                             "cv5": cv[4],
+                                                             "cv6": cv[5],
+                                                             "bilan": bilan,
+                                                             "motiv1": motivation[0],
+                                                             "motiv2": motivation[1],
+                                                             "motiv3": motivation[2],
+                                                             "motiv4": motivation[3],
+                                                             "motiv5": motivation[4],
+                                                             "motiv6": motivation[5],
+                                                             "mess1": message[0],
+                                                             "mess2": message[1],
+                                                             "mess3": message[2],
+                                                             "mess4": message[3],
+                                                             "mess5": message[4],
+                                                             "mess6": message[5],
+                                                             
+                                                             })
 
-    return render(request, 'comment_faire_mon_cv.html', {"nom" : nom,
-                                                         "prenom": prenom,
-                                                         "cv1": cv[0],
-                                                         "cv2": cv[1],
-                                                         "cv3": cv[2],
-                                                         "cv4": cv[3],
-                                                         "cv5": cv[4],
-                                                         "cv6": cv[5],
-                                                         "bilan": bilan,
-                                                         "motiv1": motivation[0],
-                                                         "motiv2": motivation[1],
-                                                         "motiv3": motivation[2],
-                                                         "motiv4": motivation[3],
-                                                         "motiv5": motivation[4],
-                                                         "motiv6": motivation[5],
-                                                         "mess1": message[0],
-                                                         "mess2": message[1],
-                                                         "mess3": message[2],
-                                                         "mess4": message[3],
-                                                         "mess5": message[4],
-                                                         "mess6": message[5],
-                                                         
-                                                         })
 
-
-
+    except:
+        return render(request, 'comment_faire_mon_cv.html')
 
 
 def ma_demarche(request):
@@ -306,57 +314,73 @@ from .cv.database.recuperation_info import recuperation_info
 def page_cv(request):
 
 
-    pseudo = request.user
-
-    cv = traitement_cv(pseudo)
-    motivation = traitement_motivation(pseudo)
-    mesasge = traitement_message(pseudo)
-    nom, prenom, addresse, fixe, portable, email = recuperation_info(pseudo)
-
-
-
-    #addresse num ect
-    return render(request, 'page_cv.html',
-                  {"cv1" : cv[0],
-                   "cv2" : cv[1],
-                   "cv3" : cv[2],
-                   "cv4" : cv[3],
-                   "cv5" : cv[4],
-                   "cv6" : cv[5],
-                   "motvation1" : motivation[0],
-                   "motvation2" : motivation[1],
-                   "motvation3" : motivation[2],
-                   "motvation4" : motivation[3],
-                   "motvation5" : motivation[4],
-                   "motvation6" : motivation[5],
-                   "message1" : mesasge[0],
-                   "message2" : mesasge[1],
-                   "message3" : mesasge[2],
-                   "message4" : mesasge[3],
-                   "message5" : mesasge[4],
-                   "message6" : mesasge[5],
-                   "nom": nom,
-                   "prenom": prenom,
-                   "addresse": addresse,
-                   "fixe": fixe,
-                   "portable": portable,
-                   "email": email}
+##    pseudo = request.user
+##
+##    cv = traitement_cv(pseudo)
+##
+##    nom, prenom, addresse, fixe, portable, email = recuperation_info(pseudo)
+##    nom = nom.upper()
+##    prenom = prenom.upper()
 
 
-                  )
+##    return render(request, 'page_cv.html',
+##                  {"cv1" : cv[0],
+##                   "cv2" : cv[1],
+##                   "cv3" : cv[2],
+##                   "cv4" : cv[3],
+##                   "cv5" : cv[4],
+##                   "cv6" : cv[5],
+##                   "nom": nom,
+##                   "prenom": prenom,
+##                   "addresse": addresse,
+##                   "fixe": fixe,
+##                   "portable": portable,
+##                   "email": email}
+##                  )
+
+
+            
 
 
 
 
-def ma_lettre(request):
-    return render(request, 'ma_lettre.html')
-
-def mon_message(request):
-    return render(request, 'mon_message.html')
+    return render(request, 'page_cv.html')
 
 
+def page_motivation(request):
+    return render(request, 'page_motivation.html')
 
 
 
+##    motivation = traitement_motivation(pseudo)
+##    mesasge = traitement_message(pseudo)
+##                   "motvation1" : motivation[0],
+##                   "motvation2" : motivation[1],
+##                   "motvation3" : motivation[2],
+##                   "motvation4" : motivation[3],
+##                   "motvation5" : motivation[4],
+##                   "motvation6" : motivation[5],
+##                   "message1" : mesasge[0],
+##                   "message2" : mesasge[1],
+##                   "message3" : mesasge[2],
+##                   "message4" : mesasge[3],
+##                   "message5" : mesasge[4],
+##                   "message6" : mesasge[5],
 
+
+
+
+
+def page_message(request):
+    return render(request, 'page_message.html')
+
+
+
+
+def page_message_telechargement(request):
+    return render(request, 'page_message_telechargement.html')
+def page_motivation_telechargement(request):
+    return render(request, 'page_motivation_telechargement.html')
+def page_cv_telechargement(request):
+    return render(request, 'page_cv_telechargement.html')
 
