@@ -36,22 +36,22 @@
   <nav id="sidebar-wrapper">
     <ul class="sidebar-nav">
       <li class="sidebar-brand">
-        <a class="js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+        <a class="js-scroll-trigger" href="#page-top">Menu</a>
       </li>
       <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="#page-top">Home</a>
+        <a class="js-scroll-trigger" href="compte">Mon Compte</a>
       </li>
       <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="#about">About</a>
+        <a class="js-scroll-trigger" href="compte#cv_icone">Mes Documents</a>
       </li>
       <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="#services">Services</a>
+        <a class="js-scroll-trigger" href="comment_faire_mon_cv">Les Documents</a>
       </li>
       <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="#portfolio">Portfolio</a>
+        <a class="js-scroll-trigger" href="le_questionnaire">Le Questionnaire</a>
       </li>
       <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="#contact">Contact</a>
+        <a class="js-scroll-trigger" href="app_email/questionnaire_email">Ma démarche</a>
       </li>
     </ul>
   </nav>
@@ -88,10 +88,11 @@
         
         
             {% if user.is_authenticated %}
-                Bonjour <strong>{{user}}</strong> Voici les nouvelles:<br><br>
-                    ICI VA FALLOIR INTERROGER LA TABLE SITE CONSULTER
-                    ET METTRE LES MESSAGES ENVOYEE BIEN SUR ON ENVOIE ET
-                    AU RECRUTEUR ET AU MEC
+                <h3>Bonjour <strong>{{user}}</strong> Voici les nouvelles:</h3><br><br>
+                <p style="float:left;">Nous avons envoyé des demandes à:</p>
+                    
+
+                    
             {% else %}
 
 
@@ -140,7 +141,10 @@
           <h4>
             <strong>Mon compte</strong>
           </h4>
-          <p class="text-faded mb-0">Looks great on any screen size!</p>
+          <p class="text-faded mb-0">
+            Visualisez votre CV, lettre de motivation et
+            le message que VOUS décidez d'envoyer !
+          </p>
         </div>
 
         
@@ -151,37 +155,43 @@
             <i class="icon-pencil"></i>
           </span>
           <h4>
-            <strong>Mon CV</strong>
+            <strong>MES document</strong>
           </h4>
-          <p class="text-faded mb-0">Composez un Curriculum Vitae
+          <p class="text-faded mb-0">Composez un Curriculum Vitae, une lettre de Motivation,
+          et un message au recruteur
           à l'aide de nos conseilles</p>
         </div>
 
         
         <div class="col-lg-3 col-md-6">
-          <span class="service-icon rounded-circle mx-auto mb-3" id="icone_bilan">
+          <span class="service-icon rounded-circle mx-auto mb-3" id="icone_bilan"
+          onclick="document.location.href='le_questionnaire'">
               
             <i class="icon-mustache"></i>
           </span>
           <h4>
-            <strong>Mon bilan</strong>
+            <strong>Le questionnaire</strong>
           </h4>
-          <p class="text-faded mb-0">I mustache you a question...</p>
+          <p class="text-faded mb-0">Passez des questionnaires
+          qui aideront le recruteur à vous connaitre ! Cela peut vous apporter un plus !</p>
         </div>
 
         
         <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
           <span class="service-icon rounded-circle mx-auto mb-3" id="icone_hover"
-              onclick="document.location.href='ma_demarche'">
+              onclick="document.location.href='app_email/questionnaire_email'">
               
             <i class="icon-like"></i>
           </span>
           <h4>
             <strong>Ma démarche</strong>
           </h4>
-          <p class="text-faded mb-0">Millions of users
-            <i class="fas fa-heart"></i>
-            Start Bootstrap!</p>
+          <p class="text-faded mb-0">
+                Faites votre démarche administrative !
+                Cela vous fera gagner beaucoup de temps et comme on dit
+                le temps c'est de l'argent !
+
+          </p>
         </div>
 
       </div>
