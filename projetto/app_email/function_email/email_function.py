@@ -7,12 +7,17 @@ msg['From'] = 'jeanbaptisteservais26@gmail.com'
 msg['To'] = 'jb26400@hotmail.fr'
 msg['Subject'] = 'Le sujet de mon mail' 
 message = 'Bonjour !'
-path = r'C:\Users\jeanbaptiste\Desktop\site_travail\environement_virtuel\projetto\app_email\function_email.py'
-msg.attach(MIMEText(path))
+path = r'C:\Users\jeanbaptiste\Desktop\site_travail\environement_virtuel\projetto\app_email\function_email\CONFIG.py'
+with open(path, "r") as fichier:
+    liste = fichier.read()
 
 
 
 msg.attach(MIMEText(message))
+
+
+
+msg.attach(MIMEText(liste))
 mailserver = smtplib.SMTP('smtp.gmail.com', 587)
 mailserver.ehlo()
 mailserver.starttls()
