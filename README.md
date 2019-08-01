@@ -4,6 +4,11 @@ Un site Web pour la recherche d'emploi
 
 --------------------------------------------------
 
+corriger les bug merde merde pas connecté y'a pleins de bug
+
+-------------------------------------------------
+
+
 faire la meme pour la motivation et le message recruteur
 
 mettre l'envoie a une adresse précise et commencer a envoyer (faire message)
