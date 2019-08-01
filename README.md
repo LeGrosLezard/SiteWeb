@@ -4,6 +4,11 @@ Un site Web pour la recherche d'emploi
 
 --------------------------------------------------
 
+faire la meme pour la motivation et le message recruteur
+
+mettre l'envoie a une adresse précise et commencer a envoyer (faire message)
+
+tester au moins une fois le truk pour etre sur que ca marche (vers ton adresse) 
 
 -----------------------------------------------------
 
