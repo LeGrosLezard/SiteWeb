@@ -7,15 +7,17 @@ push heroku
 
 PAGE CV 
 
+push heroku
 
-fonctionalité le mec peut se l'envoyer (nous serviera a aussi envoyer au gars)
+faire un page avec que le cv
 
-funiction js qui télécharge la page MAIS je veux pas le bas de page ni la croix du menu... du coup ptetre transfere vers une autre
-page via python sans les truks ah bah nan juste refaire une page cv, moti et message mais sabns les truk et c elle que tu up
+telecharger avec python
 
-tin jmetais fais un plan avant ce soir mais j'ai oublié, en gros par python on récup que le container
+crop avec python -> voir si on peut réduire la fenetre
 
-télécharger nous meme les documents du mec (a l'inscription faire un dossier document pseudo comme pour my_profil)
+a l'inscription faire un dossier par utilisateur 
+
+enregistrer les documents dans son truk tin 'jai tout essayer serieux
 
 -----------------------------------------------------
 
