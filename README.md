@@ -13,6 +13,7 @@ fonctionalité le mec peut se l'envoyer (nous serviera a aussi envoyer au gars)
 funiction js qui télécharge la page MAIS je veux pas le bas de page ni la croix du menu... du coup ptetre transfere vers une autre
 page via python sans les truks ah bah nan juste refaire une page cv, moti et message mais sabns les truk et c elle que tu up
 
+tin jmetais fais un plan avant ce soir mais j'ai oublié, en gros par python on récup que le container
 
 
 -----------------------------------------------------
