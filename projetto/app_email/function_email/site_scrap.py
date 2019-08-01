@@ -857,9 +857,49 @@ def traitement(liste1, liste2):
 
 
 #----------------------------------------------------GOOGLE RECHERCHE
-from CONFIG import PATH_BING
+from CONFIG import PATH_GOOGLE
 def recherche_google(liste, lieu):
-    pass
+
+    final = []
+    #i[1] c'est la page de référence de pole emploie
+    for element in liste:
+        recherche = element[0].replace(" ", "+")
+        print(element)
+        path = PATH_GOOGLE.format(recherche, lieu)
+        request_html = requests.get(path)
+        page = request_html.content
+        soup_html = BeautifulSoup(page, "html.parser")
+        propriete = soup_html.find_all("div")
+
+        liste_div = []
+        email = []
+        for i in propriete:
+
+            liste_div.append(str(i.get_text()))
+            
+            for i in liste_div:
+
+                adresse = ""
+                
+                for j in i:
+
+                    if j == " ":
+
+                        arobase = str(adresse).find("@")
+                        if arobase >= 0:
+                            email.append(adresse)
+                        adresse = ""
+                    
+                    adresse += j
+
+            
+
+        print(set(email))
+        final.append([set(email), element])
+    
+
+    for i in final:
+        print(i)
 
 
 
