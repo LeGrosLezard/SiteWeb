@@ -902,14 +902,65 @@ def recherche_google(liste, lieu):
         print(i)
 
 
+    return final
 
 
 
+def nettoyage_email(liste):
+
+    liste_none = []
+    liste_traitement = []
+    for i in liste:
+        
+        if i[0] == set():
+            liste_none.append(i)
+        else:
+            liste_traitement.append([list(i[0]), i[1]])
 
 
 
+    liste_secondaire = []
+    for i in liste_traitement:
+        attention = False
+
+        if len(i[0]) == 1:
+            attention = True
+        
+        for j in i[0]:
+            j = j[1:]
+            if j[-1] == ".":
+                j = j[:-1]
+
+            c = 0
+            for lettre in j:
+                if lettre == "@":
+                    try:
+                        lever_exception = j[c + 1]
+                        liste_secondaire.append([j, i[1][1]])
+                    except IndexError:
+                        if attention is True:
+                            liste_none.append(i)
+                        
+                c += 1
+                        
+            
+
+    for i in liste_secondaire:
+        for j in liste_secondaire:
+
+            if i == j:
+                liste_secondaire.remove(i)
 
 
+    for i in liste_secondaire:
+        print(i)
+
+
+    return liste_secondaire, liste_none
+    #FAUT RECUPERER L'INTITULER MTN AVEC
+    #FONCTION TITRE
+    #ON MET AUSSI LA LISTE DES NONE AU CAS OU
+    #FAUT Y REFKECGUR
 
 
 
