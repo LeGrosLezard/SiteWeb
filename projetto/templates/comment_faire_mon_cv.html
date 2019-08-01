@@ -187,9 +187,11 @@
           
           <p class="lead mb-0">
               Ici on se met à la place du recruteur.
-              
+
+              {% if user.is_authenticated %}
               <input type="button" Value="Valider" id="valider_premiere">
-              
+              {% else %}
+              {% endif %}
           </p>
 
 
@@ -211,9 +213,13 @@
               Bootstrap 4 is leading the way in mobile responsive
               web development! All of the themes on
               Start Bootstrap are now using Bootstrap 4!
-         
-            <input type="button" Value="Valider" id="valider_deuxieme">
-            
+
+
+             {% if user.is_authenticated %}
+              <input type="button" Value="Valider" id="valider_deuxieme">
+              {% else %}
+              {% endif %}
+              
         </p>
 
 
@@ -234,8 +240,15 @@
               splash of SCSS for users who demand some deeper customization
               options. Out of the box, just add your content and images,
               and your new landing page will be ready to go!
-              
+
+
+              {% if user.is_authenticated %}
               <input type="button" Value="Valider" id="valider_troisieme">
+              {% else %}
+              {% endif %}
+
+
+              
 
           </p>
 
@@ -258,8 +271,13 @@
               great utility classes, Bootstrap 4 is leading the
               way in mobile responsive web development! All of the
               themes on Start Bootstrap are now using Bootstrap 4!
-              
+
+              {% if user.is_authenticated %}
               <input type="button" Value="Valider" id="valider_quatrieme">
+              {% else %}
+              {% endif %}
+
+              
           </p>
 
           <div id="fourth_validation"></div>
@@ -280,8 +298,13 @@
               of SCSS for users who demand some deeper customization options. Out
               of the box, just add your content and images, and your new landing
               page will be ready to go!
-              <input type="button" Value="Valider" id="valider_cinquieme">
 
+              {% if user.is_authenticated %}
+              <input type="button" Value="Valider" id="valider_cinquieme">
+              {% else %}
+              {% endif %}
+
+              
           </p>
 
           <div id="fifty_validation"></div>
@@ -301,9 +324,14 @@
           <p class="lead mb-0">Newly improved, and full of great utility classes,
               Bootstrap 4 is leading the way in mobile responsive web development!
               All of the themes on Start Bootstrap are now using Bootstrap 4!
-              
-              <input type="button" Value="Valider" id="valider_sixieme">
 
+              {% if user.is_authenticated %}
+              <input type="button" Value="Valider" id="valider_sixieme">
+              {% else %}
+              {% endif %}
+
+
+              
           </p>
 
           <div id="sixty_validation"></div>
@@ -348,8 +376,13 @@
           
           <p class="lead mb-0">
               Ici on se met à la place du recruteur.
-              
+
+               {% if user.is_authenticated %}
               <input type="button" value="Valider" id="valider1_motivation">
+              {% else %}
+              {% endif %}
+
+              
               <div id="motivation1"></div>
               
           </p>
@@ -369,8 +402,13 @@
           <p class="lead mb-0">Newly improved, and full of great utility classes,
               Bootstrap 4 is leading the way in mobile responsive web development!
               All of the themes on Start Bootstrap are now using Bootstrap 4!
-        
+
+
+              {% if user.is_authenticated %}
               <input type="button" value="Valider" id="valider2_motivation">
+              {% else %}
+              {% endif %}
+              
               <div id="motivation2"></div>
           </p>
         </div>
@@ -388,8 +426,13 @@
               a splash of SCSS for users who demand some deeper
               customization options. Out of the box, just add
               your content and images, and your new landing page will be ready to go!
-              
+
+              {% if user.is_authenticated %}
               <input type="button" value="Valider" id="valider3_motivation">
+              {% else %}
+              {% endif %}
+
+              
               <div id="motivation3"></div>
           </p>
           
@@ -410,7 +453,13 @@
               responsive web development! All of the themes on Start
               Bootstrap are now using Bootstrap 4!
 
+             {% if user.is_authenticated %}
              <input type="button" value="Valider" id="valider4_motivation">
+             {% else %}
+             {% endif %}
+
+
+
              <div id="motivation4"></div>
           </p>
         </div>
@@ -429,8 +478,14 @@
               a splash of SCSS for users who demand some deeper
               customization options. Out of the box, just add your
               content and images, and your new landing page will be ready to go!
-    
+
+
+              {% if user.is_authenticated %}
               <input type="button" value="Valider" id="valider5_motivation">
+             {% else %}
+             {% endif %}
+
+              
               <div id="motivation5"></div>
           </p>
         </div>
@@ -449,7 +504,12 @@
               responsive web development! All of the themes on Start
               Bootstrap are now using Bootstrap 4!
 
+              {% if user.is_authenticated %}
               <input type="button" value="Valider" id="valider6_motivation">
+              {% else %}
+             {% endif %}
+
+             
               <div id="motivation6"></div>
           </p>
 
@@ -495,7 +555,13 @@
           
           <p class="lead mb-0">
               Ici on se met à la place du recruteur.
+              {% if user.is_authenticated %}
+              
               <input type="button" value="Valider" id="message1">
+             {% else %}
+             {% endif %}
+
+              
               <div id="message_recru1"></div>
           </p>
           
@@ -514,8 +580,11 @@
           <p class="lead mb-0">Newly improved, and full of great utility classes,
               Bootstrap 4 is leading the way in mobile responsive web development!
               All of the themes on Start Bootstrap are now using Bootstrap 4!
-
+             {% if user.is_authenticated %}
              <input type="button" value="Valider" id="message2">
+            {% else %}
+             {% endif %}
+             
              <div id="message_recru2"></div>
           </p>
         </div>
@@ -534,7 +603,13 @@
               options. Out of the box, just add your content and images,
               and your new landing page will be ready to go!
 
+              {% if user.is_authenticated %}
               <input type="button" value="Valider" id="message3">
+              {% else %}
+             {% endif %}
+
+
+             
               <div id="message_recru3"></div>
 
           </p>
@@ -554,7 +629,12 @@
               Bootstrap 4 is leading the way in mobile responsive web development! All
               of the themes on Start Bootstrap are now using Bootstrap 4!
 
+            {% if user.is_authenticated %}
             <input type="button" value="Valider" id="message4">
+
+             {% else %}
+             {% endif %}
+            
             <div id="message_recru4"></div>
           </p>
         </div>
@@ -573,8 +653,13 @@
               SCSS for users who demand some deeper customization options. Out of
               the box, just add your content and images, and your new landing page
               will be ready to go!
-              
+
+              {% if user.is_authenticated %}
               <input type="button" value="Valider" id="message5">
+              {% else %}
+              {% endif %}
+
+             
               <div id="message_recru5"></div>
 
           </p>
@@ -593,7 +678,11 @@
               classes, Bootstrap 4 is leading the way in mobile responsive web
               development! All of the themes on Start Bootstrap are now using Bootstrap 4!
 
+              {% if user.is_authenticated %}
               <input type="button" value="Valider" id="message6">
+              {% else %}
+              {% endif %}
+              
               <div id="message_recru6"></div>
           </p>
         </div>
