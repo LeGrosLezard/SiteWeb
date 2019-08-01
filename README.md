@@ -2,13 +2,18 @@
 
 Un site Web pour la recherche d'emploi
 
-ouaa t'étais fatigué toi ^^
+--------------------------------------------------
+push heroku
 
-en gros va falloir soit appeler les interim, tu leur ferai gagner de la thune gratuitement
+PAGE CV la designer
+-----------------------------------------------------
 
-sinon trouve un truk alternatif
 
-netoyage des email mtn
+ok faudra implémenter le truk mail
+
+faire envoie mail (genre c toi qui rentre l'email)
+
+la fonctionnalité m'envoyer les documents pour une simulation
 
 
 --------------------------------------------------
