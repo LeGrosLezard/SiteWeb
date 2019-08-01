@@ -3,21 +3,7 @@
 Un site Web pour la recherche d'emploi
 
 --------------------------------------------------
-push heroku
 
-PAGE CV 
-
-push heroku
-
-faire un page avec que le cv
-
-telecharger avec python
-
-crop avec python -> voir si on peut réduire la fenetre
-
-a l'inscription faire un dossier par utilisateur 
-
-enregistrer les documents dans son truk tin 'jai tout essayer serieux
 
 -----------------------------------------------------
 
