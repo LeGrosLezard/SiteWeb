@@ -15,6 +15,7 @@ page via python sans les truks ah bah nan juste refaire une page cv, moti et mes
 
 tin jmetais fais un plan avant ce soir mais j'ai oublié, en gros par python on récup que le container
 
+télécharger nous meme les documents du mec (a l'inscription faire un dossier document pseudo comme pour my_profil)
 
 -----------------------------------------------------
 
