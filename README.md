@@ -2,30 +2,13 @@
 
 Un site Web pour la recherche d'emploi
 
-#-------------------------------------site interim
+ouaa t'étais fatigué toi ^^
 
-- si on trouve pas l'email depuis un moteur de recherche 
+en gros va falloir soit appeler les interim, tu leur ferai gagner de la thune gratuitement
 
-- aller directement sur le site
+sinon trouve un truk alternatif
 
-- copier toute la page avec python + remplir les input avec les données du mec
-
-- copier le contenu dans une page html
-
-- appuyer sur le input ce qui mettra le truk directement dans leur database
-
-- ok si on demande de télécharger le cv:
-
-  - récupérer les js https 
-  - les regrouper et esperer que ca envoie faire leur serveur en onclick boutton
-  
-- sinon juste récupérer les mail via les moteurs
-
-- repense tout tout est carrément illégal y te faudrait les adresses emails
-
-- sinon tu dis que tu savais pas que c'était illégale ^^
-
-
+netoyage des email mtn
 
 
 --------------------------------------------------
