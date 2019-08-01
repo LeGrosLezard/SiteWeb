@@ -6,6 +6,10 @@ Un site Web pour la recherche d'emploi
 push heroku
 
 PAGE CV la designer
+
+funiction js qui télécharge la page MAIS je veux pas le bas de page ni la croix du menu... du coup ptetre transfere vers une autre
+page via python sans les truks ah bah nan juste refaire une page cv, moti et message mais sabns les truk et c elle que tu up
+
 -----------------------------------------------------
 
 
