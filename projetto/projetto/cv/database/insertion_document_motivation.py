@@ -44,10 +44,10 @@ def insertion_part_motivation(pseudo, part, mode):
 
 
     if mode == "un":
-
+        print(id_user)
         cur.execute("""UPDATE motivation
-                    SET lettre_motivation = '{1}'
-                    WHERE id_user = '{0}';""".format(id_user, part))
+                    SET lettre_motivation = %s
+                    WHERE id_user = {0};""".format(id_user), (part, ))
                            
 
         conn.commit() 
@@ -57,8 +57,8 @@ def insertion_part_motivation(pseudo, part, mode):
     if mode == "deux":
 
         cur.execute("""UPDATE motivation
-                    SET lettre_motivation1 = '{1}'
-                    WHERE id_user = '{0}';""".format(id_user, part))
+                    SET lettre_motivation1 = %s
+                    WHERE id_user = {0};""".format(id_user), (part, ))
                            
 
         conn.commit() 
@@ -68,8 +68,8 @@ def insertion_part_motivation(pseudo, part, mode):
     if mode == "trois":
 
         cur.execute("""UPDATE motivation
-                    SET lettre_motivation2 = '{1}'
-                    WHERE id_user = '{0}';""".format(id_user, part))
+                    SET lettre_motivation2 = %s
+                    WHERE id_user = {0};""".format(id_user), (part, ))
                            
 
         conn.commit() 
@@ -79,8 +79,8 @@ def insertion_part_motivation(pseudo, part, mode):
     if mode == "quattre":
 
         cur.execute("""UPDATE motivation
-                    SET lettre_motivation3 = '{1}'
-                    WHERE id_user = '{0}';""".format(id_user, part))
+                    SET lettre_motivation3 = %s
+                    WHERE id_user = {0};""".format(id_user), (part, ))
                            
 
         conn.commit() 
@@ -90,8 +90,8 @@ def insertion_part_motivation(pseudo, part, mode):
     if mode == "cinq":
 
         cur.execute("""UPDATE motivation
-                    SET lettre_motivation4 = '{1}'
-                    WHERE id_user = '{0}';""".format(id_user, part))
+                    SET lettre_motivation4 = %s
+                    WHERE id_user = {0};""".format(id_user), (part, ))
                            
 
         conn.commit() 
@@ -101,14 +101,35 @@ def insertion_part_motivation(pseudo, part, mode):
     if mode == "six":
 
         cur.execute("""UPDATE motivation
-                    SET lettre_motivation5 = '{1}'
-                    WHERE id_user = '{0}';""".format(id_user, part))
+                    SET lettre_motivation5 = %s
+                    WHERE id_user = {0};""".format(id_user), (part, ))
                            
 
         conn.commit() 
 
+    if mode == "poste_motivation":
 
+        cur.execute("""UPDATE motivation
+                    SET poste_moitivation = %s
+                    WHERE id_user = {0};""".format(id_user), (part, ))
+                           
 
+        conn.commit() 
 
+    if mode == "code":
 
+        cur.execute("""UPDATE motivation
+                    SET code = %s
+                    WHERE id_user = {0};""".format(id_user), (part, ))
+                           
 
+        conn.commit() 
+
+    if mode == "ville":
+
+        cur.execute("""UPDATE motivation
+                    SET ville = %s
+                    WHERE id_user = {0};""".format(id_user), (part, ))
+                           
+
+        conn.commit() 
