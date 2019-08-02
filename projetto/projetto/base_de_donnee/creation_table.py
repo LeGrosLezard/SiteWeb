@@ -72,7 +72,9 @@ class Table:
                     cv2 TEXT,
                     cv3 TEXT,
                     cv4 TEXT,
-                    cv5 TEXT);""")
+                    cv6_1 TEXT,
+                    cv6_2 TEXT,
+                    cv6_3 TEXT);""")
         
         conn.commit()
 
