@@ -1,512 +1,392 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>Landing Page - Start Bootstrap Theme</title>
-
-  <!-- Bootstrap core CSS -->
-  <link href="/static/mon_compte/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Custom fonts for this template -->
-  <link href="/static/mon_compte/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-  <link href="/static/mon_compte/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-
-  <!-- Custom styles for this template -->
-  <link href="/static/mon_compte/css/landing-page.min.css" rel="stylesheet">
+from django.shortcuts import render
+from django.http import JsonResponse
+from django.http import HttpResponse
+from django.template.loader import get_template
+from django import forms
+from django.http import HttpResponse
+from django.views.generic import View
 
 
-  <!-- Custom CSS -->
-  <link href="/static/home/css/stylish-portfolio.min.css" rel="stylesheet">
+from django.contrib.auth import login as lo 
+from django.contrib.auth.models import User
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
-    <script type="text/javascript" src="html2canvas.js"></script>
-  <script type="text/javascript" src="jspdf.min.js"></script>
+from django.contrib.auth import logout
+from django.contrib.auth import authenticate
+from django.contrib.auth import get_user_model
+from django.contrib.auth import login
+from django.contrib.auth import logout
+
+from django.shortcuts import render, redirect
+
+from .forms import compte_utilisateur_form
+from .forms import userloginform
+from .forms import userregisterform
+
+from .models import compte
+
+#FAUT FAIRE LA DECONNEXTION ET DONC LA GLOBAL
 
 
+GLOBAL = []
 
+def home(request):
+    global GLOBAL
+    user = request.user
+    print(user)
 
-  
-</head>
+    if request.method == "POST":
+        verification = request.POST.get('verification')
 
+        if verification:
+            print("000000000000000000000000000000000000000000000000")
 
-<body>
+            #FAUT CHECK SI LE MEC A UN BILAN SI OUI RENVOYER OUI ET DONC
+            #SUR COMPTE
+            #SINON ON LENVOIE SUR LA PAGE BILAN
+    
+    try:
+        return render(request, 'home.html', {"user":GLOBAL[0][0]})
+    except IndexError:
+        return render(request, 'home.html')
 
-  <!-- Navigation -->
-  <section id="nav">
-  <a class="menu-toggle rounded" href="#">
-    <i class="fas fa-bars"></i>
-  </a>
-  <nav id="sidebar-wrapper">
-    <ul class="sidebar-nav">
-      <li class="sidebar-brand">
-        <a class="js-scroll-trigger" href="#page-top">Menu</a>
-      </li>
-      <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="">Accueil</a>
-      </li>
-      <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="compte">Mon Compte</a>
-      </li>
-      <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="compte#cv_icone">Mes Documents</a>
-      </li>
-      <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="le_questionnaire">Le Questionnaire</a>
-      </li>
-      <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="app_email/questionnaire_email">Ma démarche</a>
-      </li>
-    </ul>
-  </nav>
-  </section>
-
-  
-    <br><br>
-    <div id="un" style="float:right;margin-right:200px;">Click</div>
-    <br><br><br>
+    #On essais de voir si l'utilisateur est connecter ou pas.
 
 
 
 
 
 
+
+def compte(request):
+    global GLOBAL
 
     
-    <div class="container" id="EDITOR">
-      <div class="row">
 
-
+    if request.method == "POST":
         
-        <div class="col-sm-12 col-mg-5 col-lg-12" id="gauche">
-            <br><br>
-            <img src="eaze" style="float:right;margin-right:150px;margin-top:100px;">
-            <h2>P R E N O M</h2><br>
-            <h2>N O M </h2><br><br>
-            <h3 style="color:#79A9B7;">T I T R E &nbsp;&nbsp; DU  &nbsp;&nbsp; P O S T E</h3>
-            <h5>T I T R E &nbsp;&nbsp;DE &nbsp;&nbsp;LA &nbsp;&nbsp;F O R M A T I O N</h5>
-            {{cv1}}
+        demande_de_cv = request.POST.get('demande_de_cv')
+        demande_de_motivation = request.POST.get('demande_de_motivation')
+        demande_de_message = request.POST.get('demande_de_message')
+
+
+        if demande_de_cv:
+            return JsonResponse({"a":"connected"})
+
+
+        if demande_de_message:
+            pass
+
+        if demande_de_motivation:
+            pass
+
+
+    return render(request, 'compte.html')
+
+
+
+
+
+
+
+
+def questionnaire(request):
+    return render(request, 'questionnaire.html')
+
+
+
+
+
+
+
+#We insert document into database here
+from .cv.traitement_document import traitement_cv
+from .cv.traitement_document import traitement_motivation
+from .cv.traitement_document import traitement_message
+
+#
+from .cv.database.insertion_document_cv import insertion_part_cv
+from .cv.database.insertion_document_motivation import insertion_part_motivation
+from .cv.database.insertion_document_message import insertion_part_message
+
+#We recup traitment data
+from .cv.database.recuperation_document import recuperation_bilan
+from .cv.database.recuperation_document import recuperation_nom
+from .cv.database.recuperation_document import recuperation_bilan
+from .cv.database.recuperation_document import recuperation_motivation
+
+from .cv.CONFIG import cv1
+def comment_faire_mon_cv(request):
+
+    try:
+
+        pseudo = request.user
+
+        nom, prenom = recuperation_nom(pseudo)
         
-
-            <br><br><br><br>
-
+        cv = traitement_cv(pseudo)
+        motivation = traitement_motivation(pseudo)
+        message = traitement_message(pseudo)
+        print(cv)
+        print("")
+        print(message)
         
-        </div>
+        bilan = recuperation_bilan(pseudo)
 
-
-
-
-
+    except IndexError:
+        pass
     
-        <div class="col-sm-12 col-mg-7 col-lg-5" id="gauche">
 
+    if request.method == "POST":
+        
+        
+        motive = request.POST.get('motive')
+        message_requete = request.POST.get('message')
+
+        
+
+        if message_requete:
+            #PARTIE MESSAGE RECRUTEUR
+            print("OUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII")
+            un = request.POST.get('un')
+            if un:
+                insertion_part_message(pseudo, un, "un")
             
-    
-            <div style="background:#BECFEC;">
+            deux = request.POST.get('deux')
+            if deux:
+                insertion_part_message(pseudo, deux, "deux")
             
-                <h3 style="color:#79A9B7;">C O M P E T E N C E S</h3>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                <br><br><br>
+            trois = request.POST.get('trois')
+            if trois:
+                insertion_part_message(pseudo, trois, "trois")
+            
+            quattre = request.POST.get('quattre')
+            if quattre:
+                insertion_part_message(pseudo, quattre, "quattre")
+            
+            cinq = request.POST.get('cinq')
+            if cinq:
+                insertion_part_message(pseudo, cinq, "cinq")
+            
+            six = request.POST.get('six')
+            if six:
+                insertion_part_message(pseudo, six, "six")
+
+
+
+
+
+        elif motive:
+            #PARTIE LETTRE DE MOTIVATION
+            un = request.POST.get('un')
+            if un:
+                insertion_part_motivation(pseudo, un, "un")
+            
+            deux = request.POST.get('deux')
+            if deux:
+                insertion_part_motivation(pseudo, deux, "deux")
+            
+            trois = request.POST.get('trois')
+            if trois:
+                insertion_part_motivation(pseudo, trois, "trois")
+            
+            quattre = request.POST.get('quattre')
+            if quattre:
+                insertion_part_motivation(pseudo, quattre, "quattre")
+            
+            cinq = request.POST.get('cinq')
+            if cinq:
+                insertion_part_motivation(pseudo, cinq, "cinq")
+            
+            six = request.POST.get('six')
+            if six:
+                insertion_part_motivation(pseudo, six, "six")
+
+
+
+        
+        else:
+            #PARTIE CURRICULUM VITAE
+            #On récupere l'étape qui correspond au cv
+            #et on l'insert dans la database cv, cv1, cv2 ect...
+            #Par contre blem : si le mec commence a l'étape 2 ?
+            un = request.POST.get('un')
+            if un:
+                insertion_part_cv(pseudo, un, "un")
+            
+            deux = request.POST.get('deux')
+            if deux:
+                insertion_part_cv(pseudo, deux, "deux")
+            
+            trois = request.POST.get('trois')
+            if trois:
+                insertion_part_cv(pseudo, trois, "trois")
+            
+            quattre = request.POST.get('quattre')
+            if quattre:
+                insertion_part_cv(pseudo, quattre, "quattre")
+            
+            cinq = request.POST.get('cinq')
+            if cinq:
+                insertion_part_cv(pseudo, cinq, "cinq")
+            
+            six_un = request.POST.get('six_un')
+            if six_un:
+                insertion_part_cv(pseudo, six, "six_un")
+
+            six_deux = request.POST.get('six_deux')
+            if six_deux:
+                insertion_part_cv(pseudo, six, "six_deux")
+
+            six_trois = request.POST.get('six_trois')
+            if six_trois:
+                insertion_part_cv(pseudo, six, "six_trois")
+
                 
-            </div>
-        
-      
-            <div style="background:#BECFEC;">
-            
-                <h3 style="color:#79A9B7;">ENVIRONEMENT</h3>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                <br><br><br>
-            </div>  
-            
- 
-            
-            <div style="background:#BECFEC;">
-            
-                <h3 style="color:#79A9B7;">SOFT SKILL</h3>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                <br><br><br>
-            </div> 
- 
-
-
-            <div style="background:#BECFEC;">
-            
-                <h3 style="color:#79A9B7;">CONTACT</h3>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                <br><br><br>
-            </div> 
-            
-        </div>
-
-
-        
-      </div>
-      
-        <div class="col-sm-12 col-mg-7 col-lg-7" id="droite" style="float:right;margin-top:-885px;">
-            <div style="background:white;">
-                <br>
-                <h3 style="color:#79A9B7;">PROJET 1</h3>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                <br><br><br>
-            </div>
-
-
-
-            <div style="background:white;">
-                <br>
-                <h3 style="color:#79A9B7;">PROJET 2</h3>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                <br><br><br>
-            </div> 
-
-
-            <div style="background:white;">
-                <br>
-                <h3 style="color:#79A9B7;">PROJET 3</h3>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                <br><br>
-            </div> 
-
-            <div style="background:white;">
-                <br>
-                <h3 style="color:#79A9B7;">UN PEU PLUS SUR MOI</h3>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                <br><br><br>
-            </div> 
-            
-        </div>
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-      <div>
-    </div>
-    
-
-
-
-
-
-
-
-
-
-
-        
- 
-
-
-
-<br><br><br><br>
-
-
-
-
-
-
-
-
-
-
-    <style>
-        #gauche{
-            background:#bdd0e7;
-        }
-
-        #contact{
-            font-size:1.5em;
-        }
-        #un:hover,
-        #deux:hover,
-        #trois:hover{
-            border:2px solid black;
-        }
-    </style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <!-- Testimonials -->
-  <section class="testimonials text-center bg-light" id="Testimonials">
-    <div class="container">
+    try:
 
     
-      <div class="row">
-
-
-        <div class="col-lg-4">
-          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-          
-            <img class="img-fluid rounded-circle mb-3"
-                src="/static/mon_compte/img/testimonials-2.jpg" alt=""
-                id="un">
-                
-            <h5>Vous l'envoyez !</h5>
-            <p class="font-weight-light mb-0">Envoyez le vous par mail !</p>
-          </div>
-        </div>
-
-
-
-        <div class="col-lg-4">
-          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-            <img class="img-fluid rounded-circle mb-3"
-                src="/static/mon_compte/img/testimonials-2.jpg" alt=""
-                id="deux" onclick="document.location.href='comment_faire_mon_cv'">
-                
-            <h5>Retour à la composition de votre CV</h5>
-            <p class="font-weight-light mb-0">Prenez votre temps !</p>
-          </div>
-        </div>
-
-
-
-        <div class="col-lg-4">
-          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-          
-            <img class="img-fluid rounded-circle mb-3"
-                src="/static/mon_compte/img/testimonials-2.jpg" alt=""
-                id="trois" onclick="document.location.href='page_motivation'">
-                
-            <h5>Votre lettre de motivation</h5>
-            <p class="font-weight-light mb-0">Allez visualiser votre lettre de motivation</p>
-          </div>
-        </div>
-
-
-
-        
-      </div>
-    </div>
-  </section>
-
-
-
+        return render(request, 'comment_faire_mon_cv.html', {"nom" : nom,
+                                                             "prenom": prenom,
+                                                             "cv1": cv[0],
+                                                             "cv2": cv[1],
+                                                             "cv3": cv[2],
+                                                             "cv4": cv[3],
+                                                             "cv5": cv[4],
+                                                             "cv6_1": cv[5],
+                                                             "cv6_2": cv[6],
+                                                             "cv6_3": cv[7],
+                                                             "bilan": bilan,
+                                                             "motiv1": motivation[0],
+                                                             "motiv2": motivation[1],
+                                                             "motiv3": motivation[2],
+                                                             "motiv4": motivation[3],
+                                                             "motiv5": motivation[4],
+                                                             "motiv6": motivation[5],
+                                                             "mess1": message[0],
+                                                             "mess2": message[1],
+                                                             "mess3": message[2],
+                                                             "mess4": message[3],
+                                                             "mess5": message[4],
+                                                             "mess6": message[5],
+                                                             
+                                                             })
 
 
-  <!-- Call to Action -->
-  <section class="call-to-action text-white text-center" id="question">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-9 mx-auto">
-          <h2 class="mb-4">Aidez-nous à améliorer nos conseils!</h2>
-        </div>
-        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-          <form>
-            <div class="form-row">
-              <div class="col-12 col-md-9 mb-2 mb-md-0">
-                <input type="text" size="40" placeholder="Entez votre conseil">
-              </div>
-              <div class="col-12 col-md-3">
-                <button type="submit" class="btn btn-block btn-lg btn-primary">Valider</button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-
-
-
-
-
-  <!-- Footer -->
-  <footer class="footer bg-light" id="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
-          <ul class="list-inline mb-2">
-            <li class="list-inline-item">
-              <a href="#">About</a>
-            </li>
-            <li class="list-inline-item">&sdot;</li>
-            <li class="list-inline-item">
-              <a href="#">Contact</a>
-            </li>
-            <li class="list-inline-item">&sdot;</li>
-            <li class="list-inline-item">
-              <a href="#">Terms of Use</a>
-            </li>
-            <li class="list-inline-item">&sdot;</li>
-            <li class="list-inline-item">
-              <a href="#">Privacy Policy</a>
-            </li>
-          </ul>
-          <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2019. All Rights Reserved.</p>
-        </div>
-        <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
-          <ul class="list-inline mb-0">
-            <li class="list-inline-item mr-3">
-              <a href="#">
-                <i class="fab fa-facebook fa-2x fa-fw"></i>
-              </a>
-            </li>
-            <li class="list-inline-item mr-3">
-              <a href="#">
-                <i class="fab fa-twitter-square fa-2x fa-fw"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <i class="fab fa-instagram fa-2x fa-fw"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
+    except:
+        return render(request, 'comment_faire_mon_cv.html')
 
 
+def ma_demarche(request):
+    return render(request, 'ma_demarche.html')
 
+def le_questionnaire(request):
+    return render(request, 'le_questionnaire.html')
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="/static/mon_compte/vendor/jquery/jquery.min.js"></script>
-  <script src="/static/mon_compte/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="/static/home/js/stylish-portfolio.min.js"></script>
-</body>
 
-</html>
 
+from .questionnaire.questionnaire import question_reponse
+from .questionnaire.analyse import analyse_questionnaire
+from .questionnaire.analyse import association_definition
+from .questionnaire.analyse import association_definition1
+def le_questionnaire_premiere_partie(request):
 
+    if request.method == "POST":
 
+        questionnaire = request.POST.get('questionnaire')
+        print(questionnaire,"00000000000000000000000000000000000000")
+        questionnaire_traitee = question_reponse(questionnaire)
+        analyse = analyse_questionnaire(questionnaire_traitee)
+        reponse = association_definition(analyse)
+        reponse_associee = association_definition1(reponse[0], reponse[1])
+    return render(request, 'le_questionnaire_premiere_partie.html')
 
 
 
-<script>
 
 
+def le_questionnaire_seconde_partie(request):
+    return render(request, 'le_questionnaire_seconde_partie.html')
 
+def le_questionnaire_troisieme_partie(request):
+    return render(request, 'le_questionnaire_troisieme_partie.html')
 
-var doc = new jsPDF();
-var specialElementHandlers = {
-    '#editor': function (element, renderer) {
-        return true;
-    }
-};
+def le_questionnaire_quatrieme_partie(request):
+    return render(request, 'le_questionnaire_quatrieme_partie.html')
 
-$('#un').click(function () {
-    document.getElementById("un").style.display = "none";
-    document.getElementById("Testimonials").style.display = "none";
-    document.getElementById("footer").style.display = "none";
-    document.getElementById("nav").style.display = "none";
-    document.getElementById("question").style.display = "none";
 
-    var pdf = new jsPDF();
-    pdf.addHTML(document.getElementById('EDITOR').value, function() {
-        pdf.save('web.pdf');
-    });
 
-    document.getElementById("un").style.display = "block";
-    document.getElementById("Testimonials").style.display = "block";
-    document.getElementById("footer").style.display = "block";
-    document.getElementById("nav").style.display = "block";
-    document.getElementById("question").style.display = "block";
-    
-})
-</script>
 
+from .cv.traitement_document import traitement_cv
+from .cv.traitement_document import traitement_motivation
+from .cv.traitement_document import traitement_message
 
+from .cv.database.recuperation_info import recuperation_info
+def page_cv(request):
 
 
+    pseudo = request.user
 
+    cv = traitement_cv(pseudo)
 
+    nom, prenom, addresse, fixe, portable, email = recuperation_info(pseudo)
+    nom = nom.upper()
+    prenom = prenom.upper()
 
 
+    return render(request, 'page_cv.html',
+                  {"cv1" : cv[0],
+                   "cv2" : cv[1],
+                   "cv3" : cv[2],
+                   "cv4" : cv[3],
+                   "cv5" : cv[4],
+                   "cv6" : cv[5],
+                   "nom": nom,
+                   "prenom": prenom,
+                   "addresse": addresse,
+                   "fixe": fixe,
+                   "portable": portable,
+                   "email": email}
+                  )
 
 
+            
 
 
 
 
+    return render(request, 'page_cv.html')
 
 
+def page_motivation(request):
+    return render(request, 'page_motivation.html')
 
 
 
+##    motivation = traitement_motivation(pseudo)
+##    mesasge = traitement_message(pseudo)
+##                   "motvation1" : motivation[0],
+##                   "motvation2" : motivation[1],
+##                   "motvation3" : motivation[2],
+##                   "motvation4" : motivation[3],
+##                   "motvation5" : motivation[4],
+##                   "motvation6" : motivation[5],
+##                   "message1" : mesasge[0],
+##                   "message2" : mesasge[1],
+##                   "message3" : mesasge[2],
+##                   "message4" : mesasge[3],
+##                   "message5" : mesasge[4],
+##                   "message6" : mesasge[5],
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+def page_message(request):
+    return render(request, 'page_message.html')
 
 
 
