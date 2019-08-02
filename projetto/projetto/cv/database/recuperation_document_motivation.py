@@ -45,10 +45,12 @@ def recuperation_motivation(pseudo):
                 lettre_motivation2,
                 lettre_motivation3,
                 lettre_motivation4,
-                lettre_motivation5
+                lettre_motivation5,
+                code,
+                ville,
+                poste_moitivation
                 FROM motivation
-                WHERE id_user = '{0}'
-                ORDER BY(id_user);""".format(username))
+                WHERE id_user = '{0}';""".format(username))
                        
 
     conn.commit() 
