@@ -10,7 +10,7 @@ base de donnée cv mettre les info formation + job
 
 bon grouille toi un peu faut un peu plus de site puis si un jour t'as le mojo apel pole emploi puis ainsi de suite o pire on te dira c dla merde et puis voila
 
-9/10 en python... jvoulais mettre 5/10 mais le type va se dire ok il est nul alors que je sais que chui ptetre 6 allé par contre ce qui me frutstre c soit y'a des mecs y sla pete et c des mecs hyper fort ouais lui i lest fort soit c un geni qui se la pete et y pue alors jfais quoi jferais le demeuré ? pcque le recruteur lui il a plein pouvoir moi chui la jlui dit nikomouk chui batman des genis le type y va me dire creve et prendra le plus cool alors c chiant du coup faut dfaire du site et si ca aide temieux ! 
+9/10 en python... jvoulais mettre 5/10 mais le type va se dire ok il est nul alors que je sais que chui ptetre 6 allé par contre ce qui me frutstre c soit y'a des mecs y sla pete et c des mecs hyper fort ouais lui i lest fort soit c un geni qui se la pete et y pue alors jfais quoi jferais le demeuré ? pcque le recruteur lui il a plein pouvoir moi chui la jlui dit nikomouk chui batman des genis le type y va me dire creve et prendra le plus cool alors c chiant du coup faut dfaire du site et si ca aide temieux ! en terme de superpouvoir hin ? cc !
 
 -----------------------------------------------------
 
