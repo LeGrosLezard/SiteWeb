@@ -13,6 +13,13 @@ from .CONFIG import CV5
 from .CONFIG import CV6_1
 from .CONFIG import CV6_2
 from .CONFIG import CV6_3
+from .CONFIG import CV7
+from .CONFIG import METIER
+from .CONFIG import FORMATION
+from .CONFIG import POSTE1
+from .CONFIG import POSTE2
+from .CONFIG import POSTE3
+
 
 
 def insertion_user(nom, prenom, date, sexe, email, fixe, password,
@@ -50,16 +57,24 @@ def insertion_user(nom, prenom, date, sexe, email, fixe, password,
     
 
     cur.execute("""INSERT INTO cv
-                (id_user, cv, cv1, cv2, cv3, cv4, cv6_1, cv6_2, cv6_3)
-                values(%s, %s, %s, %s, %s, %s, %s, %s, %s);""",(user,
-                                                        CV1,
-                                                        CV2,
-                                                        CV3,
-                                                        CV4,
-                                                        CV5,
-                                                        CV6_1,
-                                                        CV6_2,
-                                                        CV6_3))
+                (id_user, cv, cv1, cv2, cv3, cv4,
+                cv6_1, cv6_2, cv6_3, cv7, metier, formation, poste1,
+                poste2, poste3)
+                values(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s,%s,);""",(user,
+                                                                                CV1,
+                                                                                CV2,
+                                                                                CV3,
+                                                                                CV4,
+                                                                                CV5,
+                                                                                CV6_1,
+                                                                                CV6_2,
+                                                                                CV6_3,
+                                                                                CV7,
+                                                                                METIER,
+                                                                                FORMATION,
+                                                                                POSTE1,
+                                                                                POSTE2,
+                                                                                POSTE3))
 
     conn.commit()
 
