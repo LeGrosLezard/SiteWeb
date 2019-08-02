@@ -5,13 +5,10 @@ from .CONFIG import USER
 from .CONFIG import HOST
 from .CONFIG import PASSWORD
 
-
-
+from .CONFIG import CV1
+from .CONFIG import CV2
 def insertion_user(nom, prenom, date, sexe, email, fixe, password,
                    pseudo, lieu_habitation, portable):
-
-    print(nom, prenom, date, sexe, email, fixe, password,
-                   pseudo, lieu_habitation, portable)
 
 
     conn = psycopg2.connect(database=DATABASE,
@@ -32,23 +29,53 @@ def insertion_user(nom, prenom, date, sexe, email, fixe, password,
     conn.commit() 
 
 
+    
+    cur.execute("""SELECT id FROM users
+                where pseudo='{0}' """.format(pseudo))
+                       
+
+    conn.commit() 
+
+    rows = cur.fetchall()
+    user = [i for i in rows]
+    user = user[0][0]
+    
+
+    cur.execute("""INSERT INTO cv
+                (id_user, cv, cv1, cv2, cv3, cv4, cv5)
+                values(%s, %s, %s, %s, %s, %s, %s);""",(user,
+                                                        CV1,
+                                                        CV2,
+                                                        CV3,
+                                                        CV4,
+                                                        CV5,
+                                                        CV6))
+
+    conn.commit()
 
 
 
+    cur.execute("""INSERT INTO motivation
+                (id_user, lettre_motivation,
+                lettre_motivation1,
+                lettre_motivation2,
+                lettre_motivation3,
+                lettre_motivation4,
+                lettre_motivation5)
+                values(%s, '', '', '', '', '', '');""",(user, ))
 
+    conn.commit()
 
+    cur.execute("""INSERT INTO message
+                (id_user, lettre_motivation,
+                lettre_motivation1,
+                lettre_motivation2,
+                lettre_motivation3,
+                lettre_motivation4,
+                lettre_motivation5)
+                values(%s, '', '', '', '', '', '');""",(user, ))
 
-
-
-
-
-
-
-
-
-
-
-
+    conn.commit()
 
 
 
