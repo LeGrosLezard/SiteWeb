@@ -124,6 +124,8 @@ def comment_faire_mon_cv(request):
         nom, prenom = recuperation_nom(pseudo)
         
         cv = traitement_cv(pseudo)
+
+
         motivation = traitement_motivation(pseudo)
         message = traitement_message(pseudo)
         print(cv)
@@ -212,7 +214,15 @@ def comment_faire_mon_cv(request):
             un = request.POST.get('un')
             if un:
                 insertion_part_cv(pseudo, un, "un")
-            
+
+            metier = request.POST.get('metier')
+            if metier:
+                insertion_part_cv(pseudo, metier, "metier")
+
+            formation = request.POST.get('formation')
+            if formation:
+                insertion_part_cv(pseudo, formation, "formation")
+  
             deux = request.POST.get('deux')
             if deux:
                 insertion_part_cv(pseudo, deux, "deux")
@@ -231,16 +241,32 @@ def comment_faire_mon_cv(request):
             
             six_un = request.POST.get('six_un')
             if six_un:
-                insertion_part_cv(pseudo, six, "six_un")
+                insertion_part_cv(pseudo, six_un, "six_un")
+
+            poste1 = request.POST.get('poste1')
+            if poste1:
+                insertion_part_cv(pseudo, poste1, "poste1")
 
             six_deux = request.POST.get('six_deux')
             if six_deux:
-                insertion_part_cv(pseudo, six, "six_deux")
+                insertion_part_cv(pseudo, six_deux, "six_deux")
+
+            poste2 = request.POST.get('poste2')
+            if poste2:
+                insertion_part_cv(pseudo, poste2, "poste2")
+
 
             six_trois = request.POST.get('six_trois')
             if six_trois:
-                insertion_part_cv(pseudo, six, "six_trois")
+                insertion_part_cv(pseudo, six_trois, "six_trois")
 
+            poste3 = request.POST.get('poste3')
+            if poste3:
+                insertion_part_cv(pseudo, poste3, "poste3")
+
+            sept = request.POST.get('sept')
+            if sept:
+                insertion_part_cv(pseudo, sept, "sept")
                 
 
 
@@ -259,6 +285,12 @@ def comment_faire_mon_cv(request):
                                                              "cv6_1": cv[5],
                                                              "cv6_2": cv[6],
                                                              "cv6_3": cv[7],
+                                                             "cv7": cv[8],
+                                                             "metier": cv[9],
+                                                             "formation":cv[10],
+                                                             "poste1":cv[11],
+                                                             "poste2":cv[12],
+                                                             "poste3":cv[13],
                                                              "bilan": bilan,
                                                              "motiv1": motivation[0],
                                                              "motiv2": motivation[1],
@@ -323,36 +355,36 @@ def le_questionnaire_quatrieme_partie(request):
 from .cv.traitement_document import traitement_cv
 from .cv.traitement_document import traitement_motivation
 from .cv.traitement_document import traitement_message
-
 from .cv.database.recuperation_info import recuperation_info
 def page_cv(request):
 
+    try:
+        pseudo = request.user
 
-    pseudo = request.user
+        cv = traitement_cv(pseudo)
 
-    cv = traitement_cv(pseudo)
-
-    nom, prenom, addresse, fixe, portable, email = recuperation_info(pseudo)
-    nom = nom.upper()
-    prenom = prenom.upper()
-
-
-    return render(request, 'page_cv.html',
-                  {"cv1" : cv[0],
-                   "cv2" : cv[1],
-                   "cv3" : cv[2],
-                   "cv4" : cv[3],
-                   "cv5" : cv[4],
-                   "cv6" : cv[5],
-                   "nom": nom,
-                   "prenom": prenom,
-                   "addresse": addresse,
-                   "fixe": fixe,
-                   "portable": portable,
-                   "email": email}
-                  )
+        nom, prenom, addresse, fixe, portable, email = recuperation_info(pseudo)
+        nom = nom.upper()
+        prenom = prenom.upper()
 
 
+        return render(request, 'page_cv.html',
+                      {"cv1" : cv[0],
+                       "cv2" : cv[1],
+                       "cv3" : cv[2],
+                       "cv4" : cv[3],
+                       "cv5" : cv[4],
+                       "cv6" : cv[5],
+                       "nom": nom,
+                       "prenom": prenom,
+                       "addresse": addresse,
+                       "fixe": fixe,
+                       "portable": portable,
+                       "email": email}
+                      )
+
+    except IndexError :
+        return render(request, 'page_cv.html')
             
 
 
