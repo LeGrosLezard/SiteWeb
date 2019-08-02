@@ -70,19 +70,7 @@
     <div class="container">
       <div class="row">
         <div class="col-xl-9 mx-auto">
-          <h1 class="mb-5">Build a landing page for your business or project and generate more leads!</h1>
-        </div>
-        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-          <form>
-            <div class="form-row">
-              <div class="col-12 col-md-9 mb-2 mb-md-0">
-                <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
-              </div>
-              <div class="col-12 col-md-3">
-                <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button>
-              </div>
-            </div>
-          </form>
+          <h1 class="mb-5">Construisez votre avenir, Faites vos documents selon nos conseils</h1>
         </div>
       </div>
     </div>
@@ -97,7 +85,11 @@
       <div class="row">
 
 
-      
+            <h5>Faites vos documents en suivant les étapes que nous vous conseillons.
+            Prenez votre temps! Etallez cela sur plusieurs jours si nécéssaire.
+            Nous nous chargeons du reste en envoyant
+            toutes vos informations à de potentiels recruteurs !<br><br><br></h5>
+            
         <div class="col-lg-4">
           <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
           
@@ -109,14 +101,14 @@
             
             <h3>Curriculum Vitae</h3>
             
-            <p class="lead mb-0">Faites votre CV en suivant les étapes que nous vous conseillons.
-            Prenez votre temps! Etallez cela sur plusieurs jours si nécéssaire.
-            Nous nous chargeons du reste en envoyant
-            toutes vos informations à de potentiels recruteurs !</p>
-            Visualisez le ! Il ne vous conviens pas ? télécharger le!
+            <p class="lead mb-0" style="text-align:justify;">
+                Votre CV vous sert de vitrine. C'est ce qui va renseigner
+                le recruteur ce qui vous interrese, sur ce que vous savez
+                faire et ce qui vous passione !
+            
+            </p>
             <br><br>
-            Télécharger<br>
-            <a href="page_cv">Mon cv</a>
+            <a href="page_cv">Mon Curriculum Vitae</a>
           </div>
         </div>
 
@@ -135,7 +127,10 @@
             
             <h3>Lettre de Motivation</h3>
             
-            <p class="lead mb-0">Featuring the latest build of the new Bootstrap 4 framework!</p>
+            <p class="lead mb-0" style="text-align:justify;">
+            
+            </p>
+            <a href="page_motivation">Ma lettre de motivation</a>
           </div>
         </div>
 
@@ -155,7 +150,11 @@
             
             <h3>Message à l'employeur</h3>
             
-            <p class="lead mb-0">Ready to use with your own content, or customize the source files!</p>
+            <p class="lead mb-0" style="text-align:justify;">
+
+            
+            </p>
+            <a href="page_message">Mon message au recruteur</a>
           </div>
         </div>
 
@@ -178,27 +177,46 @@
     <div class="container-fluid p-0">
       <div class="row no-gutters">
 
+
+
         <div class="col-lg-6 order-lg-2">
+            <input type="text" placeholder="Votre métier"> <br>
+            <input type="text" placeholder="Votre formation">
+            
             <TEXTAREA name="nom" style="width:100%;height:100%;" id="first">{{cv1}}</TEXTAREA>
         </div>
             
-        <div class="col-lg-6 order-lg-1 my-auto showcase-text" style="background:#f5ec42">
+        <div class="col-lg-6 order-lg-1 my-auto showcase-text"
+            style="background:#B8D9E3">
+
+            
           <h2>Curriculum Vitae<br><br>Première étape</h2>
           
           <p class="lead mb-0">
-              Ici on se met à la place du recruteur.
+              1) - Renseignez-nous sur votre métier et
+              sur votre formation si vous en avez une.<br>
 
+              2) - Que cherchez-vous ?<br>
+
+              3) - Quels sont vos atouts ?
+              <br><br>
+              
               {% if user.is_authenticated %}
-              <input type="button" Value="Valider" id="valider_premiere">
+              <center>
+                  <input type="button" Value="Valider" id="valider_premiere">
+              </center>
               {% else %}
               {% endif %}
           </p>
 
 
-          <div id="first_validation"></div>
+          <center><div id="first_validation"></div></center>
    
         </div>
       </div>
+
+
+
 
 
       
@@ -207,12 +225,10 @@
             <TEXTAREA name="nom" style="width:100%;height:100%;" id="second">{{cv2}}</TEXTAREA>
         </div>
             
-        <div class="col-lg-6 my-auto showcase-text" style="background:#f54242">
+        <div class="col-lg-6 my-auto showcase-text" style="background:#9DC8D5">
           <h2>Deuxième étape</h2>
-          <p class="lead mb-0">Newly improved, and full of great utility classes,
-              Bootstrap 4 is leading the way in mobile responsive
-              web development! All of the themes on
-              Start Bootstrap are now using Bootstrap 4!
+          <p class="lead mb-0">
+              Identifier vos compétences et notez les sur 10 !
 
 
              {% if user.is_authenticated %}
@@ -234,16 +250,17 @@
             <TEXTAREA name="nom" style="width:100%;height:100%;" id="third">{{cv3}}</TEXTAREA>
         </div>
             
-        <div class="col-lg-6 order-lg-1 my-auto showcase-text" style="background:#4296f5">
+        <div class="col-lg-6 order-lg-1 my-auto showcase-text" style="background:#89BAC9">
           <h2>Easy to Use &amp; Customize</h2>
-          <p class="lead mb-0">Landing Page is just HTML and CSS with a
-              splash of SCSS for users who demand some deeper customization
-              options. Out of the box, just add your content and images,
-              and your new landing page will be ready to go!
+          <p class="lead mb-0">
+              Maintenant renseignez le recruteur sur vos outils de travail, en somme
+              votre environement de travail !
+
+          <p>
 
 
               {% if user.is_authenticated %}
-              <input type="button" Value="Valider" id="valider_troisieme">
+              <center><input type="button" Value="Valider" id="valider_troisieme"></center>
               {% else %}
               {% endif %}
 
@@ -265,12 +282,12 @@
             <TEXTAREA name="nom" style="width:100%;height:100%;" id="fourth">{{cv4}}</TEXTAREA>
         </div>
             
-        <div class="col-lg-6 my-auto showcase-text" style="background:#f54242">
+        <div class="col-lg-6 my-auto showcase-text" style="background:#639AAB">
           <h2>Deuxième étape</h2>
-          <p class="lead mb-0">Newly improved, and full of
-              great utility classes, Bootstrap 4 is leading the
-              way in mobile responsive web development! All of the
-              themes on Start Bootstrap are now using Bootstrap 4!
+          <p class="lead mb-0">
+                Passons a vos SOFT SKILL. Un soft skill est vos qualités d'Humain.
+                
+          </p>
 
               {% if user.is_authenticated %}
               <input type="button" Value="Valider" id="valider_quatrieme">
@@ -292,7 +309,7 @@
             <TEXTAREA name="nom" style="width:100%;height:100%;" id="fifty">{{cv5}}</TEXTAREA>
         </div>
             
-        <div class="col-lg-6 order-lg-1 my-auto showcase-text" style="background:#4296f5">
+        <div class="col-lg-6 order-lg-1 my-auto showcase-text" style="background:#52899A">
           <h2>Easy to Use &amp; Customize</h2>
           <p class="lead mb-0">Landing Page is just HTML and CSS with a splash
               of SCSS for users who demand some deeper customization options. Out
@@ -319,7 +336,7 @@
             <TEXTAREA name="nom" style="width:100%;height:100%;" id="sixty">{{cv6}}</TEXTAREA>
         </div>
             
-        <div class="col-lg-6 my-auto showcase-text" style="background:#f54242">
+        <div class="col-lg-6 my-auto showcase-text" style="background:#3A7182">
           <h2>Deuxième étape</h2>
           <p class="lead mb-0">Newly improved, and full of great utility classes,
               Bootstrap 4 is leading the way in mobile responsive web development!
