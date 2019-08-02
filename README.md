@@ -10,6 +10,7 @@ mettre si le mec a un permis
 
 base de donnée cv mettre les info formation + job
 
+y'a la parti un peu plus sur moi bon ben refaire toute l'opération ^^
 
 -----------------------------------------------------
 
