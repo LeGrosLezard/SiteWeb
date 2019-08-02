@@ -108,7 +108,8 @@
             
             </p>
             <br><br>
-            <a href="page_cv">Mon Curriculum Vitae</a>
+            <a href="page_cv">Visulaliser mon Curriculum Vitae</a>
+            <a href="compte">Mon Curriculum Vitae</a>
           </div>
         </div>
 
@@ -130,7 +131,8 @@
             <p class="lead mb-0" style="text-align:justify;">
             
             </p>
-            <a href="page_motivation">Ma lettre de motivation</a>
+            <a href="page_motivation">Visualiser ma lettre de motivation</a>
+            <a href="compte">Ma lettre de motivation</a>
           </div>
         </div>
 
@@ -154,7 +156,8 @@
 
             
             </p>
-            <a href="page_message">Mon message au recruteur</a>
+            <a href="page_message">Visualiser mon message au recruteur</a>
+            <a href="compte">Mon message au recruteure</a>
           </div>
         </div>
 
@@ -180,8 +183,8 @@
 
 
         <div class="col-lg-6 order-lg-2">
-            <input type="text" placeholder="Votre métier"> <br>
-            <input type="text" placeholder="Votre formation">
+            <input type="text" value="{{metier}}" id="metier" style="width:100%;"><br>
+            <input type="text" value="{{formation}}" id="formation" style="width:100%;">
             
             <TEXTAREA name="nom" style="width:100%;height:100%;" id="first">{{cv1}}</TEXTAREA>
         </div>
@@ -332,7 +335,7 @@
       <div class="row no-gutters">
         <div class="col-lg-6">
 
-            <input type="text" placeholder="Intitulié du poste" style='width:100%;' id="">
+            <input type="text" value="{{poste1}}" style='width:100%;' id="poste1">
         
             <TEXTAREA name="nom" style="width:100%;height:100%;" id="sixty_one">{{cv6_1}}</TEXTAREA>
        
@@ -378,7 +381,7 @@
       <div class="row no-gutters">
         <div class="col-lg-6 order-lg-2">
 
-            <input type="text" placeholder="Intitulié du poste" style='width:100%;' id="">
+            <input type="text" value="{{poste2}}" style='width:100%;' id="poste2">
             
             <TEXTAREA name="nom" style="width:100%;height:100%;" id="sixty_two">{{cv6_2}}</TEXTAREA>
         </div>
@@ -419,7 +422,7 @@
       <div class="row no-gutters">
         <div class="col-lg-6">
 
-            <input type="text" placeholder="Intitulié du poste" style='width:100%;' id="">
+            <input type="text" value="{{poste3}}" style='width:100%;' id="poste3">
             
             <TEXTAREA name="nom" style="width:100%;height:100%;" id="sixty_three">{{cv6_3}}</TEXTAREA>
             
@@ -455,6 +458,42 @@
         </div> 
       </div>
 
+
+
+
+      <div class="row no-gutters">
+        <div class="col-lg-6 order-lg-2">
+
+
+            <TEXTAREA name="nom" style="width:100%;height:100%;" id="seventy">{{cv7}}</TEXTAREA>
+        </div>
+            
+        <div class="col-lg-6 order-lg-1 my-auto showcase-text" style="background:#89BAC9">
+          <h2>Septième étape</h2>
+          <p class="lead mb-0">
+              1) - Maintenant renseignez le recruteur à propos de vous !
+
+     
+
+
+              {% if user.is_authenticated %}
+              <br>
+              <center>
+                  <input type="button" Value="Valider" id="valider_septieme">
+              </center>
+              {% else %}
+              {% endif %}
+
+
+              
+
+          </p>
+
+
+          <div id="sixty_validation"></div>
+    
+        </div>
+      </div>
 
 
 
@@ -949,6 +988,15 @@
 
 
 <script>
+
+
+
+
+
+
+
+
+
     function cv(){
         document.getElementById("section_lettre").style.display = "none";
         document.getElementById("section_cv").style.display = "block";
@@ -1041,14 +1089,28 @@
             var modifier = document.getElementById('valider_cinquieme').value = "Modifier";
         }
         
-        var l = document.getElementById('sixty').value;
+        var l = document.getElementById('sixty_one').value;
 
         if (l != ""){
-            var modifier = document.getElementById('valider_sixieme').value = "Modifier";
+            var modifier = document.getElementById('valider_sixieme_un').value = "Modifier";
         }
 
+        var ll = document.getElementById('sixty_two').value;
+        if (ll != ""){
+            var modifier = document.getElementById('valider_sixieme_deux').value = "Modifier";
+        }
 
+        var lll = document.getElementById('sixty_three').value;
+        if (lll != ""){
+            var modifier = document.getElementById('valider_sixieme_trois').value = "Modifier";
+        }
 
+        var llll = document.getElementById('seventy').value;
+        if (llll != ""){
+            var modifier = document.getElementById('valider_septieme').value = "Modifier";
+        }
+
+        
         var m = document.getElementById('text_message1').value;
 
         if (m != ""){
@@ -1131,6 +1193,12 @@
 
 
 <script>
+
+
+
+
+
+
 
 //-----------------------------------------------------------------PARTIE 
 //-----------------------------------------------------------------MESSAGE
@@ -1365,7 +1433,6 @@ jQuery("#message6").on("click", function(e){
 jQuery("#valider1_motivation").on("click", function(e){
     
  un = document.getElementById("motivation_text1").value;
-
  
  e.preventDefault();
   jQuery.ajax({
@@ -1593,12 +1660,15 @@ jQuery("#valider6_motivation").on("click", function(e){
 jQuery("#valider_premiere").on("click", function(e){
     
  premiere_partie = document.getElementById("first").value;
-
+ metier = document.getElementById("metier").value;
+ formation = document.getElementById("formation").value;
  
  e.preventDefault();
   jQuery.ajax({
       data:{
-          "un":premiere_partie,
+          "un": premiere_partie,
+          "metier": metier,
+          "formation": formation,
           'csrfmiddlewaretoken': '{{csrf_token}}' , 
       },
       type:"POST",
@@ -1775,12 +1845,13 @@ jQuery("#valider_cinquieme").on("click", function(e){
 jQuery("#valider_sixieme_un").on("click", function(e){
     
  sixieme_partie = document.getElementById("sixty_one").value;
+ poste1 = document.getElementById("poste1").value;
 
  
  e.preventDefault();
   jQuery.ajax({
       data:{
-
+          "poste1": poste1,
           "six_un":sixieme_partie,
           'csrfmiddlewaretoken': '{{csrf_token}}' , 
       },
@@ -1808,12 +1879,12 @@ jQuery("#valider_sixieme_un").on("click", function(e){
 jQuery("#valider_sixieme_deux").on("click", function(e){
     
  sixieme_partie = document.getElementById("sixty_two").value;
-
+ poste2 = document.getElementById("poste2").value;
  
  e.preventDefault();
   jQuery.ajax({
       data:{
-
+          "poste2": poste2,
           "six_deux":sixieme_partie,
           'csrfmiddlewaretoken': '{{csrf_token}}' , 
       },
@@ -1842,12 +1913,12 @@ jQuery("#valider_sixieme_deux").on("click", function(e){
 jQuery("#valider_sixieme_trois").on("click", function(e){
     
  sixieme_partie = document.getElementById("sixty_three").value;
-
+ poste3 = document.getElementById("poste3").value;
  
  e.preventDefault();
   jQuery.ajax({
       data:{
-
+          "poste3": poste3,
           "six_trois":sixieme_partie,
           'csrfmiddlewaretoken': '{{csrf_token}}' , 
       },
@@ -1871,7 +1942,36 @@ jQuery("#valider_sixieme_trois").on("click", function(e){
 
 
 
+//-----------------------------------------------------------------7
+jQuery("#valider_septieme").on("click", function(e){
+    
+ sixieme_partie = document.getElementById("seventy").value;
 
+ 
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+
+          "sept":sixieme_partie,
+          'csrfmiddlewaretoken': '{{csrf_token}}' , 
+      },
+      type:"POST",
+      url:"comment_faire_mon_cv"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+          document.getElementById("sixty_validation").innerHTML = "Sixième partie effectué";
+          
+          
+      };
+      
+  });
+ });
+
+//-----------------------------------------------------------------7
 
 
 
