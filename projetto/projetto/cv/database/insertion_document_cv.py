@@ -99,15 +99,112 @@ def insertion_part_cv(pseudo, part, mode):
 
 
 
-    if mode == "six":
+    if mode == "six_un":
 
 
         cur.execute("""UPDATE cv
-                    SET cv5 = %s
+                    SET cv6_1 = %s
                     WHERE id_user = {0};""".format(id_user), (part, ))
                            
 
         conn.commit() 
+
+
+
+
+    if mode == "six_deux":
+
+
+        cur.execute("""UPDATE cv
+                    SET cv6_2 = %s
+                    WHERE id_user = {0};""".format(id_user), (part, ))
+                           
+
+        conn.commit() 
+
+
+
+    if mode == "six_trois":
+
+
+        cur.execute("""UPDATE cv
+                    SET cv6_3= %s
+                    WHERE id_user = {0};""".format(id_user), (part, ))
+                           
+
+        conn.commit()
+
+
+
+    if mode == "sept":
+
+
+        cur.execute("""UPDATE cv
+                    SET cv7 = %s
+                    WHERE id_user = {0};""".format(id_user), (part, ))
+                           
+
+        conn.commit() 
+
+
+    if mode == "metier":
+
+        cur.execute("""UPDATE cv
+                    SET metier = %s
+                    WHERE id_user = {0};""".format(id_user), (part, ))
+                           
+
+        conn.commit() 
+
+    if mode == "formation":
+
+
+        cur.execute("""UPDATE cv
+                    SET formation = %s
+                    WHERE id_user = {0};""".format(id_user), (part, ))
+                           
+
+        conn.commit() 
+
+
+
+    if mode == "poste1":
+
+
+        cur.execute("""UPDATE cv
+                    SET poste1 = %s
+                    WHERE id_user = {0};""".format(id_user), (part, ))
+                           
+
+        conn.commit() 
+
+
+
+
+    if mode == "poste2":
+
+
+        cur.execute("""UPDATE cv
+                    SET poste2 = %s
+                    WHERE id_user = {0};""".format(id_user), (part, ))
+                           
+
+        conn.commit() 
+
+
+    if mode == "poste3":
+
+
+        cur.execute("""UPDATE cv
+                    SET poste3 = %s
+                    WHERE id_user = {0};""".format(id_user), (part, ))
+                           
+
+        conn.commit() 
+
+
+
+
 
 
 
