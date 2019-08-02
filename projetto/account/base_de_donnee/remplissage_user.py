@@ -7,6 +7,14 @@ from .CONFIG import PASSWORD
 
 from .CONFIG import CV1
 from .CONFIG import CV2
+from .CONFIG import CV3
+from .CONFIG import CV4
+from .CONFIG import CV5
+from .CONFIG import CV6_1
+from .CONFIG import CV6_2
+from .CONFIG import CV6_3
+
+
 def insertion_user(nom, prenom, date, sexe, email, fixe, password,
                    pseudo, lieu_habitation, portable):
 
@@ -42,14 +50,16 @@ def insertion_user(nom, prenom, date, sexe, email, fixe, password,
     
 
     cur.execute("""INSERT INTO cv
-                (id_user, cv, cv1, cv2, cv3, cv4, cv5)
-                values(%s, %s, %s, %s, %s, %s, %s);""",(user,
+                (id_user, cv, cv1, cv2, cv3, cv4, cv6_1, cv6_2, cv6_3)
+                values(%s, %s, %s, %s, %s, %s, %s, %s, %s);""",(user,
                                                         CV1,
                                                         CV2,
                                                         CV3,
                                                         CV4,
                                                         CV5,
-                                                        CV6))
+                                                        CV6_1,
+                                                        CV6_2,
+                                                        CV6_3))
 
     conn.commit()
 
