@@ -179,6 +179,21 @@ def comment_faire_mon_cv(request):
 
         elif motive:
             #PARTIE LETTRE DE MOTIVATION
+
+            poste_motivation = request.POST.get('poste_motivation')
+            if poste_motivation:
+
+                insertion_part_motivation(pseudo, poste_motivation, "poste_motivation")
+
+
+            ville = request.POST.get('ville')
+            if ville:
+                insertion_part_motivation(pseudo, ville, "ville")
+
+            code = request.POST.get('code')
+            if code:
+                insertion_part_motivation(pseudo, code, "code")
+
             un = request.POST.get('un')
             if un:
                 insertion_part_motivation(pseudo, un, "un")
@@ -298,6 +313,9 @@ def comment_faire_mon_cv(request):
                                                              "motiv4": motivation[3],
                                                              "motiv5": motivation[4],
                                                              "motiv6": motivation[5],
+                                                             "code":  motivation[6],
+                                                             "ville":  motivation[7],
+                                                             "poste_motivation":  motivation[8],
                                                              "mess1": message[0],
                                                              "mess2": message[1],
                                                              "mess3": message[2],
