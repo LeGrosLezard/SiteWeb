@@ -4,13 +4,12 @@ Un site Web pour la recherche d'emploi
 
 --------------------------------------------------
 
+faut mettre tout les novueaux inputs + insertion en database (donc nouveau input aussi)
+
 mettre si le mec a un permis
 
 base de donnée cv mettre les info formation + job
 
-bon grouille toi un peu faut un peu plus de site puis si un jour t'as le mojo apel pole emploi puis ainsi de suite o pire on te dira c dla merde et puis voila
-
-faut que jdorme
 
 -----------------------------------------------------
 
