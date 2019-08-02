@@ -10,7 +10,7 @@ base de donnée cv mettre les info formation + job
 
 bon grouille toi un peu faut un peu plus de site puis si un jour t'as le mojo apel pole emploi puis ainsi de suite o pire on te dira c dla merde et puis voila
 
-en gros y'a plusieurs groupes, tu te tiens droit et forcement quelqu'un d'un des groupes fais attention a toi et c la que la parti commence, faut lui faire croire que t'es cool et que tu te dis droit naturellement et du coup faut ballayer le regard et par exemple si un mec te regarde et qui a regardé un mec avant et que le mec davant a baissé la tete faut pas la baissé et ce mec baissera la tete OU la baissera pas pour le mec apres moi vu que chui static, du coup le mec dapres soit tu gagnes soit il sera combatif mais moi pendant ce mini duel jtimagine entrain de danser enfoiré et du coup pendant tous ces "duel" la personne qui te prété attention va renseigner son groupe ainsi de suite
+faut que jdorme
 
 -----------------------------------------------------
 
