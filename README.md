@@ -2,6 +2,18 @@
 
 Un site Web pour la recherche d'emploi
 
+
+--------------------------------------------------
+
+faire le message (etape)
+
+
+faire dossier de utilisateur a la création
+
+ajouter le téléchargement automatique des cv
+
+
+
 --------------------------------------------------
 
 maintenant faire la meme chose pour motivation et lettre !
