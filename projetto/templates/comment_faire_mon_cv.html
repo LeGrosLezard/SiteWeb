@@ -530,14 +530,19 @@
       <div class="row no-gutters">
 
         <div class="col-lg-6 order-lg-2">
+            <input type="text" value="{{ville}}" id="ville">
+            <input type="text" value="{{code}}" id="code">
+            <input type="text" value="{{poste_motivation}}" id="poste_moitivation">
             <TEXTAREA name="nom" style="width:100%;height:100%;" id="motivation_text1">{{motiv1}}</TEXTAREA>
         </div>
             
         <div class="col-lg-6 order-lg-1 my-auto showcase-text" style="background:#f5ec42">
-          <h2>Sixième étape - Deuxième projet</h2>
+          <h2>Première étape</h2>
           
           <p class="lead mb-0">
-              Ici on se met à la place du recruteur.
+              1) - Rentrez votre ville ainsi que votre code postal.<br>
+
+              2) - Faites une phrase d'accroche qui défini votre présent statut ainsi que l'objectif de cette lettre<br>
 
                {% if user.is_authenticated %}
               <input type="button" value="Valider" id="valider1_motivation">
@@ -553,16 +558,21 @@
       </div>
 
 
-      
+        
       <div class="row no-gutters">
         <div class="col-lg-6">
             <TEXTAREA name="nom" style="width:100%;height:100%;" id="motivation_text2">{{motiv2}}</TEXTAREA>
         </div>
             
         <div class="col-lg-6 my-auto showcase-text" style="background:#f54242">
-          <h2>Sixième étape - Troisème projet</h2>
+          <h2>Deuxième étape</h2>
           <p class="lead mb-0">
 
+              1) - Dites que votre profil correspond à l'offre d'emploi.<br>
+              2) - Précisez que votre formation et/ou expériences universitaires qui
+              vous ont aidé à acquérir les compétences pour cette offre.<br>
+              3) - Montrez vos meilleurs traits de personnalité professionel !
+              
 
               {% if user.is_authenticated %}
               <input type="button" value="Valider" id="valider2_motivation">
@@ -581,11 +591,15 @@
         </div>
             
         <div class="col-lg-6 order-lg-1 my-auto showcase-text" style="background:#4296f5">
-          <h2>Easy to Use &amp; Customize</h2>
-          <p class="lead mb-0">Landing Page is just HTML and CSS with
-              a splash of SCSS for users who demand some deeper
-              customization options. Out of the box, just add
-              your content and images, and your new landing page will be ready to go!
+        
+          <h2>Troisième étape</h2>
+          <p class="lead mb-0">
+
+              1) - Montrez vos expériences professionnelles dans le domaine de votre recherche.<br>
+              2) - Que vous ont-ils apporté ?<br>
+              3) - Montrez encore une fois vos meilleurs traits de personnalité professionel !
+                
+              
 
               {% if user.is_authenticated %}
               <input type="button" value="Valider" id="valider3_motivation">
@@ -607,11 +621,11 @@
         </div>
             
         <div class="col-lg-6 my-auto showcase-text" style="background:#f54242">
-          <h2>Deuxième étape</h2>
-          <p class="lead mb-0">Newly improved, and full of great
-              utility classes, Bootstrap 4 is leading the way in mobile
-              responsive web development! All of the themes on Start
-              Bootstrap are now using Bootstrap 4!
+          <h2>Quatrième étape</h2>
+          <p class="lead mb-0">
+
+             1) - Dites pourquoi cette demande d'emploi est très importante pour vous
+          
 
              {% if user.is_authenticated %}
              <input type="button" value="Valider" id="valider4_motivation">
@@ -633,11 +647,10 @@
         </div>
             
         <div class="col-lg-6 order-lg-1 my-auto showcase-text" style="background:#4296f5">
-          <h2>Easy to Use &amp; Customize</h2>
-          <p class="lead mb-0">Landing Page is just HTML and CSS with
-              a splash of SCSS for users who demand some deeper
-              customization options. Out of the box, just add your
-              content and images, and your new landing page will be ready to go!
+          <h2>Cinquième étape</h2>
+          <p class="lead mb-0">
+
+              1) - Montrez leur que vous etes à leur disposition !  
 
 
               {% if user.is_authenticated %}
@@ -658,11 +671,10 @@
         </div>
             
         <div class="col-lg-6 my-auto showcase-text" style="background:#f54242">
-          <h2>Deuxième étape</h2>
-          <p class="lead mb-0">Newly improved, and full of great
-              utility classes, Bootstrap 4 is leading the way in mobile
-              responsive web development! All of the themes on Start
-              Bootstrap are now using Bootstrap 4!
+          <h2>Sixième étape</h2>
+          <p class="lead mb-0">
+
+              Finissez par une expréssion de politesse
 
               {% if user.is_authenticated %}
               <input type="button" value="Valider" id="valider6_motivation">
@@ -1429,14 +1441,19 @@ jQuery("#message6").on("click", function(e){
 
 
 
-//-----------------------------------------------------------------1
+//-----------------------------------------------------------------1 
 jQuery("#valider1_motivation").on("click", function(e){
     
  un = document.getElementById("motivation_text1").value;
- 
+ var ville = document.getElementById("ville").value;
+ var code = document.getElementById("code").value;
+ var poste_moitivation = document.getElementById("poste_moitivation").value;
  e.preventDefault();
   jQuery.ajax({
       data:{
+          "code": code,
+          "ville": ville,
+          "poste_motivation": poste_moitivation,
           "motive":"motive",
           "un":un,
           'csrfmiddlewaretoken': '{{csrf_token}}' , 
