@@ -28,4 +28,11 @@ CV5 ="Date - établissement - Intitulé du diplome \n Date - établissement - In
 CV6_1 = "- Faire la plonge \n - Faire l'inventaire \n - Assurer la sécurité"
 CV6_2 = "- Faire la plonge \n - Faire l'inventaire \n - Assurer la sécurité"
 CV6_3 = "- Faire la plonge \n - Faire l'inventaire \n - Assurer la sécurité"
+CV7 = ""
+METIER = "Votre métier"
+FORMATION = "Votre Formation"
+
+POSTE1 = "Votre premier projet"
+POSTE2 = "Votre deuxième projet"
+POSTE3 = "Votre troisième projet"
 
