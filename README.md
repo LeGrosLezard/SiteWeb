@@ -39,23 +39,9 @@ a un recruteur le mec y va sur le site ca sera cool
 
 -------------------------------------------------------------------------------------------------------------------------------
 
-raccorder chaque page
+finir les phrases analyses
 
-finir les message
-
-finir les étapes
-
-finir les tests
-
-finir l'envoie email
-
-finir les analyses
-
-faire le message de présentation présentation, pourquoi voila (2 lignes maxi)
-
-faire les documents
-
-finir les messages pour les différents mecs ^^
+faire les tests cognitifs mais la c que du report de faute + si le mec a moyenne ou plus (ten fou raven portera pas plainte)
 
 si négociation faire comme dans les films
 
