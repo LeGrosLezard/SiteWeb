@@ -4,7 +4,9 @@ Un site Web pour la recherche d'emploi
 
 --------------------------------------------------
 
-corriger les bug merde merde pas connecté y'a pleins de bug
+mettre si le mec a un permis
+
+base de donnée cv mettre les info formation + job
 
 -------------------------------------------------
 
