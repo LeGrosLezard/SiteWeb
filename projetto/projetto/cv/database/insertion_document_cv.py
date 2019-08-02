@@ -46,8 +46,8 @@ def insertion_part_cv(pseudo, part, mode):
     if mode == "un":
 
         cur.execute("""UPDATE cv
-                    SET cv = '{1}'
-                    WHERE id_user = '{0}';""".format(id_user, part))
+                    SET cv = %s
+                    WHERE id_user = %s;""",(part, id_user))
                            
 
         conn.commit() 
@@ -57,8 +57,8 @@ def insertion_part_cv(pseudo, part, mode):
     if mode == "deux":
 
         cur.execute("""UPDATE cv
-                    SET cv1 = '{1}'
-                    WHERE id_user = '{0}';""".format(id_user, part))
+                    SET cv1 = %s
+                    WHERE id_user = %s;"""(part, id_user))
                            
 
         conn.commit() 
@@ -68,9 +68,8 @@ def insertion_part_cv(pseudo, part, mode):
     if mode == "trois":
 
         cur.execute("""UPDATE cv
-                    SET cv2 = '{1}'
-                    WHERE id_user = '{0}';""".format(id_user, part))
-                           
+                    SET cv2 = %s
+                    WHERE id_user = %s;"""(part, id_user))                           
 
         conn.commit() 
 
@@ -79,8 +78,8 @@ def insertion_part_cv(pseudo, part, mode):
     if mode == "quattre":
 
         cur.execute("""UPDATE cv
-                    SET cv3 = '{1}'
-                    WHERE id_user = '{0}';""".format(id_user, part))
+                    SET cv3 = %s
+                    WHERE id_user = %s;"""(part, id_user))
                            
 
         conn.commit() 
@@ -90,8 +89,8 @@ def insertion_part_cv(pseudo, part, mode):
     if mode == "cinq":
 
         cur.execute("""UPDATE cv
-                    SET cv4 = '{1}'
-                    WHERE id_user = '{0}';""".format(id_user, part))
+                    SET cv4 = %s
+                    WHERE id_user = %s;"""(part, id_user))
                            
 
         conn.commit() 
@@ -101,8 +100,8 @@ def insertion_part_cv(pseudo, part, mode):
     if mode == "six":
 
         cur.execute("""UPDATE cv
-                    SET cv5 = '{1}'
-                    WHERE id_user = '{0}';""".format(id_user, part))
+                    SET cv5 = %s
+                    WHERE id_user = %s;"""(part, id_user))
                            
 
         conn.commit() 
