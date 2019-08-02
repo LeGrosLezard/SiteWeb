@@ -39,7 +39,9 @@ def recuperation_cv(pseudo):
 
     cur = conn.cursor()
     
-    cur.execute("""SELECT cv, cv1, cv2, cv3, cv4, cv5 FROM cv
+    cur.execute("""SELECT cv, cv1, cv2, cv3, cv4,
+                cv6_1, cv6_2, cv6_3, cv7, metier, formation,
+                poste1, poste2, poste3 FROM cv
                 WHERE id_user = '{0}'
                 ORDER BY(id_user);""".format(username))
                        
