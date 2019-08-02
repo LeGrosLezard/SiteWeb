@@ -13,6 +13,7 @@ CV1 = "Bien décidé à commencé un nouveau travail, je cherche un emploi " +\
 CV2 = "Livreur 5/10 \n Chanteur 6/10 \n Paint 5/10 \n Commercial 9/10"
 
 CV3 = "Windows 10, scène, semi-remorque, en équipe, en solo... "
+
 CV4 = "Je suis quelqu'un à l'écoute et s'implique à 100 % dans son travail. " +\
       "Je suis sérieux et attentionné. " +\
       "Par mon expérience de  vie suis très courageux et ne lâche jamais l'affaire. " +\
@@ -21,5 +22,10 @@ CV4 = "Je suis quelqu'un à l'écoute et s'implique à 100 % dans son travail. "
       "Je suis quelqu'un de discret."
 
 
-CV5 =""
-CV6 =""
+CV5 ="Date - établissement - Intitulé du diplome \n Date - établissement - Intitulé du diplome (du plus récent au plus vieux)"
+
+
+CV6_1 = "- Faire la plonge \n - Faire l'inventaire \n - Assurer la sécurité"
+CV6_2 = "- Faire la plonge \n - Faire l'inventaire \n - Assurer la sécurité"
+CV6_3 = "- Faire la plonge \n - Faire l'inventaire \n - Assurer la sécurité"
+
