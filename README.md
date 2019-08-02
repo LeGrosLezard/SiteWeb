@@ -4,13 +4,15 @@ Un site Web pour la recherche d'emploi
 
 --------------------------------------------------
 
-faut mettre tout les novueaux inputs + insertion en database (donc nouveau input aussi)
+maintenant faire la meme chose pour motivation et lettre !
 
-mettre si le mec a un permis
++ téléchargement
 
-base de donnée cv mettre les info formation + job
+IL FAUT: telecharger le cv et tout du type pour le mettre dans un doss
 
-y'a la parti un peu plus sur moi bon ben refaire toute l'opération ^^
+et lui faire voir depuis mon compte atta, faudra
+
+le supprimer et a chaque modif le télécharger !!
 
 -----------------------------------------------------
 
