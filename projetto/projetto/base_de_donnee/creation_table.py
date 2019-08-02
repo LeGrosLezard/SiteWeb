@@ -67,6 +67,11 @@ class Table:
         cur.execute("""create table cv(
                     id serial PRIMARY KEY,
                     id_user integer REFERENCES users (id),
+                    metier varchar(100),
+                    formation varchar(100),
+                    poste1 varchar(100),
+                    poste2 varchar(100),
+                    poste3 varchar(100),
                     cv TEXT,
                     cv1 TEXT,
                     cv2 TEXT,
@@ -74,7 +79,8 @@ class Table:
                     cv4 TEXT,
                     cv6_1 TEXT,
                     cv6_2 TEXT,
-                    cv6_3 TEXT);""")
+                    cv6_3 TEXT,
+                    cv7 TEXT);""")
         
         conn.commit()
 
