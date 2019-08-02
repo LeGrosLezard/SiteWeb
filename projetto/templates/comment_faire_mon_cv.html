@@ -1771,17 +1771,17 @@ jQuery("#valider_cinquieme").on("click", function(e){
 
 
 
-//-----------------------------------------------------------------6
-jQuery("#valider_sixieme").on("click", function(e){
+//-----------------------------------------------------------------6-1
+jQuery("#valider_sixieme_un").on("click", function(e){
     
- sixieme_partie = document.getElementById("sixty").value;
+ sixieme_partie = document.getElementById("sixty_one").value;
 
  
  e.preventDefault();
   jQuery.ajax({
       data:{
 
-          "six":sixieme_partie,
+          "six_un":sixieme_partie,
           'csrfmiddlewaretoken': '{{csrf_token}}' , 
       },
       type:"POST",
@@ -1800,16 +1800,74 @@ jQuery("#valider_sixieme").on("click", function(e){
   });
  });
 
-//-----------------------------------------------------------------6
+//-----------------------------------------------------------------6-1
+
+
+
+//-----------------------------------------------------------------6-2
+jQuery("#valider_sixieme_deux").on("click", function(e){
+    
+ sixieme_partie = document.getElementById("sixty_two").value;
+
+ 
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+
+          "six_deux":sixieme_partie,
+          'csrfmiddlewaretoken': '{{csrf_token}}' , 
+      },
+      type:"POST",
+      url:"comment_faire_mon_cv"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+          document.getElementById("sixty_validation").innerHTML = "Sixième partie effectué";
+          
+          
+      };
+      
+  });
+ });
+
+//-----------------------------------------------------------------6-2
 
 
 
 
+//-----------------------------------------------------------------6-3
+jQuery("#valider_sixieme_trois").on("click", function(e){
+    
+ sixieme_partie = document.getElementById("sixty_three").value;
 
+ 
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
 
+          "six_trois":sixieme_partie,
+          'csrfmiddlewaretoken': '{{csrf_token}}' , 
+      },
+      type:"POST",
+      url:"comment_faire_mon_cv"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+          document.getElementById("sixty_validation").innerHTML = "Sixième partie effectué";
+          
+          
+      };
+      
+  });
+ });
 
-
-
+//-----------------------------------------------------------------6-3
 
 
 
