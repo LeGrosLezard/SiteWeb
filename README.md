@@ -8,14 +8,9 @@ mettre si le mec a un permis
 
 base de donnée cv mettre les info formation + job
 
--------------------------------------------------
+bon grouille toi un peu faut un peu plus de site puis si un jour t'as le mojo apel pole emploi puis ainsi de suite o pire on te dira c dla merde et puis voila
 
-message = recruteur = .format le mail
-
-mettre en forme en python
-
-faire la barre des softskill si ca existe pas faire un truk hr en %
-
+9/10 en python... jvoulais mettre 5/10 mais le type va se dire ok il est nul alors que je sais que chui ptetre 6 allé
 
 -----------------------------------------------------
 
