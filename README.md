@@ -8,12 +8,10 @@ corriger les bug merde merde pas connecté y'a pleins de bug
 
 -------------------------------------------------
 
+message = recruteur = .format le mail
 
-faire la meme pour la motivation et le message recruteur
+bon ben refaire la page cv selon le theme ludovic
 
-mettre l'envoie a une adresse précise et commencer a envoyer (faire message)
-
-tester au moins une fois le truk pour etre sur que ca marche (vers ton adresse) 
 
 -----------------------------------------------------
 
