@@ -10,7 +10,9 @@ corriger les bug merde merde pas connecté y'a pleins de bug
 
 message = recruteur = .format le mail
 
-bon ben refaire la page cv selon le theme ludovic
+mettre en forme en python
+
+faire la barre des softskill si ca existe pas faire un truk hr en %
 
 
 -----------------------------------------------------
