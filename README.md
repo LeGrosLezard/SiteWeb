@@ -38,6 +38,26 @@ la fonctionnalité m'envoyer les documents pour une simulation
 
 --------------------------------------------------
 
+----------------------------------------
+
+BUG: pas de rediction inscription
+
+retour page (inscrption)
+
+partie valider document
+
+page home -> mes cv au lieu de mes documents
+
+---------------------------------------
+
+
+
+
+
+
+
+
+
 ATTENTION 
 
 recherche d'emploie marche pas en database transforme ca
