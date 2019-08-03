@@ -48,6 +48,8 @@ partie valider document
 
 page home -> mes cv au lieu de mes documents
 
+remplissage vide des documents ptin
+
 ---------------------------------------
 
 
