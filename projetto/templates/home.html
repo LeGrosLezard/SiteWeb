@@ -369,12 +369,20 @@
             <span class="caption">
               <span class="caption-content">
                 <h2>Curiculum Vitae</h2>
-                <p class="mb-0">Mon cv !</p>
+                
+                <p class="mb-0">Mon cv !<br>
+                  <input type='button' value="Visualiser mon CV" class="choix" id="choix1"><br>
+                  <input type='button' value="Visualiser le PDF" class="choix" id="choix11">
+                </p>
+
+                
               </span>
             </span>
             <img class="img-fluid" src="/static/home/img/portfolio-1.jpg" alt="">
           </a>
         </div>
+
+
 
         
         <div class="col-lg-6">
@@ -382,7 +390,14 @@
             <span class="caption">
               <span class="caption-content">
                 <h2>Lettre de Motivation</h2>
-                <p class="mb-0">A dark blue background with a colored pencil, a clip, and a tiny ice cream cone!</p>
+                
+                <p class="mb-0">
+                  Ma lettre de motivation
+                  <input type='button' value="Visualiser ma lettre" class="choix" id="choix2"><br>
+                  <input type='button' value="Visualiser le PDF" class="choix" id="choix22">
+                </p>
+
+                
               </span>
             </span>
             <img class="img-fluid" src="/static/home/img/portfolio-2.jpg" alt="">
@@ -395,7 +410,15 @@
             <span class="caption">
               <span class="caption-content">
                 <h2>Message aux recruteurs</h2>
-                <p class="mb-0">Strawberries are such a tasty snack, especially with a little sugar on top!</p>
+                
+                <p class="mb-0">
+                
+                  Mon message
+                  <input type='button' value="Visualiser mon message" class="choix" id="choix3"><br>
+                  <input type='button' value="Visualiser le PDF" class="choix" id="choix33">
+
+                </p>
+                
               </span>
             </span>
             <img class="img-fluid" src="/static/home/img/portfolio-3.jpg" alt="">
@@ -408,7 +431,15 @@
             <span class="caption">
               <span class="caption-content">
                 <h2>Le questionnaire</h2>
-                <p class="mb-0">A yellow workspace with some scissors, pencils, and other objects.</p>
+                
+                <p class="mb-0">
+
+                  Mon bilan<br>
+                  <input type='button' value="Visualiser mon bilan" class="choix" id="choix4"><br>
+                  <input type='button' value="Visualiser mon PDF" class="choix" id="choix44"><br>
+
+                </p>
+                
               </span>
             </span>
             <img class="img-fluid" src="/static/home/img/portfolio-4.jpg" alt="">
@@ -579,6 +610,14 @@
     #explication{
         color:white;
     }
+    .choix{
+      background:none;
+      border:none;
+      color:white;
+    }
+    .choix:hover{
+      border:1px solid black;
+    }
 </style>
 
 
@@ -641,13 +680,14 @@ function redirection_questionnaire(){
 
 
 //---------------------------------------------------------------------Bilan
-jQuery("#icone_bilan").on("click", function(e){
+jQuery("#choix1").on("click", function(e){
 
 
  e.preventDefault();
   jQuery.ajax({
       data:{
-          "verification":"verification",
+          "verification_document":"verification_document",
+          "un":"un",
           'csrfmiddlewaretoken': '{{csrf_token}}',
       },
       type:"POST",
@@ -669,6 +709,225 @@ jQuery("#icone_bilan").on("click", function(e){
 
 //---------------------------------------------------------------------Bilan
 
+
+//---------------------------------------------------------------------Bilan
+jQuery("#choix11").on("click", function(e){
+
+
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+          "verification_document":"verification_document",
+          "unun":"unun",
+          'csrfmiddlewaretoken': '{{csrf_token}}',
+      },
+      type:"POST",
+      url:"/"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+          document.location.href = '/'
+          
+          
+      };
+      
+  });
+});
+
+
+//---------------------------------------------------------------------Bilan
+
+
+//---------------------------------------------------------------------Bilan
+jQuery("#choix2").on("click", function(e){
+
+
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+          "deux":"deux",
+          "verification_document":"verification_document",
+          'csrfmiddlewaretoken': '{{csrf_token}}',
+      },
+      type:"POST",
+      url:"/"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+          document.location.href = '/'
+          
+          
+      };
+      
+  });
+});
+
+
+//---------------------------------------------------------------------Bilan
+
+
+//---------------------------------------------------------------------Bilan
+jQuery("#choix22").on("click", function(e){
+
+
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+          "deuxdeux":"deuxdeux",
+          "verification_document":"verification_document",
+          'csrfmiddlewaretoken': '{{csrf_token}}',
+      },
+      type:"POST",
+      url:"/"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+          document.location.href = '/'
+          
+          
+      };
+      
+  });
+});
+
+
+//---------------------------------------------------------------------Bilan
+
+
+//---------------------------------------------------------------------Bilan
+jQuery("#choix3").on("click", function(e){
+
+
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+          "trois":"trois",
+          "verification_document":"verification_document",
+          'csrfmiddlewaretoken': '{{csrf_token}}',
+      },
+      type:"POST",
+      url:"/"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+          document.location.href = '/'
+          
+          
+      };
+      
+  });
+});
+
+
+//---------------------------------------------------------------------Bilan
+
+
+
+
+
+//---------------------------------------------------------------------Bilan
+jQuery("#choix33").on("click", function(e){
+
+
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+          "troistrois":"troistrois",
+          "verification_document":"verification_document",
+          'csrfmiddlewaretoken': '{{csrf_token}}',
+      },
+      type:"POST",
+      url:"/"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+          document.location.href = '/'
+          
+          
+      };
+      
+  });
+});
+
+
+//---------------------------------------------------------------------Bilan
+
+
+//---------------------------------------------------------------------Bilan
+jQuery("#choix4").on("click", function(e){
+
+
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+          "quattre":"quattre",
+          "verification_document":"verification_document",
+          'csrfmiddlewaretoken': '{{csrf_token}}',
+      },
+      type:"POST",
+      url:"/"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+          document.location.href = '/'
+          
+          
+      };
+      
+  });
+});
+
+
+//---------------------------------------------------------------------Bilan
+
+
+//---------------------------------------------------------------------Bilan
+jQuery("#choix44").on("click", function(e){
+
+
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+          "quattre":"quattrequattre",
+          "verification_document":"verification_document",
+          'csrfmiddlewaretoken': '{{csrf_token}}',
+      },
+      type:"POST",
+      url:"/"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+          document.location.href = '/'
+          
+          
+      };
+      
+  });
+});
+
+
+//---------------------------------------------------------------------Bilan
 
 </script>
 
