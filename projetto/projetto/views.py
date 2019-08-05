@@ -27,29 +27,81 @@ from .models import compte
 #FAUT FAIRE LA DECONNEXTION ET DONC LA GLOBAL
 
 
-GLOBAL = []
 
+from .cv.verify_document import verify_document_cv
 def home(request):
-    global GLOBAL
+
     user = request.user
-    print(user)
+
 
     if request.method == "POST":
-        verification = request.POST.get('verification')
+        verification_document = request.POST.get('verification_document')
 
-        if verification:
-            print("000000000000000000000000000000000000000000000000")
+        if verification_document:
+            cv = request.POST.get('un')
+            if cv:
+                pass
+            
+            cv_pdf = request.POST.get('unun')
+            if cv_pdf:
+                verification = verify_document_cv(pseudo, "cv")
+                if verification == "verification":
+                    return httpresponse("ok")
+                else:
+                    return httpresponse("not_ok")
+            
+            motivation = request.POST.get('deux')
+            if motivation:
+                pass
+            
+            motivation_pdf = request.POST.get('deuxdeux')
+            if motivation_pdf:
+                verification = verify_document_cv(pseudo, "lettre_de_motivation")
+                if verification == "verification":
+                    return httpresponse("ok")
+                else:
+                    return httpresponse("not_ok")
+                
+            message = request.POST.get('trois')
+            if message:
+                pass
+            
+            message_pdf = request.POST.get('troistrois')
+            if message_pdf:
+                verification = verify_document_cv(pseudo, "message")
+                if verification == "verification":
+                    return httpresponse("ok")
+                else:
+                    return httpresponse("not_ok")
+                
+            bilan = request.POST.get('quattre')
+            if bilan:
+                pass
 
-            #FAUT CHECK SI LE MEC A UN BILAN SI OUI RENVOYER OUI ET DONC
-            #SUR COMPTE
-            #SINON ON LENVOIE SUR LA PAGE BILAN
+            bilan_pdf = request.POST.get('quattrequattre')
+            if bilan_pdf:
+                verification = verify_document_cv(pseudo, "bilan")
+                if verification == "verification":
+                    return httpresponse("ok")
+                else:
+                    return httpresponse("not_ok")
+
+
     
-    try:
-        return render(request, 'home.html', {"user":GLOBAL[0][0]})
-    except IndexError:
+
         return render(request, 'home.html')
 
-    #On essais de voir si l'utilisateur est connecter ou pas.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -114,7 +166,10 @@ from .cv.database.recuperation_document import recuperation_nom
 from .cv.database.recuperation_document import recuperation_bilan
 from .cv.database.recuperation_document import recuperation_motivation
 
-from .cv.CONFIG import cv1
+
+
+
+
 def comment_faire_mon_cv(request):
 
     try:
@@ -128,9 +183,7 @@ def comment_faire_mon_cv(request):
 
         motivation = traitement_motivation(pseudo)
         message = traitement_message(pseudo)
-        print(cv)
-        print("")
-        print(message)
+
         
         bilan = recuperation_bilan(pseudo)
 
@@ -229,34 +282,48 @@ def comment_faire_mon_cv(request):
             un = request.POST.get('un')
             if un:
                 insertion_part_cv(pseudo, un, "un")
-
+                verify_document_cv(pseudo)
+             
+                
             metier = request.POST.get('metier')
             if metier:
                 insertion_part_cv(pseudo, metier, "metier")
 
+                
             formation = request.POST.get('formation')
             if formation:
                 insertion_part_cv(pseudo, formation, "formation")
+
   
             deux = request.POST.get('deux')
             if deux:
                 insertion_part_cv(pseudo, deux, "deux")
+                verify_document_cv(pseudo)
+   
             
             trois = request.POST.get('trois')
             if trois:
                 insertion_part_cv(pseudo, trois, "trois")
+                verify_document_cv(pseudo)
+               
             
             quattre = request.POST.get('quattre')
             if quattre:
                 insertion_part_cv(pseudo, quattre, "quattre")
+                verify_document_cv(pseudo)
+          
             
             cinq = request.POST.get('cinq')
             if cinq:
                 insertion_part_cv(pseudo, cinq, "cinq")
+                verify_document_cv(pseudo)
+           
             
             six_un = request.POST.get('six_un')
             if six_un:
                 insertion_part_cv(pseudo, six_un, "six_un")
+                verify_document_cv(pseudo)
+                
 
             poste1 = request.POST.get('poste1')
             if poste1:
@@ -265,6 +332,8 @@ def comment_faire_mon_cv(request):
             six_deux = request.POST.get('six_deux')
             if six_deux:
                 insertion_part_cv(pseudo, six_deux, "six_deux")
+                verify_document_cv(pseudo)
+             
 
             poste2 = request.POST.get('poste2')
             if poste2:
@@ -274,6 +343,8 @@ def comment_faire_mon_cv(request):
             six_trois = request.POST.get('six_trois')
             if six_trois:
                 insertion_part_cv(pseudo, six_trois, "six_trois")
+                verify_document_cv(pseudo)
+           
 
             poste3 = request.POST.get('poste3')
             if poste3:
@@ -282,7 +353,8 @@ def comment_faire_mon_cv(request):
             sept = request.POST.get('sept')
             if sept:
                 insertion_part_cv(pseudo, sept, "sept")
-                
+                verify_document_cv(pseudo)
+          
 
 
 
@@ -345,7 +417,7 @@ def le_questionnaire_premiere_partie(request):
     if request.method == "POST":
 
         questionnaire = request.POST.get('questionnaire')
-        print(questionnaire,"00000000000000000000000000000000000000")
+
         questionnaire_traitee = question_reponse(questionnaire)
         analyse = analyse_questionnaire(questionnaire_traitee)
         reponse = association_definition(analyse)
