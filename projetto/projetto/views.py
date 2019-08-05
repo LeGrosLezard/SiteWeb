@@ -15,41 +15,74 @@ from django.contrib.auth import authenticate
 from django.contrib.auth import get_user_model
 from django.contrib.auth import login
 from django.contrib.auth import logout
-
+from django.views.generic import View
 from django.shortcuts import render, redirect
 
+
+from django.template.loader import get_template
+import pdfkit
 from .forms import compte_utilisateur_form
 from .forms import userloginform
 from .forms import userregisterform
 
 from .models import compte
 
-#FAUT FAIRE LA DECONNEXTION ET DONC LA GLOBAL
 
 
 
+
+from .utils import render_to_pdf
+from .cv.traitement_document import traitement_cv
+from .cv.traitement_document import traitement_motivation
+from .cv.traitement_document import traitement_message
+from .cv.database.recuperation_info import recuperation_info
 from .cv.verify_document import verify_document_cv
+
+def page_pdf(request):
+    pseudo = request.user
+    path = "/static/espace_user/{}"
+    fichier_uti = str(pseudo) + "\cv.pdf"
+    path = path.format(fichier_uti)
+    return render(request, 'page_pdf.html', {"path":path})
+
+
+
 def home(request):
 
-    user = request.user
+    pseudo = request.user
 
 
     if request.method == "POST":
         verification_document = request.POST.get('verification_document')
 
+        #---------------------------------------------------------------------------------
+
         if verification_document:
             cv = request.POST.get('un')
             if cv:
                 pass
+
             
             cv_pdf = request.POST.get('unun')
             if cv_pdf:
+
                 verification = verify_document_cv(pseudo, "cv")
+
                 if verification == "verification":
-                    return httpresponse("ok")
+
+                    return HttpResponse("ok")        
+                    
+
+
+  
                 else:
-                    return httpresponse("not_ok")
-            
+                    return HttpResponse("not_ok")
+
+
+                
+        #---------------------------------------------------------------------------------
+
+
             motivation = request.POST.get('deux')
             if motivation:
                 pass
@@ -58,10 +91,13 @@ def home(request):
             if motivation_pdf:
                 verification = verify_document_cv(pseudo, "lettre_de_motivation")
                 if verification == "verification":
-                    return httpresponse("ok")
+                    return HttpResponse("ok")
+                #retourner page pdf
                 else:
-                    return httpresponse("not_ok")
+                    return HttpResponse("not_ok")
+
                 
+        #---------------------------------------------------------------------------------
             message = request.POST.get('trois')
             if message:
                 pass
@@ -70,10 +106,12 @@ def home(request):
             if message_pdf:
                 verification = verify_document_cv(pseudo, "message")
                 if verification == "verification":
-                    return httpresponse("ok")
+                    return HttpResponse("ok")
                 else:
-                    return httpresponse("not_ok")
-                
+                    return HttpResponse("not_ok")
+
+
+        #---------------------------------------------------------------------------------
             bilan = request.POST.get('quattre')
             if bilan:
                 pass
@@ -82,14 +120,14 @@ def home(request):
             if bilan_pdf:
                 verification = verify_document_cv(pseudo, "bilan")
                 if verification == "verification":
-                    return httpresponse("ok")
+                    return HttpResponse("ok")
                 else:
-                    return httpresponse("not_ok")
+                    return HttpResponse("not_ok")
 
 
     
 
-        return render(request, 'home.html')
+    return render(request, 'home.html')
 
 
 
