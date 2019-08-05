@@ -31,6 +31,10 @@ from .CONFIG import VILLE
 from .CONFIG import POSTE_MOTIVATION
 
 
+from .CONFIG import MESSAGE1
+from .CONFIG import MESSAGE2
+from .CONFIG import MESSAGE3
+from .CONFIG import MESSAGE4
 
 
 def insertion_user(nom, prenom, date, sexe, email, fixe, password,
@@ -115,13 +119,16 @@ def insertion_user(nom, prenom, date, sexe, email, fixe, password,
     conn.commit()
 
     cur.execute("""INSERT INTO message
-                (id_user, lettre_motivation,
+                (id_user,
+                lettre_motivation,
                 lettre_motivation1,
                 lettre_motivation2,
-                lettre_motivation3,
-                lettre_motivation4,
-                lettre_motivation5)
-                values(%s, '', '', '', '', '', '');""",(user, ))
+                lettre_motivation3)
+                values(%s, %s, %s, %s, %s);""",(user,
+                                                MESSAGE1,
+                                                MESSAGE2,
+                                                MESSAGE3,
+                                                MESSAGE4))
 
     conn.commit()
 
