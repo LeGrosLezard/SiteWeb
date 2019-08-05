@@ -107,7 +107,7 @@ def insertion_user(nom, prenom, date, sexe, email, fixe, password,
                 code,
                 ville,
                 poste_moitivation)
-                values(%s, %s, %s, %s, %s, %s, %s, 26400, 'Ville',
+                values(%s, %s, %s, %s, %s, %s, 'salut', 26400, 'Ville',
                 'Serveur le caffé la ristourne');""",(user,
                                                     MOTIVATION1,
                                                     MOTIVATION2,
