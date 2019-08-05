@@ -323,7 +323,7 @@
       {% if user.is_authenticated %}
       
           <a class="btn btn-primary btn-xl"
-            onclick="redirection_questionnaire()">Le passer!</a>
+            onclick="redirection_questionnaire()" id="passer">Le passer!</a>
 
       {% else %}
       
@@ -365,7 +365,7 @@
       
       <div class="row no-gutters">
         <div class="col-lg-6">
-          <a class="portfolio-item" href="comment_faire_mon_cv">
+          <a class="portfolio-item">
             <span class="caption">
               <span class="caption-content">
                 <h2>Curiculum Vitae</h2>
@@ -373,6 +373,8 @@
                 <p class="mb-0">Mon cv !<br>
                   <input type='button' value="Visualiser mon CV" class="choix" id="choix1"><br>
                   <input type='button' value="Visualiser le PDF" class="choix" id="choix11">
+
+                  <div id="alert1"></div>
                 </p>
 
                 
@@ -386,7 +388,7 @@
 
         
         <div class="col-lg-6">
-          <a class="portfolio-item" href="comment_faire_mon_cv">
+          <a class="portfolio-item">
             <span class="caption">
               <span class="caption-content">
                 <h2>Lettre de Motivation</h2>
@@ -395,6 +397,8 @@
                   Ma lettre de motivation
                   <input type='button' value="Visualiser ma lettre" class="choix" id="choix2"><br>
                   <input type='button' value="Visualiser le PDF" class="choix" id="choix22">
+
+                  <div id="alert2"></div>
                 </p>
 
                 
@@ -406,7 +410,7 @@
 
         
         <div class="col-lg-6">
-          <a class="portfolio-item" href="comment_faire_mon_cv">
+          <a class="portfolio-item">
             <span class="caption">
               <span class="caption-content">
                 <h2>Message aux recruteurs</h2>
@@ -416,6 +420,8 @@
                   Mon message
                   <input type='button' value="Visualiser mon message" class="choix" id="choix3"><br>
                   <input type='button' value="Visualiser le PDF" class="choix" id="choix33">
+
+                  <div id="alert3"></div>
 
                 </p>
                 
@@ -427,7 +433,7 @@
 
         
         <div class="col-lg-6">
-          <a class="portfolio-item" href="questionnaire">
+          <a class="portfolio-item">
             <span class="caption">
               <span class="caption-content">
                 <h2>Le questionnaire</h2>
@@ -437,6 +443,8 @@
                   Mon bilan<br>
                   <input type='button' value="Visualiser mon bilan" class="choix" id="choix4"><br>
                   <input type='button' value="Visualiser mon PDF" class="choix" id="choix44"><br>
+
+                  <div id="alert4"></div>
 
                 </p>
                 
@@ -469,7 +477,7 @@
       </div>
       <div class="row no-gutters">
         <div class="col-lg-6">
-          <a class="portfolio-item" href="#">
+          <a class="portfolio-item">
             <span class="caption">
               <span class="caption-content">
                 <h2>Curiculum Vitae</h2>
@@ -618,53 +626,23 @@
     .choix:hover{
       border:1px solid black;
     }
+
+    #alert4,
+    #alert3,
+    #alert2,
+    #alert1{
+      color:black;
+    }
+    #ici{
+      color:red;
+    }
+    
 </style>
 
 
 
 
 
-<script>
-
-
-//Ici en gros on verifie que l'utilisateur est connecté.
-//Si oui on lui montre ces info
-//Sinon on lui dis connecte toi
-if("{{user}}" != "AnonymousUser"){     //conected
-    document.getElementById('info_connected').style.display = "block";
-    document.getElementById('info_not_connected').style.display = "none";
-    document.getElementById('essentiel_connected').style.display = "block";
-    document.getElementById('essentiel_not_connected').style.display = "none";
-    document.getElementById('essentiel_connected').style.display = "block";
-    
-}
-else{
-    document.getElementById('info_connected').style.display = "none";
-    document.getElementById('info_not_connected').style.display = "block";
-    document.getElementById('essentiel_connected').style.display = "none";
-    document.getElementById('essentiel_not_connected').style.display = "block";
-    document.getElementById('essentiel_connected').style.display = "none";
-};
-
-
-
-function redirection_questionnaire(){
-  if("{{user}}" == "AnonymousUser"){
-    document.location.href="compte";
-  }
-  else{
-    document.location.href="le_questionnaire";
-  };
-};
-
-
-
-
-
-
-
-
-</script>
 
 
 
@@ -698,7 +676,7 @@ jQuery("#choix1").on("click", function(e){
           document.getElementById("#Alert").inner.html = "aie"; 
       }
       else{
-          document.location.href = '/'
+          document.location.href = 'page_cv'
           
           
       };
@@ -729,8 +707,10 @@ jQuery("#choix11").on("click", function(e){
           document.getElementById("#Alert").inner.html = "aie"; 
       }
       else{
-          document.location.href = '/'
-          
+
+          if(data == "not_ok"){
+            document.getElementById("alert1").innerHTML = "<center>Veuillez constituer un CV <a href='#icone_hover' id='ici'>Ici</a></center>"
+          };
           
       };
       
@@ -760,7 +740,7 @@ jQuery("#choix2").on("click", function(e){
           document.getElementById("#Alert").inner.html = "aie"; 
       }
       else{
-          document.location.href = '/'
+          document.location.href = 'page_motivation'
           
           
       };
@@ -791,7 +771,9 @@ jQuery("#choix22").on("click", function(e){
           document.getElementById("#Alert").inner.html = "aie"; 
       }
       else{
-          document.location.href = '/'
+          if(data == "not_ok"){
+            document.getElementById("alert2").innerHTML = "<center>Veuillez constituer une lettre de motivation <a href='#icone_hover' id='ici'>Ici</a></center>"
+          };
           
           
       };
@@ -822,7 +804,7 @@ jQuery("#choix3").on("click", function(e){
           document.getElementById("#Alert").inner.html = "aie"; 
       }
       else{
-          document.location.href = '/'
+          document.location.href = 'page_message'
           
           
       };
@@ -856,7 +838,9 @@ jQuery("#choix33").on("click", function(e){
           document.getElementById("#Alert").inner.html = "aie"; 
       }
       else{
-          document.location.href = '/'
+          if(data == "not_ok"){
+            document.getElementById("alert3").innerHTML = "<center>Veuillez constituer un message <a href='#icone_hover' id='ici'>Ici</a></center>"
+          };
           
           
       };
@@ -887,7 +871,7 @@ jQuery("#choix4").on("click", function(e){
           document.getElementById("#Alert").inner.html = "aie"; 
       }
       else{
-          document.location.href = '/'
+          document.location.href = 'page_bilan'
           
           
       };
@@ -906,7 +890,7 @@ jQuery("#choix44").on("click", function(e){
  e.preventDefault();
   jQuery.ajax({
       data:{
-          "quattre":"quattrequattre",
+          "quattrequattre":"quattrequattre",
           "verification_document":"verification_document",
           'csrfmiddlewaretoken': '{{csrf_token}}',
       },
@@ -918,7 +902,10 @@ jQuery("#choix44").on("click", function(e){
           document.getElementById("#Alert").inner.html = "aie"; 
       }
       else{
-          document.location.href = '/'
+ 
+          if(data == "not_ok"){
+            document.getElementById("alert4").innerHTML = "<center>Veuillez passez le questionnaire <a href='#passer' id='ici'>Ici</a></center>"
+          };
           
           
       };
