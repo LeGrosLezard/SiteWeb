@@ -1,8 +1,10 @@
 # SiteWeb
+# plus vite tu fini ce truk de merde plus vite tu peux faire le truk
 
 Un site Web pour la recherche d'emploi
 
 fais un truk production non production push ca prend 2sec mais ouais c chiant
+
 
 --------------------------------------------------
 finir le type demande son cv pdf 
