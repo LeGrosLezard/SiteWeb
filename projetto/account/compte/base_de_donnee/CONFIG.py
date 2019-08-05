@@ -68,3 +68,38 @@ MOTIVATION5 = """Restant à votre disposition pour toute information complément
 MOTIVATION6 = "Veuillez agréer, (Madame, Monsieur), l’expression de mes sincères salutations."
 
 
+
+
+
+MESSAGE1 = """1) - Madame, Monsieur, \n
+                a) - Ayant fini ma formation x à x\n
+                ou \n
+                b) - Chef de projet depuis plus de 5 ans d'expérience à x
+                \n
+                je vous adresse ma candidature au poste de votre poste.
+            """
+
+
+MESSAGE2 = """Ayant des compétences dans le domaine comme
+            le décrit mon CV ci-joint j'aimerai les mettre à profit
+            au sein de votre enseigne."""
+
+
+MESSAGE3 = """Je serai ravi de vous exposer plus
+            en détails mes expériences lors d'un entretient."""
+
+MESSAGE4 = """Dans cette attente, je vous pris ’agréer mes salutations les meilleures."""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
