@@ -710,7 +710,10 @@ jQuery("#choix11").on("click", function(e){
 
           if(data == "not_ok"){
             document.getElementById("alert1").innerHTML = "<center>Veuillez constituer un CV <a href='#icone_hover' id='ici'>Ici</a></center>"
-          };
+          }
+          else if(data == "ok"){
+            document.location.href="page_pdf"
+          }
           
       };
       
