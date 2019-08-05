@@ -2,6 +2,8 @@
 
 5 balles pour pas recopié tout le code d'une video de 40 min... comprend pas ou mettre ce template php en plus bande de raclure
 
+mec j'ai fais les premiere 20 min apres x vidéo putin
+
 Un site Web pour la recherche d'emploi
 
 bon le type télécharge son truk
