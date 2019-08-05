@@ -320,8 +320,6 @@ def comment_faire_mon_cv(request):
                                                              "mess2": message[1],
                                                              "mess3": message[2],
                                                              "mess4": message[3],
-                                                             "mess5": message[4],
-                                                             "mess6": message[5],
                                                              
                                                              })
 
