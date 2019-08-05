@@ -51,6 +51,8 @@ partie valider document
 
 page home -> mes cv au lieu de mes documents
 
+non connexion faire les pages
+
 ---------------------------------------
 
 
