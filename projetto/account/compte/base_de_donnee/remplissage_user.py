@@ -41,6 +41,7 @@ def insertion_user(nom, prenom, date, sexe, email, fixe, password,
                    pseudo, lieu_habitation, portable):
 
 
+
     conn = psycopg2.connect(database=DATABASE,
                             user=USER,
                             host=HOST,
@@ -96,7 +97,7 @@ def insertion_user(nom, prenom, date, sexe, email, fixe, password,
 
 
 
-    cur.execute("""INSERT INTO motivation
+    SQL = """INSERT INTO motivation
                 (id_user,
                 lettre_motivation,
                 lettre_motivation1,
@@ -107,15 +108,20 @@ def insertion_user(nom, prenom, date, sexe, email, fixe, password,
                 code,
                 ville,
                 poste_moitivation)
-                values(%s, %s, %s, %s, %s, %s, 'salut', 26400, 'Ville',
-                'Serveur le caffé la ristourne');""",(user,
-                                                    MOTIVATION1,
-                                                    MOTIVATION2,
-                                                    MOTIVATION3,
-                                                    MOTIVATION4,
-                                                    MOTIVATION5,
-                                                    MOTIVATION6))
+                values(%s, %s, %s, %s, %s, %s, %s, 26400, 'Ville',
+                'Serveur le caffé la ristourne');"""
 
+
+    VALUES = (user,
+             MOTIVATION1,
+             MOTIVATION2,
+             MOTIVATION3,
+             MOTIVATION4,
+             MOTIVATION5,
+             MOTIVATION6)
+    
+    cur.execute(SQL, VALUES)
+    
     conn.commit()
 
     cur.execute("""INSERT INTO message
