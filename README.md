@@ -16,7 +16,7 @@ envoie views
 
 views -> supprimer le document
 
-retour template -> téléchargement avec path format (ptin y'a trop de truk et faut isoler le truk noir prendre le pts le plus a gauche)
+retour template -> téléchargement avec path format (ptin y'a trop de truk et faut isoler le truk noir prendre le pts le plus a gauche et le mettre dans matplolib en rouge sous forme de petit rond c classe ca)
 
 ----------------------------------------------------
 
