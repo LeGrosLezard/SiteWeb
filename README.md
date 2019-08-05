@@ -3,6 +3,8 @@
 
 Un site Web pour la recherche d'emploi
 
+c'est juste ca qui me manqué c le php apprendre le php !!!
+
 fais un truk production non production push ca prend 2sec mais ouais c chiant
 
 
