@@ -371,7 +371,7 @@
                 <h2>Curiculum Vitae</h2>
                 
                 <p class="mb-0">Mon cv !<br>
-                  <input type='button' value="Visualiser mon CV" class="choix" id="choix1"><br>
+                  <input type='button' value="Modifier mon CV" class="choix" id="choix1"><br>
                   <input type='button' value="Visualiser le PDF" class="choix" id="choix11">
 
                   <div id="alert1"></div>
@@ -395,7 +395,7 @@
                 
                 <p class="mb-0">
                   Ma lettre de motivation
-                  <input type='button' value="Visualiser ma lettre" class="choix" id="choix2"><br>
+                  <input type='button' value="Modifier ma lettre" class="choix" id="choix2"><br>
                   <input type='button' value="Visualiser le PDF" class="choix" id="choix22">
 
                   <div id="alert2"></div>
@@ -418,7 +418,7 @@
                 <p class="mb-0">
                 
                   Mon message
-                  <input type='button' value="Visualiser mon message" class="choix" id="choix3"><br>
+                  <input type='button' value="Modifier mon message" class="choix" id="choix3"><br>
                   <input type='button' value="Visualiser le PDF" class="choix" id="choix33">
 
                   <div id="alert3"></div>
@@ -441,7 +441,7 @@
                 <p class="mb-0">
 
                   Mon bilan<br>
-                  <input type='button' value="Visualiser mon bilan" class="choix" id="choix4"><br>
+                  <input type='button' value="Modifier mon bilan" class="choix" id="choix4"><br>
                   <input type='button' value="Visualiser mon PDF" class="choix" id="choix44"><br>
 
                   <div id="alert4"></div>
@@ -676,7 +676,7 @@ jQuery("#choix1").on("click", function(e){
           document.getElementById("#Alert").inner.html = "aie"; 
       }
       else{
-          document.location.href = 'page_cv'
+          document.location.href = 'comment_faire_mon_cv'
           
           
       };
@@ -712,7 +712,7 @@ jQuery("#choix11").on("click", function(e){
             document.getElementById("alert1").innerHTML = "<center>Veuillez constituer un CV <a href='#icone_hover' id='ici'>Ici</a></center>"
           }
           else if(data == "ok"){
-            document.location.href="page_pdf"
+            document.location.href="page_cv_pdf"
           }
           
       };
@@ -743,7 +743,7 @@ jQuery("#choix2").on("click", function(e){
           document.getElementById("#Alert").inner.html = "aie"; 
       }
       else{
-          document.location.href = 'page_motivation'
+          document.location.href = 'comment_faire_mon_cv'
           
           
       };
@@ -776,7 +776,10 @@ jQuery("#choix22").on("click", function(e){
       else{
           if(data == "not_ok"){
             document.getElementById("alert2").innerHTML = "<center>Veuillez constituer une lettre de motivation <a href='#icone_hover' id='ici'>Ici</a></center>"
-          };
+          }
+          else if(data == "ok"){
+            document.location.href="page_motivation_pdf"
+          }
           
           
       };
@@ -807,7 +810,7 @@ jQuery("#choix3").on("click", function(e){
           document.getElementById("#Alert").inner.html = "aie"; 
       }
       else{
-          document.location.href = 'page_message'
+          document.location.href = 'comment_faire_mon_cv'
           
           
       };
@@ -843,7 +846,10 @@ jQuery("#choix33").on("click", function(e){
       else{
           if(data == "not_ok"){
             document.getElementById("alert3").innerHTML = "<center>Veuillez constituer un message <a href='#icone_hover' id='ici'>Ici</a></center>"
-          };
+          }
+          else if(data == "ok"){
+            document.location.href="page_message_pdf"
+          }
           
           
       };
@@ -908,8 +914,10 @@ jQuery("#choix44").on("click", function(e){
  
           if(data == "not_ok"){
             document.getElementById("alert4").innerHTML = "<center>Veuillez passez le questionnaire <a href='#passer' id='ici'>Ici</a></center>"
-          };
-          
+          }
+          else if(data == "ok"){
+            document.location.href="page_bilan_pdf"
+          }
           
       };
       
