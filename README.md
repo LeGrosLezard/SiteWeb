@@ -3,26 +3,24 @@
 Un site Web pour la recherche d'emploi
 
 
+----------------------------------------------------
+a la creation
+
+creer un dossier dans espace_user.document
+
+document pdf cv PDF, lettre motivation PDF, message recruteur EN TXT ICI
+
+des que le mec touche a comment faire mon cv et appuie sur valider
+
+envoie views
+
+views -> supprimer le document
+
+retour template -> téléchargement avec path format (ptin y'a trop de truk et faut isoler le truk noir prendre le pts le plus a gauche)
+
+----------------------------------------------------
+
 --------------------------------------------------
-
-faire dossier de utilisateur a la création
-
-ajouter le téléchargement automatique des cv
-
---------------------------------------------------
-
-maintenant faire la meme chose pour motivation et lettre !
-
-+ téléchargement
-
-IL FAUT: telecharger le cv et tout du type pour le mettre dans un doss
-
-et lui faire voir depuis mon compte atta, faudra
-
-le supprimer et a chaque modif le télécharger !!
-
------------------------------------------------------
-
 
 ok faudra implémenter le truk mail
 
@@ -30,10 +28,25 @@ faire envoie mail (genre c toi qui rentre l'email)
 
 la fonctionnalité m'envoyer les documents pour une simulation
 
+mettre les pieces jointes(voir si ca dépasse pas la taille maxi mais jcrois pas)
+
 
 --------------------------------------------------
 
+finir les phrases de l'ananlyse
+
+si on trouve des truk dans la grande catégorie 
+
+la mette et la dire
+
+le mettre en TXT dans espace user
+
+mail -> récuperer puis le mettre dans message
+
 ----------------------------------------
+
+
+
 
 BUG: pas de rediction inscription
 
