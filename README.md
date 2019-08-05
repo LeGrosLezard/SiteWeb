@@ -3,22 +3,16 @@
 Un site Web pour la recherche d'emploi
 
 
-----------------------------------------------------
-a la creation
+--------------------------------------------------
+finir le type demande son cv pdf 
 
-creer un dossier dans espace_user.document
+on regarde si y'a son cv pdf si oui on lui montrer chai pas comment faut un truk ouverture pdf hé merde ou on lui envoie sur son mail nik
 
-document pdf cv PDF, lettre motivation PDF, message recruteur EN TXT ICI
+sinon on lui dit fais en un stp
 
-des que le mec touche a comment faire mon cv et appuie sur valider
+si le mec demande de visualiser son document on le retourne vers la page
 
-envoie views
-
-views -> supprimer le document
-
-retour template -> téléchargement avec path format (ptin y'a trop de truk et faut isoler le truk noir prendre le pts le plus a gauche et le mettre dans matplolib en rouge sous forme de petit rond c classe ca)
-
-----------------------------------------------------
+---------------------------------------------------
 
 --------------------------------------------------
 
