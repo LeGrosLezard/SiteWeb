@@ -66,26 +66,27 @@ def insertion_user(nom, prenom, date, sexe, email, fixe, password,
     user = [i for i in rows]
     user = user[0][0]
     
-
+    print(user)
     cur.execute("""INSERT INTO cv
                 (id_user, cv, cv1, cv2, cv3, cv4,
                 cv6_1, cv6_2, cv6_3, cv7, metier, formation, poste1,
                 poste2, poste3)
-                values(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s,%s,);""",(user,
-                                                                                CV1,
-                                                                                CV2,
-                                                                                CV3,
-                                                                                CV4,
-                                                                                CV5,
-                                                                                CV6_1,
-                                                                                CV6_2,
-                                                                                CV6_3,
-                                                                                CV7,
-                                                                                METIER,
-                                                                                FORMATION,
-                                                                                POSTE1,
-                                                                                POSTE2,
-                                                                                POSTE3))
+                values(%s, %s, %s, %s, %s, %s,
+                %s, %s, %s, %s, %s, %s, %s, %s, %s);""",(user,
+                                                        CV1,
+                                                        CV2,
+                                                        CV3,
+                                                        CV4,
+                                                        CV5,
+                                                        CV6_1,
+                                                        CV6_2,
+                                                        CV6_3,
+                                                        CV7,
+                                                        METIER,
+                                                        FORMATION,
+                                                        POSTE1,
+                                                        POSTE2,
+                                                        POSTE3))
 
     conn.commit()
 
@@ -102,16 +103,14 @@ def insertion_user(nom, prenom, date, sexe, email, fixe, password,
                 code,
                 ville,
                 poste_moitivation)
-                values(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s);""",(user,
-                                                                    MOTIVATION1,
-                                                                    MOTIVATION2,
-                                                                    MOTIVATION3,
-                                                                    MOTIVATION4,
-                                                                    MOTIVATION5,
-                                                                    MOTIVATION6,
-                                                                    CODE,
-                                                                    VILLE,
-                                                                    POSTE_MOTIVATION))
+                values(%s, %s, %s, %s, %s, %s, %s, 26400, 'Ville',
+                'Serveur le caffé la ristourne');""",(user,
+                                                    MOTIVATION1,
+                                                    MOTIVATION2,
+                                                    MOTIVATION3,
+                                                    MOTIVATION4,
+                                                    MOTIVATION5,
+                                                    MOTIVATION6))
 
     conn.commit()
 
