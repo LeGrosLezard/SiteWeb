@@ -716,7 +716,7 @@
 
   <section class="showcase" id="section_message">
     <div class="container-fluid p-0">
-      <div class="row no-gutters">
+      <div class="row no-gutters" id="WAGA">
 
         <div class="col-lg-6 order-lg-2">
             <TEXTAREA name="nom" style="width:100%;height:100%;" id="text_message1">{{mess1}}</TEXTAREA>
@@ -726,7 +726,8 @@
           <h2>Message au recruteur<br><br>Première étape</h2>
           
           <p class="lead mb-0">
-              Ici on se met à la place du recruteur.
+              Ici on se présente et on dit pourquoi
+              on joint la personne.
               {% if user.is_authenticated %}
               
               <input type="button" value="Valider" id="message1">
@@ -749,9 +750,10 @@
             
         <div class="col-lg-6 my-auto showcase-text" style="background:#f54242">
           <h2>Deuxième étape</h2>
-          <p class="lead mb-0">Newly improved, and full of great utility classes,
-              Bootstrap 4 is leading the way in mobile responsive web development!
-              All of the themes on Start Bootstrap are now using Bootstrap 4!
+          <p class="lead mb-0">
+
+              On lui dit ce que l'on apporte comme document à notre candidature.
+              
              {% if user.is_authenticated %}
              <input type="button" value="Valider" id="message2">
             {% else %}
@@ -769,11 +771,9 @@
         </div>
             
         <div class="col-lg-6 order-lg-1 my-auto showcase-text" style="background:#4296f5">
-          <h2>Easy to Use &amp; Customize</h2>
-          <p class="lead mb-0">Landing Page is just HTML and CSS with a
-              splash of SCSS for users who demand some deeper customization
-              options. Out of the box, just add your content and images,
-              and your new landing page will be ready to go!
+          <h2>Troisième étape</h2>
+          <p class="lead mb-0">
+              Dites lui que vous etes pret à un éventuel entretient.
 
               {% if user.is_authenticated %}
               <input type="button" value="Valider" id="message3">
@@ -796,10 +796,10 @@
         </div>
             
         <div class="col-lg-6 my-auto showcase-text" style="background:#f54242">
-          <h2>Deuxième étape</h2>
-          <p class="lead mb-0">Newly improved, and full of great utility classes,
-              Bootstrap 4 is leading the way in mobile responsive web development! All
-              of the themes on Start Bootstrap are now using Bootstrap 4!
+          <h2>Quattrième étape</h2>
+          <p class="lead mb-0">
+
+              Et nous sortons notre plus belle phrase de salut !
 
             {% if user.is_authenticated %}
             <input type="button" value="Valider" id="message4">
@@ -814,51 +814,6 @@
 
 
 
-      <div class="row no-gutters">
-        <div class="col-lg-6 order-lg-2">
-            <TEXTAREA name="nom" style="width:100%;height:100%;" id="text_message5">{{mess5}}</TEXTAREA>
-        </div>
-            
-        <div class="col-lg-6 order-lg-1 my-auto showcase-text" style="background:#4296f5">
-          <h2>Easy to Use &amp; Customize</h2>
-          <p class="lead mb-0">Landing Page is just HTML and CSS with a splash of
-              SCSS for users who demand some deeper customization options. Out of
-              the box, just add your content and images, and your new landing page
-              will be ready to go!
-
-              {% if user.is_authenticated %}
-              <input type="button" value="Valider" id="message5">
-              {% else %}
-              {% endif %}
-
-             
-              <div id="message_recru5"></div>
-
-          </p>
-        </div>
-      </div>
-
-
-      <div class="row no-gutters">
-        <div class="col-lg-6">
-            <TEXTAREA name="nom" style="width:100%;height:100%;" id="text_message6">{{mess6}}</TEXTAREA>
-        </div>
-            
-        <div class="col-lg-6 my-auto showcase-text" style="background:#f54242">
-          <h2>Deuxième étape</h2>
-          <p class="lead mb-0">Newly improved, and full of great utility
-              classes, Bootstrap 4 is leading the way in mobile responsive web
-              development! All of the themes on Start Bootstrap are now using Bootstrap 4!
-
-              {% if user.is_authenticated %}
-              <input type="button" value="Valider" id="message6">
-              {% else %}
-              {% endif %}
-              
-              <div id="message_recru6"></div>
-          </p>
-        </div>
-      </div>
 
         
 
@@ -1146,21 +1101,7 @@
         if (p != ""){
             var modifier = document.getElementById('message4').value = "Modifier";
         }
-
-        var q = document.getElementById('text_message5').value;
-
-        if (q != ""){
-            var modifier = document.getElementById('message5').value = "Modifier";
-        }
-
-        var r = document.getElementById('text_message6').value;
-
-        if (r != ""){
-            var modifier = document.getElementById('message6').value = "Modifier";
-        }
-
-
-        
+  
     };
 
     function_bouton()
@@ -1353,69 +1294,6 @@ jQuery("#message4").on("click", function(e){
 //-----------------------------------------------------------------4
 
 
-//-----------------------------------------------------------------5
-jQuery("#message5").on("click", function(e){
-    
- cinq = document.getElementById("text_message5").value;
-
- 
- e.preventDefault();
-  jQuery.ajax({
-      data:{
-          "message":"message",
-          "cinq":cinq,
-          'csrfmiddlewaretoken': '{{csrf_token}}' , 
-      },
-      type:"POST",
-      url:"comment_faire_mon_cv"
-  })
-  .done(function(data){
-      if (data.error){
-          document.getElementById("#Alert").inner.html = "aie"; 
-      }
-      else{
-          document.getElementById("message_recru5").innerHTML = "Cinquième partie effectué";
-          
-          
-      };
-      
-  });
- });
-
-//-----------------------------------------------------------------5
-
-
-
-//-----------------------------------------------------------------6
-jQuery("#message6").on("click", function(e){
-    
- six = document.getElementById("text_message6").value;
-
- 
- e.preventDefault();
-  jQuery.ajax({
-      data:{
-          "message":"message",
-          "six":six,
-          'csrfmiddlewaretoken': '{{csrf_token}}' , 
-      },
-      type:"POST",
-      url:"comment_faire_mon_cv"
-  })
-  .done(function(data){
-      if (data.error){
-          document.getElementById("#Alert").inner.html = "aie"; 
-      }
-      else{
-          document.getElementById("message_recru6").innerHTML = "Sixième partie effectué";
-          
-          
-      };
-      
-  });
- });
-
-//-----------------------------------------------------------------6
 
 
 
