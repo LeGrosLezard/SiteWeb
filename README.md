@@ -5,14 +5,9 @@ Un site Web pour la recherche d'emploi
 
 --------------------------------------------------
 
-faire le message (etape)
-
-
 faire dossier de utilisateur a la création
 
 ajouter le téléchargement automatique des cv
-
-
 
 --------------------------------------------------
 
@@ -48,8 +43,6 @@ partie valider document
 
 page home -> mes cv au lieu de mes documents
 
-remplissage vide des documents ptin
-
 ---------------------------------------
 
 
@@ -61,8 +54,6 @@ remplissage vide des documents ptin
 
 
 ATTENTION 
-
-recherche d'emploie marche pas en database transforme ca
 
 Rajouter envoyer votre truk a une adresse, comme ca imagine, t'envoie ce truk avec le message a la fin nous sommes ect...
 a un recruteur le mec y va sur le site ca sera cool
@@ -76,8 +67,6 @@ a un recruteur le mec y va sur le site ca sera cool
 finir les phrases analyses
 
 faire les tests cognitifs mais la c que du report de faute + si le mec a moyenne ou plus (ten fou raven portera pas plainte)
-
-si négociation faire comme dans les films
 
 -------------------------------------------------------------------------------------------------------------------------------
 
