@@ -1,11 +1,16 @@
 # SiteWeb
-# plus vite tu fini ce truk de merde plus vite tu peux faire le truk
+
+5 balles pour pas recopié tout le code d'une video de 40 min... comprend pas ou mettre ce template php en plus bande de raclure
 
 Un site Web pour la recherche d'emploi
 
-c'est juste ca qui me manqué c le php apprendre le php !!!
+bon le type télécharge son truk
 
-fais un truk production non production push ca prend 2sec mais ouais c chiant
+directe on lui dit depose le mtn stp
+
+et voila mais ste fois on tuilise l'orm... faudra faire 
+
+une photo de profil aussi
 
 
 --------------------------------------------------
