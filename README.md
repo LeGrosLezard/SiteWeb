@@ -1,8 +1,5 @@
 # SiteWeb
 
-faire une simulation pcque y'a des cv.pdf folder qui pop de partout
-
-faire une simulation merde c classe
 
 --------------------------------------------------
 
@@ -23,7 +20,7 @@ si on trouve des truk dans la grande catégorie
 
 la mette et la dire
 
-le mettre en TXT dans espace user
+le mettre en TXT dans espace user bien joué ptin
 
 mail -> récuperer puis le mettre dans message
 
