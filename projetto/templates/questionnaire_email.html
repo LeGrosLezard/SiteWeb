@@ -89,39 +89,96 @@
                 Bonjour <strong>{{user}}</strong><br><br>
                 <em>Vous pouvez voir vos nouvelles depuis la page d'accueil<br>
                 Nous envoyons automatiquement des messages aux recruteurs chaque jour.</em>
+                <br><br>
+
+     
+
+
+                <div class="container">
+                  <div class="row">
+                  
+                    <div class="col-sm" id="one">
+                      Envoyer Message à des destinataires précis
+                    </div>
+
                     
+                    <div class="col-sm" id="two">
+                      Envoyer Message à toutes les demandes correspondant à ma recherche
+                    </div>
+
+                  </div>
+                </div>
+
+
+
+
+
+              <section id="precis">
+                  <br><br><br><br>
+                  <h2>Envoyez vos données !</h2><br><br>
+                  
+                  <input type="text" placeholder="mail1"><br><br>
+                  <input type="text" placeholder="mail1"><br><br>
+                  <input type="text" placeholder="mail1"><br><br>
+                  <input type="text" placeholder="mail1"><br><br>
+                  <input type="text" placeholder="mail1"><br><br>
+                  <input type="text" placeholder="mail1"><br><br>
+                  <input type="text" placeholder="mail1"><br><br>
+                  <input type="text" placeholder="mail1"><br><br>
+                  
+
+
+
+                  <br><br>
+
+                  Acceptez vous de joindre votre bilan (visible dans mon compte) ?<br>
+                  <input type="text" placeholder="oui"><br><br><br><br>
+                  <input type="button" value="Envoyer !"><br><br><br>
+                  <em>Nous vous enverrons et au recruteur et à vous les demande de cv.</em><br>
+                  <strong>Bien à vous l'équipe de Projetto</strong>
+             </section>
+
+
+
+
+
+
+
+
+
+
        
-
-              <br><br><br><br>
-              <h2>Voici le dernier formulaire à remplir</h2><br><br>
-              <em>ex: Prof de math, professeur de math, professeur de mathématique </em><br><br>
-              Quel est le métier auquel vous souhaitez postuler ?<br><br>
-              <input type="text" placeholder="Nom du métier"><br><br>
-              <input type="text" placeholder="Nom du métier"><br><br>
-              <input type="text" placeholder="Nom du métier"><br><br>
-              <input type="text" placeholder="Nom du métier"><br><br>
-              <input type="text" placeholder="Nom du métier"><br><br>
-              <input type="text" placeholder="Nom du métier"><br><br>
-              <input type="text" placeholder="Nom du métier"><br><br>
-
-
-
-              <br><br>
+              <section id="all">
+                  <br><br><br><br>
+                  <h2>Voici le dernier formulaire à remplir</h2><br><br>
+                  <em>ex: Prof de math, professeur de math, professeur de mathématique </em><br><br>
+                  Quel est le métier auquel vous souhaitez postuler ?<br><br>
+                  <input type="text" placeholder="Nom du métier"><br><br>
+                  <input type="text" placeholder="Nom du métier"><br><br>
+                  <input type="text" placeholder="Nom du métier"><br><br>
+                  <input type="text" placeholder="Nom du métier"><br><br>
+                  <input type="text" placeholder="Nom du métier"><br><br>
+                  <input type="text" placeholder="Nom du métier"><br><br>
+                  <input type="text" placeholder="Nom du métier"><br><br>
 
 
-              Quel est la région/ville dans laquelle vous aimeriez avoir un travail ?<br>
-              <input type="text" placeholder="Ville"><br><br>
+
+                  <br><br>
 
 
-              Quel est le rayon dans lequel vous pouvez vous déplacer ?<br>
-              <input type="text" placeholder="Rayon"><br><br>
-    
-              Acceptez vous de joindre votre bilan (visible dans mon compte) ?<br>
-              <input type="text" placeholder="oui"><br><br><br><br>
-              <input type="button" value="Envoyer !"><br><br><br>
-              <em>Nous vous enverrons et au recruteur et à vous les demande de cv.</em><br>
-              <strong>Bien à vous l'équipe de Projetto</strong>
+                  Quel est la région/ville dans laquelle vous aimeriez avoir un travail ?<br>
+                  <input type="text" placeholder="Ville"><br><br>
 
+
+                  Quel est le rayon dans lequel vous pouvez vous déplacer ?<br>
+                  <input type="text" placeholder="Rayon"><br><br>
+        
+                  Acceptez vous de joindre votre bilan (visible dans mon compte) ?<br>
+                  <input type="text" placeholder="oui"><br><br><br><br>
+                  <input type="button" value="Envoyer !"><br><br><br>
+                  <em>Nous vous enverrons et au recruteur et à vous les demande de cv.</em><br>
+                  <strong>Bien à vous l'équipe de Projetto</strong>
+             </section>
 
 
 
@@ -229,6 +286,14 @@
       #icone_bilan:hover,
       #icone_hover:hover{
           background:#ECB807
+      }
+      #one:hover,
+      #two:hover{
+        border:1px solid black;
+      }
+      #precis,
+      #all{
+        display:none;
       }
   </style>
 
@@ -344,6 +409,26 @@ jQuery("#icone_bilan").on("click", function(e){
   });
 });
 //---------------------------------------------------------------------Bilan
+
+
+
+
+jQuery("#one").on("click", function(e){
+    document.getElementById("all").style.display = "block";
+    document.getElementById("precis").style.display = "none";
+
+});
+
+
+
+jQuery("#two").on("click", function(e){
+    document.getElementById("all").style.display = "none";
+    document.getElementById("precis").style.display = "block";
+
+});
+
+
+
 </script>
 
 
