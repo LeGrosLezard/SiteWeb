@@ -500,32 +500,26 @@ from .cv.document_user import document_cv_download
 def page_cv(request):
 
 
-
+    pseudo = request.user
     form = DocumentForm_cv(request.POST, request.FILES)
-
+    ok = False
     
     if request.method == "POST":
         
         if form.is_valid():
             try:
-                newdoc = Document(docfile = request.FILES['docfile'])
+                ok = True
+                newdoc = Document_cv(docfile = request.FILES['docfile'])
                 newdoc.save()
-            
-
-                
             except:
                 pass
         else:
             pass
  
 
-
-    
-    return render(request, 'page_cv.html', {"form":form})
-
-
-
-
+    if ok is True:
+        document_cv_download(pseudo)
+        ok = False
 
 
     try:
@@ -550,11 +544,12 @@ def page_cv(request):
                        "addresse": addresse,
                        "fixe": fixe,
                        "portable": portable,
-                       "email": email}
+                       "email": email,
+                       "form":form}
                       )
 
     except IndexError :
-        return render(request, 'page_cv.html')
+        return render(request, 'page_cv.html', {"form":form})
             
 
 
@@ -572,21 +567,27 @@ def page_motivation(request):
 
     form = DocumentForm_motivation(request.POST, request.FILES)
 
-    
+    pseudo = request.user
+    ok = False
+
     if request.method == "POST":
         
         if form.is_valid():
             try:
-                newdoc = Document(docfile = request.FILES['docfile'])
+                ok = True
+                newdoc = Document_motivation(docfile = request.FILES['docfile'])
                 newdoc.save()
-            
-
-                
             except:
                 pass
         else:
             pass
-    
+
+
+    if ok is True:
+        document_motivation_download(pseudo)
+        ok = False
+
+        
     return render(request, 'page_motivation.html', {"form":form})
 
 
@@ -615,8 +616,9 @@ from .cv.document_user import document_message_download
 def page_message(request):
 
 
-
-
+    pseudo = request.user
+    ok = False
+    
     form = DocumentForm_message(request.POST, request.FILES)
 
     
@@ -624,7 +626,8 @@ def page_message(request):
         
         if form.is_valid():
             try:
-                newdoc = Document(docfile = request.FILES['docfile'])
+                ok = True
+                newdoc = Document_message(docfile = request.FILES['docfile'])
                 newdoc.save()
             
 
@@ -635,7 +638,9 @@ def page_message(request):
             pass
  
 
-
+    if ok is True:
+        document_message_download(pseudo)
+        ok = False
     
     return render(request, 'page_message.html', {"form":form})
 
