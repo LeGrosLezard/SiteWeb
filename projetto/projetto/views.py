@@ -38,12 +38,38 @@ from .cv.traitement_document import traitement_message
 from .cv.database.recuperation_info import recuperation_info
 from .cv.verify_document import verify_document_cv
 
-def page_pdf(request):
+def page_cv_pdf(request, mode):
     pseudo = request.user
     path = "/static/espace_user/{}"
     fichier_uti = str(pseudo) + "\cv.pdf"
     path = path.format(fichier_uti)
     return render(request, 'page_pdf.html', {"path":path})
+
+
+def page_motivation_pdf(request, mode):
+    pseudo = request.user
+    path = "/static/espace_user/{}"
+    fichier_uti = str(pseudo) + "\motivation.pdf"
+    path = path.format(fichier_uti)
+    return render(request, 'page_pdf.html', {"path":path})
+
+
+def page_message_pdf(request, mode):
+    pseudo = request.user
+    path = "/static/espace_user/{}"
+    fichier_uti = str(pseudo) + "\message.pdf"
+    path = path.format(fichier_uti)
+    return render(request, 'page_pdf.html', {"path":path})
+
+
+
+def page_bilan_pdf(request, mode):
+    pseudo = request.user
+    path = "/static/espace_user/{}"
+    fichier_uti = str(pseudo) + "\bilan.pdf"
+    path = path.format(fichier_uti)
+    return render(request, 'page_pdf.html', {"path":path})
+
 
 
 
@@ -133,20 +159,6 @@ def home(request):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 def compte(request):
     global GLOBAL
 
@@ -157,7 +169,6 @@ def compte(request):
         demande_de_cv = request.POST.get('demande_de_cv')
         demande_de_motivation = request.POST.get('demande_de_motivation')
         demande_de_message = request.POST.get('demande_de_message')
-
 
         if demande_de_cv:
             return JsonResponse({"a":"connected"})
@@ -482,7 +493,40 @@ from .cv.traitement_document import traitement_cv
 from .cv.traitement_document import traitement_motivation
 from .cv.traitement_document import traitement_message
 from .cv.database.recuperation_info import recuperation_info
+
+from .forms import DocumentForm_cv
+from .models import Document_cv
+from .cv.document_user import document_cv_download
 def page_cv(request):
+
+
+
+    form = DocumentForm_cv(request.POST, request.FILES)
+
+    
+    if request.method == "POST":
+        
+        if form.is_valid():
+            try:
+                newdoc = Document(docfile = request.FILES['docfile'])
+                newdoc.save()
+            
+
+                
+            except:
+                pass
+        else:
+            pass
+ 
+
+
+    
+    return render(request, 'page_cv.html', {"form":form})
+
+
+
+
+
 
     try:
         pseudo = request.user
@@ -519,8 +563,31 @@ def page_cv(request):
     return render(request, 'page_cv.html')
 
 
+
+from .forms import DocumentForm_motivation
+from .models import Document_motivation
+from .cv.document_user import document_motivation_download
 def page_motivation(request):
-    return render(request, 'page_motivation.html')
+
+
+    form = DocumentForm_motivation(request.POST, request.FILES)
+
+    
+    if request.method == "POST":
+        
+        if form.is_valid():
+            try:
+                newdoc = Document(docfile = request.FILES['docfile'])
+                newdoc.save()
+            
+
+                
+            except:
+                pass
+        else:
+            pass
+    
+    return render(request, 'page_motivation.html', {"form":form})
 
 
 
@@ -542,9 +609,35 @@ def page_motivation(request):
 
 
 
-
+from .forms import DocumentForm_message
+from .models import Document_message
+from .cv.document_user import document_message_download
 def page_message(request):
-    return render(request, 'page_message.html')
+
+
+
+
+    form = DocumentForm_message(request.POST, request.FILES)
+
+    
+    if request.method == "POST":
+        
+        if form.is_valid():
+            try:
+                newdoc = Document(docfile = request.FILES['docfile'])
+                newdoc.save()
+            
+
+                
+            except:
+                pass
+        else:
+            pass
+ 
+
+
+    
+    return render(request, 'page_message.html', {"form":form})
 
 
 
