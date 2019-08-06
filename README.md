@@ -1,30 +1,7 @@
 # SiteWeb
 
-5 balles pour pas recopié tout le code d'une video de 40 min... comprend pas ou mettre ce template php en plus bande de raclure
+faire une simulation pcque y'a des cv.pdf folder qui pop de partout
 
-mec j'ai fais les premiere 20 min apres x vidéo putin
-
-Un site Web pour la recherche d'emploi
-
-bon le type télécharge son truk
-
-directe on lui dit depose le mtn stp
-
-et voila mais ste fois on tuilise l'orm... faudra faire 
-
-une photo de profil aussi
-
-
---------------------------------------------------
-finir le type demande son cv pdf 
-
-on regarde si y'a son cv pdf si oui on lui montrer chai pas comment faut un truk ouverture pdf hé merde ou on lui envoie sur son mail nik
-
-sinon on lui dit fais en un stp
-
-si le mec demande de visualiser son document on le retourne vers la page
-
----------------------------------------------------
 
 --------------------------------------------------
 
