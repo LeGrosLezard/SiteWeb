@@ -65,24 +65,10 @@
 <br><br>
 
 
-<section id="telechargement">
- 
-    <form action="page_message" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <p>{{ form.non_field_errors }}</p>
-        <p>{{ form.docfile.label_tag }} {{ form.docfile.help_text }} et renommer le avec vote pseudo</p>
-        <p>
-            {{ form.docfile.errors }}
-            {{ form.docfile }}                                            
-        </p>
-
-        <p><input type="submit" value="Upload" /></p>
-    </form>
-</section>
 
 
 
-
+CE MESSAGE Ne sera pas envoyé ca sera votre message de mail
 
 
 
