@@ -1,18 +1,25 @@
 # SiteWeb
 
-c ca de bouffer des bonbon a jein heuresement que la péri existe 
+
 
 
 --------------------------------------------------
 
 constituer MAIL
 
-- les pieces jointes
+- database
 
-- le message du mec
+- verifie les pieces jointes
+
+- le message du mec (pluss c info)
 
 - ton message a la fin
 
+RECUPERE LE MAIL DU MEC pour lui envoyer aussi 
+
+# FAIRE UN TRUK VOULEZ VOUS FAIRE UNE SIMULATION EMAIL
+
+non en vrai il est cool mon site 
 
 -------------------------------------------------
 
