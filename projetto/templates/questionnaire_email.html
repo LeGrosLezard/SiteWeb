@@ -117,25 +117,25 @@
                   <br><br><br><br>
                   <h2>Envoyez vos données !</h2><br><br>
                   
-                  <input type="text" placeholder="mail1"><br><br>
-                  <input type="text" placeholder="mail1"><br><br>
-                  <input type="text" placeholder="mail1"><br><br>
-                  <input type="text" placeholder="mail1"><br><br>
-                  <input type="text" placeholder="mail1"><br><br>
-                  <input type="text" placeholder="mail1"><br><br>
-                  <input type="text" placeholder="mail1"><br><br>
-                  <input type="text" placeholder="mail1"><br><br>
+                  <input type="text" placeholder="mail" id="mail_1" value=""><br><br>
+                  <input type="text" placeholder="mail" id="mail_2" value=""><br><br>
+                  <input type="text" placeholder="mail" id="mail_3" value=""><br><br>
+                  <input type="text" placeholder="mail" id="mail_4" value=""><br><br>
+                  <input type="text" placeholder="mail" id="mail_5" value=""><br><br>
+                  <input type="text" placeholder="mail" id="mail_6" value=""><br><br>
+                  <input type="text" placeholder="mail" id="mail_7" value=""><br><br>
+                  <input type="text" placeholder="mail" id="mail_8" value=""><br><br>
                   
 
 
 
                   <br><br>
 
-                  Acceptez vous de joindre votre bilan (visible dans mon compte) ?<br>
-                  <input type="text" placeholder="oui"><br><br><br><br>
-                  <input type="button" value="Envoyer !"><br><br><br>
+                  <input type="button" value="Envoyer !" id="bouton_precis"><br><br><br>
+                  
                   <em>Nous vous enverrons et au recruteur et à vous les demande de cv.</em><br>
                   <strong>Bien à vous l'équipe de Projetto</strong>
+                  
              </section>
 
 
@@ -153,13 +153,13 @@
                   <h2>Voici le dernier formulaire à remplir</h2><br><br>
                   <em>ex: Prof de math, professeur de math, professeur de mathématique </em><br><br>
                   Quel est le métier auquel vous souhaitez postuler ?<br><br>
-                  <input type="text" placeholder="Nom du métier"><br><br>
-                  <input type="text" placeholder="Nom du métier"><br><br>
-                  <input type="text" placeholder="Nom du métier"><br><br>
-                  <input type="text" placeholder="Nom du métier"><br><br>
-                  <input type="text" placeholder="Nom du métier"><br><br>
-                  <input type="text" placeholder="Nom du métier"><br><br>
-                  <input type="text" placeholder="Nom du métier"><br><br>
+                  <input type="text" placeholder="Nom du métier" id="metier1"><br><br>
+                  <input type="text" placeholder="Nom du métier" id="metier2"><br><br>
+                  <input type="text" placeholder="Nom du métier" id="metier3"><br><br>
+                  <input type="text" placeholder="Nom du métier" id="metier4"><br><br>
+                  <input type="text" placeholder="Nom du métier" id="metier5"><br><br>
+                  <input type="text" placeholder="Nom du métier" id="metier6"><br><br>
+                  <input type="text" placeholder="Nom du métier" id="metier7"><br><br>
 
 
 
@@ -167,15 +167,15 @@
 
 
                   Quel est la région/ville dans laquelle vous aimeriez avoir un travail ?<br>
-                  <input type="text" placeholder="Ville"><br><br>
+                  <input type="text" placeholder="Ville" id="ville"><br><br>
 
 
                   Quel est le rayon dans lequel vous pouvez vous déplacer ?<br>
-                  <input type="text" placeholder="Rayon"><br><br>
+                  <input type="text" placeholder="Rayon" id="rayon"><br><br>
         
-                  Acceptez vous de joindre votre bilan (visible dans mon compte) ?<br>
-                  <input type="text" placeholder="oui"><br><br><br><br>
+   
                   <input type="button" value="Envoyer !"><br><br><br>
+                  
                   <em>Nous vous enverrons et au recruteur et à vous les demande de cv.</em><br>
                   <strong>Bien à vous l'équipe de Projetto</strong>
              </section>
@@ -295,6 +295,9 @@
       #all{
         display:none;
       }
+      input{
+        text-align:center;
+      }
   </style>
 
 
@@ -385,16 +388,53 @@
 
 
 <script>
+
+
+//---------------------------------------------------------------------function Bilan
+
+    function recup_mail(){
+        var a = document.getElementById("mail_1").value;
+        var b = document.getElementById("mail_2").value;
+        var c = document.getElementById("mail_3").value;
+        var d = document.getElementById("mail_4").value;
+        var e = document.getElementById("mail_5").value;
+        var f = document.getElementById("mail_6").value;
+        var g = document.getElementById("mail_7").value;
+        var h = document.getElementById("mail_8").value;
+  
+        return a, b, c, d, e, f, g, h
+
+    }
+
+
+
+
+
+//---------------------------------------------------------------------function Bilan
+
+
 //---------------------------------------------------------------------Bilan
-jQuery("#icone_bilan").on("click", function(e){
+jQuery("#bouton_precis").on("click", function(e){
+
+ a, b, c, d, e, f, g, h = recup_mail()
+
+
  e.preventDefault();
   jQuery.ajax({
       data:{
-          "verification":"verification",
+          "mail_precis":"mail_precis",
+          "mail1":a,
+          "mail2":b,
+          "mail3":c,
+          "mail4":d,
+          "mail5":e,
+          "mail6":f,
+          "mail7":g,
+          "mail8":h,
           'csrfmiddlewaretoken': '{{csrf_token}}',
       },
       type:"POST",
-      url:"/"
+      url:"questionnaire_email"
   })
   .done(function(data){
       if (data.error){
@@ -411,8 +451,7 @@ jQuery("#icone_bilan").on("click", function(e){
 //---------------------------------------------------------------------Bilan
 
 
-
-
+//---------------------------------------------------------------------départ
 jQuery("#one").on("click", function(e){
     document.getElementById("all").style.display = "block";
     document.getElementById("precis").style.display = "none";
@@ -426,6 +465,81 @@ jQuery("#two").on("click", function(e){
     document.getElementById("precis").style.display = "block";
 
 });
+
+
+//---------------------------------------------------------------------départ
+
+
+
+
+
+//---------------------------------------------------------------------function all mail
+
+function recup_metier(){
+
+    var a = document.getElementById("metier1").value;
+    var b = document.getElementById("metier2").value;
+    var c = document.getElementById("metier3").value;
+    var d = document.getElementById("metier4").value;
+    var e = document.getElementById("metier5").value;
+    var f = document.getElementById("metier6").value;
+    var g = document.getElementById("metier7").value;
+    var h = document.getElementById("ville").value;
+    var i = document.getElementById("rayon").value;
+
+
+    return a, b, c, d, e, f, g, h, i
+
+
+}
+
+//---------------------------------------------------------------------function all mail
+
+//---------------------------------------------------------------------all mail
+
+jQuery("#bouton_precis").on("click", function(e){
+
+ a, b, c, d, e, f, g, h, i = recup_metier()
+
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+          "all_function":"all_function",
+          "metier1":a,
+          "metier2":b,
+          "metier3":c,
+          "metier4":d,
+          "metier5":e,
+          "metier6":f,
+          "metier7":g,
+          "ville":h,
+          "rayon":i,
+          'csrfmiddlewaretoken': '{{csrf_token}}',
+      },
+      type:"POST",
+      url:"questionnaire_email"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+          document.location.href = '/'
+          
+          
+      };
+      
+  });
+});
+
+
+
+
+//---------------------------------------------------------------------all mail
+
+
+
+
 
 
 
