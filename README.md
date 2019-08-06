@@ -2,6 +2,7 @@
 
 faire une simulation pcque y'a des cv.pdf folder qui pop de partout
 
+faire une simulation merde c classe
 
 --------------------------------------------------
 
