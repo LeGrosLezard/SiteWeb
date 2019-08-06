@@ -19,17 +19,18 @@ class compte_utilisateur_form(forms.Form):
 
 
 
-
 class userloginform(forms.Form):
     
     username = forms.CharField()
     password = forms.CharField(widget=forms.PasswordInput)
+
     
 
     def clean(self, *args, **kwargs):
 
         username = self.cleaned_data.get('username')
         password = self.cleaned_data.get('password')
+
 
         if username and password:
             user = authenticate(username=username, password=password)
@@ -48,13 +49,14 @@ class userloginform(forms.Form):
 
 
 
-class userregisterform(forms.ModelForm):
+class userregisterform(forms.Form):
 
     
+    pseudo = forms.CharField()
     email = forms.EmailField(label="Email adresse")
     email2 = forms.EmailField(label="Email adresse")
     password = forms.CharField(widget=forms.PasswordInput)
-
+    
 
 
     class mera:
@@ -84,7 +86,8 @@ class userregisterform(forms.ModelForm):
         
 
 
-
+class DocumentForm(forms.Form):
+    docfile = forms.FileField(label='Selectionner un fichier')
 
 
 
