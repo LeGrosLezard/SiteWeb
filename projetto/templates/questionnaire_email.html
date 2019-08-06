@@ -125,6 +125,8 @@
                   <input type="text" placeholder="mail" id="mail_6" value=""><br><br>
                   <input type="text" placeholder="mail" id="mail_7" value=""><br><br>
                   <input type="text" placeholder="mail" id="mail_8" value=""><br><br>
+
+                  <input type="text" placeholder="sujet du message" id="sujet" value=""><br><br>
                   
 
 
@@ -486,9 +488,10 @@ function recup_metier(){
     var g = document.getElementById("metier7").value;
     var h = document.getElementById("ville").value;
     var i = document.getElementById("rayon").value;
+    var j = document.getElementById("sujet").value;
 
 
-    return a, b, c, d, e, f, g, h, i
+    return a, b, c, d, e, f, g, h, i, j
 
 
 }
@@ -499,7 +502,7 @@ function recup_metier(){
 
 jQuery("#bouton_precis").on("click", function(e){
 
- a, b, c, d, e, f, g, h, i = recup_metier()
+ a, b, c, d, e, f, g, h, i, j = recup_metier()
 
  e.preventDefault();
   jQuery.ajax({
@@ -514,6 +517,7 @@ jQuery("#bouton_precis").on("click", function(e){
           "metier7":g,
           "ville":h,
           "rayon":i,
+          "sujet":j,
           'csrfmiddlewaretoken': '{{csrf_token}}',
       },
       type:"POST",
