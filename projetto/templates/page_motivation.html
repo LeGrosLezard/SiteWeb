@@ -67,6 +67,23 @@
 
 
 
+<section id="telechargement">
+    <!-- Upload form. Note enctype attribute! -->
+    <form action="page_motivation" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <p>{{ form.non_field_errors }}</p>
+        <p>{{ form.docfile.label_tag }} {{ form.docfile.help_text }} et renommer le avec vote pseudo</p>
+        <p>
+            {{ form.docfile.errors }}
+            {{ form.docfile }}                                            
+        </p>
+
+        <p><input type="submit" value="Upload" /></p>
+    </form>
+</section>
+
+
+  
   <section id="EDITOR">
 
     <input type="button" id="click" value="Click">
@@ -291,8 +308,6 @@
 
 
 
-
-
   <!-- Footer -->
   <footer class="footer bg-light">
     <div class="container">
@@ -371,6 +386,7 @@ $('#click').click(function () {
 
     document.getElementById("click").style.display = "none";
     document.getElementById("nav").style.display = "none";
+    document.getElementById("telechargement").style.display = "none";
 
     var pdf = new jsPDF();
     pdf.addHTML(document.getElementById('EDITOR').value, function() {
@@ -379,6 +395,7 @@ $('#click').click(function () {
 
     document.getElementById("click").style.display = "block";
     document.getElementById("question").style.display = "block";
+    document.getElementById("telechargement").style.display = "block";
     
 })
 </script>
