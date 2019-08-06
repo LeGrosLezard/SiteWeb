@@ -74,8 +74,20 @@
 
 
 
+    <section id="telechargement">
+
+        <form action="page_motivation" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
 
 
+            <p>
+                STP TELECHARGE LE PDF ET RENOMME LE AVEC TON PSEDUO PSEDUO et upload le!<br>
+                {{ form.docfile }}                                            
+            </p>
+
+            <p><input type="submit" value="Upload" /></p>
+        </form>
+    </section>
 
 
     
@@ -86,7 +98,8 @@
         
         <div class="col-sm-12 col-mg-5 col-lg-12" id="gauche">
             <br><br>
-            <img src="/static/mon_compte/img/testimonials-2.jpg" style="float:right;margin-right:150px;margin-top:100px;">
+            <img src="/static/mon_compte/img/testimonials-2.jpg" style="float:right;
+                margin-right:150px;width:150px;height:150px;">
             <h3>P R E N O M<br>
             <h3>N O M </h3><br>
             <h3 style="color:#79A9B7;">T I T R E &nbsp;&nbsp; DU  &nbsp;&nbsp; P O S T E</h3>
@@ -467,6 +480,9 @@ $('#un').click(function () {
     document.getElementById("footer").style.display = "none";
     document.getElementById("nav").style.display = "none";
     document.getElementById("question").style.display = "none";
+    document.getElementById("telechargement").style.display = "none";
+
+
 
     var pdf = new jsPDF();
     pdf.addHTML(document.getElementById('EDITOR').value, function() {
@@ -478,6 +494,7 @@ $('#un').click(function () {
     document.getElementById("footer").style.display = "block";
     document.getElementById("nav").style.display = "block";
     document.getElementById("question").style.display = "block";
+    document.getElementById("telechargement").style.display = "block";
     
 })
 </script>
