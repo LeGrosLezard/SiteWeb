@@ -66,8 +66,8 @@
 
 
 <section id="telechargement">
-    <!-- Upload form. Note enctype attribute! -->
-    <form action="page_motivation" method="post" enctype="multipart/form-data">
+ 
+    <form action="page_message" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <p>{{ form.non_field_errors }}</p>
         <p>{{ form.docfile.label_tag }} {{ form.docfile.help_text }} et renommer le avec vote pseudo</p>
@@ -86,48 +86,46 @@
 
 
 
-    <input type="button" id="click" value="Click">
+    <input type="button" id="un" value="Click">
     <br><br>
     
     <style>
-        #click{
+        #un{
             background:none;
             border:none;
             float:right;
             margin-right:200px;
         }
-        #click:hover{
+        #un:hover{
             border:1px solid black;
         }
     </style>
 
 <section id="EDITOR">
-<center>
-    <br><br><br><br>
-    <div id="motivation" class="col-lg-8" style="text-align:center;">
-        Lettre de motivation<br>
-        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    </div>
-</center>
+    <center>
+        <br><br><br><br>
+        <div id="motivation" class="col-lg-8" style="text-align:center;">
+            Lettre de motivation<br>
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        </div>
+    </center>
 
-<br><br><br><br><br><br><br><br>
-<center>
-    Nous
-</center>
+    <br><br><br><br><br><br><br><br>
+
   </section>
 
 
@@ -138,8 +136,8 @@
 <br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
-  <!-- Testimonials -->
-  <section class="testimonials text-center bg-light">
+  
+  <section class="testimonials text-center bg-light" id="testi">
     <div class="container">
 
     
@@ -217,7 +215,7 @@
 
 
   <!-- Footer -->
-  <footer class="footer bg-light">
+  <footer class="footer bg-light" id="footer">
     <div class="container">
       <div class="row">
         <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
@@ -303,6 +301,10 @@ $('#un').click(function () {
     document.getElementById("un").style.display = "none";
     document.getElementById("nav").style.display = "none";
     document.getElementById("telechargement").style.display = "none";
+    document.getElementById("testi").style.display = "none";
+    document.getElementById("footer").style.display = "none";
+
+    
 
     var pdf = new jsPDF();
     pdf.addHTML(document.getElementById('EDITOR').value, function() {
@@ -310,10 +312,11 @@ $('#un').click(function () {
     });
 
     document.getElementById("un").style.display = "block";
-    document.getElementById("question").style.display = "block";
+
     document.getElementById("telechargement").style.display = "block";
-    
-})
+    document.getElementById("testi").style.display = "block";
+    document.getElementById("footer").style.display = "block";
+});
 </script>
 
 
