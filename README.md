@@ -1,14 +1,8 @@
 # SiteWeb
 
-n'en fais pas trop théréza après tu vas bacler
-
 -------------------------------------------------
 
-finir les phrases de l'ananlyse
-
-si on trouve des truk dans la grande catégorie 
-
-la mette et la dire
+refaire les phrases de l'ananlyse
 
 faire les tests cognitifs
 
@@ -22,23 +16,9 @@ mémoire de travail
 
 mémoire
 
-
-
-et score tout sur 10 donc il en faut 10 et tu met si le mec a plus de 5 dis leur qu'il a un bon score ici
-
-mettre du temps
-
-
-
-faire "lanalyse"
-
 le mettre en pdf
 
-le télécharger
-
 l'inclure dans email
-
-
 
 (va revoir wiki)
 
