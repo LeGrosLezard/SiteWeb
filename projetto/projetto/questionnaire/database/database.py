@@ -6,7 +6,8 @@ from .CONFIG import HOST
 from .CONFIG import PASSWORD
 
 
-def insertion_bilan(pseudo, password, bilan):
+def insertion_bilan_premiere_partie(pseudo, bilan):
+
 
     conn = psycopg2.connect(database=DATABASE,
                             user=USER,
@@ -15,12 +16,9 @@ def insertion_bilan(pseudo, password, bilan):
 
     cur = conn.cursor()
     
-    cur.execute("""INSERT INTO bilan
-                (bilan, id_user)
-                VALUES ('{2}')
-                SELECT users.id from users
-                WHERE users.pseudo = '{0}'
-                password = '{1}'""".format(pseudo, password, bilan))
+    cur.execute("""UPDATE bilan
+                set bilan = %s
+                WHERE id_user = {0};""".format(user, (bilan, )))
                        
 
     conn.commit() 
