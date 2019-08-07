@@ -141,7 +141,19 @@ def insertion_user(nom, prenom, date, sexe, email, fixe, password,
 
 
 
+    cur.execute("""INSERT INTO bilan
+                (id_user,
+                bilan,
+                bilan1,
+                bilan2,
+                bilan3)
+                values(%s, %s, %s, %s, %s);""",(user,
+                                                "",
+                                                "",
+                                                "",
+                                                ""))
 
+    conn.commit()
 
 
 
