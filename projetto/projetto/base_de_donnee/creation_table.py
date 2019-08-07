@@ -56,7 +56,10 @@ class Table:
                     lettre_motivation2 TEXT,
                     lettre_motivation3 TEXT,
                     lettre_motivation4 TEXT,
-                    lettre_motivation5 TEXT);""")
+                    lettre_motivation5 TEXT,
+                    code varchar(10),
+                    ville varchar(100),
+                    poste_moitivation TEXT);""")
         
         conn.commit()
 
@@ -103,6 +106,9 @@ class Table:
         cur.execute("""create table bilan(
                     id serial PRIMARY KEY,
                     bilan TEXT,
+                    bilan1 TEXT,
+                    bilan2 TEXT,
+                    bilan3 TEXT,
                     id_user integer REFERENCES users (id));""")
         
         conn.commit()
