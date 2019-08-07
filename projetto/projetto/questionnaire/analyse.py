@@ -14,7 +14,30 @@ from .CONFIG import Reactions_naturelles
 #Morosité/contentement:
 #Indolencen, Sensibilité, Affectation
 
+def nettoyage_questionnaire(questionnaire):
+    
+    question_traitee = []
+    liste_w = []
+    for i in questionnaire:
 
+        ok = False
+        
+        for j in questionnaire:
+            if i == j:
+                liste_w.append(i)
+
+                
+
+    print(liste_w)
+
+
+    print(question_traitee)
+
+
+
+        
+    return questionnaire
+    
 from .CONFIG import QUESTION
 def analyse_questionnaire(questionnaire):
 
@@ -51,8 +74,10 @@ def analyse_questionnaire(questionnaire):
         "Sensibilite_au_stress" : 0,
         }
 
-    dico_pts = {"a": 1, "b": 0.5, "c": 0, "d": -0.5, "e": -1}
+    dico_pts = {"a": -1, "b": -0.5, "c": 0, "d": 0.5, "e": 1}
 
+
+    nettoyage_questionnaire(questionnaire)
  
     for i in questionnaire:
         #On parcours la liste nettoyé
@@ -92,8 +117,7 @@ def analyse_questionnaire(questionnaire):
                             if i[1] == cle2:
                                 #on a la réponse sous forme a,b,c,d,e
                                 #ou a = 1 et e = -1
-                                
-                                SOUS_CAT[cle1] -= int(valeur2)
+                                SOUS_CAT[cle1] += int(-valeur2)
                                 #On l'ajoute au dico
 
     return SOUS_CAT
@@ -102,14 +126,16 @@ def association_definition(dico):
 
     liste_supp = []
     liste_inf = []
-
+    liste_all = []
 
 
     for cle, valeur in dico.items():
         if valeur > 0:
             liste_supp.append(cle)
+            print(cle, valeur)
         elif valeur < 0:
             liste_inf.append(cle)
+            print(cle, valeur, "ici")
 
 
 
