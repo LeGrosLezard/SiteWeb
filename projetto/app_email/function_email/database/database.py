@@ -1,9 +1,9 @@
 import psycopg2
 
-from .CONFIG import DATABASE
-from .CONFIG import USER
-from .CONFIG import HOST
-from .CONFIG import PASSWORD
+from CONFIG import DATABASE
+from CONFIG import USER
+from CONFIG import HOST
+from CONFIG import PASSWORD
 
 def recup_user(pseudo):
 
@@ -15,13 +15,16 @@ def recup_user(pseudo):
     cur = conn.cursor()
 
     cur.execute("""select id, nom, prenom, lieu_habitation, fixe,
-                portable, email from users;""")
+                portable, email from users
+                where pseudo = '{}';""".format(pseudo))
 
     conn.commit() 
 
     rows = cur.fetchall()
     liste = [i for i in rows]
-    return liste
+
+    return liste[0][0], liste[0][1], liste[0][2], liste[0][3],\
+           liste[0][4], liste[0][5], liste[0][6]
 
 def recup_message(pseudo):
 
@@ -51,13 +54,13 @@ def recup_message(pseudo):
     rows = cur.fetchall()
     liste = [i for i in rows]
 
-    return id, nom, prenom, lieu_habitation, fixe,\
-                portable, email, liste[0], liste[1],\
-                liste[2], liste[3], liste[4], liste[5]
+    return nom, prenom, lieu_habitation, fixe,\
+                portable, email, liste[0][0], liste[0][1],\
+                liste[0][2], liste[0][3], liste[0][4], liste[0][5]
 
 
 
-
+print(recup_message("Jbaw"))
 
 
 
