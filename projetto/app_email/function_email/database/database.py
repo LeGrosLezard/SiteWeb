@@ -1,9 +1,9 @@
 import psycopg2
 
-from CONFIG import DATABASE
-from CONFIG import USER
-from CONFIG import HOST
-from CONFIG import PASSWORD
+from .CONFIG import DATABASE
+from .CONFIG import USER
+from .CONFIG import HOST
+from .CONFIG import PASSWORD
 
 def recup_user(pseudo):
 
