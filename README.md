@@ -1,26 +1,6 @@
 # SiteWeb
 
 
-
-
---------------------------------------------------
-
-constituer MAIL
-
-- database
-
-- verifie les pieces jointes
-
-- le message du mec (pluss c info)
-
-- ton message a la fin
-
-RECUPERE LE MAIL DU MEC pour lui envoyer aussi 
-
-# FAIRE UN TRUK VOULEZ VOUS FAIRE UNE SIMULATION EMAIL
-
-non en vrai il est cool mon site 
-
 -------------------------------------------------
 
 finir les phrases de l'ananlyse
@@ -33,8 +13,9 @@ faire les tests cognitifs
 
 ----------------------------------------
 
+finir mail_all
 
-
+----------------------------------------
 
 BUG: pas de rediction inscription
 
