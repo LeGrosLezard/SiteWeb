@@ -81,7 +81,7 @@ def home(request):
     if request.method == "POST":
         verification_document = request.POST.get('verification_document')
 
-        #---------------------------------------------------------------------------------
+        
 
         if verification_document:
             cv = request.POST.get('un')
@@ -106,7 +106,6 @@ def home(request):
 
 
                 
-        #---------------------------------------------------------------------------------
 
 
             motivation = request.POST.get('deux')
@@ -123,7 +122,7 @@ def home(request):
                     return HttpResponse("not_ok")
 
                 
-        #---------------------------------------------------------------------------------
+        
             message = request.POST.get('trois')
             if message:
                 pass
@@ -137,10 +136,10 @@ def home(request):
                     return HttpResponse("not_ok")
 
 
-        #---------------------------------------------------------------------------------
             bilan = request.POST.get('quattre')
             if bilan:
                 pass
+
 
             bilan_pdf = request.POST.get('quattrequattre')
             if bilan_pdf:
@@ -470,7 +469,13 @@ def le_questionnaire_premiere_partie(request):
         questionnaire_traitee = question_reponse(questionnaire)
         analyse = analyse_questionnaire(questionnaire_traitee)
         reponse = association_definition(analyse)
-        reponse_associee = association_definition1(reponse[0], reponse[1])
+        reponse_associee = association_definition1(reponse)
+        print(reponse_associee)
+
+
+
+
+
     return render(request, 'le_questionnaire_premiere_partie.html')
 
 
