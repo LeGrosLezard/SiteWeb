@@ -14,30 +14,8 @@ from .CONFIG import Reactions_naturelles
 #Morosité/contentement:
 #Indolencen, Sensibilité, Affectation
 
-def nettoyage_questionnaire(questionnaire):
-    
-    question_traitee = []
-    liste_w = []
-    for i in questionnaire:
-
-        ok = False
-        
-        for j in questionnaire:
-            if i == j:
-                liste_w.append(i)
-
-                
-
-    print(liste_w)
 
 
-    print(question_traitee)
-
-
-
-        
-    return questionnaire
-    
 from .CONFIG import QUESTION
 def analyse_questionnaire(questionnaire):
 
@@ -77,8 +55,6 @@ def analyse_questionnaire(questionnaire):
     dico_pts = {"a": -1, "b": -0.5, "c": 0, "d": 0.5, "e": 1}
 
 
-    nettoyage_questionnaire(questionnaire)
- 
     for i in questionnaire:
         #On parcours la liste nettoyé
 
@@ -122,51 +98,50 @@ def analyse_questionnaire(questionnaire):
 
     return SOUS_CAT
 
+
+from .CONFIG import NOMBRE
 def association_definition(dico):
-
+ 
     liste_supp = []
-    liste_inf = []
-    liste_all = []
-
-
+    ok = False
+ 
     for cle, valeur in dico.items():
-        if valeur > 0:
+
+        for cle1, valeur1 in NOMBRE.items():
+
+            if cle == cle1:
+                if valeur >= float(valeur1/2):
+                    ok = True
+                    
+        if ok is True:
             liste_supp.append(cle)
-            print(cle, valeur)
-        elif valeur < 0:
-            liste_inf.append(cle)
-            print(cle, valeur, "ici")
+            ok = False
 
 
-
-    return liste_supp, liste_inf
+    print(liste_supp)
+    return liste_supp
 
 
 from .CONFIG import SOUS_CLASSE
-def association_definition1(liste_supp, liste_inf):
+def association_definition1(liste_supp):
     
     liste_qualite = []
     liste_a_w = []
-    
+
     for i in liste_supp:
         for cle, valeur in SOUS_CLASSE.items():
             if cle == i:
-                liste_qualite.append(valeur)
+                liste_qualite.append([valeur, i])
 
 
 
-    for i in liste_inf:
-        for cle, valeur in SOUS_CLASSE.items():
-            if cle == i:
-                liste_a_w.append(valeur)
+##    for i in liste_inf:
+##        for cle, valeur in SOUS_CLASSE.items():
+##            if cle == i:
+##                liste_a_w.append(valeur)
+##
 
-
-    print(liste_qualite, liste_a_w)
-    return liste_qualite, liste_a_w
-
-
-
-
+    return liste_qualite
 
 
 
