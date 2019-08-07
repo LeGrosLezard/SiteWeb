@@ -209,43 +209,43 @@ NOMBRE = {"Anxiete":4,
 
 #1 nom 2 il ou elle
 SPHERE = {"Ouverture_a_l_experience": """{0} semble etre
-                                      une personne qui recherche activement
-                                      et qui apprécie l'expérience en tant que telle.
-                                      De plus, {1} possède une très grande imagination en plus du grande ouverture
-                                      d'esprit. Travailler dans un cadre changeant n'est pas dérangeant et est
-                                      meme une source de stimulation.""",
+une personne qui recherche activement
+et qui apprécie l'expérience en tant que telle.
+De plus, {1} possède une très grande imagination en plus du grande ouverture
+d'esprit. Travailler dans un cadre changeant n'est pas dérangeant et est
+meme une source de stimulation.""",
           
           "Conscience_professionnelle": """{0} a un ahut degré d’organisation,
-                                       de motivation et de minutie d’une personne dans
-                                       sa vie et dans la poursuite de ses objectifs. 
-                                       {0} est méthodiques, motivés et organisés.""",
+de motivation et de minutie d’une personne dans
+sa vie et dans la poursuite de ses objectifs. 
+{0} est méthodiques, motivés et organisés.""",
           
           "Extraversion" : """"L’extraversion décrit l’énergie et
-                             l’enthousiasme d’une personne dans ses
-                             rapports avec les gens. Elle fait référence aux
-                             préférences de la personne en matière de quantité et
-                             d’intensité des relations interpersonnelles. 
-                             Les scores élevés sont sociables et cherchent 
-                             activement la compagnie des autres. Plus le score 
-                             est élevé, plus la description fournie sera fidèle.""",
+l’enthousiasme d’une personne dans ses
+rapports avec les gens. Elle fait référence aux
+préférences de la personne en matière de quantité et
+d’intensité des relations interpersonnelles. 
+Les scores élevés sont sociables et cherchent 
+activement la compagnie des autres. Plus le score 
+est élevé, plus la description fournie sera fidèle.""",
           
             "Agréabilité" : """Le caractère agréable d'une personne fait
-                            référence aux attitudes qu'elle adopte vis-à-vis des autres.
-                            Les personnes qui marquent un score élevé sont douées de compassion,
-                            sont franches et coopératives. Les personnes agréables possèdent une 
-                            vue optimiste de la nature humaine. Elles pensent que les gens sont
-                            foncièrement honnêtes, respectueux et dignes de confiance.""",
+référence aux attitudes qu'elle adopte vis-à-vis des autres.
+Les personnes qui marquent un score élevé sont douées de compassion,
+ sont franches et coopératives. Les personnes agréables possèdent une 
+vue optimiste de la nature humaine. Elles pensent que les gens sont
+foncièrement honnêtes, respectueux et dignes de confiance.""",
           
             "Réactions Naturelles" : """Les gens qui marquent un score 
-                                    élevé sont dotés de réactions naturelles fortes, excessivement
-                                    sensibles et émotionnelles. Ils répondent de manière émotionnelle 
-                                    aux événements qui n’affectent généralement pas beaucoup de personnes,
-                                    et leurs réactions ont tendance à être plus intenses. 
-                                    Ils sont plus enclins à interpréter les situations
-                                    ordinaires comme menaçantes et les frustrations mineures comme de
-                                    « gros problèmes ». Ces « réactions naturelles » fortes peuvent réduire
-                                    la capacité d’une personne à penser clairement, à prendre des
-                                    décisions et à gérer efficacement le stress."""
+élevé sont dotés de réactions naturelles fortes, excessivement
+sensibles et émotionnelles. Ils répondent de manière émotionnelle 
+aux événements qui n’affectent généralement pas beaucoup de personnes,
+et leurs réactions ont tendance à être plus intenses. 
+Ils sont plus enclins à interpréter les situations
+ordinaires comme menaçantes et les frustrations mineures comme de
+« gros problèmes ». Ces « réactions naturelles » fortes peuvent réduire
+la capacité d’une personne à penser clairement, à prendre des
+décisions et à gérer efficacement le stress."""
             }
 
 
