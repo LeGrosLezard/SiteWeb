@@ -23,9 +23,8 @@ téléphone fixe :{10}
 mail :{11}
 
 Ce message vous est envoyé par Projetto un site web opensource
-fait par Jean Baptiste Servais un dev super calé et super cool
 qui a pour but d'aider les personnes en recherche d'emploi
 à trouver un travail plus vite. Pour plus d'information nous contacter
-à l'adresse suivant: 
+à l'adresse suivant: jeanbaptisteservais26@gmail.com
 
 """
