@@ -2922,6 +2922,15 @@
 
 var LISTE_QUESTION = []
 function is_click(question, score){
+
+    for(var i = 0; i < LISTE_QUESTION.length; i++){
+      if(question == LISTE_QUESTION[i][0]){
+        LISTE_QUESTION.splice([i])
+
+      };
+
+    };
+    
     LISTE_QUESTION.push([question, score])
 
 };
@@ -2930,8 +2939,6 @@ function is_click(question, score){
 
 
 jQuery("#validation_test").on("click", function(e){
-
- alert(LISTE_QUESTION);
 
  e.preventDefault();
   jQuery.ajax({
@@ -2947,8 +2954,8 @@ jQuery("#validation_test").on("click", function(e){
           document.getElementById("#Alert").inner.html = "aie"; 
       }
       else{
-          document.location.href = 'le_questionnaire_deuxieme_partie'
-          
+          //document.location.href = 'le_questionnaire_deuxieme_partie'
+          {}
           
       };
       
