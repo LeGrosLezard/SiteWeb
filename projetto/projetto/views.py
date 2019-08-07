@@ -214,10 +214,6 @@ from .cv.database.recuperation_document import recuperation_nom
 from .cv.database.recuperation_document import recuperation_bilan
 from .cv.database.recuperation_document import recuperation_motivation
 
-
-
-
-
 def comment_faire_mon_cv(request):
 
     try:
@@ -460,7 +456,12 @@ from .questionnaire.questionnaire import question_reponse
 from .questionnaire.analyse import analyse_questionnaire
 from .questionnaire.analyse import association_definition
 from .questionnaire.analyse import association_definition1
+from .questionnaire.analyse import association_definition2
+from .questionnaire.database.database import insertion_bilan_premiere_partie
 def le_questionnaire_premiere_partie(request):
+
+    pseudo = request.user
+
 
     if request.method == "POST":
 
@@ -470,10 +471,10 @@ def le_questionnaire_premiere_partie(request):
         analyse = analyse_questionnaire(questionnaire_traitee)
         reponse = association_definition(analyse)
         reponse_associee = association_definition1(reponse)
-        print(reponse_associee)
-
-
-
+        reponse_associee2 = association_definition2(reponse)
+        print(reponse_associee2)
+        insertion_bilan_premiere_partie(pseudo, reponse_associee2)
+        
 
 
     return render(request, 'le_questionnaire_premiere_partie.html')
