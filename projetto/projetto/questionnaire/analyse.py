@@ -99,6 +99,8 @@ def analyse_questionnaire(questionnaire):
     return SOUS_CAT
 
 
+
+
 from .CONFIG import NOMBRE
 def association_definition(dico):
  
@@ -120,6 +122,9 @@ def association_definition(dico):
 
     print(liste_supp)
     return liste_supp
+
+
+
 
 
 from .CONFIG import SOUS_CLASSE
@@ -145,12 +150,60 @@ def association_definition1(liste_supp):
 
 
 
+from .CONFIG import Ouverture_a_l_experience
+from .CONFIG import Conscience_professionnelle
+from .CONFIG import Extraversion
+from .CONFIG import Agreabilite
+from .CONFIG import Reactions_naturelles
+
+def association_definition2(liste_supp):
 
 
+    ouv_ex = 0
+    prof = 0
+    extra = 0
+    agre = 0
+    reaction = 0
+    
+    for i in liste_supp:
+        for j in Ouverture_a_l_experience:
+            if i == j:
+                ouv_ex += 1
+                
+        for k in Conscience_professionnelle:
+            if i == k:
+                prof += 1
+                
+        for l in Extraversion:
+            if i == l:
+                extra += 1
+                
+        for m in Agreabilite:
+            if i == m:
+                agre += 1
+                
+        for n in Reactions_naturelles:
+            if i == n:
+                reaction += 1
+
+    liste = []
+    if ouv_ex > 0:
+        liste.append(["Ouverture_a_l_experience", ouv_ex])
+        
+    if prof > 0:
+        liste.append(["Conscience_professionnelle", prof])
+        
+    if extra > 0:
+        liste.append(["Extraversion", extra])
+        
+    if agre > 0 :
+        liste.append(["Agreabilite", agre])
+        
+    if reaction > 0:
+        liste.append(["Reactions_naturelles", reaction])
 
 
-
-
+    return liste
 
 
 
