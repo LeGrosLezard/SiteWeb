@@ -126,9 +126,10 @@
                   <input type="text" placeholder="mail" id="mail_7" value=""><br><br>
                   <input type="text" placeholder="mail" id="mail_8" value=""><br><br>
 
-                  <input type="text" placeholder="sujet du message" id="sujet" value=""><br><br>
+                  <input type="text" placeholder="sujet du message"
+                      id="sujet" value=""><br><br>
                   
-
+                  <div id="required"></div>
 
 
                   <br><br>
@@ -162,6 +163,7 @@
                   <input type="text" placeholder="Nom du métier" id="metier5"><br><br>
                   <input type="text" placeholder="Nom du métier" id="metier6"><br><br>
                   <input type="text" placeholder="Nom du métier" id="metier7"><br><br>
+                  <input type="text" placeholder="Sujet du message" id="sujet_all"><br><br>
 
 
 
@@ -176,7 +178,7 @@
                   <input type="text" placeholder="Rayon" id="rayon"><br><br>
         
    
-                  <input type="button" value="Envoyer !"><br><br><br>
+                  <input type="button" value="Envoyer !" id="bouton_all"><br><br><br>
                   
                   <em>Nous vous enverrons et au recruteur et à vous les demande de cv.</em><br>
                   <strong>Bien à vous l'équipe de Projetto</strong>
@@ -403,10 +405,18 @@
         var f = document.getElementById("mail_6").value;
         var g = document.getElementById("mail_7").value;
         var h = document.getElementById("mail_8").value;
-  
-        return a, b, c, d, e, f, g, h
 
-    }
+        var i = document.getElementById("sujet").value;
+
+        if(i == ""){
+            document.getElementById("required").innerHTML = "Remplissez le sujet de votre requete"
+            return ""
+        }
+        else{
+            return [a, b, c, d, e, f, g, h, i]
+        }
+
+    };
 
 
 
@@ -418,43 +428,59 @@
 //---------------------------------------------------------------------Bilan
 jQuery("#bouton_precis").on("click", function(e){
 
- a, b, c, d, e, f, g, h = recup_mail()
+
+ var mail = recup_mail()
+ if (mail == ""){
+    {}
+ }
+ else{
+     var a = mail[0]
+     var b = mail[1]
+     var c = mail[2]
+     var d = mail[3]
+     var ee = mail[4]
+     var f = mail[5]
+     var g = mail[6]
+     var h = mail[7]
+     var i = mail[8]
 
 
- e.preventDefault();
-  jQuery.ajax({
-      data:{
-          "mail_precis":"mail_precis",
-          "mail1":a,
-          "mail2":b,
-          "mail3":c,
-          "mail4":d,
-          "mail5":e,
-          "mail6":f,
-          "mail7":g,
-          "mail8":h,
-          'csrfmiddlewaretoken': '{{csrf_token}}',
-      },
-      type:"POST",
-      url:"questionnaire_email"
-  })
-  .done(function(data){
-      if (data.error){
-          document.getElementById("#Alert").inner.html = "aie"; 
-      }
-      else{
-          document.location.href = '/'
+     e.preventDefault();
+      jQuery.ajax({
+          data:{
+              "mail_precis":"mail_precis",
+              "mail1":a,
+              "mail2":b,
+              "mail3":c,
+              "mail4":d,
+              "mail5":ee,
+              "mail6":f,
+              "mail7":g,
+              "mail8":h,
+              "sujet":i,
+              'csrfmiddlewaretoken': '{{csrf_token}}',
+          },
+          type:"POST",
+          url:"questionnaire_email"
+      })
+      .done(function(data){
+          if (data.error){
+              document.getElementById("#Alert").inner.html = "aie"; 
+          }
+          else{
+              {}
+              
+              
+          };
           
-          
-      };
-      
-  });
+      });
+    }
 });
 //---------------------------------------------------------------------Bilan
 
 
 //---------------------------------------------------------------------départ
-jQuery("#one").on("click", function(e){
+jQuery("#two").on("click", function(e){
     document.getElementById("all").style.display = "block";
     document.getElementById("precis").style.display = "none";
 
@@ -462,7 +488,7 @@ jQuery("#one").on("click", function(e){
 
 
 
-jQuery("#two").on("click", function(e){
+jQuery("#one").on("click", function(e){
     document.getElementById("all").style.display = "none";
     document.getElementById("precis").style.display = "block";
 
@@ -488,10 +514,12 @@ function recup_metier(){
     var g = document.getElementById("metier7").value;
     var h = document.getElementById("ville").value;
     var i = document.getElementById("rayon").value;
-    var j = document.getElementById("sujet").value;
+    var j = document.getElementById("sujet_all").value;
+    
+    
 
 
-    return a, b, c, d, e, f, g, h, i, j
+    return [a, b, c, d, e, f, g, h, i, j];
 
 
 }
@@ -500,9 +528,22 @@ function recup_metier(){
 
 //---------------------------------------------------------------------all mail
 
-jQuery("#bouton_precis").on("click", function(e){
+jQuery("#bouton_all").on("click", function(e){
 
- a, b, c, d, e, f, g, h, i, j = recup_metier()
+ var metier = recup_metier()
+
+ var a = metier[0]
+ var b = metier[1]
+ var c = metier[2]
+ var d = metier[3]
+ var ee = metier[4]
+ var f = metier[5]
+ var g = metier[6]
+ var h = metier[7]
+ var i = metier[8]
+ var j = metier[9]
+
+ 
 
  e.preventDefault();
   jQuery.ajax({
@@ -512,7 +553,7 @@ jQuery("#bouton_precis").on("click", function(e){
           "metier2":b,
           "metier3":c,
           "metier4":d,
-          "metier5":e,
+          "metier5":ee,
           "metier6":f,
           "metier7":g,
           "ville":h,
@@ -528,7 +569,7 @@ jQuery("#bouton_precis").on("click", function(e){
           document.getElementById("#Alert").inner.html = "aie"; 
       }
       else{
-          document.location.href = '/'
+          {}
           
           
       };
