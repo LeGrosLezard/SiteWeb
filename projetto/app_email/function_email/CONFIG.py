@@ -5,5 +5,27 @@ PATH_BING = "https://www.bing.com/search?q={0}+{1}+entreprise+contact+adresse+em
 PATH_GOOGLE = "https://www.google.com/search?q={0}+{1}+contact+mail&oq={0}&aqs=chrome.0.69i59j69i57j69i59l2j0j69i60.2255j0j7&sourceid=chrome&ie=UTF-8"
 
 
-PATH_DOCUMENT = "C:\Users\jeanbaptiste\Desktop\site_travail\environement_virtuel\projetto\static\espace_user\{}\{}"
+PATH_DOCUMENT = r"C:\Users\jeanbaptiste\Desktop\site_travail\environement_virtuel\projetto\static\espace_user\{}\{}"
 
+MESSAGE_MAIL = """{0} {1} \n
+{2}\n
+{3}\n
+{4}\n
+{5}\n
+{6}\n
+{7}\n\n
+
+
+Contacte de {0} {1}:\n
+adresse :{8}
+téléphone portable :{9}
+téléphone fixe :{10}
+mail :{11}
+
+Ce message vous est envoyé par Projetto un site web opensource
+fait par Jean Baptiste Servais un dev super calé et super cool
+qui a pour but d'aider les personnes en recherche d'emploi
+à trouver un travail plus vite. Pour plus d'information nous contacter
+à l'adresse suivant: 
+
+"""
