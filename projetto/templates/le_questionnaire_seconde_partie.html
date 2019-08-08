@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Landing Page - Start Bootstrap Theme</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="/static/mon_compte/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="/static/mon_compte/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="/static/mon_compte/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+  <!-- Custom styles for this template -->
+  <link href="/static/mon_compte/css/landing-page.min.css" rel="stylesheet">
+
+
+  <!-- Custom CSS -->
+  <link href="/static/home/css/stylish-portfolio.min.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+
+
+
+
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+  <section id="nav">
+  <a class="menu-toggle rounded" href="#">
+    <i class="fas fa-bars"></i>
+  </a>
+  <nav id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand">
+        <a class="js-scroll-trigger" href="#page-top">Menu</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="">Accueil</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="compte">Mon Compte</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="compte#cv_icone">Mes Documents</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="le_questionnaire">Le Questionnaire</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="app_email/questionnaire_email">Ma démarche</a>
+      </li>
+    </ul>
+  </nav>
+  </section>
+
+
+  <!-- Header -->
+  <header class="masthead d-flex" style="background: no-repeat url('/static/home/img/premiere.jpg');">
+    <div class="container text-center my-auto">
+      <h1 class="mb-1">Projetto</h1>
+      <h3 class="mb-5">
+        <em>Seconde partie du questionnaire<br>
+        Que dites vous d'une dicté?</em>
+      </h3>
+      <center><h5>Et si j'ai une mauvaise note ? Pas d'inquiétude ! nous ne prenons que les bonnes notes !</h5></center>
+    </div>
+    <div class="overlay"></div>
+  </header>
+  <center>
+      <em>Nous remercions Athavan Harirajendran pour sa dictée.
+      <a href="https://www.youtube.com/watch?v=ynQr478eZBo">qui se trouve ici</a></em>
+  </center>
+
+    <br><br>
+    
+    <figure style="display:none;">
+        <figcaption>Ecoutez bien !</figcaption>
+        <audio
+            controls
+            src="/static/dictée/dictée.mp3" id="dictee">
+            <code>audio</code> element.
+            
+        </audio>
+    </figure>
+
+
+    <center>
+        <section style="border:2px solid black;width:90%;border-radius:10px 10px 10px;">
+            <center><p>Commencez la dictée en appuyant sur commencer.
+            Elle dure 9 minutes, n'oubliez pas la ponctuation.
+            Vous faites moins de 20 erreurs ? alors la faculté du
+            langage apparait sur votre bilan. Le langage fait partie
+            des facultés de l'intellect. Vous n'arrivez pas à avoir moins
+            de 20 erruers ? pas d'inquiétude le bilan n'en tiendra pas compte
+
+            <br><br>
+
+            Vous ne pouvez pas revenir en arrière.
+            Vous ne pouvez pas quittez. Détendez vous et commencer !
+            <strong>les phrases sont répétés deux fois</strong></p></center>
+        </section>
+    </center>
+
+    
+    <br>
+    <center><a class="btn btn-primary btn-xl"
+             id="passer" onclick="play()">Le passer!</a></center>
+
+
+    <center>
+
+    <textarea id="texte" style="width:60%;height:200px;display:none;"></textarea>
+    <br><br>
+    <input type="button" value="Valider" id="fini" style="display:none;">
+
+
+
+
+
+    
+    </center>
+
+
+
+
+            
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Call to Action -->
+  <section class="call-to-action text-white text-center" id="question">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <h2 class="mb-4">Aidez-nous à améliorer nos conseils!</h2>
+        </div>
+        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+          <form>
+            <div class="form-row">
+              <div class="col-12 col-md-9 mb-2 mb-md-0">
+                <input type="text" size="40" placeholder="Entez votre conseil">
+              </div>
+              <div class="col-12 col-md-3">
+                <button type="submit" class="btn btn-block btn-lg btn-primary">Valider</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+  <!-- Footer -->
+  <footer class="footer bg-light" id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+          <ul class="list-inline mb-2">
+            <li class="list-inline-item">
+              <a href="#">About</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Contact</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Terms of Use</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Privacy Policy</a>
+            </li>
+          </ul>
+          <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2019. All Rights Reserved.</p>
+        </div>
+        <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item mr-3">
+              <a href="#">
+                <i class="fab fa-facebook fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item mr-3">
+              <a href="#">
+                <i class="fab fa-twitter-square fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fab fa-instagram fa-2x fa-fw"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="/static/mon_compte/vendor/jquery/jquery.min.js"></script>
+  <script src="/static/mon_compte/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/home/js/stylish-portfolio.min.js"></script>
+
+ </body>
+</html>
+
+
+
+
+
+<script>
+
+function play(){
+
+    document.getElementById("passer").style.display = "none";
+    document.getElementById("texte").style.display = "block";
+    document.getElementById("fini").style.display = "block";
+    
+    var audio = document.getElementById("dictee");
+    audio.play();
+    
+};
+
+
+jQuery("#fini").on("click", function(e){
+    
+ var texte = document.getElementById("texte").value;
+ 
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+          "texte":texte,
+          'csrfmiddlewaretoken': '{{csrf_token}}',
+      },
+      type:"POST",
+      url:"le_questionnaire_seconde_partie"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+          {}
+          
+          
+      };
+      
+  });
+});
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
