@@ -1,12 +1,20 @@
 # SiteWeb
 
--------------------------------------------------
+
+dictée
+
+l'écrire, reverso, lower() et comparaison par un split de chaque mot puis total faute + texte disant si oui
 
 refaire les phrases de l'ananlyse
 
+
+-------------------------------------------------
+
+
+
 faire les tests cognitifs
 
-dictée
+
 
 visuo
 
