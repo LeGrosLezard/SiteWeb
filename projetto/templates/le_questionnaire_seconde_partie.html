@@ -85,15 +85,9 @@
 
     <br><br>
     
-    <figure style="display:none;">
-        <figcaption>Ecoutez bien !</figcaption>
-        <audio
-            controls
-            src="/static/dictée/dictée.mp3" id="dictee">
-            <code>audio</code> element.
-            
-        </audio>
-    </figure>
+    <iframe width="420" height="315" style="display:;"
+    src="" id="iframe">
+    </iframe>
 
 
     <center>
@@ -124,6 +118,7 @@
     <textarea id="texte" style="width:60%;height:200px;display:none;"></textarea>
     <br><br>
     <input type="button" value="Valider" id="fini" style="display:none;">
+    
 
 
 
@@ -248,8 +243,8 @@ function play(){
     document.getElementById("texte").style.display = "block";
     document.getElementById("fini").style.display = "block";
     
-    var audio = document.getElementById("dictee");
-    audio.play();
+    var audio = document.getElementById("iframe").src = "https://www.youtube.com/embed/ynQr478eZBo?autoplay=1";
+
     
 };
 
