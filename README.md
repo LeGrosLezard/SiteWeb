@@ -5,6 +5,8 @@ dictée
 
 l'écrire, reverso, lower() et comparaison par un split de chaque mot puis total faute + texte disant si oui
 
+prend la définition du langage et poruquoi c une faculté
+
 refaire les phrases de l'ananlyse
 
 
