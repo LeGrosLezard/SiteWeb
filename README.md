@@ -1,13 +1,9 @@
 # SiteWeb
 
 
-dictée
+elle est un peu facile j'ai eu que 3 fautes. bon on met la barre a 3 fautes. Bon ok 4 bateau y'a pas de chapeau chinois
 
-l'écrire, reverso, lower() et comparaison par un split de chaque mot puis total faute + texte disant si oui
-
-prend la définition du langage et poruquoi c une faculté
-
-refaire les phrases de l'ananlyse
+faire la différence mtn
 
 
 -------------------------------------------------
