@@ -2,19 +2,12 @@
 
 -------------------------------------------------
 
-faire les tests cognitifs
+https://openpsychometrics.org/tests/FSIQ/1.php (mémoire, visuo)
 
-visuo
+flexibilité = + 3 - 3 3 foix
 
-math
+et fais un test numérique logique toi meme (fin recopie celui du site et dis que tu savais pas)
 
-mémoire de travail
-
-mémoire
-
-l'inclure dans email
-
-(va revoir wiki)
 
 ----------------------------------------
 
