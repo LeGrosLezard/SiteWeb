@@ -103,10 +103,13 @@
 
             Vous ne pouvez pas revenir en arrière.
             Vous ne pouvez pas quittez. Détendez vous et commencer !
-            <strong>les phrases sont répétés deux fois</strong></p></center>
+            <strong>les phrases sont répétés deux fois après la fin de l'écoute vous avez 5 minutes pour vous relire</strong></p></center>
         </section>
     </center>
-
+    
+    <center>
+    <div id="attention">ô</div>
+    </center>
     
     <br>
     <center><a class="btn btn-primary btn-xl"
@@ -241,6 +244,18 @@ body{
 
 <script>
 
+
+function annonce(){
+    alert("il vous reste 5 minutes")
+}
+
+
+function fin(){
+    document.getElementById("fini").click();
+}
+
+
+
 function play(){
 
     document.getElementById("passer").style.display = "none";
@@ -248,7 +263,8 @@ function play(){
     document.getElementById("fini").style.display = "block";
     
     var audio = document.getElementById("iframe").src = "https://www.youtube.com/embed/ynQr478eZBo?autoplay=1";
-
+    window.setTimeout(annonce, 100000);
+    window.setTimeout(fin, 150000);
     
 };
 
