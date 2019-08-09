@@ -1,18 +1,8 @@
 # SiteWeb
 
-
-elle est un peu facile j'ai eu que 3 fautes. bon on met la barre a 3 fautes. Bon ok 4 bateau y'a pas de chapeau chinois
-
-faire la différence mtn
-
-
 -------------------------------------------------
 
-
-
 faire les tests cognitifs
-
-
 
 visuo
 
@@ -22,13 +12,17 @@ mémoire de travail
 
 mémoire
 
-le mettre en pdf
-
 l'inclure dans email
 
 (va revoir wiki)
 
 ----------------------------------------
+
+responsive cv et motivation (surtout cv attention)
+
+mise en database des tests
+
+mettre le rendu en pdf
 
 finir mail_all
 
@@ -40,6 +34,8 @@ faire des simulations sur tout le site
 -----------------------------------------
 
 BUG: pas de rediction inscription
+
+telechargement du cv = on a pas le pied de page....
 
 retour page (inscrption)
 
