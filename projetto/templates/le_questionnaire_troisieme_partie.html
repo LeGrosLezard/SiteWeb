@@ -80,172 +80,182 @@
     <div class="overlay"></div>
   </header>
 
-    <br><br><br><br>
+    <br><br>
+    <center>Vous avez 20 secondes et 3 passations. Faites de votre mieux !</center>
+    <br><br>
     <center><a class="btn btn-primary btn-xl"
-             id="passer" onclick="play()">Le passer!</a></center>
+             id="passer" onclick="play('1')">Le passer!</a></center>
     <br><br><br><br>
 
     
   <center>
-      <section id="1" style="">
-      Ajoute + 3<br><br>
-            15&nbsp;&nbsp;<input type="text" id="un1"><br>
-            19&nbsp;&nbsp;<input type="text" id="un2"><br>
-            13&nbsp;&nbsp;<input type="text" id="un3"><br>
-            56&nbsp;&nbsp;<input type="text" id="un4"><br>
-            87&nbsp;&nbsp;<input type="text" id="un5"><br>
-            54&nbsp;&nbsp;<input type="text" id="un6"><br>
-            21&nbsp;&nbsp;<input type="text" id="un7"><br>
-            23&nbsp;&nbsp;<input type="text" id="un8"><br>
-            79&nbsp;&nbsp;<input type="text" id="un9"><br>
-            48&nbsp;&nbsp;<input type="text" id="un10"><br>
-            53&nbsp;&nbsp;<input type="text" id="un11"><br>
-            32&nbsp;&nbsp;<input type="text" id="un12"><br>
-            68&nbsp;&nbsp;<input type="text" id="un13"><br>
-            98&nbsp;&nbsp;<input type="text" id="un14"><br>
-            74&nbsp;&nbsp;<input type="text" id="un15"><br>
-            85&nbsp;&nbsp;<input type="text" id="un16"><br>
-            86&nbsp;&nbsp;<input type="text" id="un17"><br>
-            42&nbsp;&nbsp;<input type="text" id="un18"><br>
-            28&nbsp;&nbsp;<input type="text" id="un19"><br>
-            38&nbsp;&nbsp;<input type="text" id="un20"><br>
-            78&nbsp;&nbsp;<input type="text" id="un21"><br>
-            27&nbsp;&nbsp;<input type="text" id="un22"><br>
-            24&nbsp;&nbsp;<input type="text" id="un23"><br>
-            25&nbsp;&nbsp;<input type="text" id="un24"><br>
-            36&nbsp;&nbsp;<input type="text" id="un25"><br>
-            69&nbsp;&nbsp;<input type="text" id="un26"><br>
-            47&nbsp;&nbsp;<input type="text" id="un27"><br>
-            14&nbsp;&nbsp;<input type="text" id="un28"><br>
-            25&nbsp;&nbsp;<input type="text" id="un29"><br>
-            36&nbsp;&nbsp;<input type="text" id="un30"><br>
-            47&nbsp;&nbsp;<input type="text" id="un31"><br>
-            75&nbsp;&nbsp;<input type="text" id="un32"><br>
-            42&nbsp;&nbsp;<input type="text" id="un33"><br>
-            64&nbsp;&nbsp;<input type="text" id="un34"><br>
-            62&nbsp;&nbsp;<input type="text" id="un35"><br>
-            18&nbsp;&nbsp;<input type="text" id="un36"><br>
-            48&nbsp;&nbsp;<input type="text" id="un37"><br>
-            23&nbsp;&nbsp;<input type="text" id="un38"><br>
-            26&nbsp;&nbsp;<input type="text" id="un39"><br>
-            98&nbsp;&nbsp;<input type="text" id="un40"><br>
-            14&nbsp;&nbsp;<input type="text" id="un41"><br>
-            89&nbsp;&nbsp;<input type="text" id="un42"><br>
-            74&nbsp;&nbsp;<input type="text" id="un43"><br>
-            87&nbsp;&nbsp;<input type="text" id="un44"><br>
-            54&nbsp;&nbsp;<input type="text" id="un45"><br>
-        
+      <section id="1" style="display:none;">
+            
+            15 + 3&nbsp;&nbsp;<input type="text" id="un1"><br>
+            19 - 3 &nbsp;&nbsp;<input type="text" id="un2"><br>
+            13 + 3&nbsp;&nbsp;<input type="text" id="un3"><br>
+            56 - 3 &nbsp;&nbsp;<input type="text" id="un4"><br>
+            87 + 3&nbsp;&nbsp;<input type="text" id="un5"><br>
+            54 - 3 &nbsp;&nbsp;<input type="text" id="un6"><br>
+            21 + 3&nbsp;&nbsp;<input type="text" id="un7"><br>
+            23 - 3 &nbsp;&nbsp;<input type="text" id="un8"><br>
+            79 + 3&nbsp;&nbsp;<input type="text" id="un9"><br>
+            48 - 3 &nbsp;&nbsp;<input type="text" id="un10"><br>
+            53 + 3&nbsp;&nbsp;<input type="text" id="un11"><br>
+            32 - 3 &nbsp;&nbsp;<input type="text" id="un12"><br>
+            68 + 3&nbsp;&nbsp;<input type="text" id="un13"><br>
+            98 - 3 &nbsp;&nbsp;<input type="text" id="un14"><br>
+            74 + 3&nbsp;&nbsp;<input type="text" id="un15"><br>
+            85 - 3 &nbsp;&nbsp;<input type="text" id="un16"><br>
+            86 + 3&nbsp;&nbsp;<input type="text" id="un17"><br>
+            42 - 3 &nbsp;&nbsp;<input type="text" id="un18"><br>
+            28 + 3&nbsp;&nbsp;<input type="text" id="un19"><br>
+            38 - 3 &nbsp;&nbsp;<input type="text" id="un20"><br>
+            78 + 3&nbsp;&nbsp;<input type="text" id="un21"><br>
+            27 - 3 &nbsp;&nbsp;<input type="text" id="un22"><br>
+            24 + 3&nbsp;&nbsp;<input type="text" id="un23"><br>
+            25 - 3 &nbsp;&nbsp;<input type="text" id="un24"><br>
+            36 + 3&nbsp;&nbsp;<input type="text" id="un25"><br>
+            69 - 3 &nbsp;&nbsp;<input type="text" id="un26"><br>
+            47 + 3&nbsp;&nbsp;<input type="text" id="un27"><br>
+            14 - 3 &nbsp;&nbsp;<input type="text" id="un28"><br>
+            25 + 3&nbsp;&nbsp;<input type="text" id="un29"><br>
+            36 - 3 &nbsp;&nbsp;<input type="text" id="un30"><br>
+            47 + 3&nbsp;&nbsp;<input type="text" id="un31"><br>
+            75 - 3 &nbsp;&nbsp;<input type="text" id="un32"><br>
+            42 + 3&nbsp;&nbsp;<input type="text" id="un33"><br>
+            64 - 3 &nbsp;&nbsp;<input type="text" id="un34"><br>
+            62 + 3&nbsp;&nbsp;<input type="text" id="un35"><br>
+            18 - 3 &nbsp;&nbsp;<input type="text" id="un36"><br>
+            48 + 3&nbsp;&nbsp;<input type="text" id="un37"><br>
+            23 - 3 &nbsp;&nbsp;<input type="text" id="un38"><br>
+            26 + 3&nbsp;&nbsp;<input type="text" id="un39"><br>
+            98 - 3 &nbsp;&nbsp;<input type="text" id="un40"><br>
+            14 + 3&nbsp;&nbsp;<input type="text" id="un41"><br>
+            89 - 3 &nbsp;&nbsp;<input type="text" id="un42"><br>
+            74 + 3&nbsp;&nbsp;<input type="text" id="un43"><br>
+            87 - 3 &nbsp;&nbsp;<input type="text" id="un44"><br>
+            54 + 3&nbsp;&nbsp;<input type="text" id="un45"><br>
+            
       </section>
 
-      <section id="2" style="">
-          Enleve -3<br><br>
-            54&nbsp;&nbsp;<input type="text" id="un46"><br>
-            56&nbsp;&nbsp;<input type="text" id="un47"><br>
-            43&nbsp;&nbsp;<input type="text" id="un48"><br>
-            82&nbsp;&nbsp;<input type="text" id="un49"><br>
-            23&nbsp;&nbsp;<input type="text" id="un50"><br>
-            91&nbsp;&nbsp;<input type="text" id="un51"><br>
-            34&nbsp;&nbsp;<input type="text" id="un52"><br>
-            51&nbsp;&nbsp;<input type="text" id="un53"><br>
-            89&nbsp;&nbsp;<input type="text" id="un54"><br>
-            69&nbsp;&nbsp;<input type="text" id="un55"><br>
-            48&nbsp;&nbsp;<input type="text" id="un56"><br>
-            74&nbsp;&nbsp;<input type="text" id="un57"><br>
-            58&nbsp;&nbsp;<input type="text" id="un58"><br>
-            25&nbsp;&nbsp;<input type="text" id="un59"><br>
-            34&nbsp;&nbsp;<input type="text" id="un60"><br>
-            75&nbsp;&nbsp;<input type="text" id="un61"><br>
-            85&nbsp;&nbsp;<input type="text" id="un62"><br>
-            64&nbsp;&nbsp;<input type="text" id="un63"><br>
-            83&nbsp;&nbsp;<input type="text" id="un64"><br>
-            92&nbsp;&nbsp;<input type="text" id="un65"><br>
-            15&nbsp;&nbsp;<input type="text" id="un66"><br>
-            99&nbsp;&nbsp;<input type="text" id="un67"><br>
-            51&nbsp;&nbsp;<input type="text" id="un68"><br>
-            79&nbsp;&nbsp;<input type="text" id="un69"><br>
-            41&nbsp;&nbsp;<input type="text" id="un70"><br>
-            52&nbsp;&nbsp;<input type="text" id="un71"><br>
-            69&nbsp;&nbsp;<input type="text" id="un72"><br>
-            47&nbsp;&nbsp;<input type="text" id="un73"><br>
-            58&nbsp;&nbsp;<input type="text" id="un74"><br>
-            36&nbsp;&nbsp;<input type="text" id="un75"><br>
-            74&nbsp;&nbsp;<input type="text" id="un76"><br>
-            10&nbsp;&nbsp;<input type="text" id="un77"><br>
-            48&nbsp;&nbsp;<input type="text" id="un78"><br>
-            11&nbsp;&nbsp;<input type="text" id="un79"><br>
-            57&nbsp;&nbsp;<input type="text" id="un80"><br>
-            85&nbsp;&nbsp;<input type="text" id="un81"><br>
-            69&nbsp;&nbsp;<input type="text" id="un82"><br>
-            36&nbsp;&nbsp;<input type="text" id="un83"><br>
-            78&nbsp;&nbsp;<input type="text" id="un84"><br>
-            56&nbsp;&nbsp;<input type="text" id="un85"><br>
-            23&nbsp;&nbsp;<input type="text" id="un86"><br>
-            13&nbsp;&nbsp;<input type="text" id="un87"><br>
-            46&nbsp;&nbsp;<input type="text" id="un88"><br>
-            58&nbsp;&nbsp;<input type="text" id="un89"><br>
-            39&nbsp;&nbsp;<input type="text" id="un90"><br>
-            39&nbsp;&nbsp;<input type="text" id="un91"><br>
-            27&nbsp;&nbsp;<input type="text" id="un92"><br>
-            58&nbsp;&nbsp;<input type="text" id="un93"><br>
-            79&nbsp;&nbsp;<input type="text" id="un94"><br>
-            98&nbsp;&nbsp;<input type="text" id="un95"><br>
-            69&nbsp;&nbsp;<input type="text" id="un96"><br>
+
+     <input type="button" value="Continuer" onclick="continuer()"
+         style="display:none;width:100px;" id="continuer"><br><br>
+
+
+      <section id="2" style="display:none;">
+            54 + 3&nbsp;&nbsp;<input type="text" id="un46"><br>
+            56 - 3 &nbsp;&nbsp;<input type="text" id="un47"><br>
+            43 + 3&nbsp;&nbsp;<input type="text" id="un48"><br>
+            82 - 3 &nbsp;&nbsp;<input type="text" id="un49"><br>
+            23 + 3&nbsp;&nbsp;<input type="text" id="un50"><br>
+            91 - 3 &nbsp;&nbsp;<input type="text" id="un51"><br>
+            34 + 3&nbsp;&nbsp;<input type="text" id="un52"><br>
+            51 - 3 &nbsp;&nbsp;<input type="text" id="un53"><br>
+            89 + 3&nbsp;&nbsp;<input type="text" id="un54"><br>
+            69 - 3 &nbsp;&nbsp;<input type="text" id="un55"><br>
+            48 + 3&nbsp;&nbsp;<input type="text" id="un56"><br>
+            74 - 3 &nbsp;&nbsp;<input type="text" id="un57"><br>
+            58 + 3&nbsp;&nbsp;<input type="text" id="un58"><br>
+            25 - 3 &nbsp;&nbsp;<input type="text" id="un59"><br>
+            34 + 3&nbsp;&nbsp;<input type="text" id="un60"><br>
+            75 - 3 &nbsp;&nbsp;<input type="text" id="un61"><br>
+            85 + 3&nbsp;&nbsp;<input type="text" id="un62"><br>
+            64 - 3 &nbsp;&nbsp;<input type="text" id="un63"><br>
+            83 + 3&nbsp;&nbsp;<input type="text" id="un64"><br>
+            92 - 3 &nbsp;&nbsp;<input type="text" id="un65"><br>
+            15 + 3&nbsp;&nbsp;<input type="text" id="un66"><br>
+            99 - 3 &nbsp;&nbsp;<input type="text" id="un67"><br>
+            51 + 3&nbsp;&nbsp;<input type="text" id="un68"><br>
+            79 - 3 &nbsp;&nbsp;<input type="text" id="un69"><br>
+            41 + 3&nbsp;&nbsp;<input type="text" id="un70"><br>
+            52 - 3 &nbsp;&nbsp;<input type="text" id="un71"><br>
+            69 + 3&nbsp;&nbsp;<input type="text" id="un72"><br>
+            47 - 3 &nbsp;&nbsp;<input type="text" id="un73"><br>
+            58 + 3&nbsp;&nbsp;<input type="text" id="un74"><br>
+            36 - 3 &nbsp;&nbsp;<input type="text" id="un75"><br>
+            74 + 3&nbsp;&nbsp;<input type="text" id="un76"><br>
+            10 - 3 &nbsp;&nbsp;<input type="text" id="un77"><br>
+            48 + 3&nbsp;&nbsp;<input type="text" id="un78"><br>
+            11 - 3 &nbsp;&nbsp;<input type="text" id="un79"><br>
+            57 + 3&nbsp;&nbsp;<input type="text" id="un80"><br>
+            85 - 3 &nbsp;&nbsp;<input type="text" id="un81"><br>
+            69 + 3&nbsp;&nbsp;<input type="text" id="un82"><br>
+            36 - 3 &nbsp;&nbsp;<input type="text" id="un83"><br>
+            78 + 3&nbsp;&nbsp;<input type="text" id="un84"><br>
+            56 - 3 &nbsp;&nbsp;<input type="text" id="un85"><br>
+            23 + 3&nbsp;&nbsp;<input type="text" id="un86"><br>
+            13 - 3 &nbsp;&nbsp;<input type="text" id="un87"><br>
+            46 + 3&nbsp;&nbsp;<input type="text" id="un88"><br>
+            58 - 3 &nbsp;&nbsp;<input type="text" id="un89"><br>
+            39 + 3&nbsp;&nbsp;<input type="text" id="un90"><br>
+            39 - 3 &nbsp;&nbsp;<input type="text" id="un91"><br>
+            27 + 3&nbsp;&nbsp;<input type="text" id="un92"><br>
+            58 - 3 &nbsp;&nbsp;<input type="text" id="un93"><br>
+            79 + 3&nbsp;&nbsp;<input type="text" id="un94"><br>
+            98 - 3 &nbsp;&nbsp;<input type="text" id="un95"><br>
+            69 + 3&nbsp;&nbsp;<input type="text" id="un96"><br>
             
         
         
       </section>
+
+
+      <input type="button" value="continuer"
+          onclick="continuer1()" id="continuer1" style="display:none;width:100px;"><br><br>
       
-      <section id="3" style="">
-      ajoute + 3<br><br>
-            49&nbsp;&nbsp;<input type="text" id="un97"><br>
-            16&nbsp;&nbsp;<input type="text" id="un98"><br>
-            25&nbsp;&nbsp;<input type="text" id="un99"><br>
-            88&nbsp;&nbsp;<input type="text" id="un100"><br>
-            25&nbsp;&nbsp;<input type="text" id="un101"><br>
-            48&nbsp;&nbsp;<input type="text" id="un102"><br>
-            25&nbsp;&nbsp;<input type="text" id="un103"><br>
-            36&nbsp;&nbsp;<input type="text" id="un104"><br>
-            53&nbsp;&nbsp;<input type="text" id="un105"><br>
-            57&nbsp;&nbsp;<input type="text" id="un106"><br>
-            23&nbsp;&nbsp;<input type="text" id="un107"><br>
-            34&nbsp;&nbsp;<input type="text" id="un108"><br>
-            25&nbsp;&nbsp;<input type="text" id="un109"><br>
-            10&nbsp;&nbsp;<input type="text" id="un110"><br>
-            57&nbsp;&nbsp;<input type="text" id="un111"><br>
-            69&nbsp;&nbsp;<input type="text" id="un112"><br>
-            47&nbsp;&nbsp;<input type="text" id="un113"><br>
-            14&nbsp;&nbsp;<input type="text" id="un114"><br>
-            96&nbsp;&nbsp;<input type="text" id="un115"><br>
-            57&nbsp;&nbsp;<input type="text" id="un116"><br>
-            97&nbsp;&nbsp;<input type="text" id="un117"><br>
-            12&nbsp;&nbsp;<input type="text" id="un118"><br>
-            56&nbsp;&nbsp;<input type="text" id="un119"><br>
-            12&nbsp;&nbsp;<input type="text" id="un120"><br>
-            48&nbsp;&nbsp;<input type="text" id="un121"><br>
-            90&nbsp;&nbsp;<input type="text" id="un122"><br>
-            46&nbsp;&nbsp;<input type="text" id="un123"><br>
-            19&nbsp;&nbsp;<input type="text" id="un124"><br>
-            18&nbsp;&nbsp;<input type="text" id="un125"><br>
-            26&nbsp;&nbsp;<input type="text" id="un126"><br>
-            39&nbsp;&nbsp;<input type="text" id="un127"><br>
-            48&nbsp;&nbsp;<input type="text" id="un128"><br>
-            79&nbsp;&nbsp;<input type="text" id="un129"><br>
-            54&nbsp;&nbsp;<input type="text" id="un130"><br>
-            19&nbsp;&nbsp;<input type="text" id="un131"><br>
-            78&nbsp;&nbsp;<input type="text" id="un132"><br>
-            96&nbsp;&nbsp;<input type="text" id="un133"><br>
-            91&nbsp;&nbsp;<input type="text" id="un134"><br>
-            97&nbsp;&nbsp;<input type="text" id="un135"><br>
-            84&nbsp;&nbsp;<input type="text" id="un136"><br>
-            51&nbsp;&nbsp;<input type="text" id="un137"><br>
-            52&nbsp;&nbsp;<input type="text" id="un138"><br>
-            32&nbsp;&nbsp;<input type="text" id="un139"><br>
-            98&nbsp;&nbsp;<input type="text" id="un140"><br>
+      <section id="3" style="display:none;">
+
+            49 + 3&nbsp;&nbsp;<input type="text" id="un97"><br>
+            16 - 3 &nbsp;&nbsp;<input type="text" id="un98"><br>
+            25 + 3&nbsp;&nbsp;<input type="text" id="un99"><br>
+            88 - 3 &nbsp;&nbsp;<input type="text" id="un100"><br>
+            25 + 3&nbsp;&nbsp;<input type="text" id="un101"><br>
+            48 - 3 &nbsp;&nbsp;<input type="text" id="un102"><br>
+            25 + 3&nbsp;&nbsp;<input type="text" id="un103"><br>
+            36 - 3 &nbsp;&nbsp;<input type="text" id="un104"><br>
+            53 + 3&nbsp;&nbsp;<input type="text" id="un105"><br>
+            57 - 3 &nbsp;&nbsp;<input type="text" id="un106"><br>
+            23 + 3&nbsp;&nbsp;<input type="text" id="un107"><br>
+            34 - 3 &nbsp;&nbsp;<input type="text" id="un108"><br>
+            25 + 3&nbsp;&nbsp;<input type="text" id="un109"><br>
+            10 - 3 &nbsp;&nbsp;<input type="text" id="un110"><br>
+            57 + 3&nbsp;&nbsp;<input type="text" id="un111"><br>
+            69 - 3 &nbsp;&nbsp;<input type="text" id="un112"><br>
+            47 + 3&nbsp;&nbsp;<input type="text" id="un113"><br>
+            14 - 3 &nbsp;&nbsp;<input type="text" id="un114"><br>
+            96 + 3&nbsp;&nbsp;<input type="text" id="un115"><br>
+            57 - 3 &nbsp;&nbsp;<input type="text" id="un116"><br>
+            97 + 3&nbsp;&nbsp;<input type="text" id="un117"><br>
+            12 - 3 &nbsp;&nbsp;<input type="text" id="un118"><br>
+            56 + 3&nbsp;&nbsp;<input type="text" id="un119"><br>
+            12 - 3 &nbsp;&nbsp;<input type="text" id="un120"><br>
+            48 + 3&nbsp;&nbsp;<input type="text" id="un121"><br>
+            90 - 3 &nbsp;&nbsp;<input type="text" id="un122"><br>
+            46 + 3&nbsp;&nbsp;<input type="text" id="un123"><br>
+            19 - 3 &nbsp;&nbsp;<input type="text" id="un124"><br>
+            18 + 3&nbsp;&nbsp;<input type="text" id="un125"><br>
+            26 - 3 &nbsp;&nbsp;<input type="text" id="un126"><br>
+            39 + 3&nbsp;&nbsp;<input type="text" id="un127"><br>
+            48 - 3 &nbsp;&nbsp;<input type="text" id="un128"><br>
+            79 + 3&nbsp;&nbsp;<input type="text" id="un129"><br>
+            54 - 3 &nbsp;&nbsp;<input type="text" id="un130"><br>
+            19 + 3&nbsp;&nbsp;<input type="text" id="un131"><br>
+            78 - 3 &nbsp;&nbsp;<input type="text" id="un132"><br>
+            96 + 3&nbsp;&nbsp;<input type="text" id="un133"><br>
+            91 - 3 &nbsp;&nbsp;<input type="text" id="un134"><br>
+            97 + 3&nbsp;&nbsp;<input type="text" id="un135"><br>
+            84 - 3 &nbsp;&nbsp;<input type="text" id="un136"><br>
+            51 + 3&nbsp;&nbsp;<input type="text" id="un137"><br>
+            52 - 3 &nbsp;&nbsp;<input type="text" id="un138"><br>
+            32 + 3&nbsp;&nbsp;<input type="text" id="un139"><br>
+            98 - 3 &nbsp;&nbsp;<input type="text" id="un140"><br>
             
         
         
       </section>
-
+      <input type="button" value="end_three" id="end_three" style="display:none;">
   </center>
 
 
@@ -362,4 +372,105 @@
         width:50px
     }
 </style>
-  
+
+<script>
+
+function end_one(){
+    document.getElementById("1").style.display = "none";
+    document.getElementById("continuer").style.display = "block";    
+};
+
+function end_two(){
+    document.getElementById("2").style.display = "none";
+    document.getElementById("continuer1").style.display = "block";    
+};
+
+
+function end_three(){
+    document.getElementById("end_three").click();
+
+};
+
+function continuer1(){
+    document.getElementById("continuer1").style.display = "none";    
+    document.getElementById("3").style.display = "block";
+    window.setTimeout(end_three, 30000);
+};
+
+
+
+
+function continuer(){
+    document.getElementById("continuer").style.display = "none";
+    document.getElementById("2").style.display = "block";
+    window.setTimeout(end_two, 30000);
+};
+
+
+function play(the_block1){
+    document.getElementById("passer").style.display = "none";
+    document.getElementById(the_block1).style.display = "block";
+    window.setTimeout(end_one, 30000);
+};
+
+
+
+
+
+function recup_data(){
+
+    var liste = []
+    var liste1 = []
+    
+    for(var i = 1; i <= 140; i++){
+        id = "un" + String(i)
+
+        var resultat = document.getElementById(id).value;
+        if (resultat == ""){
+            liste1.push(0)
+        }
+        else{
+            liste1.push(resultat)
+        }
+    }
+    return liste1
+    
+
+};
+
+jQuery("#end_three").on("click", function(e){
+    
+ resultat = recup_data()
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+          "resultat":resultat,
+          'csrfmiddlewaretoken': '{{csrf_token}}',
+      },
+      type:"POST",
+      url:"le_questionnaire_troisieme_partie"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+          {}
+          
+          
+      };
+      
+  });
+});
+
+</script>
+
+
+
+
+
+
+
+
+
+
