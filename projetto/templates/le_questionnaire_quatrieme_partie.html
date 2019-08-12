@@ -556,14 +556,21 @@
         
 
     RESULTAT = []
+    ok = ""
     function put(question, reponse){
         for(var i = 0; i < RESULTAT.length; i++){
+          ok = ""
           if(question == RESULTAT[i][0]){
-            RESULTAT[i][1] = reponse
+            RESULTAT[i][1] = reponse;
+            ok = "non"
           };
         };
-        RESULTAT.push([question, reponse])
-        alert(RESULTAT)
+        if(ok == "non"){
+            {}
+        }
+        else{
+            RESULTAT.push([question, reponse])
+        }
     };
 
 
