@@ -24,8 +24,8 @@
 
   <!-- Custom CSS -->
   <link href="/static/home/css/stylish-portfolio.min.css" rel="stylesheet">
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+  <script src="/static/mon_compte/vendor/jquery/jquery.min.js"></script>
+  
 
 
 
@@ -96,6 +96,52 @@
     </div></center>
 
 
+
+    <center>
+         <div id="question1" style="display:none;">
+             <br>
+             Il y avait une pizza<br>
+             oui
+             <input type="checkbox" id="scales" name="scales" id="un" onclick="put('1', 'oui')">
+             non
+             <input type="checkbox" id="scales" name="scales" id="unun" onclick="put('1', 'non')">
+             <br><br>
+
+
+             Il n'y avait pas de seche cheveux<br>
+             oui
+             <input type="checkbox" id="scales" name="scales" id="deux" onclick="put('2', 'oui')">
+             non
+             <input type="checkbox" id="scales" name="scales" id="deuxdeux" onclick="put('2', 'non')"><br><br>
+
+
+             le seche cheveux était rouge<br>
+             oui
+             <input type="checkbox" id="scales" name="scales" id="trois" onclick="put('3', 'oui')">
+             non
+             <input type="checkbox" id="scales" name="scales" id="troistrois" onclick="put('3', 'non')"><br><br>
+
+
+             Il y avait 2 aliments<br>
+             oui
+             <input type="checkbox" id="scales" name="scales" id="quattre" onclick="put('4', 'oui')">
+             non
+             <input type="checkbox" id="scales" name="scales" id="quattrequattre" onclick="put('4', 'non')"><br><br>
+
+
+             Il y avait un camion<br>
+             oui
+             <input type="checkbox" id="scales" name="scales" id="cinq" onclick="put('5', 'oui')"> 
+             non
+             <input type="checkbox" id="scales" name="scales" id="cinqcinq" onclick="put('5', 'non')"><br><br>
+
+        </div>
+    </center>
+
+
+
+
+
     <center><div id="image1" style="display:none;">
 
 
@@ -105,13 +151,56 @@
          <img src="https://img.icons8.com/dusk/64/000000/sim-card.png">,
          <img src="https://img.icons8.com/dusk/64/000000/shipped.png">,
          <img src="https://img.icons8.com/dusk/64/000000/school-director-female-skin-type-6.png">
-        
 
-    </div></center>
+    </div>
+    </center>
+
+    <center>
+         <div id="question2" style="display:none;">
+             <br>
+             Il y avait une carte sim<br>
+             oui
+             <input type="checkbox" id="scales" name="scales" id="six" onclick="put('6', 'oui')">
+             non
+             <input type="checkbox" id="scales" name="scales" id="sixsix" onclick="put('6', 'non')">
+             <br><br>
+
+
+             Il n'y avait pas de souris<br>
+             oui
+             <input type="checkbox" id="scales" name="scales" id="sept" onclick="put('7', 'oui')">
+             non
+             <input type="checkbox" id="scales" name="scales" id="septsept" onclick="put('7', 'non')"><br><br>
+
+
+            la souris était verte<br>
+             oui
+             <input type="checkbox" id="scales" name="scales" id="huit" onclick="put('8', 'oui')">
+             non
+             <input type="checkbox" id="scales" name="scales" id="huithuit" onclick="put('8', 'non')"><br><br>
+
+
+            Il y avait une fille avec des lunettes<br>
+             oui
+             <input type="checkbox" id="scales" name="scales" id="neuf" onclick="put('9', 'oui')">
+             non
+             <input type="checkbox" id="scales" name="scales" id="neufneuf" onclick="put('9', 'non')"><br><br>
+
+
+            Il y avait une dent<br>
+             oui
+             <input type="checkbox" id="scales" name="scales" id="dix" onclick="put('10', 'oui')">
+             non
+             <input type="checkbox" id="scales" name="scales" id="dixdix" onclick="put('10', 'non')"><br><br>
+
+        </div>
+    </center>
 
 
 
 
+
+     
     <center><div id="image2" style="display:none;">
 
 
@@ -124,6 +213,54 @@
         
 
     </div></center>
+
+
+
+    <center>
+         <div id="question3" style="display:none;">
+             <br>
+             Il y avait un A+<br>
+             oui
+             <input type="checkbox" id="scales" name="scales" id="onze" onclick="put('11', 'oui')">
+             non
+             <input type="checkbox" id="scales" name="scales" id="onzeonze" onclick="put('11', 'non')">
+             <br><br>
+
+
+             Le A + était bleu<br>
+             oui
+             <input type="checkbox" id="scales" name="scales" id="douze" onclick="put('12', 'oui')">
+             non
+             <input type="checkbox" id="scales" name="scales" id="douzedouze" onclick="put('12', 'non')"><br><br>
+
+
+             Il y avait le logo apple<br>
+             oui
+             <input type="checkbox" id="scales" name="scales" id="treize" onclick="put('13', 'oui')">
+             non
+             <input type="checkbox" id="scales" name="scales" id="treizetreize" onclick="put('13', 'non')"><br><br>
+
+
+             Il y avait une bague<br>
+             oui
+             <input type="checkbox" id="scales" name="scales" id="quatorze" onclick="put('14', 'oui')"> 
+             non
+             <input type="checkbox" id="scales" name="scales" id="quatorzequatorze" onclick="put('14', 'non')"><br><br>
+
+
+             la couleur de cheveux du clown était de la meme couleur que le premier élément<br>
+             oui
+             <input type="checkbox" id="scales" name="scales" id="quinze" onclick="put('15', 'oui')">
+             non
+             <input type="checkbox" id="scales" name="scales" id="quinzequinze" onclick="put('15', 'non')"><br><br>
+
+        </div>
+    </center>
+
+
+
+
+
 
     
     <center><div id="image3" style="display:none;">
@@ -141,6 +278,55 @@
 
 
 
+    <center>
+         <div id="question4" style="display:none;">
+             <br>
+             Le premier élement se mange<br>
+             oui
+             <input type="checkbox" id="scales" name="scales" id="seize" onclick="put('16', 'oui')">
+             non
+             <input type="checkbox" id="scales" name="scales" id="seizeseize" onclick="put('16', 'non')">
+             <br><br>
+
+
+             Deux des images sont des sportifs<br>
+             oui
+             <input type="checkbox" id="scales" name="scales" id="dixsept" onclick="put('17', 'oui')">
+             non
+             <input type="checkbox" id="scales" name="scales" id="dixseptdixsept" onclick="put('17', 'non')"><br><br>
+
+
+             Un deux fait de la boxe<br>
+             oui
+             <input type="checkbox" id="scales" name="scales" id="dixhuit" onclick="put('18', 'oui')">
+             non
+             <input type="checkbox" id="scales" name="scales" id="dixhuitdixhuit" onclick="put('18', 'non')"><br><br>
+
+
+             il y a une map monde<br>
+             oui
+             <input type="checkbox" id="scales" name="scales" id="dixneuf" onclick="put('19', 'oui')">
+             non
+             <input type="checkbox" id="scales" name="scales" id="dixneufdixneuf" onclick="put('19', 'non')"><br><br>
+
+
+             il y a une brioche<br>
+             oui
+             <input type="checkbox" id="scales" name="scales" id="vingt" onclick="put('20', 'oui')">
+             non
+             <input type="checkbox" id="scales" name="scales" id="vingtvingt" onclick="put('20', 'non')"><br><br>
+
+        </div>
+    </center>
+
+
+
+
+
+
+
+
+
     <center><div id="image4" style="display:none;">
 
 
@@ -152,6 +338,55 @@
         
 
     </div></center>
+
+
+    <center>
+         <div id="question5" style="display:none;">
+             <br>
+             il y a un nuage<br>
+             oui
+             <input type="checkbox" id="scales" name="scales" id="vingtun" onclick="put('21', 'oui')">
+             non
+             <input type="checkbox" id="scales" name="scales" id="vingtunvingtun" onclick="put('21', 'non')">
+             <br><br>
+
+
+             il y a une robe<br>
+             oui
+             <input type="checkbox" id="scales" name="scales" id="vingtdeux" onclick="put('22', 'oui')">
+             non
+             <input type="checkbox" id="scales" name="scales" id="vingtdeuxvingtdeux" onclick="put('22', 'non')"><br><br>
+
+
+             Il y a le signe dvd<br>
+             oui
+             <input type="checkbox" id="scales" name="scales" id="vingttrois" onclick="put('23', 'oui')">
+             non
+             <input type="checkbox" id="scales" name="scales" id="vingttroisvingttrois" onclick="put('23', 'non')"><br><br>
+
+
+             le troisieme élement est une altere<br>
+             oui
+             <input type="checkbox" id="scales" name="scales" id="vingtquattre" onclick="put('24', 'oui')">
+             non
+             <input type="checkbox" id="scales" name="scales" id="vingtquattrevingtquattre" onclick="put('24', 'non')"><br><br>
+
+
+             le premier et le deuxieme éléments sont de la meme couleur<br>
+             oui
+             <input type="checkbox" id="scales" name="scales" id="vingtcinq" onclick="put('25', 'oui')">
+             non
+             <input type="checkbox" id="scales" name="scales" id="vingtcinqvingtcinq" onclick="put('25', 'non')"><br><br>
+
+        </div>
+    </center>
+
+
+
+
+
+
+
 
 
     <center><div id="image5" style="display:none;">
@@ -167,97 +402,197 @@
     </div></center>
 
 
+
+    <center>
+         <div id="question6" style="display:none;">
+             <br>
+             il y a un chien<br>
+             oui
+             <input type="checkbox" id="scales" name="scales" id="vingtsix" onclick="put('26', 'oui')">
+             non
+             <input type="checkbox" id="scales" name="scales" id="vingtsixvingtsix" onclick="put('26', 'non')">
+             <br><br>
+
+
+             il y a un pc bleu<br>
+             oui
+             <input type="checkbox" id="scales" name="scales" id="vingtsept" onclick="put('27', 'oui')">
+             non
+             <input type="checkbox" id="scales" name="scales" id="vingtseptvingtsept" onclick="put('27', 'non')"><br><br>
+
+
+             Il y a un signe rouge, vert, jaune, bleu<br>
+             oui
+             <input type="checkbox" id="scales" name="scales" id="vingthuit" onclick="put('28', 'oui')">
+             non
+             <input type="checkbox" id="scales" name="scales" id="vingthuitvingthuit" onclick="put('28', 'non')"><br><br>
+
+
+             les pieces sont vertes<br>
+             oui
+             <input type="checkbox" id="scales" name="scales" id="vingtneuf" onclick="put('29', 'oui')">
+             non
+             <input type="checkbox" id="scales" name="scales" id="vingtneufvingtneuf" onclick="put('29', 'non')"><br><br>
+
+
+             il y avait un cadenas<br>
+             oui
+             <input type="checkbox" id="scales" name="scales" id="trente" onclick="put('30', 'oui')">
+             non
+             <input type="checkbox" id="scales" name="scales" id="trentetrente" onclick="put('30', 'non')"><br><br>
+
+        </div>
+    </center>
+
+
+
+
+
+
+
     <center><input type="button" onclick="continuer1()" value="continuer" style="display:none;" id="continuer1"></center>
     <center><input type="button" onclick="continuer2()" value="continuer" style="display:none;" id="continuer2"></center>
     <center><input type="button" onclick="continuer3()" value="continuer" style="display:none;" id="continuer3"></center>
     <center><input type="button" onclick="continuer4()" value="continuer" style="display:none;" id="continuer4"></center>
+    <center><input type="button" onclick="continuer5()" value="continuer" style="display:none;" id="continuer5"></center>
+    <center><input type="button" value="fin" style="display:none;" id="fin"></center>
     
 
     <br><br>
 
     <script>
 
+
+        function play(){
+            document.getElementById("image").style.display = "block";
+            window.setTimeout(display_one, 1000);
+            
+        };
+
+
         function display_one(){
             document.getElementById("image").style.display = "none";
+            document.getElementById("question1").style.display = "block";
             document.getElementById("continuer1").style.display = "block";
 
-        }
+        };
 
+      function continuer1(){
+            document.getElementById("continuer1").style.display = "none";
+            document.getElementById("question1").style.display = "none";
+            document.getElementById("image1").style.display = "block";
+            window.setTimeout(display_two, 1000);
 
-
+      };
         function display_two(){
             document.getElementById("image1").style.display = "none";
+            document.getElementById("question2").style.display = "block";
             document.getElementById("continuer2").style.display = "block";
 
         }
 
 
+      function continuer2(){
+            document.getElementById("continuer2").style.display = "none";
+             document.getElementById("question2").style.display = "none";
+            document.getElementById("image2").style.display = "block";
+            window.setTimeout(display_three, 1000);
+
+      };
+
+
         function display_three(){
             document.getElementById("image2").style.display = "none";
+            document.getElementById("question3").style.display = "block";
             document.getElementById("continuer3").style.display = "block";
 
         }
 
-        function display_fourth(){
-            document.getElementById("image3").style.display = "none";
-            document.getElementById("continuer4").style.display = "block";
-
-        }
-
-
-        function display_five(){
-            document.getElementById("image4").style.display = "none";
-        }
-
-
-
-
-        function play(){
-            document.getElementById("image").style.display = "block";
-            window.setTimeout(display_one, 2000);
-            
-        };
-
-
-
-
-
-      function continuer1(){
-            document.getElementById("continuer1").style.display = "none";
-            document.getElementById("image1").style.display = "block";
-            window.setTimeout(display_two, 2000);
-
-      };
-
-
-      function continuer2(){
-            document.getElementById("continuer2").style.display = "none";
-            document.getElementById("image2").style.display = "block";
-            window.setTimeout(display_three, 2000);
-
-      };
-
-
-
       function continuer3(){
             document.getElementById("continuer3").style.display = "none";
+            document.getElementById("question3").style.display = "none";
             document.getElementById("image3").style.display = "block";
-            window.setTimeout(display_fourth, 2000);
+            window.setTimeout(display_fourth, 1000);
 
       };
+
+      function display_fourth(){
+            document.getElementById("image3").style.display = "none";
+            document.getElementById("question4").style.display = "block";
+            document.getElementById("continuer4").style.display = "block";
+
+      };
+
 
       function continuer4(){
             document.getElementById("continuer4").style.display = "none";
+            document.getElementById("question4").style.display = "none";
             document.getElementById("image4").style.display = "block";
-            window.setTimeout(display_five, 2000);
+            window.setTimeout(display_five, 1000);
 
       };
 
+
+      function display_five(){
+            document.getElementById("image4").style.display = "none";
+            document.getElementById("question5").style.display = "block";
+            document.getElementById("continuer5").style.display = "block";  
+      };
+      
       function continuer5(){
             document.getElementById("continuer5").style.display = "none";
+            document.getElementById("question5").style.display = "none";
             document.getElementById("image5").style.display = "block";
+            window.setTimeout(display_six, 1000);
 
       };
+
+      function display_six(){
+            document.getElementById("image5").style.display = "none";
+            document.getElementById("question6").style.display = "block";
+            document.getElementById("fin").style.display = "block";
+      };
+
+        
+
+    RESULTAT = []
+    function put(question, reponse){
+        for(var i = 0; i < RESULTAT.length; i++){
+          if(question == RESULTAT[i][0]){
+            RESULTAT[i][1] = reponse
+          };
+        };
+        RESULTAT.push([question, reponse])
+        alert(RESULTAT)
+    };
+
+
+    
+    $("#fin").on("click", function(e){
+        
+     var resultat = recup_data()
+     alert("resultat")
+     e.preventDefault();
+      jQuery.ajax({
+          data:{
+              "resultat":resultat,
+              'csrfmiddlewaretoken': '{{csrf_token}}',
+          },
+          type:"POST",
+          url:"le_questionnaire_seconde_partie"
+      })
+      .done(function(data){
+          if (data.error){
+              document.getElementById("#Alert").inner.html = "aie"; 
+          }
+          else{
+              {}
+              
+              
+          };
+          
+      });
+    });
 
     </script>
     
