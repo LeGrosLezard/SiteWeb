@@ -2,9 +2,11 @@
 
 -------------------------------------------------
 
-https://openpsychometrics.org/tests/FSIQ/1.php (mémoire, visuo)
+verifier les truks 
 
+mettre 30 secondes les truks si le mec a + de 20/30% a chauqe condi dire ok
 
+mettre 30 sec mémoire
 
 finir resultat mémoire
 
