@@ -482,12 +482,37 @@ def le_questionnaire_premiere_partie(request):
 
 
 
-
+from .questionnaire.questionnaire_deux import traitement_DICTEE
+from .questionnaire.questionnaire_deux import traitement_texte_utilisateur
+from .questionnaire.CONFIG import DICTEE
 def le_questionnaire_seconde_partie(request):
+
+    if request.method == "POST":
+
+        texte = request.POST.get('texte')
+        if texte:
+            dictee = traitement_DICTEE(DICTEE)
+            faute = traitement_texte_utilisateur(texte, dictee)
+            
+
     return render(request, 'le_questionnaire_seconde_partie.html')
 
+
+from .questionnaire.questionnaire_trois import resultat_function
+from .questionnaire.questionnaire_trois import correction
 def le_questionnaire_troisieme_partie(request):
+
+    if request.method == "POST":
+        resultat = request.POST.get('resultat')
+        
+        if resultat:
+            print(resultat)
+            resultat_function(resultat)
+        
     return render(request, 'le_questionnaire_troisieme_partie.html')
+
+
+
 
 def le_questionnaire_quatrieme_partie(request):
     return render(request, 'le_questionnaire_quatrieme_partie.html')
