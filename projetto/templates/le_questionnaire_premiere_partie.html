@@ -2921,17 +2921,25 @@
 <script>
 
 var LISTE_QUESTION = []
+ok = ""
+
 function is_click(question, score){
 
     for(var i = 0; i < LISTE_QUESTION.length; i++){
+      ok = ""
       if(question == LISTE_QUESTION[i][0]){
-        LISTE_QUESTION.splice([i])
-
+        LISTE_QUESTION[i][0] = score
+        ok = "non"
       };
-
+      if(ok == "non"){
+        {}
+      }
+      else{
+        LISTE_QUESTION.push([question, score])
+      }
     };
     
-    LISTE_QUESTION.push([question, score])
+    
 
 
 };
