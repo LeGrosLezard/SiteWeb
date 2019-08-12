@@ -394,7 +394,7 @@ function end_three(){
 function continuer1(){
     document.getElementById("continuer1").style.display = "none";    
     document.getElementById("3").style.display = "block";
-    window.setTimeout(end_three, 30000);
+    window.setTimeout(end_three, 1000);
 };
 
 
@@ -403,14 +403,14 @@ function continuer1(){
 function continuer(){
     document.getElementById("continuer").style.display = "none";
     document.getElementById("2").style.display = "block";
-    window.setTimeout(end_two, 30000);
+    window.setTimeout(end_two, 1000);
 };
 
 
 function play(the_block1){
     document.getElementById("passer").style.display = "none";
     document.getElementById(the_block1).style.display = "block";
-    window.setTimeout(end_one, 30000);
+    window.setTimeout(end_one, 1000);
 };
 
 
@@ -431,8 +431,8 @@ function recup_data(){
         }
         else{
             liste1.push(resultat)
-        }
-    }
+        };
+    };
     return liste1
     
 
@@ -444,7 +444,7 @@ jQuery("#end_three").on("click", function(e){
  e.preventDefault();
   jQuery.ajax({
       data:{
-          "resultat":resultat,
+          "resultat":String(resultat),
           'csrfmiddlewaretoken': '{{csrf_token}}',
       },
       type:"POST",
