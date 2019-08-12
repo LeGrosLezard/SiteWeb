@@ -4,16 +4,16 @@
 
 https://openpsychometrics.org/tests/FSIQ/1.php (mémoire, visuo)
 
-flexibilité = + 3 - 3 3 foix
 
-et fais un test numérique logique toi meme (fin recopie celui du site et dis que tu savais pas)
+finir resultat mémoire
 
+mise en database des tests
+
+stp faite quavec le bon agent je puisse bel et bien scrap pole emploi
 
 ----------------------------------------
 
 responsive cv et motivation (surtout cv attention)
-
-mise en database des tests
 
 mettre le rendu en pdf
 
