@@ -96,7 +96,7 @@ QUESTION = {"1": "Anxiete",
             "94": "Confiance_en_autre",
             "95": "Sens_des_competences",
             "96": "Affectation",
-            "97": "Sociabilite",
+            "97": "-Sociabilite",
             "98": "Interets_artistiques",
             "99": "-Tolerance_a_la_diversite",
             "100": "Ordre",
@@ -208,50 +208,60 @@ NOMBRE = {"Anxiete":4,
 
 
 #1 nom 2 il ou elle
-SPHERE = {"Ouverture_a_l_experience": """{0} semble etre
-une personne qui recherche activement
-et qui apprécie l'expérience en tant que telle.
-De plus, {1} possède une très grande imagination en plus du grande ouverture
-d'esprit. Travailler dans un cadre changeant n'est pas dérangeant et est
+SPHERE = {"Ouverture_a_l_experience":
+          """Le participant à eu un score supérieur à la moyenne dans \
+l'ouverture à l'expérience.
+Cela indique que c'est \
+une personne qui recherche l'expérience en tant que telle. \
+Cela s'accompagne d'une très grande imagination \
+en plus du grande ouverture d'esprit. \
+Travailler dans un cadre changeant n'est pas dérangeant et est \
 meme une source de stimulation.""",
           
-          "Conscience_professionnelle": """{0} a un ahut degré d’organisation,
-de motivation et de minutie d’une personne dans
-sa vie et dans la poursuite de ses objectifs. 
-{0} est méthodiques, motivés et organisés.""",
+          "Conscience_professionnelle":
+          """Le participant à eu un score supérieur à la moyenne dans \
+la conscience professionnelle.
+Cela montre que la personne à un haut degré d’organisation, \
+de motivation et de minutie dans \
+sa vie et dans la poursuite de ses objectifs. \
+Cela fait d'elle une personne méthodique, motivé et organisé.""",
+
+          "Extraversion":
+          """Le participant à eu un score supérieur à la moyenne dans \
+Extraversion.
+Cela décrit l’énergie et \
+l’enthousiasme d’une personne dans ses \
+rapports avec les gens. Elle fait référence aux \
+préférences de la personne en matière de quantité et \
+d’intensité des relations interpersonnelles. \
+Les scores élevés sont sociables et cherchent \
+activement la compagnie des autres.""",
           
-          "Extraversion": """L’extraversion décrit l’énergie et
-l’enthousiasme d’une personne dans ses
-rapports avec les gens. Elle fait référence aux
-préférences de la personne en matière de quantité et
-d’intensité des relations interpersonnelles. 
-Les scores élevés sont sociables et cherchent 
-activement la compagnie des autres. Plus le score 
-est élevé, plus la description fournie sera fidèle.""",
-          
-            "Agréabilité": """Le caractère agréable d'une personne fait
-référence aux attitudes qu'elle adopte vis-à-vis des autres.
-Les personnes qui marquent un score élevé sont douées de compassion,
- sont franches et coopératives. Les personnes agréables possèdent une 
-vue optimiste de la nature humaine. Elles pensent que les gens sont
+            "Agréabilité":
+          """Le participant à eu un score supérieur à la moyenne dans \
+l'agréabilité.
+Le caractère agréable d'une personne fait \
+référence aux attitudes qu'elle adopte vis-à-vis des autres. \
+Les personnes qui marquent un score élevé sont douées de compassion, \
+sont franches et coopératives. Les personnes agréables possèdent une \
+vue optimiste de la nature humaine. Elles pensent que les gens sont \
 foncièrement honnêtes, respectueux et dignes de confiance.""",
           
-            "Réactions Naturelles": """Les gens qui marquent un score 
-élevé sont dotés de réactions naturelles fortes, excessivement
-sensibles et émotionnelles. Ils répondent de manière émotionnelle 
-aux événements qui n’affectent généralement pas beaucoup de personnes,
-et leurs réactions ont tendance à être plus intenses. 
-Ils sont plus enclins à interpréter les situations
-ordinaires comme menaçantes et les frustrations mineures comme de
-« gros problèmes ». Ces « réactions naturelles » fortes peuvent réduire
-la capacité d’une personne à penser clairement, à prendre des
-décisions et à gérer efficacement le stress."""
+            "Réactions Naturelles":
+          """Le participant à eu un score supérieur à la moyenne dans \
+les réactions Naturelles.
+Les gens qui marquent un score \
+élevé sont dotés de \
+sensibilité. Cela marque peut etre négatif pour les uns mais une force pour \
+les autres. Une personne sensible à tendance à tout analyser. \
+Une personne sensible peut etre synonyme de grand analyste de situation."""
             }
 
 
 
-SOUS_CLASSE = {"immagination": """{0} a un sens poussé de l'immagination.
-Sa capacité à immaginer lui permet de créer des mondes intérieurs
+SOUS_CLASSE = {"Imagination":
+               """Signifie que la personne a un sens poussé de l'immagination.
+Sa capacité à immaginer lui permet de créer des mondes intérieurs\
 puissants, riches et très interressant.""",
                
                "Interets_artistiques": """Nous pouvons confirmer que {0} a un
