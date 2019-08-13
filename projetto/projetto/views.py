@@ -489,8 +489,12 @@ def le_questionnaire_premiere_partie(request):
 
 from .questionnaire.questionnaire_deux import traitement_DICTEE
 from .questionnaire.questionnaire_deux import traitement_texte_utilisateur
+from .questionnaire.database.database import insertion_bilan_seconde_partie
+
 from .questionnaire.CONFIG import DICTEE
 def le_questionnaire_seconde_partie(request):
+
+    pseudo = request.user
 
     if request.method == "POST":
 
@@ -498,9 +502,17 @@ def le_questionnaire_seconde_partie(request):
         if texte:
             dictee = traitement_DICTEE(DICTEE)
             faute = traitement_texte_utilisateur(texte, dictee)
+
+            print(faute)
+##            if faute == None:
+##                pass
+##            else:
+            insertion_bilan_seconde_partie(pseudo, faute)
             
 
     return render(request, 'le_questionnaire_seconde_partie.html')
+
+
 
 
 from .questionnaire.questionnaire_trois import resultat_function
