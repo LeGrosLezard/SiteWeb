@@ -503,11 +503,10 @@ def le_questionnaire_seconde_partie(request):
             dictee = traitement_DICTEE(DICTEE)
             faute = traitement_texte_utilisateur(texte, dictee)
 
-            print(faute)
-##            if faute == None:
-##                pass
-##            else:
-            insertion_bilan_seconde_partie(pseudo, faute)
+            if faute == None:
+                insertion_bilan_seconde_partie(pseudo, "non")
+            else:
+                insertion_bilan_seconde_partie(pseudo, faute)
             
 
     return render(request, 'le_questionnaire_seconde_partie.html')
