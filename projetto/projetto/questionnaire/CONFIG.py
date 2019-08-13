@@ -415,7 +415,7 @@ DICTEE ="""il était une heure du matin. Une énorme déflagration s'est fait en
 qu'elle panique il y a eu ! Les passagers se sont tous précipités sur le pont à la demande
 du capitaine. Mais les membres de l'équipage semblaient affolés.
 Ils les ont entendu hurler. Et les ont vus préparer les bateaux de survie.
-Pris de panique, les passagers se sont vus mourrir.
+Pris de panique, les passagers se sont vus mourir.
 Ils se sont finalement laissé convaincre de quitter le navire dans le calme.
 Ils sont montés dans les chaloupes et se sont tous fais ramener sain et sauf
 sur la côte.
