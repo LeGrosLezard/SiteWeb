@@ -453,10 +453,12 @@ def le_questionnaire(request):
 
 
 from .questionnaire.questionnaire import question_reponse
-from .questionnaire.analyse import analyse_questionnaire
-from .questionnaire.analyse import association_definition
-from .questionnaire.analyse import association_definition1
-from .questionnaire.analyse import association_definition2
+from .questionnaire.questionnaire import analyse_questionnaire
+from .questionnaire.questionnaire import association_definition
+from .questionnaire.questionnaire import association_definition1
+from .questionnaire.questionnaire import association_definition2
+from .questionnaire.questionnaire import assoc_grande_categorie
+from .questionnaire.questionnaire import mise_en_page
 from .questionnaire.database.database import insertion_bilan_premiere_partie
 def le_questionnaire_premiere_partie(request):
 
@@ -466,14 +468,17 @@ def le_questionnaire_premiere_partie(request):
     if request.method == "POST":
 
         questionnaire = request.POST.get('questionnaire')
-
         questionnaire_traitee = question_reponse(questionnaire)
         analyse = analyse_questionnaire(questionnaire_traitee)
         reponse = association_definition(analyse)
+        
         reponse_associee = association_definition1(reponse)
         reponse_associee2 = association_definition2(reponse)
-        print(reponse_associee2)
-        insertion_bilan_premiere_partie(pseudo, reponse_associee2)
+        
+        grande_cat = assoc_grande_categorie(reponse_associee2)
+        pagination = mise_en_page(reponse_associee, grande_cat)
+        #print(pagination)
+        insertion_bilan_premiere_partie(pseudo, pagination)
         
 
 
@@ -515,6 +520,17 @@ def le_questionnaire_troisieme_partie(request):
 
 
 def le_questionnaire_quatrieme_partie(request):
+
+    if request.method == "POST":
+        resultat = request.POST.get('resultat')
+
+        if resultat:
+            print(resultat)
+
+
+
+
+    
     return render(request, 'le_questionnaire_quatrieme_partie.html')
 
 
@@ -678,4 +694,5 @@ def page_message(request):
 
 
 
-
+def page_bilan(request):
+    return render(request, 'page_bilan.html')
