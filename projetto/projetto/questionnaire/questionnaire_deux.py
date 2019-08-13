@@ -16,8 +16,8 @@ def traitement_texte_utilisateur(texte, dictee):
     texte = texte.split()
 
     if len(texte) < 50:
-        #return None
-        pass
+        return None
+
     else:
         for i in texte:
             liste.append(i.lower())
