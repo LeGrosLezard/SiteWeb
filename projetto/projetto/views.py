@@ -540,18 +540,25 @@ def le_questionnaire_troisieme_partie(request):
 
 
 
-
+from .questionnaire.questionnaire_quattre import resultat_function
+from .questionnaire.questionnaire_quattre import correction
+from .questionnaire.database.database import insertion_bilan_quatrieme_partie
 def le_questionnaire_quatrieme_partie(request):
 
+    ok = ""
+    pseudo = request.user
     if request.method == "POST":
         resultat = request.POST.get('resultat')
 
         if resultat:
-            print(resultat)
+            result = resultat_function(resultat)
+            correct =  correction(result)
+            if correct >= 15:
+                ok = "La personne a eu plus que la moyenne dans le test de la mémoire ce qui..."
+            else:
+                ok = "non"
 
-
-
-
+            insertion_bilan_quatrieme_partie(pseudo, ok)
     
     return render(request, 'le_questionnaire_quatrieme_partie.html')
 
