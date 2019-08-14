@@ -6,7 +6,7 @@ finir les textes
 
 verifier les tests
 
-finir mail all (verifier linux scrap)
+finir mail all (verifier linux scrap) -> faut un truk sur mec te fais pas blacklist au pire une autre addresse mailpcque le mec tu lui montres ton site au debut y se dit ouaaaa puis apres la redescente de ouaaa voila huum ok je vois - -----> + et le mec dapres ben lui est + OU l'inverse mais faut pas miser sur ca
 
 ----------------------------------------
 
