@@ -89,7 +89,7 @@
 
     
   <center>
-      <section id="1" style="display:;">
+      <section id="1" style="display:none;">
             
             15 + 3&nbsp;&nbsp;<input type="text" id="un1"><br>
             19 - 3 &nbsp;&nbsp;<input type="text" id="un2"><br>
@@ -393,7 +393,7 @@ function end_three(){
 function continuer1(){
     document.getElementById("continuer1").style.display = "none";    
     document.getElementById("3").style.display = "block";
-    window.setTimeout(end_three, 1000);
+    window.setTimeout(end_three, 40000);
 };
 
 
@@ -402,14 +402,14 @@ function continuer1(){
 function continuer(){
     document.getElementById("continuer").style.display = "none";
     document.getElementById("2").style.display = "block";
-    window.setTimeout(end_two, 1000);
+    window.setTimeout(end_two, 40000);
 };
 
 
 function play(the_block1){
     document.getElementById("passer").style.display = "none";
     document.getElementById(the_block1).style.display = "block";
-    window.setTimeout(end_one, 1000);
+    window.setTimeout(end_one, 40000);
 };
 
 
@@ -423,13 +423,21 @@ function recup_data(){
     
     for(var i = 1; i <= 140; i++){
         id = "un" + String(i)
+        if(id == "un44"){
 
-        var resultat = document.getElementById(id).value;
-        if (resultat == ""){
-            liste1.push(0)
+        }
+        else if(id=="un45"){
+
         }
         else{
-            liste1.push(resultat)
+            var resultat = document.getElementById(id).value;
+            
+            if (resultat == ""){
+                liste1.push(0)
+            }
+            else{
+                liste1.push(resultat)
+            };
         };
     };
     return liste1
