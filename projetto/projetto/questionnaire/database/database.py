@@ -69,3 +69,33 @@ def insertion_bilan_seconde_partie(pseudo, bilan):
                        
 
     conn.commit() 
+
+
+
+
+def insertion_bilan_troisieme_partie(pseudo, bilan):
+
+
+    id_user = recuperation_id_pseudo(pseudo)
+    id_user = id_user[0][0]
+
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD) 
+
+    cur = conn.cursor()
+    
+    cur.execute("""INSERT INTO bilan
+                (id_user, bilan2)
+                VALUES(%s, %s);""", (id_user, bilan))
+                       
+
+    conn.commit() 
+
+
+
+
+
+
+
