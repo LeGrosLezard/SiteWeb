@@ -516,15 +516,26 @@ def le_questionnaire_seconde_partie(request):
 
 from .questionnaire.questionnaire_trois import resultat_function
 from .questionnaire.questionnaire_trois import correction
+from .questionnaire.database.database import insertion_bilan_troisieme_partie
 def le_questionnaire_troisieme_partie(request):
+
+    pseudo = request.user
 
     if request.method == "POST":
         resultat = request.POST.get('resultat')
         
         if resultat:
-            print(resultat)
-            resultat_function(resultat)
-        
+
+            ok = ""
+            correction_uti = resultat_function(resultat)
+            correction_uti = correction(correction_uti)
+            if correction_uti > 59:
+                ok = "L'utilisateur a eu " + str(correction_uti) + " à la flexibilité mentale cela veut dire que..."
+            else:
+                ok = "non"
+                
+            insertion_bilan_troisieme_partie(pseudo, ok)
+            
     return render(request, 'le_questionnaire_troisieme_partie.html')
 
 
