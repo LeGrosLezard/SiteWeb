@@ -14,13 +14,15 @@ def resultat_function(resultat):
         else:
             nb += i
 
-    print(liste)
 
+    return liste
 
 def correction(liste):
     c = 0
     counter = 0
+
     for i in liste:
+
         if i == questionnaire_3[c]:
             counter += 1
         c+=1
