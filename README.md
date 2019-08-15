@@ -52,6 +52,17 @@ non connexion faire les pages
 
 ---------------------------------------
 
+probleme
+
+ya pas assez dapplication t'as tout mis dans projetto
+
+soit tu refais tout 
+
+soit tu rends ca moins chargé
+
+soit tu trouves un truk pour rendre tout ca clair 
+
+---------------------------------------
 
 
 
