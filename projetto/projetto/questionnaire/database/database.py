@@ -117,3 +117,117 @@ def insertion_bilan_quatrieme_partie(pseudo, bilan):
 
 
 
+
+
+#--------------------SECONDE PARTIE------------------------------------
+#----------------RECUPERATION DES BILANS-------------------------------
+
+
+def recuperation_info_perso(pseudo):
+    
+    id_user = recuperation_id_pseudo(pseudo)
+    id_user = id_user[0][0]
+
+    
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD) 
+
+    cur = conn.cursor()
+
+    cur.execute("""select nom, prenom from users
+                WHERE (pseudo = '{0}');""".format(pseudo))
+                       
+
+    conn.commit()  
+
+    rows = cur.fetchall()
+    liste = [i for i in rows]
+
+
+    return liste[0][0], liste[0][1]
+
+
+
+
+
+def récupération_psycho(pseudo):
+
+    
+    id_user = recuperation_id_pseudo(pseudo)
+    id_user = id_user[0][0]
+
+    
+
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD) 
+
+    cur = conn.cursor()
+    
+    cur.execute("""SELECT bilan FROM bilan
+                WHERE id_user = %s;""", (id_user, ))
+                       
+
+    conn.commit() 
+
+
+
+    rows = cur.fetchall()
+    liste = [i for i in rows]
+
+
+    liste = liste[0][0].replace("\n", "!")
+
+    resume = []
+
+    phrase = ""
+
+    c = 0
+    for i in liste:
+        if i == "!":
+            resume.append([phrase])
+            phrase = ""
+
+        else:
+            phrase += i
+
+            
+    return resume
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
