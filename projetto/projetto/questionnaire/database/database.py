@@ -158,7 +158,7 @@ def récupération_psycho(pseudo):
     id_user = recuperation_id_pseudo(pseudo)
     id_user = id_user[0][0]
 
-    
+    print(id_user)
 
     conn = psycopg2.connect(database=DATABASE,
                             user=USER,
@@ -179,7 +179,7 @@ def récupération_psycho(pseudo):
     liste = [i for i in rows]
 
 
-    liste = liste[0][0].replace("\n", "!")
+    liste = liste[1][0].replace("\n", "!")
 
     resume = []
 
