@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Landing Page - Start Bootstrap Theme</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="/static/mon_compte/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="/static/mon_compte/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="/static/mon_compte/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+  <!-- Custom styles for this template -->
+  <link href="/static/mon_compte/css/landing-page.min.css" rel="stylesheet">
+
+
+  <!-- Custom CSS -->
+  <link href="/static/home/css/stylish-portfolio.min.css" rel="stylesheet">
+
+  
+</head>
+
+<body>
+
+
+  <!-- Navigation -->
+  <a class="menu-toggle rounded" href="#">
+    <i class="fas fa-bars"></i>
+  </a>
+  <nav id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand">
+        <a class="js-scroll-trigger" href="#page-top">Menu</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="">Accueil</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="compte">Mon Compte</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="compte#cv_icone">Mes Documents</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="le_questionnaire">Le Questionnaire</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="app_email/questionnaire_email">Ma démarche</a>
+      </li>
+    </ul>
+  </nav>
+
+
+
+
+    <!-- Masthead -->
+    <header class="masthead text-white text-center"
+      style="background: no-repeat url('/static/home/img/bg-callout.jpg');">
+      
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <h1 class="mb-5">Qu'est ce que mon bilan à t'il détecté ?</h1>
+        </div>
+      </div>
+    </div>
+    </header>
+
+
+
+
+<!-- About -->
+  <section class="content-section bg-light" id="about">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+
+            <h3>Bilan de : {{nom}} {{prenom}}</h3><br><br>
+            
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+  <!-- Services -->
+  <section class="content-section bg-primary text-white text-center" id="services">
+    <div class="container">
+        <h3>Le bilan psychologique ou Big Five</h3><br>
+        permet de gnagnagna
+    
+    </div>
+  </section>
+
+
+
+
+
+  <!-- Callout -->
+  <section class="callout">
+    <div class="container text-center">
+      <h2 class="mx-auto mb-5">
+
+     </h2>
+
+
+        <div style='font-size:1.2em;'>
+            <strong>
+                <div id="bilan1"></div>
+            </strong>
+        </div>
+
+
+
+    </div>
+  </section>
+
+  <script>
+    
+
+    var liste = "{{bilan1}}"
+
+    for(var i = 0; i < liste.length; i ++){
+        liste = liste.replace("&#39;","")
+        liste = liste.replace("&quot;", "")
+        liste = liste.replace(",", "")
+    }
+    
+    var liste1 = []
+
+    phrase = ""
+
+    for(var i = 0; i < liste.length; i ++){
+        if(liste[i] == "["){
+
+        }
+        else if(liste[i] == "]"){
+            liste1.push(phrase)
+            phrase = ""
+        }
+        else{
+            phrase += liste[i]
+        };
+    };
+
+    for(var i = 0; i < liste1.length; i ++){
+        if(liste1[i] == " "){
+            liste1[i] = "<br>"
+        }
+    };
+
+
+    test = ""
+    for(var i = 0; i < liste1.length; i ++){
+        test += liste1[i]
+    };
+
+
+    
+    document.getElementById("bilan1").innerHTML = test
+    
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Services -->
+  <section class="content-section bg-primary text-white text-center" id="services">
+    <div class="container">
+        <h3>Le bilan de la dictée</h3><br>
+        permet de gnagnagna
+    
+    </div>
+  </section>
+
+
+
+
+
+  <!-- Callout -->
+  <section class="callout">
+    <div class="container text-center">
+      <h2 class="mx-auto mb-5">
+
+     </h2>
+
+
+        <div style='font-size:1.2em;'>
+            <strong>
+                <div id="bilan2"></div>
+            </strong>
+        </div>
+
+
+
+    </div>
+  </section>
+
+  <script>
+    
+
+
+    
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Services -->
+  <section class="content-section bg-primary text-white text-center" id="services">
+    <div class="container">
+        <h3>Le bilan de la fléxibilité mentale</h3><br>
+        permet de gnagnagna
+    
+    </div>
+  </section>
+
+
+
+
+
+  <!-- Callout -->
+  <section class="callout">
+    <div class="container text-center">
+      <h2 class="mx-auto mb-5">
+
+     </h2>
+
+
+        <div style='font-size:1.2em;'>
+            <strong>
+                <div id="bilan3"></div>
+            </strong>
+        </div>
+
+
+
+    </div>
+  </section>
+
+  <script>
+    
+
+
+    
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Services -->
+  <section class="content-section bg-primary text-white text-center" id="services">
+    <div class="container">
+        <h3>Le bilan de la mémoire</h3><br>
+        permet de gnagnagna
+    
+    </div>
+  </section>
+
+
+
+
+
+  <!-- Callout -->
+  <section class="callout">
+    <div class="container text-center">
+      <h2 class="mx-auto mb-5">
+
+     </h2>
+
+
+        <div style='font-size:1.2em;'>
+            <strong>
+                <div id="bilan3"></div>
+            </strong>
+        </div>
+
+
+
+    </div>
+  </section>
+
+  <script>
+    
+
+
+    
+  </script>
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Footer -->
+  <footer class="footer text-center">
+    <div class="container">
+      <ul class="list-inline mb-5">
+        <li class="list-inline-item">
+          <a class="social-link rounded-circle text-white mr-3" href="#">
+            <i class="icon-social-facebook"></i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="social-link rounded-circle text-white mr-3" href="#">
+            <i class="icon-social-twitter"></i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="social-link rounded-circle text-white" href="#">
+            <i class="icon-social-github"></i>
+          </a>
+        </li>
+      </ul>
+      <p class="text-muted small mb-0">Copyright &copy; Your Website 2019</p>
+    </div>
+  </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="/static/mon_compte/vendor/jquery/jquery.min.js"></script>
+  <script src="/static/mon_compte/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/home/js/stylish-portfolio.min.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
