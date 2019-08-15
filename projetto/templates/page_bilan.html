@@ -121,7 +121,7 @@
 
         <div style='font-size:1.2em;'>
             <strong>
-                <div id="bilan1"></div>
+                <div id="bilan1" style="text-align:justify;"></div>
             </strong>
         </div>
 
@@ -150,6 +150,7 @@
 
         }
         else if(liste[i] == "]"){
+            phrase = String(phrase) + " <br><br>"
             liste1.push(phrase)
             phrase = ""
         }
@@ -158,11 +159,6 @@
         };
     };
 
-    for(var i = 0; i < liste1.length; i ++){
-        if(liste1[i] == " "){
-            liste1[i] = "<br><br>"
-        }
-    };
 
 
     test = ""
