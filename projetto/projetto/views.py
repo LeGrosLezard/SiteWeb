@@ -722,6 +722,63 @@ def page_message(request):
 
 
 
-
+from .questionnaire.database.database import recuperation_info_perso
+from .questionnaire.database.database import récupération_psycho
 def page_bilan(request):
-    return render(request, 'page_bilan.html')
+
+    pseudo = request.user
+
+    nom, prenom = recuperation_info_perso(pseudo)
+    bilan1 = récupération_psycho(pseudo)
+    
+    data = {"nom":nom,
+            "prenom":prenom,
+            "bilan1":bilan1
+            
+
+
+
+
+
+
+
+
+
+
+
+
+            }
+    
+    return render(request, 'page_bilan.html', data)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
