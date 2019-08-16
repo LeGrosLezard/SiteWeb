@@ -2,6 +2,8 @@
 
 -------------------------------------------------
 
+réecris tout comme tete visage
+
 finir les textes
 
 finir page bilan + verification des tests
