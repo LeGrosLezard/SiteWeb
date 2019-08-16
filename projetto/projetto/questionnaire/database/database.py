@@ -200,12 +200,32 @@ def récupération_psycho(pseudo):
 
 
 
+def recuperation_dictee(pseudo):
+
+    
+    id_user = recuperation_id_pseudo(pseudo)
+    id_user = id_user[0][0]
+
+
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD) 
+
+    cur = conn.cursor()
+    
+    cur.execute("""SELECT bilan1 FROM bilan
+                WHERE id_user = %s;""", (id_user, ))
+                       
+
+    conn.commit() 
 
 
 
+    rows = cur.fetchall()
+    liste = [i for i in rows]
 
-
-
+    return liste[2]
 
 
 
