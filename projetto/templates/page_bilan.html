@@ -200,9 +200,9 @@
   <section class="callout">
     <div class="container text-center">
       <h2 class="mx-auto mb-5">
-
+        
      </h2>
-
+        <div id="none_2" style='display:none;'></div>
 
         <div style='font-size:1.2em;'>
             <strong>
@@ -216,8 +216,15 @@
   </section>
 
   <script>
-    
 
+    var ok = "(&#39;La personne a moins de 10 erreurs. Elle est ok ect faire le truk pk langage important&#39;,)"
+    if("{{bilan2}}" == ok){
+        document.getElementById("bilan2").innerHTML = "Le participant a reussi la dictée visible ect pk le fr est important";
+    }
+    else{
+        document.getElementById("none_2").innerHTML = "NONE";
+        document.getElementById("bilan2").innerHTML = "Malheureusement nous ne pouvons pas mettre la compétence langagière dans votre bilan. Nous n'enverrons donc pas cette partie du bilan aux recruteurs"
+    }
 
     
   </script>
