@@ -2,13 +2,26 @@
 
 -------------------------------------------------
 
-pk y'a un truk pdf et un truk pdf pour télécharger ? (vitrine dans compte) (télécharger le mettre a la fin quand le mec appuie a la fin de de la sixeme etape) et plus jamais accès sauf s'il change son cv
+telechargement du bilan en pdf + vitrine ! 
+
+le mettre dans dossier
+
+mettre des loading
+
+redirection apres les tests
+
+faire un truk qui dise si le mec a lancé il peut pas le repasser avant une semaine
+
+ce n'est pas une appli mobile donc pas de responsive
+
+
+j'ai bouffer tout les gnocchi ca m'a mis ko
 
 -------------------------------------------------
 
 réecris tout comme tete visage
 
-finir les textes
+finir les textes des tests
 
 finir page bilan + verification des tests
 
@@ -16,25 +29,9 @@ finir mail all (verifier linux scrap) -> faut un truk sur mec te fais pas blackl
 
 ----------------------------------------
 
-responsive cv et motivation (surtout cv attention)
+responsive cv et motivation (surtout cv attention) !!!!!!!!!!!!!!!!!!!
 
 mettre le rendu en pdf
-
-
-
-
---------------------------------------------
-
-comment le mec accede a son bilan ?
-
-comment il sait ce qu'il peut faire et comment
-
-il peut juste constituer ses documents, et faire des tests et surtout il doit les télécharger il doit le savoir
-
-tout ca dans page home
-
-
-
 
 
 ----------------------------------------
@@ -57,6 +54,9 @@ page home -> mes cv au lieu de mes documents
 non connexion faire les pages
 
 la dictée se lance pas des fois
+
+la dictée s'insere pas
+
 
 ---------------------------------------
 
