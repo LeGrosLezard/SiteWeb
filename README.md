@@ -50,6 +50,8 @@ page home -> mes cv au lieu de mes documents
 
 non connexion faire les pages
 
+la dictée se lance pas des fois
+
 ---------------------------------------
 
 probleme
