@@ -259,7 +259,7 @@
 
      </h2>
 
-
+        <div id="none_3" style="display:none;"></div>
         <div style='font-size:1.2em;'>
             <strong>
                 <div id="bilan3"></div>
@@ -272,8 +272,15 @@
   </section>
 
   <script>
-    
 
+    if("{{bilan3}}" == "non"){
+        document.getElementById("none_3").innerHTML = "NONE";
+        document.getElementById("bilan3").innerHTML = "Malheureusement nous ne pouvons pas mettre la compétence langagière dans votre bilan. Nous n'enverrons donc pas cette partie du bilan aux recruteurs"
+    }
+    else{
+     document.getElementById("bilan3").innerHTML = "{{bilan3}}";
+
+    };
 
     
   </script>
@@ -312,7 +319,8 @@
 
         <div style='font-size:1.2em;'>
             <strong>
-                <div id="bilan3"></div>
+                <div id="none_4"></div>
+                <div id="bilan4"></div>
             </strong>
         </div>
 
@@ -322,8 +330,15 @@
   </section>
 
   <script>
-    
 
+    if("{{bilan4}}" == "non"){
+        document.getElementById("none_4").innerHTML = "NONE";
+        document.getElementById("bilan4").innerHTML = "Malheureusement nous ne pouvons pas mettre la compétence langagière dans votre bilan. Nous n'enverrons donc pas cette partie du bilan aux recruteurs"
+    }
+    else{
+     document.getElementById("bilan4").innerHTML = "{{bilan4}}";
+
+    };
 
     
   </script>
