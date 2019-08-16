@@ -2,6 +2,10 @@
 
 -------------------------------------------------
 
+pk y'a un truk pdf et un truk pdf pour télécharger ? (vitrine dans compte) (télécharger le mettre a la fin quand le mec appuie a la fin de de la sixeme etape) et plus jamais accès sauf s'il change son cv
+
+-------------------------------------------------
+
 réecris tout comme tete visage
 
 finir les textes
