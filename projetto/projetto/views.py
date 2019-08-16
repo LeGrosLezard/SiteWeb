@@ -552,6 +552,7 @@ def le_questionnaire_quatrieme_partie(request):
         if resultat:
             result = resultat_function(resultat)
             correct =  correction(result)
+            print(correct)
             if correct >= 15:
                 ok = "La personne a eu plus que la moyenne dans le test de la mémoire ce qui..."
             else:
@@ -724,6 +725,9 @@ def page_message(request):
 from .questionnaire.database.database import recuperation_info_perso
 from .questionnaire.database.database import récupération_psycho
 from .questionnaire.database.database import recuperation_dictee
+from .questionnaire.database.database import recuperation_flexi
+from .questionnaire.database.database import recuperation_memoire
+
 def page_bilan(request):
 
     pseudo = request.user
@@ -731,11 +735,15 @@ def page_bilan(request):
     nom, prenom = recuperation_info_perso(pseudo)
     bilan1 = récupération_psycho(pseudo)
     bilan2 = recuperation_dictee(pseudo)
+    bilan3 = recuperation_flexi(pseudo)
+    bilan4 = recuperation_memoire(pseudo)
     
     data = {"nom":nom,
             "prenom":prenom,
             "bilan1":bilan1,
             "bilan2":bilan2,
+            "bilan3":bilan3,
+            "bilan4":bilan4,
             
 
 
