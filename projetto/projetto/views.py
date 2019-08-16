@@ -29,8 +29,6 @@ from .models import compte
 
 
 
-
-
 from .utils import render_to_pdf
 from .cv.traitement_document import traitement_cv
 from .cv.traitement_document import traitement_motivation
@@ -38,37 +36,38 @@ from .cv.traitement_document import traitement_message
 from .cv.database.recuperation_info import recuperation_info
 from .cv.verify_document import verify_document_cv
 
-def page_cv_pdf(request, mode):
+
+
+from .CONFIG import PATH_DOSSIER_DOCUMENT
+def path_dossier_document(request, nom):
     pseudo = request.user
-    path = "/static/espace_user/{}"
-    fichier_uti = str(pseudo) + "\cv.pdf"
-    path = path.format(fichier_uti)
-    return render(request, 'page_pdf.html', {"path":path})
+    fichier_uti = str(pseudo) + nom
+    return PATH_DOSSIER_DOCUMENT.format(fichier_uti)
 
 
-def page_motivation_pdf(request, mode):
-    pseudo = request.user
-    path = "/static/espace_user/{}"
-    fichier_uti = str(pseudo) + "\motivation.pdf"
-    path = path.format(fichier_uti)
-    return render(request, 'page_pdf.html', {"path":path})
+def page_cv_pdf(request):
+    path = path_dossier_document(request, "\cv.pdf")
+
+    return render(request, 'page_cv_pdf.html', {"path":path})
 
 
-def page_message_pdf(request, mode):
-    pseudo = request.user
-    path = "/static/espace_user/{}"
-    fichier_uti = str(pseudo) + "\message.pdf"
-    path = path.format(fichier_uti)
-    return render(request, 'page_pdf.html', {"path":path})
+def page_motivation_pdf(request):
+    path = path_dossier_document(request, "\motivation.pdf")
+    
+    return render(request, 'page_motivation_pdf.html', {"path":path})
+
+
+def page_message_pdf(request):
+    path = path_dossier_document(request, "\message.pdf")
+    
+    return render(request, 'page_message_pdf.html', {"path":path})
 
 
 
-def page_bilan_pdf(request, mode):
-    pseudo = request.user
-    path = "/static/espace_user/{}"
-    fichier_uti = str(pseudo) + "\bilan.pdf"
-    path = path.format(fichier_uti)
-    return render(request, 'page_pdf.html', {"path":path})
+def page_bilan_pdf(request):
+    path = path_dossier_document(request, "\bilan.pdf")
+    
+    return render(request, 'page_bilan_pdf.html', {"path":path})
 
 
 
