@@ -109,7 +109,7 @@ def insertion_bilan_quatrieme_partie(pseudo, bilan):
     cur = conn.cursor()
     
     cur.execute("""UPDATE bilan
-                SET bilan1 = %s
+                SET bilan3 = %s
                 WHERE id_user = {0};""".format(id_user), (bilan, ))
                        
 
@@ -229,11 +229,61 @@ def recuperation_dictee(pseudo):
 
 
 
+def recuperation_flexi(pseudo):
+
+    
+    id_user = recuperation_id_pseudo(pseudo)
+    id_user = id_user[0][0]
+
+
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD) 
+
+    cur = conn.cursor()
+    
+    cur.execute("""SELECT bilan2 FROM bilan
+                WHERE id_user = %s;""", (id_user, ))
+                       
+
+    conn.commit() 
 
 
 
+    rows = cur.fetchall()
+    liste = [i for i in rows]
+
+    return liste[0][0]
 
 
+
+def recuperation_memoire(pseudo):
+
+    
+    id_user = recuperation_id_pseudo(pseudo)
+    id_user = id_user[0][0]
+
+
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD) 
+
+    cur = conn.cursor()
+    
+    cur.execute("""SELECT bilan3 FROM bilan
+                WHERE id_user = %s;""", (id_user, ))
+                       
+
+    conn.commit() 
+
+
+
+    rows = cur.fetchall()
+    liste = [i for i in rows]
+
+    return liste[0][0]
 
 
 
