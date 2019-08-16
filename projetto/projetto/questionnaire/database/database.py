@@ -42,9 +42,9 @@ def insertion_bilan_premiere_partie(pseudo, bilan):
 
     cur = conn.cursor()
     
-    cur.execute("""INSERT INTO bilan
-                (id_user, bilan)
-                VALUES(%s, %s);""", (id_user, bilan))
+    cur.execute("""UPDATE bilan
+                SET bilan = %s
+                WHERE id_user = {0};""".format(id_user), (bilan, ))
                        
 
     conn.commit() 
@@ -63,9 +63,9 @@ def insertion_bilan_seconde_partie(pseudo, bilan):
 
     cur = conn.cursor()
     
-    cur.execute("""INSERT INTO bilan
-                (id_user, bilan1)
-                VALUES(%s, %s);""", (id_user, bilan))
+    cur.execute("""UPDATE bilan
+                SET bilan1 = %s
+                WHERE id_user = {0};""".format(id_user), (bilan, ))
                        
 
     conn.commit() 
@@ -86,9 +86,9 @@ def insertion_bilan_troisieme_partie(pseudo, bilan):
 
     cur = conn.cursor()
     
-    cur.execute("""INSERT INTO bilan
-                (id_user, bilan2)
-                VALUES(%s, %s);""", (id_user, bilan))
+    cur.execute("""UPDATE bilan
+                SET bilan2 = %s
+                WHERE id_user = {0};""".format(id_user), (bilan, ))
                        
 
     conn.commit() 
@@ -108,9 +108,9 @@ def insertion_bilan_quatrieme_partie(pseudo, bilan):
 
     cur = conn.cursor()
     
-    cur.execute("""INSERT INTO bilan
-                (id_user, bilan3)
-                VALUES(%s, %s);""", (id_user, bilan))
+    cur.execute("""UPDATE bilan
+                SET bilan1 = %s
+                WHERE id_user = {0};""".format(id_user), (bilan, ))
                        
 
     conn.commit() 
@@ -179,7 +179,7 @@ def récupération_psycho(pseudo):
     liste = [i for i in rows]
 
 
-    liste = liste[1][0].replace("\n", "!")
+    liste = liste[0][0].replace("\n", "!")
 
     resume = []
 
@@ -225,7 +225,7 @@ def recuperation_dictee(pseudo):
     rows = cur.fetchall()
     liste = [i for i in rows]
 
-    return liste[2]
+    return liste[0][0]
 
 
 
