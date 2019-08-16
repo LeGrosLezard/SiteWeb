@@ -260,42 +260,55 @@ Une personne sensible peut etre synonyme de grand analyste de situation."""
 
 
 SOUS_CLASSE = {"Imagination":
-               """\nSignifie que la personne a un sens poussé de l'immagination.
+               """\nLe participant à eu un score positif dans l'imagination.
+Signifie que la personne a un sens poussé de l'immagination.
 Sa capacité à immaginer lui permet de créer des mondes intérieurs\
 puissants, riches et très interressant.""",
                
-               "Interets_artistiques": """\nNous pouvons confirmer que {0} a un
+               "Interets_artistiques": """\nNous pouvons confirmer que le participant a un
 senes poussé vers les intérêts artistiques.
-Ces personnes se laissent facilement absorber
+Ces personnes se laissent facilement absorber \
 par les événements artistiques et naturels.""",
                
-               "Profondeur_des_emotions": """\n{0} sollicitent et perçoivent
+               "Profondeur_des_emotions":
+               """\nLe participant à eu un score positif dans la profondeur des émotions.
+sollicitent et perçoivent
 facilement leurs propres sentiments. """,
                
-                "Volonte_expérimenter": """\n{0} aime découvrir de nouvelles 
-activités, à voyager à l’étranger,
-à expérimenter de nouvelles choses.
-La familiarité et la routine les ennuient.
+                "Volonte_expérimenter":
+               """\nLe participant à eu un score positif dans la volonté d'exprimer.
+elle aime découvrir de nouvelles \
+activités, à voyager à l’étranger, \
+à expérimenter de nouvelles choses. \
+La familiarité et la routine les ennuient. \
 Cet aspect de personnalité est un vrai atout.""",
                
-                "Curiosite_intellectuelle": """\n{0} appréci de jongler
-avec les idées  ouverts aux idées nouvelles et
-inhabituelles et apprécient les débats et
-questionnements intellectuels. Il apprécie
+                "Curiosite_intellectuelle":
+               """\nLe participant à eu un score positif dans la curiosité intellectuelle.
+elle appréci de jongler \
+avec les idées  ouverts aux idées nouvelles et \
+inhabituelles et apprécient les débats et \
+questionnements intellectuels. Il apprécie \
 les problèmes, réflexions, puzzles et énigmes de l’esprit.""",
                
-                "Tolerance_a_la_diversite":  """\n{0} accepte l’autorité et
-préfèrent la stabilité
+                "Tolerance_a_la_diversite":
+               """\nLe participant à la qualité de la tolérance à la diversité.
+Elle accepte l’autorité et \
+préfèrent la stabilité \
 et la sécurité de la conformité à la tradition.""",
                
-                "Sens_des_competences": """\nLe sens des compétences décrit la confiance
-que la personne a en sa capacité d’accomplir les choses. Les scores élevés
-pensent qu’ils possèdent l’intelligence (le bon sens), la force 
-et la maîtrise nécessaires pour réussir. Ils ont un niveau élevé
+                "Sens_des_competences":
+               """\nLe participant à le sens des compétences.
+Le sens des compétences décrit la confiance \
+que la personne a en sa capacité d’accomplir les choses. Les scores élevés \
+pensent qu’ils possèdent l’intelligence (le bon sens), la force \
+et la maîtrise nécessaires pour réussir. Ils ont un niveau élevé \
 d’estime de soi et ont tendance à se sentir préparés pour affronter la vie""",
                
-                        "Ordre": """\nLes scores élevés sont des personnes très organisées,
-ordonnées et propres. Elles aiment la routine et une vie programmée.
+                        "Ordre":
+               """\nLe participant à la sous catégorie de l'ordre. 
+Les scores élevés sont des personnes très organisées, \
+ordonnées et propres. Elles aiment la routine et une vie programmée. \
 Elles tiennent des listes et planifient leur vie""",
                
                         "Sens_des_responsabilites" : """\nCette facette reflète la force,
@@ -428,7 +441,7 @@ questionnaire_3 = [ 18,
                     16,
                     16,
                     53,
-                    84,
+                    90,
                     51,
                     24,
                     20,
