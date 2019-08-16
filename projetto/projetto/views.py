@@ -491,6 +491,7 @@ from .questionnaire.questionnaire_deux import traitement_DICTEE
 from .questionnaire.questionnaire_deux import traitement_texte_utilisateur
 from .questionnaire.database.database import insertion_bilan_seconde_partie
 
+
 from .questionnaire.CONFIG import DICTEE
 def le_questionnaire_seconde_partie(request):
 
@@ -515,22 +516,21 @@ def le_questionnaire_seconde_partie(request):
 
 
 from .questionnaire.questionnaire_trois import resultat_function
-from .questionnaire.questionnaire_trois import correction
+from .questionnaire.questionnaire_trois import correction_questionnaire3
 from .questionnaire.database.database import insertion_bilan_troisieme_partie
 def le_questionnaire_troisieme_partie(request):
 
     pseudo = request.user
-
+    ok = ""
     if request.method == "POST":
         resultat = request.POST.get('resultat')
         
         if resultat:
-
-            ok = ""
             correction_uti = resultat_function(resultat)
-            correction_uti = correction(correction_uti)
-            if correction_uti > 59:
-                ok = "L'utilisateur a eu " + str(correction_uti) + " à la flexibilité mentale cela veut dire que..."
+            la_correction = correction_questionnaire3(correction_uti)
+
+            if la_correction >= 1:
+                ok = "L'utilisateur a eu " + str(la_correction) + " à la flexibilité mentale cela veut dire que..."
             else:
                 ok = "non"
                 
@@ -724,16 +724,19 @@ def page_message(request):
 
 from .questionnaire.database.database import recuperation_info_perso
 from .questionnaire.database.database import récupération_psycho
+from .questionnaire.database.database import recuperation_dictee
 def page_bilan(request):
 
     pseudo = request.user
 
     nom, prenom = recuperation_info_perso(pseudo)
     bilan1 = récupération_psycho(pseudo)
+    bilan2 = recuperation_dictee(pseudo)
     
     data = {"nom":nom,
             "prenom":prenom,
-            "bilan1":bilan1
+            "bilan1":bilan1,
+            "bilan2":bilan2,
             
 
 
