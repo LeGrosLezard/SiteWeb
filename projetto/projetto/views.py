@@ -77,87 +77,21 @@ def page_bilan_pdf(request):
 
 
 
-
+from .views_function import document
 def home(request):
 
     pseudo = request.user
 
+    cv, motivation, message, bilan1, bilan2, bilan3 = document(str(pseudo))
 
-    if request.method == "POST":
-        verification_document = request.POST.get('verification_document')
+    data = {"cv":cv,
+            "motivation":motivation,
+            "message":message,
+            "bilan1":bilan1,
+            "bilan2":bilan2,
+            "bilan3":bilan3}
 
-        
-
-        if verification_document:
-            cv = request.POST.get('un')
-            if cv:
-                pass
-
-            
-            cv_pdf = request.POST.get('unun')
-            if cv_pdf:
-
-                verification = verify_document_cv(pseudo, "cv")
-
-                if verification == "verification":
-
-                    return HttpResponse("ok")        
-                    
-
-
-  
-                else:
-                    return HttpResponse("not_ok")
-
-
-                
-
-
-            motivation = request.POST.get('deux')
-            if motivation:
-                pass
-            
-            motivation_pdf = request.POST.get('deuxdeux')
-            if motivation_pdf:
-                verification = verify_document_cv(pseudo, "lettre_de_motivation")
-                if verification == "verification":
-                    return HttpResponse("ok")
-                #retourner page pdf
-                else:
-                    return HttpResponse("not_ok")
-
-                
-        
-            message = request.POST.get('trois')
-            if message:
-                pass
-            
-            message_pdf = request.POST.get('troistrois')
-            if message_pdf:
-                verification = verify_document_cv(pseudo, "message")
-                if verification == "verification":
-                    return HttpResponse("ok")
-                else:
-                    return HttpResponse("not_ok")
-
-
-            bilan = request.POST.get('quattre')
-            if bilan:
-                pass
-
-
-            bilan_pdf = request.POST.get('quattrequattre')
-            if bilan_pdf:
-                verification = verify_document_cv(pseudo, "bilan")
-                if verification == "verification":
-                    return HttpResponse("ok")
-                else:
-                    return HttpResponse("not_ok")
-
-
-    
-
-    return render(request, 'home.html')
+    return render(request, 'home.html', data)
 
 
 
