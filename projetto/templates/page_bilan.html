@@ -31,6 +31,7 @@
 <body>
 
 
+
   <!-- Navigation -->
   <section id="nav">
       <a class="menu-toggle rounded" href="#">
@@ -72,6 +73,12 @@
         <div class="col-xl-9 mx-auto">
           <h1 class="mb-5">Qu'est ce que mon bilan à t'il détecté ?</h1><br>
         </div>
+
+
+        href part1 href part2 href part3
+
+        
+        
       </div>
     </div>
     </header>
@@ -126,14 +133,14 @@
 
       <div id="un" style="float:right;margin-right:200px;">Click</div><br><br>
 
-        <section id="telechargement" style="display:none;">
+        <section id="telechargement1" style="display:none;">
 
-            <form action="page_cv" method="post" enctype="multipart/form-data">
+            <form action="page_bilan1" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
 
 
                 <p>
-                    STP TELECHARGE LE PDF ET RENOMME LE AVEC TON PSEDUO PSEDUO et upload le!<br>
+                    STP TELECHARGE LE PDF ET RENOMME LE AVEC TON 1PSEDUO et upload le!<br>
                     {{ form.docfile }}                                            
                 </p>
 
@@ -194,9 +201,9 @@
 
           <div id="deux" style="float:right;margin-right:200px;">Click</div><br><br>
 
-            <section id="telechargement" style="display:none;">
+            <section id="telechargement2" style="display:none;">
 
-                <form action="page_cv" method="post" enctype="multipart/form-data">
+                <form action="page_bilan2" method="post" enctype="multipart/form-data">
                     {% csrf_token %}
 
 
@@ -303,9 +310,9 @@
 
           <div id="trois" style="float:right;margin-right:200px;">Click</div><br><br>
 
-            <section id="telechargement" style="display:none;">
+            <section id="telechargement3" style="display:none;">
 
-                <form action="page_cv" method="post" enctype="multipart/form-data">
+                <form action="page_bilan3" method="post" enctype="multipart/form-data">
                     {% csrf_token %}
 
 
@@ -531,13 +538,15 @@ $('#un').click(function () {
 
     var pdf = new jsPDF();
     pdf.addHTML(document.getElementById('EDITOR').value, function() {
-        pdf.save('partie_une_bilan.pdf');
+
+        pdf_name = "partie_une_bilan_" + "{{pseudo}}" + ".pdf"
+        pdf.save(pdf_name);
     });
 
     document.getElementById("nav").style.display = "block";
     document.getElementById("foot").style.display = "block";
     document.getElementById("un").style.display = "block";
-    document.getElementById("telechargement").style.display = "block";
+    document.getElementById("telechargement1").style.display = "block";
 
     
 })
@@ -553,13 +562,14 @@ $('#deux').click(function () {
 
     var pdf = new jsPDF();
     pdf.addHTML(document.getElementById('EDITOR').value, function() {
-        pdf.save('partie_deux_bilan.pdf');
+        pdf_name = "partie_deux_bilan_" + "{{pseudo}}" + ".pdf"
+        pdf.save(pdf_name);
     });
 
     document.getElementById("nav").style.display = "block";
     document.getElementById("foot").style.display = "block";
     document.getElementById("un").style.display = "block";
-    document.getElementById("telechargement").style.display = "block";
+    document.getElementById("telechargement2").style.display = "block";
 
     
 })
@@ -576,38 +586,21 @@ $('#trois').click(function () {
 
     var pdf = new jsPDF();
     pdf.addHTML(document.getElementById('EDITOR').value, function() {
-        pdf.save('partie_trois_bilan.pdf');
+        pdf_name = "partie_trois_bilan_" + "{{pseudo}}" + ".pdf"
+        pdf.save(pdf_name);
     });
 
     document.getElementById("nav").style.display = "block";
     document.getElementById("foot").style.display = "block";
     document.getElementById("un").style.display = "block";
-    document.getElementById("telechargement").style.display = "block";
+    document.getElementById("telechargement3").style.display = "block";
 
     
 })
 
 
 
-$('#quattre').click(function () {
-    document.getElementById("nav").style.display = "none";
-    document.getElementById("foot").style.display = "none";
-    document.getElementById("un").style.display = "none";
 
-    
-
-    var pdf = new jsPDF();
-    pdf.addHTML(document.getElementById('EDITOR3').value, function() {
-        pdf.save('partie_quattre_bilan.pdf');
-    });
-
-    document.getElementById("nav").style.display = "block";
-    document.getElementById("foot").style.display = "block";
-    document.getElementById("un").style.display = "block";
-    document.getElementById("telechargement").style.display = "block";
-
-    
-})
 
 
 
