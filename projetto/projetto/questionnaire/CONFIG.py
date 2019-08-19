@@ -261,7 +261,7 @@ Une personne sensible peut etre synonyme de grand analyste de situation."""
 
 SOUS_CLASSE = {"Imagination":
                """\nLe participant à eu un score positif dans l'imagination.
-Signifie que la personne a un sens poussé de l'immagination.
+Cela Signifie que la personne a un sens poussé de l'immagination.\
 Sa capacité à immaginer lui permet de créer des mondes intérieurs\
 puissants, riches et très interressant.""",
                
@@ -272,7 +272,7 @@ par les événements artistiques et naturels.""",
                
                "Profondeur_des_emotions":
                """\nLe participant à eu un score positif dans la profondeur des émotions.
-sollicitent et perçoivent
+Ces personnes la sollicitent et perçoivent\
 facilement leurs propres sentiments. """,
                
                 "Volonte_expérimenter":
