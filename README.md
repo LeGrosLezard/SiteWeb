@@ -4,7 +4,7 @@
 
 finir le bilan en pdf
 
-tout crop
+je mappliquerai pour les autres
 
 faire les liaisons
 
@@ -50,8 +50,6 @@ ok demain ptetre
 ---------------------------------------
 
 probleme
-
-tout récrire
 
 faire les documents
 
