@@ -1,4 +1,5 @@
 PATH_FOLDER = r"C:\Users\jeanbaptiste\Desktop\site_travail\environement_virtuel\projetto\static\espace_user\{}"
+PATH_FOLDER_CHANGE_NAME = r"C:\Users\jeanbaptiste\Desktop\site_travail\environement_virtuel\projetto\static\espace_user\{}\{}"
 
 
 PATH_MEDIA_MOTIVATION = r"C:\Users\jeanbaptiste\Desktop\site_travail\environement_virtuel\projetto\projetto\media\Lettre de motivation"
