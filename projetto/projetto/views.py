@@ -65,9 +65,15 @@ def page_message_pdf(request):
 
 
 def page_bilan_pdf(request):
-    path = path_dossier_document(request, "\bilan.pdf")
+    path1 = path_dossier_document(request, "\partie_une_bilan_grossebouille.pdf")
+    path2 = path_dossier_document(request, "\partie_deux_bilan_grossebouille.pdf")
+    path3 = path_dossier_document(request, "\partie_trois_bilan_grossebouille.pdf")
+
+
     
-    return render(request, 'page_bilan_pdf.html', {"path":path})
+    return render(request, 'page_bilan_pdf.html', {"path1":path1,
+                                                   "path2":path2,
+                                                   "path3":path3})
 
 
 
