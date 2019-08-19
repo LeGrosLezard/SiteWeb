@@ -4,7 +4,7 @@
 <head>
 
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="">
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -36,7 +36,7 @@
 </head>
 
 
-<body>
+<body style="position:;">
 
   <!-- Navigation -->
   <section id="nav">
@@ -67,14 +67,10 @@
   </nav>
   </section>
 
-  
-    <br><br>
-    <div id="un" style="float:right;margin-right:200px;">Click</div>
-    <br><br><br>
 
+  <div id="un" style="float:right;margin-right:200px;">Click</div><br><br>
 
-
-    <section id="telechargement">
+    <section id="telechargement" style="display:none;">
 
         <form action="page_cv" method="post" enctype="multipart/form-data">
             {% csrf_token %}
@@ -90,12 +86,13 @@
     </section>
 
 
+
+    <section id="EDITOR" style="position:;">
+
     
-    <div class="container" id="EDITOR">
+    <div class="container">
       <div class="row">
-
-
-        
+      
         <div class="col-sm-12 col-mg-5 col-lg-12" id="gauche">
             <br><br>
             <img src="/static/mon_compte/img/testimonials-2.jpg" style="float:right;
@@ -105,24 +102,19 @@
             <h3 style="color:#79A9B7;">T I T R E &nbsp;&nbsp; DU  &nbsp;&nbsp; P O S T E</h3>
             <h5>T I T R E &nbsp;&nbsp;DE &nbsp;&nbsp;LA &nbsp;&nbsp;F O R M A T I O N</h5>
             {{cv1}}
-        
-
             <br><br><br>
+        </div>
+      </div>
+    </div>
+
+
 
         
-        </div>
-
-
-
-
-
-    
-        <div class="col-sm-12 col-mg-7 col-lg-5" id="gauche">
-
-            
-    
-            <div style="background:#BECFEC;">
-            
+    <div class="container">
+      <div class="row">
+      
+        <div class="col-sm-5" style="background:#BECFEC;">
+                <br>
                 <h3 style="color:#79A9B7;">C O M P E T E N C E S</h3>
                 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
                 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
@@ -130,12 +122,34 @@
                 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
                 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
                 <br><br><br>
-                
-            </div>
+        </div>
+
         
+        <div class="col-sm-7">
+            <div style="background:white;">
+                <br>
+                <h3 style="color:#79A9B7;">F O R M A T I O N </h3>
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+                <br><br><br>
+            </div>
+        </div>
+
+
+      </div>
+    </div>
+
+
+
+
+
+    <div class="container">
+      <div class="row">
       
-            <div style="background:#BECFEC;">
-            
+        <div class="col-sm-5" style="background:#BECFEC;">
                 <h3 style="color:#79A9B7;">ENVIRONEMENT</h3>
                 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
                 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
@@ -143,57 +157,9 @@
                 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
                 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
                 <br><br><br>
-            </div>  
-            
- 
-            
-            <div style="background:#BECFEC;">
-            
-                <h3 style="color:#79A9B7;">SOFT SKILL</h3>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                <br><br><br>
-            </div> 
- 
-
-
-            <div style="background:#BECFEC;">
-            
-                <h3 style="color:#79A9B7;">CONTACT</h3>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                <br><br><br>
-            </div> 
-            <br><br><br><br><br><br><br><br><br><br><br><br><br>
         </div>
-
-
         
-      </div>
-      
-        <div class="col-sm-12 col-mg-7 col-lg-7" id="droite" style="float:right;margin-top:-1200px;">
-
-
-            <div style="background:white;">
-                <br>
-                <h3 style="color:#79A9B7;">E D U C A T I O N </h3>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                <br><br><br>
-            </div>
-
-        
-            <div style="background:white;">
-                <br>
+        <div class="col-sm">
                 <h3 style="color:#79A9B7;">PROJET 1</h3>
                 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
                 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
@@ -201,12 +167,30 @@
                 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
                 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
                 <br><br><br>
-            </div>
+        </div>
+
+      </div>
+    </div>
 
 
 
-            <div style="background:white;">
-                <br>
+
+
+
+    <div class="container">
+      <div class="row">
+      
+        <div class="col-sm-5" style="background:#BECFEC;">
+                <h3 style="color:#79A9B7;">SOFT SKILL</h3>
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+                <br><br><br>
+        </div>
+        
+        <div class="col-sm">
                 <h3 style="color:#79A9B7;">PROJET 2</h3>
                 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
                 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
@@ -214,22 +198,52 @@
                 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
                 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
                 <br><br><br>
-            </div> 
+        </div>
+
+      </div>
+    </div>
 
 
-            <div style="background:white;">
-                <br>
+    
+
+
+
+    <div class="container">
+      <div class="row">
+      
+        <div class="col-sm-5" style="background:#BECFEC;">
+                <h3 style="color:#79A9B7;">CONTACT</h3>
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+                <br><br><br>
+        </div>
+        
+        <div class="col-sm">
                 <h3 style="color:#79A9B7;">PROJET 3</h3>
                 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
                 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
                 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
                 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
                 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                <br><br>
-            </div> 
+                <br><br><br>
+        </div>
 
-            <div style="background:white;">
-                <br>
+      </div>
+    </div>
+
+
+
+    <div class="container">
+      <div class="row">
+      
+        <div class="col-sm-5" style="height:200px;background:#BECFEC;">
+          
+        </div>
+        
+        <div class="col-sm">
                 <h3 style="color:#79A9B7;">UN PEU PLUS SUR MOI</h3>
                 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
                 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
@@ -237,43 +251,21 @@
                 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
                 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
                 <br><br><br>
-            </div> 
-            
         </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <div>
+      </div>
     </div>
-    
+</section>
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
 
 
-
-
-
-
-
-
-        
- 
-
-
-
-<br><br><br><br><br><br><br><br><br><br><br><br>
 
 
 
