@@ -728,6 +728,9 @@ from .questionnaire.database.database import recuperation_dictee
 from .questionnaire.database.database import recuperation_flexi
 from .questionnaire.database.database import recuperation_memoire
 
+from .forms import DocumentForm_bilan
+from .models import Document_bilan
+from .cv.document_user import document_bilan_download
 def page_bilan(request):
 
     pseudo = request.user
@@ -738,26 +741,19 @@ def page_bilan(request):
     bilan3 = recuperation_flexi(pseudo)
     bilan4 = recuperation_memoire(pseudo)
     
+
+    form = DocumentForm_message(request.POST, request.FILES)
+
     data = {"nom":nom,
             "prenom":prenom,
             "bilan1":bilan1,
             "bilan2":bilan2,
             "bilan3":bilan3,
             "bilan4":bilan4,
-            
+            "pseudo":pseudo,
+            "form":form}
 
 
-
-
-
-
-
-
-
-
-
-
-            }
     
     return render(request, 'page_bilan.html', data)
 
@@ -771,19 +767,175 @@ def page_bilan(request):
 
 
 
+from .forms import DocumentForm_bilan
+from .models import Document_bilan
+from .cv.document_user import document_bilan_download
+def page_bilan1(request):
+
+    pseudo = request.user
+
+    nom, prenom = recuperation_info_perso(pseudo)
+    bilan1 = récupération_psycho(pseudo)
+    bilan2 = recuperation_dictee(pseudo)
+    bilan3 = recuperation_flexi(pseudo)
+    bilan4 = recuperation_memoire(pseudo)
+    
+
+    ok = False
+    
+    form = DocumentForm_message(request.POST, request.FILES)
+
+    
+    if request.method == "POST":
+        
+        if form.is_valid():
+            try:
+                ok = True
+                newdoc = Document_bilan(docfile = request.FILES['docfile'])
+                newdoc.save()
+            
+
+                
+            except:
+                pass
+        else:
+            pass
+ 
+
+    if ok is True:
+        document_bilan_download(pseudo, "partie_une_bilan_" + str(pseudo) + ".pdf")
+        ok = False
+    
+
+
+    data = {"nom":nom,
+            "prenom":prenom,
+            "bilan1":bilan1,
+            "bilan2":bilan2,
+            "bilan3":bilan3,
+            "bilan4":bilan4,
+            "pseudo":pseudo,
+            "form":form
+            }
+
+
+    
+    return render(request, 'page_bilan.html', data)
 
 
 
 
+from .forms import DocumentForm_bilan
+from .models import Document_bilan
+from .cv.document_user import document_bilan_download
+def page_bilan2(request):
+
+    pseudo = request.user
+
+    nom, prenom = recuperation_info_perso(pseudo)
+    bilan1 = récupération_psycho(pseudo)
+    bilan2 = recuperation_dictee(pseudo)
+    bilan3 = recuperation_flexi(pseudo)
+    bilan4 = recuperation_memoire(pseudo)
+    
+
+    ok = False
+    
+    form = DocumentForm_message(request.POST, request.FILES)
+
+    
+    if request.method == "POST":
+        
+        if form.is_valid():
+            try:
+                ok = True
+                newdoc = Document_bilan(docfile = request.FILES['docfile'])
+                newdoc.save()
+            
+
+                
+            except:
+                pass
+        else:
+            pass
+ 
+
+    if ok is True:
+        document_bilan_download(pseudo, "partie_deux_bilan_" + str(pseudo) + ".pdf")
+        ok = False
+    
+
+
+    data = {"nom":nom,
+            "prenom":prenom,
+            "bilan1":bilan1,
+            "bilan2":bilan2,
+            "bilan3":bilan3,
+            "bilan4":bilan4,
+            "pseudo":pseudo,
+            "form":form
+            }
+
+
+    
+    return render(request, 'page_bilan.html', data)
 
 
 
 
+from .forms import DocumentForm_bilan
+from .models import Document_bilan
+from .cv.document_user import document_bilan_download
+def page_bilan3(request):
+
+    pseudo = request.user
+
+    nom, prenom = recuperation_info_perso(pseudo)
+    bilan1 = récupération_psycho(pseudo)
+    bilan2 = recuperation_dictee(pseudo)
+    bilan3 = recuperation_flexi(pseudo)
+    bilan4 = recuperation_memoire(pseudo)
+
+    ok = False
+    
+    form = DocumentForm_message(request.POST, request.FILES)
+
+    
+    if request.method == "POST":
+        
+        if form.is_valid():
+            try:
+                ok = True
+                newdoc = Document_bilan(docfile = request.FILES['docfile'])
+                newdoc.save()
+            
+
+                
+            except:
+                pass
+        else:
+            pass
+ 
+
+    if ok is True:
+        document_bilan_download(pseudo, "partie_trois_bilan_" + str(pseudo) + ".pdf")
+        ok = False
+    
 
 
+    data = {"nom":nom,
+            "prenom":prenom,
+            "bilan1":bilan1,
+            "bilan2":bilan2,
+            "bilan3":bilan3,
+            "bilan4":bilan4,
+            "pseudo":pseudo,
+            "form":form
+            }
 
 
-
+    
+    return render(request, 'page_bilan.html', data)
 
 
 
