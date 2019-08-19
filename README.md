@@ -12,7 +12,15 @@ tout bien faire comprendre au mec
 
 modifier la partie téléchargement et bien dire au mec NE CHANGE PAS LE NOM DU TRUK
 
+ok taleur
+
+les textes des tests
+
+ok ce soir
+
 mail all et c fini !
+
+ok demain
 
 ----------------------------------------
 
@@ -37,6 +45,7 @@ la dictée se lance pas des fois
 
 la dictée s'insere pas des fois
 
+ok demain ptetre
 
 ---------------------------------------
 
