@@ -58,6 +58,10 @@ faire les documents
 ---------------------------------------
 
 
+prochain site bobo en mieux hihihi
 
+ou skype synergo !
+
+ou le truk marketing mais ste fois payant pour mette en tete de liste les autres sites mais ca faut que cde soit ledge
 
 
