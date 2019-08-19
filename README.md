@@ -2,42 +2,22 @@
 
 -------------------------------------------------
 
-telechargement du bilan en pdf + vitrine ! 
+finir le bilan en pdf
 
-le mettre dans dossier
+tout crop
 
-mettre des loading
+faire les liaisons
 
-redirection apres les tests
+tout bien faire comprendre au mec 
 
-faire un truk qui dise si le mec a lancé il peut pas le repasser avant une semaine
+modifier la partie téléchargement et bien dire au mec NE CHANGE PAS LE NOM DU TRUK
 
-ce n'est pas une appli mobile donc pas de responsive
-
-
-j'ai bouffer tout les gnocchi ca m'a mis ko
-
--------------------------------------------------
-
-réecris tout comme tete visage
-
-finir les textes des tests
-
-finir page bilan + verification des tests
-
-finir mail all (verifier linux scrap) -> faut un truk sur mec te fais pas blacklist au pire une autre addresse mailpcque le mec tu lui montres ton site au debut y se dit ouaaaa puis apres la redescente de ouaaa voila huum ok je vois - -----> + et le mec dapres ben lui est + OU l'inverse mais faut pas miser sur ca
-
-----------------------------------------
-
-responsive cv et motivation (surtout cv attention) !!!!!!!!!!!!!!!!!!!
-
-mettre le rendu en pdf
-
+mail all et c fini !
 
 ----------------------------------------
 
 remplacer tous les path par celui du serveur
-faire des simulations sur tout le site
+
 
 -----------------------------------------
 
@@ -55,20 +35,16 @@ non connexion faire les pages
 
 la dictée se lance pas des fois
 
-la dictée s'insere pas
+la dictée s'insere pas des fois
 
 
 ---------------------------------------
 
 probleme
 
-ya pas assez dapplication t'as tout mis dans projetto
+tout récrire
 
-soit tu refais tout 
-
-soit tu rends ca moins chargé
-
-soit tu trouves un truk pour rendre tout ca clair 
+faire les documents
 
 ---------------------------------------
 
