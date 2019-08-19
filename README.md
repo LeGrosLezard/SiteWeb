@@ -2,17 +2,9 @@
 
 -------------------------------------------------
 
-finir le bilan en pdf
-
-je mappliquerai pour les autres
 
 faire les liaisons
 
-tout bien faire comprendre au mec 
-
-modifier la partie téléchargement et bien dire au mec NE CHANGE PAS LE NOM DU TRUK
-
-ok taleur
 
 les textes des tests
 
