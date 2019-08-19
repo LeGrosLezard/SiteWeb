@@ -44,22 +44,19 @@
   <nav id="sidebar-wrapper">
     <ul class="sidebar-nav">
       <li class="sidebar-brand">
-        <a class="js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+        <a class="js-scroll-trigger">Projetto</a>
       </li>
       <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="#page-top">Home</a>
+        <a class="js-scroll-trigger" href="/">Home</a>
       </li>
       <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="#about">About</a>
+        <a class="js-scroll-trigger" href="comment_faire_mon_cv">Composez !</a>
       </li>
       <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="#services">Services</a>
+        <a class="js-scroll-trigger" href="le_questionnaire">Le questionnaire</a>
       </li>
       <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="#portfolio">Portfolio</a>
-      </li>
-      <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="#contact">Contact</a>
+        <a class="js-scroll-trigger" href="/app_email/questionnaire_email">Ma démarche</a>
       </li>
     </ul>
   </nav>
@@ -97,14 +94,15 @@
 
   
   <section class="features-icons bg-light text-center" id="account_connected">
-    <div class="container">
-      <div class="row">
 
            Info du compte
 
-        
-      </div>
-    </div>
+            <br><br><br><br>
+           <input type="button" value="Voir mon CV">
+           <input type="button" value="Voir ma lettre de motivation">
+           <input type="button" value="Voir mon message aux recruteurs">
+           <input type="button" value="Voir mon bilan">
+
   </section>
 
 
@@ -163,158 +161,6 @@
 
 
   {% endif %}
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  {% if user.is_authenticated %}
-
-
-  <!-- Image Showcases -->
-  <section class="showcase" id="account_connected_file">
-    <div class="container-fluid p-0">
-
-
-    
-      <div class="row no-gutters">
-      
-        <div class="col-lg-6 order-lg-2 text-white showcase-img" onclick='document.location.href="page_cv"'
-            style="background-image: url('/static/mon_compte/img/bg-showcase-1.jpg');">
-        </div>
-            
-        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-          <h2>Mon dernier Curriculum Vitae</h2>
-          <p class="lead mb-0"></p>
-        </div>
-      </div>
-
-
-
-      <div class="row no-gutters">
-      
-        <div class="col-lg-6 text-white showcase-img" onclick='document.location.href="page_motivation"'
-            style="background-image: url('/static/mon_compte/img/bg-showcase-2.jpg');">
-        </div>
-
-        
-        <div class="col-lg-6 my-auto showcase-text">
-          <h2>Ma lettre de motivation</h2>
-          <p class="lead mb-0"></p>
-        </div>
-      </div>
-
-
-
-      <div class="row no-gutters">
-      
-        <div class="col-lg-6 order-lg-2 text-white showcase-img" onclick='document.location.href="page_message"'
-            style="background-image: url('/static/mon_compte/img/bg-showcase-3.jpg');">
-        </div>
-        
-        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-          <h2>Mon message au recruteur</h2>
-          <p class="lead mb-0"></p>
-        </div>
-      </div>
-    </div>
-
-    
-  </section>
-
-
-
-
-
-  <!-- Testimonials -->
-  <section class="testimonials text-center bg-light" id="account_connected_file_bilan">
-  
-    <div class="container">
-    
-      <h2 class="mb-5">Voici votre Bilan</h2>
-      
-      <div class="row">
-      
-        <div class="col-lg-4">
-          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-            <img class="img-fluid rounded-circle mb-3" src="/static/mon_compte/img/testimonials-1.jpg" alt="">
-            <h5>Margaret E.</h5>
-            <p class="font-weight-light mb-0">"Jb gros, jpensais pas mais... jcrois que le mojo existe!
-            <br><br><em>1 mississipi 2missi...  allez magne toi j'ai mal au pomette... ssipi 3 mississsipi</em> "</p>
-          </div>
-        </div>
-        
-        <div class="col-lg-4">
-          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-            <img class="img-fluid rounded-circle mb-3" src="/static/mon_compte/img/testimonials-2.jpg" alt="">
-            <h5>Fred S.</h5>
-            <p class="font-weight-light mb-0">"contrate le muscle du cou contracte le muscle du cou"</p>
-          </div>
-        </div>
-        
-        <div class="col-lg-4">
-          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-            <img class="img-fluid rounded-circle mb-3" src="/static/mon_compte/img/testimonials-3.jpg" alt="">
-            <h5>Sarah W.</h5>
-            <p class="font-weight-light mb-0">"oh un nuage en forme de pied!"</p>
-          </div>
-        </div>
-      </div>
-
-        <br><br>
-        Voici vos bilans. Le premier sont vos qualités et c'est ce premier bilan que nous envoyons aux recruteurs. Le deuxième sont vos
-        choses qui pourraient etre travaillé.
-        <br><br>
-        Le troisième est la différence entre le dernier bilan et le bilan actuel. Vous pouvez faire
-        un bilan toute les semaines.
-        Mais tout le monde à ses défaults.
-        <br><br>
-        La deux versions devrait pas existé ca risque de faire mal.
-        <br><br>
-        Avec votre permission nous envoyons la ICI RECAP
-    </div>
-  </section>
-
-
- {% else %}
-
- {% endif %}
-  <!-- Call to Action -->
-  <section class="call-to-action text-white text-center">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-9 mx-auto">
-          <h2 class="mb-4">Une question ? un conseil ? Contactez nous !</h2>
-        </div>
-        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-          <form>
-            <div class="form-row">
-              <div class="col-12 col-md-9 mb-2 mb-md-0">
-                <input type="text" class="form-control form-control-lg" placeholder="Entrez votre message">
-              </div>
-              <div class="col-12 col-md-3">
-                <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
 
 
 
