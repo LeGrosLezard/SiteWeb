@@ -24,7 +24,7 @@
 
   <!-- Custom CSS -->
   <link href="/static/home/css/stylish-portfolio.min.css" rel="stylesheet">
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
   
 </head>
 
@@ -32,32 +32,33 @@
 
 
   <!-- Navigation -->
-  <a class="menu-toggle rounded" href="#">
-    <i class="fas fa-bars"></i>
-  </a>
-  <nav id="sidebar-wrapper">
-    <ul class="sidebar-nav">
-      <li class="sidebar-brand">
-        <a class="js-scroll-trigger" href="#page-top">Menu</a>
-      </li>
-      <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="">Accueil</a>
-      </li>
-      <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="compte">Mon Compte</a>
-      </li>
-      <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="compte#cv_icone">Mes Documents</a>
-      </li>
-      <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="le_questionnaire">Le Questionnaire</a>
-      </li>
-      <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="app_email/questionnaire_email">Ma démarche</a>
-      </li>
-    </ul>
-  </nav>
-
+  <section id="nav">
+      <a class="menu-toggle rounded" href="#">
+        <i class="fas fa-bars"></i>
+      </a>
+      <nav id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+          <li class="sidebar-brand">
+            <a class="js-scroll-trigger" href="#page-top">Menu</a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a class="js-scroll-trigger" href="">Accueil</a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a class="js-scroll-trigger" href="compte">Mon Compte</a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a class="js-scroll-trigger" href="compte#cv_icone">Mes Documents</a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a class="js-scroll-trigger" href="le_questionnaire">Le Questionnaire</a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a class="js-scroll-trigger" href="app_email/questionnaire_email">Ma démarche</a>
+          </li>
+        </ul>
+      </nav>
+    </section>
 
 
 
@@ -69,7 +70,7 @@
     <div class="container">
       <div class="row">
         <div class="col-xl-9 mx-auto">
-          <h1 class="mb-5">Qu'est ce que mon bilan à t'il détecté ?</h1>
+          <h1 class="mb-5">Qu'est ce que mon bilan à t'il détecté ?</h1><br>
         </div>
       </div>
     </div>
@@ -78,257 +79,284 @@
 
 
 
-<!-- About -->
-  <section class="content-section bg-light" id="about">
-    <div class="container text-center">
-      <div class="row">
-        <div class="col-lg-10 mx-auto">
+    <!-- About -->
+      <section class="content-section bg-light" id="about">
+        <div class="container text-center">
+          <div class="row">
+            <div class="col-lg-10 mx-auto">
 
-            <h3>Bilan de : {{nom}} {{prenom}}</h3><br><br>
+                <h3>Bilan de : {{nom}} {{prenom}}</h3><br><br>
+                
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+
+
+
+      <!-- Services -->
+      <section class="content-section bg-primary text-white text-center" id="services">
+        <div class="container">
+            <h3>Le bilan psychologique ou Big Five</h3><br>
+            est l'idée que les traits de personnalités
+            peuvent etre rassemblés sous cinq dimensions essentielles comportant
+            elles meme des sous catégories.
+            <br>
+            Voici vos traits de personnalités positifs. Cela peut aider un recruteur
+            à mieux vous cerner.
+        
+        </div>
+      </section>
+
+
+
+
+
+      <!-- Callout -->
+      <section class="callout">
+        <div class="container text-center">
+          <h2 class="mx-auto mb-5">
+
+         </h2>
+
+
+
+      <div id="un" style="float:right;margin-right:200px;">Click</div><br><br>
+
+        <section id="telechargement" style="display:none;">
+
+            <form action="page_cv" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+
+                <p>
+                    STP TELECHARGE LE PDF ET RENOMME LE AVEC TON PSEDUO PSEDUO et upload le!<br>
+                    {{ form.docfile }}                                            
+                </p>
+
+                <p><input type="submit" value="Upload" /></p>
+            </form>
+        </section>
+
+
+
+
+
+          <section id="EDITOR">
+            <div style='font-size:1.2em;'>
+                <strong>
+                    <div id="bilan1" style="text-align:justify;"></div>
+                </strong>
+            </div>
+          </section>
+
+
+
+        </div>
+      </section>
+
+
+
+
+
+
+
+
+
+      <!-- Services -->
+      <section class="content-section bg-primary text-white text-center" id="services">
+        <div class="container">
+            <h3>Le bilan de la dictée</h3><br>
+            est une des mesures du test de QI. Ici la difficulté était de niveau Avancé.
+            Les capacités verbales sont liées à la culture de l'individus.
+            ect et ect
+        
+        </div>
+      </section>
+
+
+
+
+
+      <!-- Callout -->
+      <section class="callout">
+        <div class="container text-center">
+          <h2 class="mx-auto mb-5">
             
+         </h2>
+            <div id="none_2" style='display:none;'></div>
+
+
+
+
+          <div id="deux" style="float:right;margin-right:200px;">Click</div><br><br>
+
+            <section id="telechargement" style="display:none;">
+
+                <form action="page_cv" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+
+                    <p>
+                        STP TELECHARGE LE PDF ET RENOMME LE AVEC TON PSEDUO PSEDUO et upload le!<br>
+                        {{ form.docfile }}                                            
+                    </p>
+
+                    <p><input type="submit" value="Upload" /></p>
+                </form>
+            </section>
+
+
+
+              <section id="EDITOR1">
+                <div style='font-size:1.2em;'>
+                    <strong>
+                        <div id="bilan2"></div>
+                    </strong>
+                </div>
+              </section>
+
+              
+
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
+      <script>
 
-
-
-
-
-
-
-  <!-- Services -->
-  <section class="content-section bg-primary text-white text-center" id="services">
-    <div class="container">
-        <h3>Le bilan psychologique ou Big Five</h3><br>
-        permet de gnagnagna
-    
-    </div>
-  </section>
-
-
-
-
-
-  <!-- Callout -->
-  <section class="callout">
-    <div class="container text-center">
-      <h2 class="mx-auto mb-5">
-
-     </h2>
-
-
-        <div style='font-size:1.2em;'>
-            <strong>
-                <div id="bilan1" style="text-align:justify;"></div>
-            </strong>
-        </div>
-
-
-
-    </div>
-  </section>
-
-  <script>
-    
-
-    var liste = "{{bilan1}}"
-
-    for(var i = 0; i < liste.length; i ++){
-        liste = liste.replace("&#39;","")
-        liste = liste.replace("&quot;", "")
-        liste = liste.replace(",", "")
-    }
-    
-    var liste1 = []
-
-    phrase = ""
-
-    for(var i = 0; i < liste.length; i ++){
-        if(liste[i] == "["){
-
-        }
-        else if(liste[i] == "]"){
-            phrase = String(phrase) + " <br><br>"
-            liste1.push(phrase)
-            phrase = ""
+        var ok = "(&#39;La personne a moins de 10 erreurs. Elle est ok ect faire le truk pk langage important&#39;,)"
+        if("{{bilan2}}" == ok){
+            document.getElementById("bilan2").innerHTML = "Le participant a reussi la dictée visible ect pk le fr est important";
         }
         else{
-            phrase += liste[i]
-        };
-    };
+            document.getElementById("none_2").innerHTML = "NONE";
+            document.getElementById("bilan2").innerHTML = "Malheureusement nous ne pouvons pas mettre la compétence langagière dans votre bilan. Nous n'enverrons donc pas cette partie du bilan aux recruteurs"
+        }
 
-
-
-    test = ""
-    for(var i = 0; i < liste1.length; i ++){
-        test += liste1[i]
-    };
-
-
-    
-    document.getElementById("bilan1").innerHTML = test
-    
-  </script>
-
-
-
-
-
-
-
-
-
-
-
-
-  <!-- Services -->
-  <section class="content-section bg-primary text-white text-center" id="services">
-    <div class="container">
-        <h3>Le bilan de la dictée</h3><br>
-        permet de gnagnagna
-    
-    </div>
-  </section>
-
-
-
-
-
-  <!-- Callout -->
-  <section class="callout">
-    <div class="container text-center">
-      <h2 class="mx-auto mb-5">
         
-     </h2>
-        <div id="none_2" style='display:none;'></div>
+      </script>
 
-        <div style='font-size:1.2em;'>
-            <strong>
-                <div id="bilan2"></div>
-            </strong>
+
+
+
+</section>
+<section id="EDITOR2">
+
+
+
+
+
+
+      <!-- Services -->
+      <section class="content-section bg-primary text-white text-center" id="services">
+        <div class="container">
+            <h3>Le bilan de la fléxibilité mentale</h3><br>
+            permet de gnagnagna
+        
         </div>
-
-
-
-    </div>
-  </section>
-
-  <script>
-
-    var ok = "(&#39;La personne a moins de 10 erreurs. Elle est ok ect faire le truk pk langage important&#39;,)"
-    if("{{bilan2}}" == ok){
-        document.getElementById("bilan2").innerHTML = "Le participant a reussi la dictée visible ect pk le fr est important";
-    }
-    else{
-        document.getElementById("none_2").innerHTML = "NONE";
-        document.getElementById("bilan2").innerHTML = "Malheureusement nous ne pouvons pas mettre la compétence langagière dans votre bilan. Nous n'enverrons donc pas cette partie du bilan aux recruteurs"
-    }
-
-    
-  </script>
+      </section>
 
 
 
 
 
+      <!-- Callout -->
+      <section class="callout">
+        <div class="container text-center">
+          <h2 class="mx-auto mb-5">
+
+         </h2>
 
 
 
+                <div id="none_3" style="display:none;"></div>
+                <div style='font-size:1.2em;'>
+                    <strong>
+                        <div id="bilan3"></div>
+                    </strong>
+                </div>
 
+            </section>
 
-
-  <!-- Services -->
-  <section class="content-section bg-primary text-white text-center" id="services">
-    <div class="container">
-        <h3>Le bilan de la fléxibilité mentale</h3><br>
-        permet de gnagnagna
-    
-    </div>
-  </section>
-
-
-
-
-
-  <!-- Callout -->
-  <section class="callout">
-    <div class="container text-center">
-      <h2 class="mx-auto mb-5">
-
-     </h2>
-
-        <div id="none_3" style="display:none;"></div>
-        <div style='font-size:1.2em;'>
-            <strong>
-                <div id="bilan3"></div>
-            </strong>
         </div>
+      </section>
 
+      <script>
 
+        if("{{bilan3}}" == "non"){
+            document.getElementById("none_3").innerHTML = "NONE";
+            document.getElementById("bilan3").innerHTML = "Malheureusement nous ne pouvons pas mettre la compétence langagière dans votre bilan. Nous n'enverrons donc pas cette partie du bilan aux recruteurs"
+        }
+        else{
+         document.getElementById("bilan3").innerHTML = "{{bilan3}}";
 
-    </div>
-  </section>
+        };
 
-  <script>
-
-    if("{{bilan3}}" == "non"){
-        document.getElementById("none_3").innerHTML = "NONE";
-        document.getElementById("bilan3").innerHTML = "Malheureusement nous ne pouvons pas mettre la compétence langagière dans votre bilan. Nous n'enverrons donc pas cette partie du bilan aux recruteurs"
-    }
-    else{
-     document.getElementById("bilan3").innerHTML = "{{bilan3}}";
-
-    };
-
-    
-  </script>
+        
+      </script>
 
 
 
 
 
+          <div id="trois" style="float:right;margin-right:200px;">Click</div><br><br>
+
+            <section id="telechargement" style="display:none;">
+
+                <form action="page_cv" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+
+                    <p>
+                        STP TELECHARGE LE PDF ET RENOMME LE AVEC TON PSEDUO PSEDUO et upload le!<br>
+                        {{ form.docfile }}                                            
+                    </p>
+
+                    <p><input type="submit" value="Upload" /></p>
+                </form>
+            </section>
 
 
 
 
 
+    <section id="EDITOR2">
 
-
-  <!-- Services -->
-  <section class="content-section bg-primary text-white text-center" id="services">
-    <div class="container">
-        <h3>Le bilan de la mémoire</h3><br>
-        permet de gnagnagna
-    
-    </div>
-  </section>
-
-
-
-
-
-  <!-- Callout -->
-  <section class="callout">
-    <div class="container text-center">
-      <h2 class="mx-auto mb-5">
-
-     </h2>
-
-
-        <div style='font-size:1.2em;'>
-            <strong>
-                <div id="none_4"></div>
-                <div id="bilan4"></div>
-            </strong>
+      <!-- Services -->
+      <section class="content-section bg-primary text-white text-center" id="services">
+        <div class="container">
+            <h3>Le bilan de la mémoire</h3><br>
+            permet de gnagnagna
+        
         </div>
+      </section>
 
 
+      <!-- Callout -->
+      <section class="callout">
+        <div class="container text-center">
+          <h2 class="mx-auto mb-5">
 
-    </div>
-  </section>
+         </h2>
 
+
+            <div style='font-size:1.2em;'>
+                <strong>
+                    <div id="none_4"></div>
+                    <div id="bilan4"></div>
+                </strong>
+            </div>
+
+        </div>
+      </section>
+
+
+      
+    </section>
+
+    
   <script>
 
     if("{{bilan4}}" == "non"){
@@ -346,7 +374,7 @@
 
 
 
-
+</section>
   
 
 
@@ -370,7 +398,7 @@
 
 
   <!-- Footer -->
-  <footer class="footer text-center">
+  <footer class="footer text-center" id="foot">
     <div class="container">
       <ul class="list-inline mb-5">
         <li class="list-inline-item">
@@ -429,6 +457,163 @@
 
 
 
+
+  <script>
+    
+
+    var liste = "{{bilan1}}"
+
+    for(var i = 0; i < liste.length; i ++){
+        liste = liste.replace("&#39;","")
+        liste = liste.replace("&quot;", "")
+        liste = liste.replace(",", "")
+    }
+    
+    var liste1 = []
+
+    phrase = ""
+
+    for(var i = 0; i < liste.length; i ++){
+        if(liste[i] == "["){
+
+        }
+        else if(liste[i] == "]"){
+            phrase = String(phrase) + " <br><br>"
+            liste1.push(phrase)
+            phrase = ""
+        }
+        else{
+            phrase += liste[i]
+        };
+    };
+
+
+
+    test = ""
+    for(var i = 0; i < liste1.length; i ++){
+        test += liste1[i]
+    };
+
+
+    
+    document.getElementById("bilan1").innerHTML = test
+    
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+var doc = new jsPDF();
+var specialElementHandlers = {
+    '#editor': function (element, renderer) {
+        return true;
+    }
+};
+$('#un').click(function () {
+    document.getElementById("nav").style.display = "none";
+    document.getElementById("foot").style.display = "none";
+    document.getElementById("un").style.display = "none";
+
+    
+
+    var pdf = new jsPDF();
+    pdf.addHTML(document.getElementById('EDITOR').value, function() {
+        pdf.save('partie_une_bilan.pdf');
+    });
+
+    document.getElementById("nav").style.display = "block";
+    document.getElementById("foot").style.display = "block";
+    document.getElementById("un").style.display = "block";
+    document.getElementById("telechargement").style.display = "block";
+
+    
+})
+
+
+
+$('#deux').click(function () {
+    document.getElementById("nav").style.display = "none";
+    document.getElementById("foot").style.display = "none";
+    document.getElementById("un").style.display = "none";
+
+    
+
+    var pdf = new jsPDF();
+    pdf.addHTML(document.getElementById('EDITOR').value, function() {
+        pdf.save('partie_deux_bilan.pdf');
+    });
+
+    document.getElementById("nav").style.display = "block";
+    document.getElementById("foot").style.display = "block";
+    document.getElementById("un").style.display = "block";
+    document.getElementById("telechargement").style.display = "block";
+
+    
+})
+
+
+
+
+$('#trois').click(function () {
+    document.getElementById("nav").style.display = "none";
+    document.getElementById("foot").style.display = "none";
+    document.getElementById("un").style.display = "none";
+
+    
+
+    var pdf = new jsPDF();
+    pdf.addHTML(document.getElementById('EDITOR').value, function() {
+        pdf.save('partie_trois_bilan.pdf');
+    });
+
+    document.getElementById("nav").style.display = "block";
+    document.getElementById("foot").style.display = "block";
+    document.getElementById("un").style.display = "block";
+    document.getElementById("telechargement").style.display = "block";
+
+    
+})
+
+
+
+$('#quattre').click(function () {
+    document.getElementById("nav").style.display = "none";
+    document.getElementById("foot").style.display = "none";
+    document.getElementById("un").style.display = "none";
+
+    
+
+    var pdf = new jsPDF();
+    pdf.addHTML(document.getElementById('EDITOR3').value, function() {
+        pdf.save('partie_quattre_bilan.pdf');
+    });
+
+    document.getElementById("nav").style.display = "block";
+    document.getElementById("foot").style.display = "block";
+    document.getElementById("un").style.display = "block";
+    document.getElementById("telechargement").style.display = "block";
+
+    
+})
+
+
+
+
+
+</script>
 
 
 
