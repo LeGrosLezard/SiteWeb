@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from django.conf.urls import include
 
 from . import views
+from account.views import *
+from app_email.views import *
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,9 +34,19 @@ urlpatterns = [
     path('le_questionnaire_seconde_partie', views.le_questionnaire_seconde_partie),
     path('le_questionnaire_troisieme_partie', views.le_questionnaire_troisieme_partie),
     path('le_questionnaire_quatrieme_partie', views.le_questionnaire_quatrieme_partie),
-    path('mon_cv', views.mon_cv),
-    path('ma_lettre', views.ma_lettre),
-    path('mon_message', views.mon_message),
+    path('page_motivation', views.page_motivation),
+    path('page_message', views.page_message),
+    path('page_cv', views.page_cv),
+    path('page_cv_pdf', views.page_cv_pdf),
+    path('page_motivation_pdf', views.page_motivation_pdf),
+    path('page_message_pdf', views.page_message_pdf),
+    path('page_bilan_pdf', views.page_bilan_pdf),
+    path('page_bilan', views.page_bilan),
+    path('page_bilan1', views.page_bilan1),
+    path('page_bilan2', views.page_bilan2),
+    path('page_bilan3', views.page_bilan3),
+    path('account/', include('account.urls')),
+    path('app_email/', include('app_email.urls')),
 ]
 
 
