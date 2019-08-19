@@ -88,9 +88,115 @@
         
         
             {% if user.is_authenticated %}
-                <h3>Bonjour <strong>{{user}}</strong> Voici les nouvelles:</h3><br><br>
-                <p style="float:left;">Nous avons envoyé des demandes à:</p>
-                    
+                <h3>Bonjour <strong>{{user}}</strong></h3><br><br>
+
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm">
+                    Constitution d'un CV <p id="cv"></p>
+                  </div>
+                  <div class="col-sm">
+                    <div id="done1">Fait</div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm">
+
+                    Constitution d'une lettre de motivation <p id="motivation"></p>
+
+                  </div>
+                  <div class="col-sm">
+                    <div id="done2">Fait</div>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm">
+                    Constitution d'un message aux recruteur <p id="message"></p>
+                  </div>
+                  <div class="col-sm">
+                    <div id="done3">Fait</div>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm">
+                    Bilan Partie une <p id="bilan1"></p>
+                  </div>
+                  <div class="col-sm">
+                    <div id="done4">Fait</div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm">
+                    Bilan Partie deux <p id="bilan2"></p>
+                  </div>
+                  <div class="col-sm">
+                    <div id="done5">Fait</div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm">
+                    Bilan Partie trois <p id="bilan3"></p>
+                  </div>
+                  <div class="col-sm">
+                    <div id="done6">Fait</div>
+                  </div>
+                </div>
+              </div>
+
+          
+          <script>
+            function ok(id_balise, doc){
+              if (doc == "0"){
+                document.getElementById(id_balise).style.color = "red"
+              }
+              else{
+                document.getElementById(id_balise).style.color = "green"
+              };
+
+            };
+            ok("done1", "{{cv}}");
+            ok("done2", "{{motivation}}");
+            ok("done3", "{{message}}");
+            ok("done4", "{{bilan1}}");
+            ok("done5", "{{bilan2}}");
+            ok("done6", "{{bilan3}}");
+          </script>
+
+
+
+
+
+
+
+
+
+
+
 
                     
             {% else %}
@@ -129,9 +235,9 @@
       <div class="content-section-heading">
         <h3 class="text-secondary mb-0">Nous vous proposons</h3>
         <h2 class="mb-5"></h2>
-        <h5>Etape une faites un compte, étape deux faites vos documents, étape trois
-        passez le questionnaire, étape quattre remplissez votre démarche.<br><br>
-        <em>Nous nous occupons du reste !</em></h5><br><br>
+        <br><br><br><br>
+  
+
       </div>
       
       <div class="row">
@@ -215,7 +321,13 @@
     
       <div class="content-section-heading">
         <h3 class="text-secondary mb-0">Nous vous proposons</h3>
-        <h2 class="mb-5"></h2>
+        <h5 style="text-align:justify;">
+        - Première étape: <em>Faites un compte.</em><br>
+        - Deuxième étape: <em>Constituez un CV, une lettre de motivation et un message aux recruteurs.</em><br>
+        - Troisième étape: <em>Passez le questionnaire d'aptitude ! (Seulement les qualités sont pris en compte.)</em><br>
+        - Quatrième étape: <em>Remplissez un dernier questionnaire. Par ce questionnaire nous envoyons automatiquement
+        vos documents au emplois qui vous interresent.</em>
+        </h5>
       </div>
       
       <div class="row">
@@ -371,8 +483,8 @@
                 <h2>Curiculum Vitae</h2>
                 
                 <p class="mb-0">Mon cv !<br>
-                  <input type='button' value="Modifier mon CV" class="choix" id="choix1"><br>
-                  <input type='button' value="Visualiser le PDF" class="choix" id="choix11">
+                  <input type='button' value="Modifier mon CV" class="choix" onclick='document.location.href="comment_faire_mon_cv"'><br>
+                  <input type='button' value="Visualiser le PDF" class="choix" onclick='document.location.href="page_cv_pdf"'>
 
                   <div id="alert1"></div>
                 </p>
@@ -395,8 +507,8 @@
                 
                 <p class="mb-0">
                   Ma lettre de motivation
-                  <input type='button' value="Modifier ma lettre" class="choix" id="choix2"><br>
-                  <input type='button' value="Visualiser le PDF" class="choix" id="choix22">
+                  <input type='button' value="Modifier ma lettre" class="choix" onclick='document.location.href="comment_faire_mon_cv"'><br>
+                  <input type='button' value="Visualiser le PDF" class="choix" onclick='document.location.href="page_motivation_pdf"'>
 
                   <div id="alert2"></div>
                 </p>
@@ -418,8 +530,8 @@
                 <p class="mb-0">
                 
                   Mon message
-                  <input type='button' value="Modifier mon message" class="choix" id="choix3"><br>
-                  <input type='button' value="Visualiser le PDF" class="choix" id="choix33">
+                  <input type='button' value="Modifier mon message" class="choix" onclick='document.location.href="comment_faire_mon_cv"'><br>
+                  <input type='button' value="Visualiser le PDF" class="choix" onclick='document.location.href="page_message_pdf"'>
 
                   <div id="alert3"></div>
 
@@ -441,8 +553,7 @@
                 <p class="mb-0">
 
                   Mon bilan<br>
-                  <input type='button' value="Modifier mon bilan" class="choix" id="choix4"><br>
-                  <input type='button' value="Visualiser mon PDF" class="choix" id="choix44"><br>
+                  <input type='button' value="Visualiser mon PDF" class="choix" onclick='document.location.href="page_bilan_pdf"'><br>
 
                   <div id="alert4"></div>
 
@@ -548,15 +659,14 @@
     <div class="container text-center">
     
       <h2 class="mb-4">A quoi sert ce site web?</h2>
-
+      <br><br>
       <div>
-        <h5 id="explication">
-        Remplissez votre CV, Faites vote lettre de motivation, Faites un message à l'employeur
-         , on analyse le bilan faut un psy,
-        on envoie ca au recruteur selon le rayon du type via les sites web
-        par contre... je sais pas si c possible merde du genre bonjour nous sommes projettoooo
-        et nous avons un cli, matte son cv, matte sa lettre, matte son message, matte on a fait un bilan sur lui !
-        aimerai tu le joindre ? voici son mail !
+        <h5 style="text-align:justify;">
+        - Première étape: <em>Faites un compte.</em><br><br>
+        - Deuxième étape: <em>Constituez un CV, une lettre de motivation et un message aux recruteurs.</em><br><br>
+        - Troisième étape: <em>Passez le questionnaire d'aptitude ! (Seulement les qualités sont pris en compte.)</em><br><br>
+        - Quatrième étape: <em>Remplissez un dernier questionnaire. Par ce questionnaire nous envoyons automatiquement
+        vos documents au emplois qui vous interresent.</em>
         </h5>
       </div>
 
@@ -648,286 +758,6 @@
 
 
 
-
-
-
-
-
-<script>
-
-
-
-//---------------------------------------------------------------------Bilan
-jQuery("#choix1").on("click", function(e){
-
-
- e.preventDefault();
-  jQuery.ajax({
-      data:{
-          "verification_document":"verification_document",
-          "un":"un",
-          'csrfmiddlewaretoken': '{{csrf_token}}',
-      },
-      type:"POST",
-      url:"/"
-  })
-  .done(function(data){
-      if (data.error){
-          document.getElementById("#Alert").inner.html = "aie"; 
-      }
-      else{
-          document.location.href = 'comment_faire_mon_cv'
-          
-          
-      };
-      
-  });
-});
-
-
-//---------------------------------------------------------------------Bilan
-
-
-//---------------------------------------------------------------------Bilan
-jQuery("#choix11").on("click", function(e){
-
-
- e.preventDefault();
-  jQuery.ajax({
-      data:{
-          "verification_document":"verification_document",
-          "unun":"unun",
-          'csrfmiddlewaretoken': '{{csrf_token}}',
-      },
-      type:"POST",
-      url:"/"
-  })
-  .done(function(data){
-      if (data.error){
-          document.getElementById("#Alert").inner.html = "aie"; 
-      }
-      else{
-
-          if(data == "not_ok"){
-            document.getElementById("alert1").innerHTML = "<center>Veuillez constituer un CV <a href='#icone_hover' id='ici'>Ici</a></center>"
-          }
-          else if(data == "ok"){
-            document.location.href="page_cv_pdf"
-          }
-          
-      };
-      
-  });
-});
-
-
-//---------------------------------------------------------------------Bilan
-
-
-//---------------------------------------------------------------------Bilan
-jQuery("#choix2").on("click", function(e){
-
-
- e.preventDefault();
-  jQuery.ajax({
-      data:{
-          "deux":"deux",
-          "verification_document":"verification_document",
-          'csrfmiddlewaretoken': '{{csrf_token}}',
-      },
-      type:"POST",
-      url:"/"
-  })
-  .done(function(data){
-      if (data.error){
-          document.getElementById("#Alert").inner.html = "aie"; 
-      }
-      else{
-          document.location.href = 'comment_faire_mon_cv'
-          
-          
-      };
-      
-  });
-});
-
-
-//---------------------------------------------------------------------Bilan
-
-
-//---------------------------------------------------------------------Bilan
-jQuery("#choix22").on("click", function(e){
-
-
- e.preventDefault();
-  jQuery.ajax({
-      data:{
-          "deuxdeux":"deuxdeux",
-          "verification_document":"verification_document",
-          'csrfmiddlewaretoken': '{{csrf_token}}',
-      },
-      type:"POST",
-      url:"/"
-  })
-  .done(function(data){
-      if (data.error){
-          document.getElementById("#Alert").inner.html = "aie"; 
-      }
-      else{
-          if(data == "not_ok"){
-            document.getElementById("alert2").innerHTML = "<center>Veuillez constituer une lettre de motivation <a href='#icone_hover' id='ici'>Ici</a></center>"
-          }
-          else if(data == "ok"){
-            document.location.href="page_motivation_pdf"
-          }
-          
-          
-      };
-      
-  });
-});
-
-
-//---------------------------------------------------------------------Bilan
-
-
-//---------------------------------------------------------------------Bilan
-jQuery("#choix3").on("click", function(e){
-
-
- e.preventDefault();
-  jQuery.ajax({
-      data:{
-          "trois":"trois",
-          "verification_document":"verification_document",
-          'csrfmiddlewaretoken': '{{csrf_token}}',
-      },
-      type:"POST",
-      url:"/"
-  })
-  .done(function(data){
-      if (data.error){
-          document.getElementById("#Alert").inner.html = "aie"; 
-      }
-      else{
-          document.location.href = 'comment_faire_mon_cv'
-          
-          
-      };
-      
-  });
-});
-
-
-//---------------------------------------------------------------------Bilan
-
-
-
-
-
-//---------------------------------------------------------------------Bilan
-jQuery("#choix33").on("click", function(e){
-
-
- e.preventDefault();
-  jQuery.ajax({
-      data:{
-          "troistrois":"troistrois",
-          "verification_document":"verification_document",
-          'csrfmiddlewaretoken': '{{csrf_token}}',
-      },
-      type:"POST",
-      url:"/"
-  })
-  .done(function(data){
-      if (data.error){
-          document.getElementById("#Alert").inner.html = "aie"; 
-      }
-      else{
-          if(data == "not_ok"){
-            document.getElementById("alert3").innerHTML = "<center>Veuillez constituer un message <a href='#icone_hover' id='ici'>Ici</a></center>"
-          }
-          else if(data == "ok"){
-            document.location.href="page_message_pdf"
-          }
-          
-          
-      };
-      
-  });
-});
-
-
-//---------------------------------------------------------------------Bilan
-
-
-//---------------------------------------------------------------------Bilan
-jQuery("#choix4").on("click", function(e){
-
-
- e.preventDefault();
-  jQuery.ajax({
-      data:{
-          "quattre":"quattre",
-          "verification_document":"verification_document",
-          'csrfmiddlewaretoken': '{{csrf_token}}',
-      },
-      type:"POST",
-      url:"/"
-  })
-  .done(function(data){
-      if (data.error){
-          document.getElementById("#Alert").inner.html = "aie"; 
-      }
-      else{
-          document.location.href = 'page_bilan'
-          
-          
-      };
-      
-  });
-});
-
-
-//---------------------------------------------------------------------Bilan
-
-
-//---------------------------------------------------------------------Bilan
-jQuery("#choix44").on("click", function(e){
-
-
- e.preventDefault();
-  jQuery.ajax({
-      data:{
-          "quattrequattre":"quattrequattre",
-          "verification_document":"verification_document",
-          'csrfmiddlewaretoken': '{{csrf_token}}',
-      },
-      type:"POST",
-      url:"/"
-  })
-  .done(function(data){
-      if (data.error){
-          document.getElementById("#Alert").inner.html = "aie"; 
-      }
-      else{
- 
-          if(data == "not_ok"){
-            document.getElementById("alert4").innerHTML = "<center>Veuillez passez le questionnaire <a href='#passer' id='ici'>Ici</a></center>"
-          }
-          else if(data == "ok"){
-            document.location.href="page_bilan_pdf"
-          }
-          
-      };
-      
-  });
-});
-
-
-//---------------------------------------------------------------------Bilan
-
-</script>
 
 
 
