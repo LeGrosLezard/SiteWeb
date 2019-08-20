@@ -50,6 +50,14 @@ def insertion_bilan_premiere_partie(pseudo, bilan):
     conn.commit() 
 
 
+    cur.execute("""UPDATE bilan
+                SET un = %s
+                WHERE id_user = {0};""".format(id_user), (1, ))
+                       
+
+    conn.commit() 
+
+
 def insertion_bilan_seconde_partie(pseudo, bilan):
 
 
@@ -70,7 +78,12 @@ def insertion_bilan_seconde_partie(pseudo, bilan):
 
     conn.commit() 
 
+    cur.execute("""UPDATE bilan
+                SET deux = %s
+                WHERE id_user = {0};""".format(id_user), (1, ))
+                       
 
+    conn.commit() 
 
 
 def insertion_bilan_troisieme_partie(pseudo, bilan):
@@ -93,6 +106,14 @@ def insertion_bilan_troisieme_partie(pseudo, bilan):
 
     conn.commit() 
 
+    cur.execute("""UPDATE bilan
+                SET trois = %s
+                WHERE id_user = {0};""".format(id_user), (1, ))
+                       
+
+    conn.commit()
+
+    
 
 
 def insertion_bilan_quatrieme_partie(pseudo, bilan):
@@ -115,7 +136,12 @@ def insertion_bilan_quatrieme_partie(pseudo, bilan):
 
     conn.commit() 
 
+    cur.execute("""UPDATE bilan
+                SET quattre = %s
+                WHERE id_user = {0};""".format(id_user), (1, ))
+                       
 
+    conn.commit() 
 
 
 
