@@ -80,46 +80,47 @@ def page_bilan_pdf(request):
 from .views_function import document
 def home(request):
 
+
+    try:
+        pseudo = request.user
+
+        cv, motivation, message, bilan1, bilan2, bilan3 = document(str(pseudo))
+
+        data = {"cv":cv,
+                "motivation":motivation,
+                "message":message,
+                "bilan1":bilan1,
+                "bilan2":bilan2,
+                "bilan3":bilan3}
+
+        return render(request, 'home.html', data)
+
+    except:
+        return render(request, 'home.html')
+
+
+from .compte.compte import compte_function
+def compte(request):
     pseudo = request.user
 
-    cv, motivation, message, bilan1, bilan2, bilan3 = document(str(pseudo))
+    info = compte_function(pseudo)
 
-    data = {"cv":cv,
-            "motivation":motivation,
-            "message":message,
-            "bilan1":bilan1,
-            "bilan2":bilan2,
-            "bilan3":bilan3}
+    dico_info = {"nom":"", "prenom":"", "sexe":"", "address_email":"",
+                 "fixe":"", "portable":"", "mot_de_passe":"", "pseduo":"",
+                 "adresse":"", "naissance":""}   
 
-    return render(request, 'home.html', data)
+    c = 1
 
-
-
-
-
-def compte(request):
-    global GLOBAL
-
+    for cle, valeur in dico_info.items():
+        dico_info[cle] = info[0][c]
+        c += 1
     
-
     if request.method == "POST":
         
-        demande_de_cv = request.POST.get('demande_de_cv')
-        demande_de_motivation = request.POST.get('demande_de_motivation')
-        demande_de_message = request.POST.get('demande_de_message')
-
-        if demande_de_cv:
-            return JsonResponse({"a":"connected"})
+        pass
 
 
-        if demande_de_message:
-            pass
-
-        if demande_de_motivation:
-            pass
-
-
-    return render(request, 'compte.html')
+    return render(request, 'compte.html', {"info":dico_info})
 
 
 
