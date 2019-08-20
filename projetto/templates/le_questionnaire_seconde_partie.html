@@ -80,15 +80,10 @@
   </header>
   <center>
       <em>Nous remercions Athavan Harirajendran pour sa dictée.
-      <a href="https://www.youtube.com/watch?v=ynQr478eZBo">qui se trouve ici</a></em>
+      <div id="dict_merci"></div>
   </center>
 
     <br><br>
-    
-    <iframe width="420" height="315" style="margin-left:10000000px;" frameborder="0"
-    src="" id="iframe">
-    </iframe>
-
 
     <center>
         <section style="border:2px solid black;width:90%;border-radius:10px 10px 10px;">
@@ -103,7 +98,8 @@
 
             Vous ne pouvez pas revenir en arrière.
             Vous ne pouvez pas quittez. Détendez vous et commencer !
-            <strong>les phrases sont répétés deux fois après la fin de l'écoute vous avez 5 minutes pour vous relire</strong></p></center>
+            <strong>les phrases sont répétés deux fois après la fin
+            de l'écoute vous avez 5 minutes pour vous relire</strong></p></center>
         </section>
     </center>
     
@@ -134,7 +130,9 @@
 
 
             
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <iframe width="420" height="315" style="margin-left:2000px;" frameborder="0"
+    src="" id="iframe" allow="autoplay">
+    </iframe>
 
 
 
@@ -261,10 +259,13 @@ function play(){
     document.getElementById("passer").style.display = "none";
     document.getElementById("texte").style.display = "block";
     document.getElementById("fini").style.display = "block";
-    
+
     var audio = document.getElementById("iframe").src = "https://www.youtube.com/embed/ynQr478eZBo?autoplay=1";
+
     window.setTimeout(annonce, 100000);
     window.setTimeout(fin, 150000);
+    document.getElementById("dict_merci").innerHTML = '<a href="https://www.youtube.com/watch?v=ynQr478eZBo">qui se trouve ici</a></em>'
+
     
 };
 
@@ -287,7 +288,7 @@ jQuery("#fini").on("click", function(e){
           document.getElementById("#Alert").inner.html = "aie"; 
       }
       else{
-          {}
+          document.location.href="/"
           
           
       };
