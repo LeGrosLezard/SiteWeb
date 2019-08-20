@@ -94,19 +94,43 @@
 
   
   <section class="features-icons bg-light text-center" id="account_connected">
+    
+           <h2>Espace Information du compte</h2><br><br>
+    
+           Nom : {{info.nom}}<br>
+           Prénom : {{info.prenom}}<br>
+           Sexe : {{info.sexe}}<br>
+           Address Email : {{info.address_email}}<br>
+           Fixe : {{info.fixe}}<br>
+           Portable : {{info.portable}}<br>
+           Mot de passe : {{info.mot_de_passe}}<br>
+           Pseudo : {{info.pseduo}}<br>
+           Adresse : {{info.adresse}}<br>
+           Naissance : {{info.naissance}}<br><br>
+    
+           <input type="button" value="Modifier">
+           
 
-           Info du compte
+           <br><br><br><br>
 
-            <br><br><br><br>
-           <input type="button" value="Voir mon CV">
-           <input type="button" value="Voir ma lettre de motivation">
-           <input type="button" value="Voir mon message aux recruteurs">
-           <input type="button" value="Voir mon bilan">
+           <h2>Mes documents</h2><br><br>
+           <input type="button" value="Voir mon CV" document.location.href="page_cv_pdf">
+           <input type="button" value="Voir ma lettre de motivation" document.location.href="page_motivation_pdf">
+           <input type="button" value="Voir mon message aux recruteurs" document.location.href="page_message_pdf">
+           <input type="button" value="Voir mon bilan" document.location.href="page_bilan_pdf">
 
   </section>
 
 
-
+  <style>
+    input{
+        border:2px solid transparent;
+        background:none;
+    }
+    input:hover{
+        border:2px solid black;
+    }
+  </style>
 
 
 
