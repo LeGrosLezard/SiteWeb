@@ -27,11 +27,9 @@ def login_view(request):
     next = request.GET.get('next')
     form = UserLoginForm(request.POST or None)
 
-    
-    print("coucoulle")
+
     if form.is_valid():
         
-        print("pio")
         username = form.cleaned_data.get('username')
         password = form.cleaned_data.get('password')
         user = authenticate(username=username, password=password)
@@ -40,7 +38,7 @@ def login_view(request):
         
         if next:
             return redirect(next)
-        return redirect('../../compte')
+        return redirect('../../')
 
     context = {
         'form':form
@@ -50,6 +48,7 @@ def login_view(request):
 
 
 from .compte.compte import inscription
+from .compte.compte import creation_dossier_user
 def register2(request):
 
 
@@ -83,13 +82,12 @@ def register2(request):
                                             adresse,
                                             str(password))
 
+            creation_dossier_user(pseudo)
 
 
-        if next:
-            return redirect(next)
-        return redirect('/account/register2')
 
-    return render(request, 'register2.html',)
+        
+    return render(request, 'register2.html')
 
 
 
