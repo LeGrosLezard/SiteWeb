@@ -400,10 +400,29 @@ from .questionnaire.questionnaire import association_definition2
 from .questionnaire.questionnaire import assoc_grande_categorie
 from .questionnaire.questionnaire import mise_en_page
 from .questionnaire.database.database import insertion_bilan_premiere_partie
+from .views_function import document
+from .questionnaire.database.database import accord
+
 def le_questionnaire_premiere_partie(request):
 
     pseudo = request.user
 
+    ok = accord(pseudo, "un")
+    if ok == 1:
+
+        cv, motivation, message, bilan1, bilan2, bilan3 = document(str(pseudo))
+
+        data = {"cv":cv,
+                "motivation":motivation,
+                "message":message,
+                "bilan1":bilan1,
+                "bilan2":bilan2,
+                "bilan3":bilan3,
+                "avertisseur":"Vous avez déja valider votre bilan psychologique !"}
+
+
+        return render(request, 'home.html', data)
+    
 
     if request.method == "POST":
 
@@ -430,12 +449,33 @@ def le_questionnaire_premiere_partie(request):
 from .questionnaire.questionnaire_deux import traitement_DICTEE
 from .questionnaire.questionnaire_deux import traitement_texte_utilisateur
 from .questionnaire.database.database import insertion_bilan_seconde_partie
-
-
 from .questionnaire.CONFIG import DICTEE
+from .questionnaire.database.database import accord
+
+from .views_function import document
+
 def le_questionnaire_seconde_partie(request):
 
     pseudo = request.user
+
+
+    ok = accord(pseudo, "deux")
+
+    if ok == 1:
+
+        cv, motivation, message, bilan1, bilan2, bilan3 = document(str(pseudo))
+
+        data = {"cv":cv,
+                "motivation":motivation,
+                "message":message,
+                "bilan1":bilan1,
+                "bilan2":bilan2,
+                "bilan3":bilan3,
+                "avertisseur":"Vous avez déja valider votre bilan psychologique !"}
+
+        
+        return render(request, 'home.html', data)
+    
 
     if request.method == "POST":
 
@@ -458,9 +498,33 @@ def le_questionnaire_seconde_partie(request):
 from .questionnaire.questionnaire_trois import resultat_function
 from .questionnaire.questionnaire_trois import correction_questionnaire3
 from .questionnaire.database.database import insertion_bilan_troisieme_partie
+from .questionnaire.database.database import accord
+from .views_function import document
 def le_questionnaire_troisieme_partie(request):
 
     pseudo = request.user
+
+
+    acc = accord(pseudo, "trois")
+    if acc == 1:
+
+
+        cv, motivation, message, bilan1, bilan2, bilan3 = document(str(pseudo))
+
+        data = {"cv":cv,
+                "motivation":motivation,
+                "message":message,
+                "bilan1":bilan1,
+                "bilan2":bilan2,
+                "bilan3":bilan3,
+                "avertisseur":"Vous avez déja valider votre bilan psychologique !"}
+
+        
+        return render(request, 'home.html', data)
+    
+
+
+    
     ok = ""
     if request.method == "POST":
         resultat = request.POST.get('resultat')
@@ -483,7 +547,29 @@ def le_questionnaire_troisieme_partie(request):
 from .questionnaire.questionnaire_quattre import resultat_function
 from .questionnaire.questionnaire_quattre import correction
 from .questionnaire.database.database import insertion_bilan_quatrieme_partie
+from .questionnaire.database.database import accord
+from .views_function import document
 def le_questionnaire_quatrieme_partie(request):
+
+
+    acc = accord(pseudo, "quattre")
+    if acc == 1:
+
+        cv, motivation, message, bilan1, bilan2, bilan3 = document(str(pseudo))
+
+        data = {"cv":cv,
+                "motivation":motivation,
+                "message":message,
+                "bilan1":bilan1,
+                "bilan2":bilan2,
+                "bilan3":bilan3,
+                "avertisseur":"Vous avez déja valider votre bilan psychologique !"}
+
+        
+        return render(request, 'home.html', data)
+    
+
+
 
     ok = ""
     pseudo = request.user
