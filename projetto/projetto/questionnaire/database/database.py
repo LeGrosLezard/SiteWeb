@@ -29,6 +29,64 @@ def recuperation_id_pseudo(pseudo):
     return liste
 
 
+
+def accord(pseudo, mode):
+    
+    id_user = recuperation_id_pseudo(pseudo)
+    id_user = id_user[0][0]
+
+
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD) 
+
+    cur = conn.cursor()
+
+    if mode == "un":
+
+        cur.execute("""select un from bilan
+                    WHERE (id_user = {0});""".format(id_user))
+                           
+
+        conn.commit()  
+
+    elif mode == "deux":
+        
+        cur.execute("""select deux from bilan
+                    WHERE (id_user = {0});""".format(id_user))
+                           
+
+        conn.commit()
+
+    elif mode == "trois":
+        cur.execute("""select trois from bilan
+                    WHERE (id_user = {0});""".format(id_user))
+                           
+
+        conn.commit()
+
+    elif mode == "quattre":
+        cur.execute("""select quattre from bilan
+                    WHERE (id_user = {0});""".format(id_user))
+                           
+
+        conn.commit()  
+
+
+
+    rows = cur.fetchall()
+    liste = [i for i in rows]
+
+
+    return liste[0][0]
+
+
+
+
+
+
+
 def insertion_bilan_premiere_partie(pseudo, bilan):
 
 
