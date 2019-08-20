@@ -146,12 +146,20 @@ def insertion_user(nom, prenom, date, sexe, email, fixe, password,
                 bilan,
                 bilan1,
                 bilan2,
-                bilan3)
+                bilan3,
+                un,
+                deux,
+                trois,
+                quattre)
                 values(%s, %s, %s, %s, %s);""",(user,
                                                 "",
                                                 "",
                                                 "",
-                                                ""))
+                                                "",
+                                                0,
+                                                0,
+                                                0,
+                                                0))
 
     conn.commit()
 
