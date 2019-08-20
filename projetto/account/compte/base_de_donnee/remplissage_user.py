@@ -151,15 +151,11 @@ def insertion_user(nom, prenom, date, sexe, email, fixe, password,
                 deux,
                 trois,
                 quattre)
-                values(%s, %s, %s, %s, %s);""",(user,
+                values(%s, %s, %s, %s, %s, 0, 0, 0, 0);""",(user,
                                                 "",
                                                 "",
                                                 "",
-                                                "",
-                                                0,
-                                                0,
-                                                0,
-                                                0))
+                                                ""))
 
     conn.commit()
 
