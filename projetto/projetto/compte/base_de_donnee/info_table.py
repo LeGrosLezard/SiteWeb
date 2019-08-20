@@ -74,8 +74,24 @@ def donnee_telephone_portable(portable):
 
 
 
+def users(user):
+    
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD) 
+
+    cur = conn.cursor()
+    
+    cur.execute("""SELECT * from users
+                WHERE pseudo = '{}'""".format(user))
+                       
+    
+    rows = cur.fetchall()
+    liste = [i for i in rows]
 
 
+    return liste
 
 
 
