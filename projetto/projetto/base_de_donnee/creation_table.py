@@ -109,6 +109,10 @@ class Table:
                     bilan1 TEXT,
                     bilan2 TEXT,
                     bilan3 TEXT,
+                    un INT,
+                    deux INT,
+                    trois INT,
+                    quatrte INT,
                     id_user integer REFERENCES users (id));""")
         
         conn.commit()
