@@ -10,63 +10,45 @@ def function_code_postal(lieu):
     request_html = requests.get(path)
     page = request_html.content
     soup_html = BeautifulSoup(page, "html.parser")
-    propriete = soup_html.find_all("h2")
+    propriete = soup_html.find_all("td")
 
-    liste = []
-    liste.append(propriete)
-
-    return liste
-
-
-
-def code_postal(lieu):
-    """Thank to the postal code we can
-    call the URL of weather. Indeed,
-    this url need the city and the postal code."""
-
-    liste = function_code_postal(lieu)
-
-    code = ''
-    liste_code = []
-
-    for i in liste[0]:
-        for j in i:
-            for k in j:
-                try:
-                    k = int(k)
-                    if k == int(k):
-                        code += str(k)
-
-                except ValueError:
-                    if code != '':
-                        liste_code.append(code)
-                        code = ''
-                    else:
-                        pass
+    code = []
+    #We trying it with only one code
+    for i in range(len(propriete)):
+        if propriete[i].string == "Code Insee":
+            code.append(propriete[i + 1].string)
 
 
-    return liste_code[0]
+    if code == []:
+        #We trying it with multiple codes.
+        for i in range(len(propriete)):
+            try:
+                numero = int(propriete[i].string)
+                code.append(numero)
+            except:
+                pass
 
-
-
-
+    return code
 
 
 
 from CONFIG import PATH_POLE
 def pole_emploi(lieu, emploi, rayon):
 
-    code = code_postal(lieu)
+    code = function_code_postal(lieu)
 
+    for i in code:
+        path = PATH_POLE.format(i, emploi, rayon)
 
-    path = PATH_POLE.format(code, emploi, rayon)
+        request_html = requests.get(path)
+        page = request_html.content
+        soup_html = BeautifulSoup(page, "html.parser")
 
-    request_html = requests.get(path)
-    page = request_html.content
-    soup_html = BeautifulSoup(page, "html.parser")
-
+        propriete = soup_html.findAll("div",{"class":"media"})
     
-    propriete = soup_html.findAll("div",{"class":"media"})
+        if propriete != []:
+            break
+
 
     liste_w1 = []
     
