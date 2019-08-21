@@ -19,12 +19,6 @@ from site_scrap import recherche_INZEJOB
 
 
 
-
-def recherche_entreprise_via_google(nom, ville):
-    pass
-
-
-
 def etape_UNE(lieu, LISTE_EMPLOI_UTILISATEUR, rayon):
     """Dans un premier temps on cherche
     toutes les url de DESCRIPTION
@@ -34,7 +28,8 @@ def etape_UNE(lieu, LISTE_EMPLOI_UTILISATEUR, rayon):
 
     print("ETAPE UNE")
     print("")
-    
+
+    liste_path = []
     for i in LISTE_EMPLOI_UTILISATEUR:
 
         liste_w1, lieu = pole_emploi(lieu, i, rayon)
@@ -43,8 +38,6 @@ def etape_UNE(lieu, LISTE_EMPLOI_UTILISATEUR, rayon):
             liste_path.append(i)
 
     return liste_path
-
-
 
 
 
@@ -68,6 +61,9 @@ def ETAPE_DEUX(liste):
 
 
     return recuperation_info
+
+
+
 
 
 
@@ -170,17 +166,19 @@ def ETAPE_SIX(liste):
 
 
 
-if __name__ == "__main__":
+
+
+def recherche_email_final(emploi, lieu, rayon):
 
 
     #def etape_mail():
 
     ENTREPRISE = []
 
-    LISTE_EMPLOI_UTILISATEUR = ["python django"]
+    LISTE_EMPLOI_UTILISATEUR = [emploi]
 
-    lieu = "paris"
-    rayon = "10"
+    lieu = lieu
+    rayon = rayon
     liste_path = []
 
 
@@ -265,3 +263,25 @@ if __name__ == "__main__":
     print(ENTREPRISE)
 
     print(lieu)
+
+
+
+
+
+
+if __name__ == "__main__":
+    recherche_email_final("développeur web python", "paris", "20")
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
