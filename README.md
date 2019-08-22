@@ -34,8 +34,18 @@ Nous effectuons cela via une tache cron depuis un serveur hébergé par digital 
 
 # ALGORYTHME
 
-a faire
+a faire + vidéo
 
+
+# LES DOCUMENTS SE SITUENT DANS DOCUMENT
+
+- docuemnt truk fonctionnel
+
+- technique
+
+- zooning
+
+- truk balade site ect
 
 
 -------------------------------------------------------
