@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Landing Page - Start Bootstrap Theme</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="/static/mon_compte/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="/static/mon_compte/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="/static/mon_compte/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+  <!-- Custom styles for this template -->
+  <link href="/static/mon_compte/css/landing-page.min.css" rel="stylesheet">
+
+
+  <!-- Custom CSS -->
+  <link href="/static/home/css/stylish-portfolio.min.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+
+
+
+
+
+
+  
+</head>
+
+
+<body style="position:;">
+
+  <!-- Navigation -->
+  <section id="nav">
+  <a class="menu-toggle rounded" href="#">
+    <i class="fas fa-bars"></i>
+  </a>
+  <nav id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand">
+        <a class="js-scroll-trigger" href="#page-top">Menu</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="">Accueil</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="compte">Mon Compte</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="compte#cv_icone">Mes Documents</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="le_questionnaire">Le Questionnaire</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="app_email/questionnaire_email">Ma démarche</a>
+      </li>
+    </ul>
+  </nav>
+  </section>
+
+
+  <div id="un" style="float:right;margin-right:200px;">Click</div><br><br>
+
+    <section id="telechargement" style="display:none;">
+
+        <form action="page_cv" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+
+            <p>
+                STP TELECHARGE LE PDF ET RENOMME LE AVEC TON PSEDUO PSEDUO et upload le!<br>
+                {{ form.docfile }}                                            
+            </p>
+
+            <p><input type="submit" value="Upload" /></p>
+        </form>
+    </section>
+
+
+
+    <section id="EDITOR" style="position:;">
+
+    
+    <div class="container">
+      <div class="row">
+      
+        <div class="col-sm-12 col-mg-5 col-lg-12" id="gauche">
+            <br><br>
+            <img src="/static/mon_compte/img/testimonials-2.jpg" style="float:right;
+                margin-right:150px;width:150px;height:150px;">
+            <h3>J E A N - B A P T I S T E<br>
+            <h3>S E R V A I S </h3><br>
+            <h3 style="color:#79A9B7;">D E V E L O P P E U R
+                &nbsp;&nbsp;D ' A P P L I C A T I O N &nbsp;&nbsp;<br>
+                W E B &nbsp;&nbsp;P Y T H O N</h3>
+            <p style="font-size:18px;">
+            Je suis à la recherche d'un emploi en tant que développeur junior
+            ou je pourrai m'épanouir. Étant passionné
+            par le développement je cherche à intégrer
+            une équipe où mes connaissances
+            de développeur python seront utiles.
+            Je suis quelqu'un de créatif,
+            consciencieux et travailleur.
+            </p>
+            <br><br><br>
+        </div>
+      </div>
+    </div>
+
+
+
+        
+    <div class="container">
+      <div class="row">
+      
+        <div class="col-sm-5" style="background:#BECFEC;text-align:justify;">
+                <br>
+                <h3 style="color:#79A9B7;">C O N T A C T</h3><br>
+                <p style="font-size:18px;"><strong>Téléphone : </strong> 06 49 08 80 54<br></p>
+                <p style="font-size:18px;"><strong>Adresse : </strong> Lot Saint Francois 6 rue des 3 becs<br>
+                26400 Aouste/sye</p>
+                <p style="font-size:18px;"><strong>Linkdedin : </strong> https://www.linkedin.com/feed/</p>
+                <p style="font-size:18px;"><strong>Mail : </strong> jb26400@hotmail.fr</p>
+                <p style="font-size:18px;"><strong>Github : </strong> Pastrouveedepseudo</p>
+                
+                
+            
+                <br><br><br>
+        </div>
+
+        
+        <div class="col-sm-7">
+            <div style="background:white;">
+                <br>
+                <h3 style="color:#79A9B7;">F O R M A T I O N </h3><br>
+                <p style="font-size:18px;">
+                    <strong>2018 - 2019 : Développeur d'application web python OpenClassrooms</strong><br>
+                    <em>Apprentissage de l'analyse d'un cahier des charges,
+                    des solutions techniques, des tests, des validations et de la production
+                    des fonctionnalités. Mise en oeuvre du support technique et
+                    fonctionnel du site.</em><br><br>
+                    
+                    <strong>2014 - 2017: Licence de Sciences Cognitives Lyon 2</strong><br>
+                    <em>Apprentissage des processus cognitifs (mémoire, attention,
+                    fonctions exécutives...)
+                    ainsi que de leur fonctionnement, localisation, application.
+                    </em><br><br>
+                    <strong>2013 - 2014: Baccalauréat Littérature - Mention Assez bien</strong>
+                </p>
+                <br><br><br>
+            </div>
+        </div>
+
+
+      </div>
+    </div>
+
+
+
+
+
+    <div class="container">
+      <div class="row">
+      
+        <div class="col-sm-5" style="background:#BECFEC;">
+                <h3 style="color:#79A9B7;">C O M P E T E N C E S</h3>
+                <br>
+                <p style="font-size:18px;">
+                    &nbsp;&nbsp;-  &nbsp;&nbsp; <strong>PYTHON : </strong>9/10<br>
+                    &nbsp;&nbsp;- &nbsp;&nbsp; <strong>JAVASCRIPT : </strong>8/10<br>
+                    &nbsp;&nbsp;- &nbsp;&nbsp; <strong>BACKEND : </strong>8/10<br>
+                    &nbsp;&nbsp;-  &nbsp;&nbsp; <strong>FRONTEND : </strong>5/10<br>
+                    &nbsp;&nbsp;-  &nbsp;&nbsp; <strong>SQL : </strong>8/10</li><br>
+                    &nbsp;&nbsp;-  &nbsp;&nbsp; <strong>ANGLAIS : courrant</strong><br>
+                    &nbsp;&nbsp;-  &nbsp;&nbsp; <strong>ITALIEN : universitaire</strong><br>
+                    
+                </p>
+                <br><br>
+
+        </div>
+        
+        <div class="col-sm" style="text-align:justify;">
+                <h3 style="color:#79A9B7;">PROJET 1</h3><br>
+                <strong style="font-size:20px;">Le magazine virtuel</strong><br>
+
+                <p style="font-size:18px;">
+                    Un webzine à but informatif composé de deux parties.
+                    L'une propose d'aider les personnes en difficulté avec les concepts de la mode.
+                    Pour cela nous proposant plusieurs fonctionnalités.
+                    Comme la recherche de coiffeur dans sa ville, visualisation et teste
+                    de perruque.
+                    L'autre concerne la pollution. Saviez-vous que la mode est le second facteur de
+                    pollution après l'industrie du pétrole ?
+                    Nous essayons de sensibiliser les lecteurs par des données en temps réel
+                    une prédiction de la pollution ainsi que de pouvoir la suivre par le vent.<br>
+                    <em>https://github.com/pastrouveedespeudo/Final-Project</em><br>
+                    <em>https://myprofilmypollution.herokuapp.com</em>
+                </p>
+                <br><br>
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-sm-5" style="background:#BECFEC;">
+                <h3 style="color:#79A9B7;">ENVIRONEMENT/LOGICIEL</h3>
+                <br>
+                <p style="font-size:18px;">
+                    &nbsp;&nbsp;<strong>- &nbsp;&nbsp;</strong> OppenOffice<br>
+                    &nbsp;&nbsp;<strong>- &nbsp;&nbsp;</strong> Paint<br>
+                    &nbsp;&nbsp;<strong>- &nbsp;&nbsp;</strong> Python<br>
+                    &nbsp;&nbsp;<strong>- &nbsp;&nbsp;</strong> JavaScript<br>
+                    &nbsp;&nbsp;<strong>- &nbsp;&nbsp;</strong> SQL<br>
+                    &nbsp;&nbsp;<strong>- &nbsp;&nbsp;</strong> Django<br>
+                    &nbsp;&nbsp;<strong>- &nbsp;&nbsp;</strong> Flask<br>
+                    &nbsp;&nbsp;<strong>- &nbsp;&nbsp;</strong> CV2<br>
+                    &nbsp;&nbsp;<strong>- &nbsp;&nbsp;</strong> BS4...
+                </p>
+                <br><br><br>
+        </div>
+
+
+        
+        <div class="col-sm" style="text-align:justify;">
+                <h3 style="color:#79A9B7;">PROJET 2</h3><br>
+                <strong style="font-size:18px;">Projetto</strong><br>
+                <p style="font-size:18px;">
+                Un site web qui propose d'aider les personnes
+                sans emploi à en trouver un rapidement.
+                Nous proposons d'accompagner l'utilisateur dans l'établissement
+                d'un cv d'une lettre de motivation
+                et d'un message au recruteur. Nous nous
+                occupons du reste par l'envoi
+                de ses informations à différents recruteurs.
+                Ce programme d'envoi d'email est basé sur le site
+                de pole emploi par scrapage.<br>
+                <em>https://github.com/LeGrosLezard/SiteWeb</em><br>
+                <em>https://projettoemploi.herokuapp.com</em></p>
+                
+                <br><br>
+        </div>
+
+      </div>
+    </div>
+
+
+    
+
+
+
+    <div class="container">
+      <div class="row">
+      
+        <div class="col-sm-5" style="background:#BECFEC;">
+                <h3 style="color:#79A9B7;text-align:justify;">SOFT SKILLS</h3><br>
+                <p style="font-size:18px;">
+                Je suis quelqu'un de passionné attentionné et qui donne beaucoup
+                d'attention dans les tâches en cours. Je suis plutôt discret
+                mais qui sais se faire entendre quand il le faut.</p>
+                <br><br><br>
+        </div>
+        
+        <div class="col-sm">
+                <h3 style="color:#79A9B7;">PROJET 3</h3>
+                <br>
+                <strong style="font-size:18px;">Synergo</strong><br>
+                <p style="font-size:18px;">
+                    est un projet qui a pour but d'aider les personnes qui ont
+                    des difficultés avec la communication non verbale et dans la reconnaissance
+                    des émotions à travers la librairie OpenCV. Nous nous servons par exemple
+                    d'haar cascades, de detectiong box ect...
+                    <br>
+                    <em>https://github.com/LeGrosLezard/cadju</em><br>
+                    <em>https://synergo.herokuapp.com</em>
+                </p>
+
+                <br><br>
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <div class="container">
+      <div class="row">
+      
+        <div class="col-sm-5" style="height:200px;background:#BECFEC;">
+          
+        </div>
+        
+        <div class="col-sm">
+                <h3 style="color:#79A9B7;">UN PEU PLUS SUR MOI</h3>
+                <br>
+                <p style="font-size:18px">
+                    J'aime les jeux vidéo comme Tetris et Osu.<br>
+                    J'aime lire de la Science Fiction.<br>
+                    J'aime lire les veilles technologiques sur les nouveautés.
+                    de tous les domaines.<br>
+                    Tennis de table et Taekwondo durant mon adolescence.
+               
+                </p>
+                <br><br><br>
+        </div>
+
+      </div>
+    </div>
+</section>
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <style>
+        #gauche{
+            background:#bdd0e7;
+        }
+
+        #contact{
+            font-size:1.5em;
+        }
+        #un:hover,
+        #deux:hover,
+        #trois:hover{
+            border:2px solid black;
+        }
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Testimonials -->
+  <section class="testimonials text-center bg-light" id="Testimonials">
+    <div class="container">
+
+    
+      <div class="row">
+
+
+        <div class="col-lg-4">
+          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+          
+            <img class="img-fluid rounded-circle mb-3"
+                src="/static/mon_compte/img/testimonials-2.jpg" 
+                id="un">
+                
+            <h5>Vous l'envoyez !</h5>
+            <p class="font-weight-light mb-0">Envoyez le vous par mail !</p>
+          </div>
+        </div>
+
+
+
+        <div class="col-lg-4">
+          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+            <img class="img-fluid rounded-circle mb-3"
+                src="/static/mon_compte/img/testimonials-2.jpg" 
+                id="deux" onclick="document.location.href='comment_faire_mon_cv'">
+                
+            <h5>Retour à la composition de votre CV</h5>
+            <p class="font-weight-light mb-0">Prenez votre temps !</p>
+          </div>
+        </div>
+
+
+
+        <div class="col-lg-4">
+          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+          
+            <img class="img-fluid rounded-circle mb-3"
+                src="/static/mon_compte/img/testimonials-2.jpg" alt=""
+                id="trois" onclick="document.location.href='page_motivation'">
+                
+            <h5>Votre lettre de motivation</h5>
+            <p class="font-weight-light mb-0">Allez visualiser votre lettre de motivation</p>
+          </div>
+        </div>
+
+
+
+        
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <!-- Call to Action -->
+  <section class="call-to-action text-white text-center" id="question">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <h2 class="mb-4">Aidez-nous à améliorer nos conseils!</h2>
+        </div>
+        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+          <form>
+            <div class="form-row">
+              <div class="col-12 col-md-9 mb-2 mb-md-0">
+                <input type="text" size="40" placeholder="Entez votre conseil">
+              </div>
+              <div class="col-12 col-md-3">
+                <button type="submit" class="btn btn-block btn-lg btn-primary">Valider</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <!-- Footer -->
+  <footer class="footer bg-light" id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+          <ul class="list-inline mb-2">
+            <li class="list-inline-item">
+              <a href="#">About</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Contact</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Terms of Use</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Privacy Policy</a>
+            </li>
+          </ul>
+          <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2019. All Rights Reserved.</p>
+        </div>
+        <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item mr-3">
+              <a href="#">
+                <i class="fab fa-facebook fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item mr-3">
+              <a href="#">
+                <i class="fab fa-twitter-square fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fab fa-instagram fa-2x fa-fw"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="/static/mon_compte/vendor/jquery/jquery.min.js"></script>
+  <script src="/static/mon_compte/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/home/js/stylish-portfolio.min.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+<script>
+
+
+
+
+var doc = new jsPDF();
+var specialElementHandlers = {
+    '#editor': function (element, renderer) {
+        return true;
+    }
+};
+
+$('#un').click(function () {
+    document.getElementById("un").style.display = "none";
+    document.getElementById("Testimonials").style.display = "none";
+    document.getElementById("footer").style.display = "none";
+    document.getElementById("nav").style.display = "none";
+    document.getElementById("question").style.display = "none";
+    document.getElementById("telechargement").style.display = "none";
+
+
+
+    var pdf = new jsPDF();
+    pdf.addHTML(document.getElementById('EDITOR').value, function() {
+        pdf.save('web.pdf');
+    });
+
+    document.getElementById("un").style.display = "block";
+    document.getElementById("Testimonials").style.display = "block";
+    document.getElementById("footer").style.display = "block";
+    document.getElementById("nav").style.display = "block";
+    document.getElementById("question").style.display = "block";
+    document.getElementById("telechargement").style.display = "block";
+    
+})
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
