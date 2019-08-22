@@ -2,6 +2,10 @@
 
 --------------------------------------------------------
 
+# QUI ?
+
+Jeune developpeur web sortant de la formation OpenClassrooms ca réduit le 0-10%...0...
+
 # Quoi ?
 
 Projetto est un site en logne qui permet aux chercheurs d'emploi de trouver un travail plus rapidement et plus efficacement.
@@ -23,7 +27,7 @@ inzejob).
 
 Ensuite une fois le nom de l'entreprise nous allons chercher une adresse mail sur google.
 
-Bien sur des fois cela ne marche pas comme nous le voudrions et obtenons une dixiène de site sur les 100. Notre taux de reussite est alors de l'ordre de 10 % 
+Bien sur des fois cela ne marche pas comme nous le voudrions et obtenons une dixiène de site sur les 100. Notre taux de reussite est alors de l'ordre de 0-10 % 
 
 # COMPLEMENTS
 
