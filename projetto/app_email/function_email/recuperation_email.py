@@ -173,7 +173,7 @@ def recherche_email_final(emploi, lieu, rayon):
 
     #def etape_mail():
 
-    ENTREPRISE = []
+    
 
     LISTE_EMPLOI_UTILISATEUR = [emploi]
 
@@ -253,16 +253,18 @@ def recherche_email_final(emploi, lieu, rayon):
         elif i[0][0].lower() == "inzejob":
             entreprise = recherche_INZEJOB(url)
 
-
-        print(entreprise)
-        ENTREPRISE.append([[entreprise], [url]])
+        try:
+            #print(entreprise)
+            ENTREPRISE.append([[entreprise], [url]])
+        except:
+            pass
         
     print("")
     print(emails)
-    print(entreprise_bas_page)
-    print(ENTREPRISE)
+    #print(entreprise_bas_page)
+    #print(ENTREPRISE)
 
-    print(lieu)
+    #print(lieu)
 
 
 
@@ -270,7 +272,7 @@ def recherche_email_final(emploi, lieu, rayon):
 
 
 if __name__ == "__main__":
-    recherche_email_final("développeur web python", "paris", "20")
+    recherche_email_final("menuisier", "lyon", "60")
 
 
 
