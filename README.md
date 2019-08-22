@@ -4,7 +4,7 @@
 
 # QUI ?
 
-Jeune developpeur web sortant de la formation OpenClassrooms ca réduit le 0-10%...0...
+Jeune developpeur web sortant de la formation OpenClassrooms 
 
 # Quoi ?
 
@@ -27,7 +27,7 @@ inzejob).
 
 Ensuite une fois le nom de l'entreprise nous allons chercher une adresse mail sur google.
 
-Bien sur des fois cela ne marche pas comme nous le voudrions et obtenons une dixiène de site sur les 100. Notre taux de reussite est alors de l'ordre de 0-10 % 
+Bien sur des fois la nombre d'email n'est pas tres grand (métier rare, petite ville) 
 
 # COMPLEMENTS
 
