@@ -23,7 +23,7 @@ inzejob).
 
 Ensuite une fois le nom de l'entreprise nous allons chercher une adresse mail sur google.
 
-Bien sur des fois cela ne marche pas.
+Bien sur des fois cela ne marche pas comme nous le voudrions et obtenons une dixiène de site sur les 50. Notre taux de reussite est alors de l'ordre de 20 % (jcrois pas sur faut faire vp*100/vt)
 
 # COMPLEMENTS
 
