@@ -29,7 +29,7 @@ Bien sur des fois cela ne marche pas.
 
 Afin de ne pas spammer nous mettons en database les sites et référence de la demande en database.
 
-Nous effectuons cela via un serveur hébergé par digital océan car notre site web est sur heroku qui impose un time out d'au maximum 30 secondes. Notre opération de mail peut prendre plusieurs minutes
+Nous effectuons cela via une tache cron depuis un serveur hébergé par digital océan car notre site web est sur heroku qui impose un time out d'au maximum 30 secondes. Notre opération de mail peut prendre plusieurs minutes
 
 
 # ALGORYTHME
