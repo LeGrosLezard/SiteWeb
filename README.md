@@ -1,5 +1,17 @@
 # SiteWeb
 
+-------------------------------------------------------
+
+finir le cv
+
+finir mail all ojd
+
+commencer truk synergo en testant des vidéo (js opencv mais dabord avec python)
+
+faire un reseau seulement pouce pour commencer mais enfete c quand je l'ai je fais quoi apres ? j'en fais un haarcascade ?
+
+trouver un truk a faire avec le truk main
+
 -------------------------------------------------
 
 finir mail all
