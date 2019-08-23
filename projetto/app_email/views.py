@@ -5,6 +5,8 @@ from .function_email.email_function import email
 from .function_email.CONFIG import PATH_DOCUMENT
 from .function_email.database.database import recup_message
 from .function_email.CONFIG import MESSAGE_MAIL
+from .function_email.recuperation_email import recherche_email_final
+from .views_function import traitement_reponse
 def questionnaire_email(request):
 
     pseudo = request.user
@@ -36,7 +38,7 @@ def questionnaire_email(request):
             message_recruteur = MESSAGE_MAIL.format(msg[0], msg[1], msg[6],
                                                     msg[7], msg[8],
                                                     msg[9], msg[10], msg[11],
-                                                    msg[2], msg[3], msg[4], a[5])
+                                                    msg[2], msg[3], msg[4], msg[5])
 
             for i in liste:
                 if i == "":
@@ -48,25 +50,18 @@ def questionnaire_email(request):
                 
         if all_function:
 
-            metier1 = request.POST.get('metier1')
-            metier2 = request.POST.get('metier2')
-            metier3 = request.POST.get('metier3')
-            metier4 = request.POST.get('metier4')
-            metier5 = request.POST.get('metier5')
-            metier6 = request.POST.get('metier6')
-            metier7 = request.POST.get('metier7')
-            ville = request.POST.get('ville')
-            rayon = request.POST.get('rayon')
+            recherche = request.POST.get('recherche')
 
-            liste = [metier1, metier2, metier3, metier4,
-                     metier5, metier6, metier7]
             
-            msg = recup_message(pseudo)
-            message_recruteur = MESSAGE_MAIL.format(msg[0], msg[1], msg[6],
-                                                    msg[7], msg[8],
-                                                    msg[9], msg[10], msg[11],
-                                                    msg[2], msg[3], msg[4], a[5])
-
+            emploi, lieu = traitement_reponse(recherche)
+            recherche_email_final(emploi, lieu)
+            
+##            msg = recup_message(pseudo)
+##            message_recruteur = MESSAGE_MAIL.format(msg[0], msg[1], msg[6],
+##                                                    msg[7], msg[8],
+##                                                    msg[9], msg[10], msg[11],
+##                                                    msg[2], msg[3], msg[4], msg[5])
+##
 
 
 
