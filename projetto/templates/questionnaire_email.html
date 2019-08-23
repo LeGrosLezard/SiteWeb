@@ -127,7 +127,7 @@
                   <input type="text" placeholder="mail" id="mail_8" value=""><br><br>
 
                   <input type="text" placeholder="sujet du message"
-                      id="sujet" value=""><br><br>
+                      id="sujet_mail" value=""><br><br>
                   
                   <div id="required"></div>
 
@@ -152,15 +152,17 @@
 
        
               <section id="all">
+
+                  <!-- ICI C LE QUESTIONNAIRE -->
+                  <section id="premiere_partie_all">
+              
                   <br><br><br><br>
                   <h2>Voici le dernier formulaire à remplir</h2><br><br>
                   <strong style="color:red;">Attention cela peut prendre un certain temps</strong><br><br>
                   <em>ex: Prof de math, professeur de math, professeur de mathématique </em><br><br>
                   Quel est le métier auquel vous souhaitez postuler ?<br><br>
-                  <input type="text" placeholder="Nom du métier" id="metier1"><br><br>
-                  <input type="text" placeholder="Sujet du message" id="sujet_all"><br><br>
-
-
+                  
+                  <input type="text" placeholder="Nom du métier" id="metier_all"><br><br>
 
                   <br><br>
 
@@ -173,6 +175,22 @@
                   
                   <em>Nous vous enverrons et au recruteur et à vous les demande de cv.</em><br>
                   <strong>Bien à vous l'équipe de Projetto</strong>
+
+
+                  </section>
+
+
+                  
+                  <!-- ICI C LA REPONSE POUR EVITER LES TIME OUTS -->
+                  <section id="seconde_partie_all">
+                    <br><br><br><br>
+                    <div id="premiere_reponse"></div>
+
+                  </section>
+
+
+
+                  
              </section>
 
 
@@ -267,58 +285,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-  <style>
-      #icone_bilan:hover,
-      #icone_hover:hover{
-          background:#ECB807
-      }
-      #one:hover,
-      #two:hover{
-        border:1px solid black;
-      }
-      #precis,
-      #all{
-        display:none;
-      }
-      input{
-        text-align:center;
-      }
-  </style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <!-- Footer -->
   <footer class="footer text-center">
     <div class="container">
@@ -384,29 +350,21 @@
 
 <script>
 
-//---------------------------------------------------------------------function Bilan
-
-    function recup_mail_all(){
-        var metier_recherche = document.getElementById("mail_1").value;
-
-        var ville = document.getElementById("ville").value;
-        var sujet = document.getElementById("sujet_all").value;
-
-        if(sujet == ""){
-            document.getElementById("required").innerHTML = "Remplissez le sujet de votre requete"
-            return ""
-        }
-        else{
-            return [ville, sujet, metier_recherche]
-        }
-
-    };
-
-
-//---------------------------------------------------------------------function Bilan
 
 
 
+function reponse_premiere_partie(data){
+  document.getElementById("premiere_partie_all").style.display = "none";
+  document.getElementById("seconde_partie_all").style.display = "block";
+
+  if (data == ""){
+    data = "Rien trouvé essayez avec un autre nom d'emploi. Professeur -> Professeur francais"
+    document.getElementById("premiere_reponse").innerHTML = data;
+  }
+  else{
+    document.getElementById("premiere_reponse").innerHTML = data;
+  };
+}
 
 
 //---------------------------------------------------------------------all mail
@@ -431,7 +389,7 @@ jQuery("#bouton_all").on("click", function(e){
           document.getElementById("#Alert").inner.html = "aie"; 
       }
       else{
-          {}
+        reponse_premiere_partie(data)
           
           
       };
@@ -451,6 +409,19 @@ jQuery("#bouton_all").on("click", function(e){
 
 
 
+//---------------------------------------------------------------------function Bilan
+
+    function recup_mail_all(){
+      
+        var metier_recherche = document.getElementById("metier_all").value;
+        var ville = document.getElementById("ville").value;
+        
+        return [metier_recherche, ville]
+
+    };
+
+
+//---------------------------------------------------------------------function Bilan
 
 
 
@@ -535,23 +506,22 @@ jQuery("#one").on("click", function(e){
 
 //---------------------------------------------------------------------function all mail
 
-function recup_metier(){
+function recup_mail(){
 
-    var a = document.getElementById("metier1").value;
-    var b = document.getElementById("metier2").value;
-    var c = document.getElementById("metier3").value;
-    var d = document.getElementById("metier4").value;
-    var e = document.getElementById("metier5").value;
-    var f = document.getElementById("metier6").value;
-    var g = document.getElementById("metier7").value;
-    var h = document.getElementById("ville").value;
-    var i = document.getElementById("rayon").value;
-    var j = document.getElementById("sujet_all").value;
+    var a = document.getElementById("mail_1").value;
+    var b = document.getElementById("mail_2").value;
+    var c = document.getElementById("mail_3").value;
+    var d = document.getElementById("mail_4").value;
+    var e = document.getElementById("mail_5").value;
+    var f = document.getElementById("mail_6").value;
+    var g = document.getElementById("mail_7").value;
+    var h = document.getElementById("mail_8").value;
+    var i = document.getElementById("sujet_mail").value;
     
     
 
 
-    return [a, b, c, d, e, f, g, h, i, j];
+    return [a, b, c, d, e, f, g, h, i];
 
 
 }
@@ -584,6 +554,23 @@ function recup_metier(){
 
 
 
+  <style>
+      #icone_bilan:hover,
+      #icone_hover:hover{
+          background:#ECB807
+      }
+      #one:hover,
+      #two:hover{
+        border:1px solid black;
+      }
+      #precis,
+      #all{
+        display:none;
+      }
+      input{
+        text-align:center;
+      }
+  </style>
 
 
 
