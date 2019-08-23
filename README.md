@@ -1,5 +1,16 @@
 # SiteWeb
 
+----------------------------------------------------
+
+- cv a faire (longueur selon la longueur)
+
+- les messages a faire pour mail all
+
+- le question/reponse pour le timeout au pire si la liste dépasse les 20 recherches ont fait retour et on reprend d'ou on était
+
+
+
+
 --------------------------------------------------------
 
 # QUI ?
