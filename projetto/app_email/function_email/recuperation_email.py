@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-from .site_scrap import pole_emploi
+
 
 
 from .site_scrap import recherche_via_image
@@ -18,8 +18,8 @@ from .site_scrap import recherche_INZEJOB
 
 
 
-
-def etape_UNE(lieu, LISTE_EMPLOI_UTILISATEUR, rayon):
+from .site_scrap import pole_emploi
+def etape_UNE(lieu, emploi, rayon):
     """Dans un premier temps on cherche
     toutes les url de DESCRIPTION
     de pole qui match avec notre
@@ -30,12 +30,11 @@ def etape_UNE(lieu, LISTE_EMPLOI_UTILISATEUR, rayon):
     print("")
 
     liste_path = []
-    for i in LISTE_EMPLOI_UTILISATEUR:
 
-        liste_w1, lieu = pole_emploi(lieu, i, rayon)
+    liste_w1, lieu = pole_emploi(lieu, emploi, rayon)
 
-        for i in liste_w1:
-            liste_path.append(i)
+    for i in liste_w1:
+        liste_path.append(i)
 
     return liste_path
 
@@ -171,9 +170,6 @@ def ETAPE_SIX(liste):
 def recherche_email_final(emploi, lieu):
 
 
-    #def etape_mail():
-
-    
 
     LISTE_EMPLOI_UTILISATEUR = [emploi]
 
@@ -185,6 +181,9 @@ def recherche_email_final(emploi, lieu):
     liste_url = etape_UNE(lieu, LISTE_EMPLOI_UTILISATEUR, rayon)
     print(liste_url)
     print("\n")
+
+
+    return liste_url
 
     liste_description = ETAPE_DEUX(liste_url)
     print(liste_description)
@@ -271,8 +270,8 @@ def recherche_email_final(emploi, lieu):
 
 
 
-##if __name__ == "__main__":
-##    recherche_email_final("développeur web python", "valence", "60")
+#if __name__ == "__main__":
+#    recherche_email_final("développeur web python", "valence", "60")
 
 
 
