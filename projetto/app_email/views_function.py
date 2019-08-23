@@ -10,7 +10,7 @@ def traitement_reponse(reponse):
                 rep = ""
             else:
                 rep += j
-
+    liste.append(rep)
     return liste
 
 
