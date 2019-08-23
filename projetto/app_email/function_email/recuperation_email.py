@@ -1,19 +1,19 @@
 import requests
 from bs4 import BeautifulSoup
 
-from site_scrap import pole_emploi
+from .site_scrap import pole_emploi
 
 
-from site_scrap import recherche_via_image
-from site_scrap import recherche_CARRERBUILDER
-from site_scrap import recherche_CARRERONLINE
-from site_scrap import recherche_CARRERONLINE2
-from site_scrap import recherche_CARRERONLINE3
-from site_scrap import recherche_TALENTPLUG
-from site_scrap import recherche_STEPSTONE
-from site_scrap import recherche_MONSTER
-from site_scrap import recherche_JOBCOLO
-from site_scrap import recherche_INZEJOB
+from .site_scrap import recherche_via_image
+from .site_scrap import recherche_CARRERBUILDER
+from .site_scrap import recherche_CARRERONLINE
+from .site_scrap import recherche_CARRERONLINE2
+from .site_scrap import recherche_CARRERONLINE3
+from .site_scrap import recherche_TALENTPLUG
+from .site_scrap import recherche_STEPSTONE
+from .site_scrap import recherche_MONSTER
+from .site_scrap import recherche_JOBCOLO
+from .site_scrap import recherche_INZEJOB
 
 
 
@@ -43,7 +43,7 @@ def etape_UNE(lieu, LISTE_EMPLOI_UTILISATEUR, rayon):
 
 
 
-from CONFIG import PATH_POLE_2
+from .CONFIG import PATH_POLE_2
 def ETAPE_DEUX(liste):
     """On cherche le path complet mtn en
     associant la premiere partie du path avec
@@ -67,7 +67,7 @@ def ETAPE_DEUX(liste):
 
 
 
-from site_scrap import verification_metier
+from .site_scrap import verification_metier
 def ETAPE_TROIS(liste, ville, LISTE_EMPLOI_UTILISATEUR):
 
     print("ETAPE trois")
@@ -93,7 +93,7 @@ def ETAPE_TROIS(liste, ville, LISTE_EMPLOI_UTILISATEUR):
     #return verification_metier_titre
 
 
-from site_scrap import recherche_email
+from .site_scrap import recherche_email
 def ETAPE_QUATTRE(liste):
     """Maintenant on essais de chercher un
     email dans la recherche a gauche"""
@@ -118,7 +118,7 @@ def ETAPE_QUATTRE(liste):
 
 
 
-from site_scrap import recherche_entreprise_bas_de_page
+from .site_scrap import recherche_entreprise_bas_de_page
 def ETAPE_CINQ(liste_no_mail):
 
     print("ETAPE cinq")
@@ -140,7 +140,7 @@ def ETAPE_CINQ(liste_no_mail):
 
 
 
-from site_scrap import identification_du_site
+from .site_scrap import identification_du_site
 def ETAPE_SIX(liste):
 
     print("ETAPE six")
@@ -168,7 +168,7 @@ def ETAPE_SIX(liste):
 
 
 
-def recherche_email_final(emploi, lieu, rayon):
+def recherche_email_final(emploi, lieu):
 
 
     #def etape_mail():
@@ -178,7 +178,7 @@ def recherche_email_final(emploi, lieu, rayon):
     LISTE_EMPLOI_UTILISATEUR = [emploi]
 
     lieu = lieu
-    rayon = rayon
+    rayon = "60"
     liste_path = []
 
 
@@ -271,8 +271,8 @@ def recherche_email_final(emploi, lieu, rayon):
 
 
 
-if __name__ == "__main__":
-    recherche_email_final("menuisier", "lyon", "60")
+##if __name__ == "__main__":
+##    recherche_email_final("développeur web python", "valence", "60")
 
 
 
