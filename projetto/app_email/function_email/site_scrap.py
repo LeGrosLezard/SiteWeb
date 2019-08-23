@@ -2,11 +2,12 @@ import requests
 from bs4 import BeautifulSoup
 
 
-from CONFIG import PATH_POSTAL
+from .CONFIG import PATH_POSTAL
 def function_code_postal(lieu):
     """Here we recup the postal code of the current place."""
 
     path = PATH_POSTAL.format(lieu)
+
     request_html = requests.get(path)
     page = request_html.content
     soup_html = BeautifulSoup(page, "html.parser")
@@ -14,10 +15,12 @@ def function_code_postal(lieu):
 
     code = []
     #We trying it with only one code
-    for i in range(len(propriete)):
-        if propriete[i].string == "Code Insee":
-            code.append(propriete[i + 1].string)
 
+    c = 0
+    for i in propriete:
+        if propriete[c].string == "Code Insee":
+            code.append(propriete[c + 1].string)
+        c+=1
 
     if code == []:
         #We trying it with multiple codes.
@@ -32,13 +35,15 @@ def function_code_postal(lieu):
 
 
 
-from CONFIG import PATH_POLE
+from .CONFIG import PATH_POLE
 def pole_emploi(lieu, emploi, rayon):
 
     code = function_code_postal(lieu)
+
     liste_w1 = []
     
     for i in code:
+
         path = PATH_POLE.format(i, emploi, rayon)
 
         request_html = requests.get(path)
@@ -64,7 +69,6 @@ def pole_emploi(lieu, emploi, rayon):
                 c = 0
                 ok = False
 
-                
                 for j in i:
                     #Pour chaque element de la div
                     
@@ -100,12 +104,11 @@ def pole_emploi(lieu, emploi, rayon):
                     #le href du début (bie nque l'on est mis c + 3)
                     
 
-
+    
     return liste_w1, lieu
 
     #ICI IL FAUT ABSOLUMENT FAIRE UN RETOUR AJAX PUIS
     #~RENVOYER UN AUTRE CALL
-
 
 
 
@@ -129,7 +132,7 @@ def titre(path):
 
 
 
-from CONFIG import PATH_POLE_2
+from .CONFIG import PATH_POLE_2
 def verification_metier(liste, ville, LISTE_EMPLOI_UTILISATEUR):
     """Ici on va voir si le titre == la recherche emploie
     de l'utilisateur
@@ -835,7 +838,7 @@ def traitement(liste1, liste2):
 
 
 #----------------------------------------------------GOOGLE RECHERCHE
-from CONFIG import PATH_GOOGLE
+from .CONFIG import PATH_GOOGLE
 def recherche_google(liste, lieu):
 
     final = []
