@@ -20,7 +20,7 @@
 
   <!-- Custom CSS -->
   <link href="/static/home/css/stylish-portfolio.min.css" rel="stylesheet">
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 <body id="page-top">
@@ -163,14 +163,14 @@
                   Quel est le métier auquel vous souhaitez postuler ?<br><br>
                   
                   <input type="text" placeholder="Nom du métier" id="metier_all"><br><br>
-
+                  développeur web python
                   <br><br>
 
 
                   Quel est la région/ville dans laquelle vous aimeriez avoir un travail ?<br>
                   <input type="text" placeholder="Ville" id="ville"><br><br>
-
-
+                  valence
+              
                   <input type="button" value="Envoyer !" id="bouton_all"><br><br><br>
                   
                   <em>Nous vous enverrons et au recruteur et à vous les demande de cv.</em><br>
@@ -180,11 +180,17 @@
                   </section>
 
 
+                  <!-- ICI C LES DECLENCHEURS CACHEE LES TIME OUTS -->
+                  <input type="button" id="declencheur_reponse_deux" style="display:none;">
+                  <input type="button" id="declencheur_reponse_trois" style="display:none;">
+
                   
                   <!-- ICI C LA REPONSE POUR EVITER LES TIME OUTS -->
                   <section id="seconde_partie_all">
                     <br><br><br><br>
                     <div id="premiere_reponse"></div>
+                    <div id="deuxieme_reponse"></div>
+                    <div id="troisieme_reponse"></div>
 
                   </section>
 
@@ -205,7 +211,193 @@
 
 
 
+<script>
 
+function recup_mail_all(){
+  
+    var metier_recherche = document.getElementById("metier_all").value;
+    var ville = document.getElementById("ville").value;
+    
+    return [metier_recherche, ville]
+
+};
+
+    
+
+function reponse_premiere_partie(data){
+  document.getElementById("premiere_partie_all").style.display = "none";
+  document.getElementById("seconde_partie_all").style.display = "block";
+
+  if (data == ""){
+    data = "Rien trouvé essayez avec un autre nom d'emploi. Professeur -> Professeur francais"
+    document.getElementById("premiere_reponse").innerHTML = data;
+  }
+  else{
+
+    var liste = []
+    var slash = 0
+    var ligne = ""
+    
+    for(var i = 0; i < data.length; i++){
+      if(data[i] == "/"){
+        slash += 1
+      };
+      if (slash == 5){
+        liste.push(ligne)
+        liste.push("<br>")
+        ligne = ""
+        slash = 0
+      };
+      ligne += data[i]
+    }; 
+    document.getElementById("premiere_reponse").innerHTML = "Etape 1 : Done" + "<br><br>Recherche des offres<br><br>" + liste + "<br><br> Etape 2 : Initialisation";
+  };
+}
+
+
+
+
+
+
+
+
+//---------------------------------------------------------------------all mail
+
+jQuery("#bouton_all").on("click", function(e){
+
+ recherche = recup_mail_all()
+
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+          "all_function":"all_function",
+          "recherche":String(recherche),
+          'csrfmiddlewaretoken': '{{csrf_token}}',
+      },
+      type:"POST",
+      url:"questionnaire_email"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+        reponse_premiere_partie(data)
+        document.getElementById("declencheur_reponse_deux").click()
+      };
+      
+  });
+});
+
+
+
+
+//---------------------------------------------------------------------all mail
+
+
+
+
+
+
+//---------------------------------------------------------------------SECONDE PARTIE
+
+function traitement_reponse_deux(data){
+
+  if (data == ""){
+    data = "Rien trouvé essayez avec un autre nom d'emploi. Professeur -> Professeur francais"
+    document.getElementById("deuxieme_reponse").innerHTML = data;
+  }
+  else{
+
+    var liste = []
+    var slash = 0
+    var ligne = ""
+    
+    for(var i = 0; i < data.length; i++){
+      if(data[i] == "/"){
+        slash += 1
+      };
+      if (slash == 7){
+        liste.push(ligne)
+        liste.push("<br>")
+        ligne = ""
+        slash = 0
+      };
+      ligne += data[i]
+    }; 
+    document.getElementById("deuxieme_reponse").innerHTML = "Etape 2 : Done" + "<br><br> Constitution de l'offre complete <br><br>" + liste + "<br><br> Etape 3 : Initialisation";
+  };
+}
+
+
+
+jQuery("#declencheur_reponse_deux").on("click", function(e){
+
+
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+          "seconde_partie":"seconde_partie",
+          'csrfmiddlewaretoken': '{{csrf_token}}',
+      },
+      type:"POST",
+      url:"questionnaire_email"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+        traitement_reponse_deux(data);
+        document.getElementById("declencheur_reponse_trois").click()
+      };
+      
+  });
+});
+
+//---------------------------------------------------------------------SECONDE PARTIE
+
+
+
+
+
+//---------------------------------------------------------------------TROISIEME PARTIE
+
+jQuery("#declencheur_reponse_trois").on("click", function(e){
+
+
+
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+          "troisieme_partie":"troisieme_partie",
+          'csrfmiddlewaretoken': '{{csrf_token}}',
+      },
+      type:"POST",
+      url:"questionnaire_email"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+        {}
+      };
+      
+  });
+});
+
+
+//---------------------------------------------------------------------TROISIEME PARTIE
+
+
+
+
+
+
+
+
+</script>
 
 
 
@@ -350,78 +542,6 @@
 
 <script>
 
-
-
-
-function reponse_premiere_partie(data){
-  document.getElementById("premiere_partie_all").style.display = "none";
-  document.getElementById("seconde_partie_all").style.display = "block";
-
-  if (data == ""){
-    data = "Rien trouvé essayez avec un autre nom d'emploi. Professeur -> Professeur francais"
-    document.getElementById("premiere_reponse").innerHTML = data;
-  }
-  else{
-    document.getElementById("premiere_reponse").innerHTML = data;
-  };
-}
-
-
-//---------------------------------------------------------------------all mail
-
-jQuery("#bouton_all").on("click", function(e){
-
- recherche = recup_mail_all()
-
-
- e.preventDefault();
-  jQuery.ajax({
-      data:{
-          "all_function":"all_function",
-          "recherche":String(recherche),
-          'csrfmiddlewaretoken': '{{csrf_token}}',
-      },
-      type:"POST",
-      url:"questionnaire_email"
-  })
-  .done(function(data){
-      if (data.error){
-          document.getElementById("#Alert").inner.html = "aie"; 
-      }
-      else{
-        reponse_premiere_partie(data)
-          
-          
-      };
-      
-  });
-});
-
-
-
-
-//---------------------------------------------------------------------all mail
-
-
-
-
-
-
-
-
-//---------------------------------------------------------------------function Bilan
-
-    function recup_mail_all(){
-      
-        var metier_recherche = document.getElementById("metier_all").value;
-        var ville = document.getElementById("ville").value;
-        
-        return [metier_recherche, ville]
-
-    };
-
-
-//---------------------------------------------------------------------function Bilan
 
 
 
