@@ -2,7 +2,7 @@
 
 ----------------------------------------------------
 
-- utiliser celery go serie
+- vérifier si t'as les meme resutat avec a la main et avec ce truk
 
 
 
