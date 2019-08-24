@@ -9,11 +9,10 @@ from .views_function import mail_precis_function
 from .views_function import traitement_reponse
 
 
+LISTE_LAPINOU = []
 
 def questionnaire_email(request):
 
-
-    
     pseudo = request.user
     if request.method == "POST":
 
@@ -21,11 +20,14 @@ def questionnaire_email(request):
         mail_precis = request.POST.get('mail_precis')
         #User wants automatic email        
         all_function = request.POST.get('all_function')
-        #Second part of automatic functionality
-        seconde_partie = request.POST.get('seconde_partie')
-        #Third part of automatic functionality
-        troisieme_partie = request.POST.get('troisieme_partie')
-
+        
+        un = request.POST.get('un')
+        deux = request.POST.get('deux')
+        trois = request.POST.get('trois')
+        quattre = request.POST.get('quattre')
+        cinq = request.POST.get('cinq')
+        six = request.POST.get('six')
+        sept = request.POST.get('sept')
 
         #Here it's for mail to one person
         if mail_precis:
@@ -33,8 +35,18 @@ def questionnaire_email(request):
 
         #Here it's automatic function mail
         if all_function:
+            #if it's auto so we have data send by user
+            recherche = request.POST.get('recherche')
+            #we clean it
+            emploi, lieu = traitement_reponse(recherche)
+            #let's do the first search !!!
+            liste_url_pole = etape_UNE(lieu, emploi, "60")
+            LISTE_LAPINOU.append(liste_url_pole)
+            return HttpResponse("ok")
+        
 
-            pass
+
+
 
 
 
