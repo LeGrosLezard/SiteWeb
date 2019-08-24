@@ -15,13 +15,18 @@ from .function_email.recuperation_email import ETAPE_DEUX
 from .function_email.recuperation_email import ETAPE_TROIS
 
 
-
+LISTE_CONTAINER3 = []
 LISTE_CONTAINER = []
 INFO = []
+RETOUR = []
+X = 20
 def questionnaire_email(request):
 
     global LISTE_CONTAINER
     global INFO
+    global RETOUR
+    global X
+    quattrieme = False
     
     pseudo = request.user
     if request.method == "POST":
@@ -60,13 +65,35 @@ def questionnaire_email(request):
             return HttpResponse(recuperation_info)
         
         if troisieme_partie:
-            print(LISTE_CONTAINER[0])
-            print("")
-            print("")
-            print("")
-            print("")
-            
-            ETAPE_TROIS(LISTE_CONTAINER[0], INFO[0][1], INFO[0][0])
+            if len(LISTE_CONTAINER[0]) < X + 20:
+                quattrieme = True
+                #TANT QUE LA TROISIEME PARTIE N4EST PAS FINI
+                #ON CONTINUE
+                #SI LA TROISIEME PARTIE EST FINI ON PASSE A LA 4
+                #CA VA ETRE LE DAWA MAIS C OK
+
+
+
+
+                
+            try:
+                verification = ETAPE_TROIS(LISTE_CONTAINER[0][:X], INFO[0][1], INFO[0][0])
+
+            except:
+                verification = ETAPE_TROIS(LISTE_CONTAINER[0], INFO[0][1], INFO[0][0])
+
+            for i in verification:
+                try:
+                    RETOUR.append(i[0])
+                except:
+                    pass
+                
+            LISTE_CONTAINER3.append(RETOUR)
+            X += 20
+            return HttpResponse(RETOUR)
+
+
+
 
     return render(request, 'questionnaire_email.html')
 
