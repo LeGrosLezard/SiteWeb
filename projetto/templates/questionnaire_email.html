@@ -180,15 +180,6 @@
                   </section>
 
 
-                  <!-- ICI C LES DECLENCHEURS CACHEE LES TIME OUTS -->
-                  <input type="button" id="declencheur_reponse_deux" style="display:none;">
-                  <input type="button" id="declencheur_reponse_trois" style="display:none;">
-
-                  
-                  <!-- ICI C LA REPONSE POUR EVITER LES TIME OUTS -->
-                  <section id="seconde_partie_all">
-                    <br><br><br><br>
-                    <div id="reponse"></div>
 
 
                   </section>
@@ -223,42 +214,6 @@ function recup_mail_all(){
 
     
 
-function reponse_premiere_partie(data){
-  document.getElementById("premiere_partie_all").style.display = "none";
-  document.getElementById("seconde_partie_all").style.display = "block";
-
-  if (data == ""){
-    data = "Rien trouvé essayez avec un autre nom d'emploi. Professeur -> Professeur francais"
-    document.getElementById("reponse").innerHTML = data;
-  }
-  else{
-
-    var liste = []
-    var slash = 0
-    var ligne = ""
-    
-    for(var i = 0; i < data.length; i++){
-      if(data[i] == "/"){
-        slash += 1
-      };
-      if (slash == 5){
-        liste.push(ligne)
-        liste.push("<br>")
-        ligne = ""
-        slash = 0
-      };
-      ligne += data[i]
-    }; 
-    document.getElementById("reponse").innerHTML = "Etape 1 : Done" + "<br><br>Recherche des offres<br><br>" + liste + "<br><br> Etape 2 : Initialisation";
-  };
-}
-
-
-
-
-
-
-
 
 //---------------------------------------------------------------------all mail
 
@@ -292,134 +247,6 @@ jQuery("#bouton_all").on("click", function(e){
 
 
 //---------------------------------------------------------------------all mail
-
-
-
-
-
-
-//---------------------------------------------------------------------SECONDE PARTIE
-
-function traitement_reponse_deux(data){
-
-  if (data == ""){
-    data = "Rien trouvé essayez avec un autre nom d'emploi. Professeur -> Professeur francais"
-    document.getElementById("reponse").innerHTML = data;
-  }
-  else{
-
-    var liste = []
-    var slash = 0
-    var ligne = ""
-    
-    for(var i = 0; i < data.length; i++){
-      if(data[i] == "/"){
-        slash += 1
-      };
-      if (slash == 7){
-        liste.push(ligne)
-        liste.push("<br>")
-        ligne = ""
-        slash = 0
-      };
-      ligne += data[i]
-    }; 
-    document.getElementById("reponse").innerHTML = "Etape 2 : Done" + "<br><br> Constitution de l'offre complete <br><br>" + liste + "<br><br> Etape 3 : Initialisation";
-  };
-}
-
-
-
-jQuery("#declencheur_reponse_deux").on("click", function(e){
-
-
- e.preventDefault();
-  jQuery.ajax({
-      data:{
-          "seconde_partie":"seconde_partie",
-          'csrfmiddlewaretoken': '{{csrf_token}}',
-      },
-      type:"POST",
-      url:"questionnaire_email"
-  })
-  .done(function(data){
-      if (data.error){
-          document.getElementById("#Alert").inner.html = "aie"; 
-      }
-      else{
-        traitement_reponse_deux(data);
-        document.getElementById("declencheur_reponse_trois").click()
-      };
-      
-  });
-});
-
-//---------------------------------------------------------------------SECONDE PARTIE
-
-
-
-
-
-//---------------------------------------------------------------------TROISIEME PARTIE
-
-function traitement_reponse_trois(data){
-  
-  if (data == ""){
-    data = "Rien trouvé essayez avec un autre nom d'emploi. Professeur -> Professeur francais"
-    document.getElementById("reponse").innerHTML = data;
-  }
-  else{
-    var liste = []
-    var slash = 0
-    var ligne = ""
-    
-    for(var i = 0; i < data.length; i++){
-      if(data[i] == "/"){
-        slash += 1
-      };
-      if (slash == 7){
-        liste.push(ligne)
-        liste.push("<br>")
-        ligne = ""
-        slash = 0
-      };
-      ligne += data[i]
-    }; 
-    document.getElementById("reponse").innerHTML = "Etape 3 : Done" + "<br><br> Vérification matching emploi chercher, offre <br><br>" + liste + "<br><br> Etape 4 : Initialisation";
-  };
-}
-
-jQuery("#declencheur_reponse_trois").on("click", function(e){
-
-
-
- e.preventDefault();
-  jQuery.ajax({
-      data:{
-          "troisieme_partie":"troisieme_partie",
-          'csrfmiddlewaretoken': '{{csrf_token}}',
-      },
-      type:"POST",
-      url:"questionnaire_email"
-  })
-  .done(function(data){
-      if (data.error){
-          document.getElementById("#Alert").inner.html = "aie"; 
-      }
-      else{
-        alert(data)
-        document.getElementById("declencheur_reponse_trois").click()
-      };
-      
-  });
-});
-
-
-//---------------------------------------------------------------------TROISIEME PARTIE
-
-
-
-
 
 
 
