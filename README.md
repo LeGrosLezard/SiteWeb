@@ -2,8 +2,7 @@
 
 ----------------------------------------------------
 
-- vérifier si t'as les meme resutat avec a la main et avec ce truk
-
+bon ca renvoie tj les memes mails ca ca veut dire tout refaire 
 
 
 - cv a faire (longueur selon la longueur)
