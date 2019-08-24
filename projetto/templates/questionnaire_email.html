@@ -113,76 +113,83 @@
 
 
 
-              <section id="precis">
-                  <br><br><br><br>
-                  <h2>Envoyez vos données !</h2><br><br>
-                  
-                  <input type="text" placeholder="mail" id="mail_1" value=""><br><br>
-                  <input type="text" placeholder="mail" id="mail_2" value=""><br><br>
-                  <input type="text" placeholder="mail" id="mail_3" value=""><br><br>
-                  <input type="text" placeholder="mail" id="mail_4" value=""><br><br>
-                  <input type="text" placeholder="mail" id="mail_5" value=""><br><br>
-                  <input type="text" placeholder="mail" id="mail_6" value=""><br><br>
-                  <input type="text" placeholder="mail" id="mail_7" value=""><br><br>
-                  <input type="text" placeholder="mail" id="mail_8" value=""><br><br>
+                <section id="precis">
+                    <br><br><br><br>
+                    <h2>Envoyez vos données !</h2><br><br>
+                    
+                    <input type="text" placeholder="mail" id="mail_1" value=""><br><br>
+                    <input type="text" placeholder="mail" id="mail_2" value=""><br><br>
+                    <input type="text" placeholder="mail" id="mail_3" value=""><br><br>
+                    <input type="text" placeholder="mail" id="mail_4" value=""><br><br>
+                    <input type="text" placeholder="mail" id="mail_5" value=""><br><br>
+                    <input type="text" placeholder="mail" id="mail_6" value=""><br><br>
+                    <input type="text" placeholder="mail" id="mail_7" value=""><br><br>
+                    <input type="text" placeholder="mail" id="mail_8" value=""><br><br>
 
-                  <input type="text" placeholder="sujet du message"
-                      id="sujet_mail" value=""><br><br>
-                  
-                  <div id="required"></div>
-
-
-                  <br><br>
-
-                  <input type="button" value="Envoyer !" id="bouton_precis"><br><br><br>
-                  
-                  <em>Nous vous enverrons et au recruteur et à vous les demande de cv.</em><br>
-                  <strong>Bien à vous l'équipe de Projetto</strong>
-                  
-             </section>
+                    <input type="text" placeholder="sujet du message"
+                        id="sujet_mail" value=""><br><br>
+                    
+                    <div id="required"></div>
 
 
+                    <br><br>
+
+                    <input type="button" value="Envoyer !" id="bouton_precis"><br><br><br>
+                    
+                    <em>Nous vous enverrons et au recruteur et à vous les demande de cv.</em><br>
+                    <strong>Bien à vous l'équipe de Projetto</strong>
+                    
+               </section>
 
 
 
 
 
+         
+                <section id="all">
+
+                    <!-- ICI C LE QUESTIONNAIRE -->
+                    <section id="premiere_partie_all">
+                
+                    <br><br><br><br>
+                    <h2>Voici le dernier formulaire à remplir</h2><br><br>
+                    <strong style="color:red;">Attention cela peut prendre un certain temps</strong><br><br>
+                    <em>ex: Prof de math, professeur de math, professeur de mathématique </em><br><br>
+                    Quel est le métier auquel vous souhaitez postuler ?<br><br>
+                    
+                    <input type="text" placeholder="Nom du métier" id="metier_all"><br><br>
+                    développeur web python
+                    <br><br>
+
+
+                    Quel est la région/ville dans laquelle vous aimeriez avoir un travail ?<br>
+                    <input type="text" placeholder="Ville" id="ville"><br><br>
+                    paris
+                
+                    <input type="button" value="Envoyer !" id="bouton_all"><br><br><br>
+                    
+                    <em>Nous vous enverrons et au recruteur et à vous les demande de cv.</em><br>
+                    <strong>Bien à vous l'équipe de Projetto</strong>
+
+
+                </section>
 
 
 
-       
-              <section id="all">
+                <div id="patientez"></div>
 
-                  <!-- ICI C LE QUESTIONNAIRE -->
-                  <section id="premiere_partie_all">
-              
-                  <br><br><br><br>
-                  <h2>Voici le dernier formulaire à remplir</h2><br><br>
-                  <strong style="color:red;">Attention cela peut prendre un certain temps</strong><br><br>
-                  <em>ex: Prof de math, professeur de math, professeur de mathématique </em><br><br>
-                  Quel est le métier auquel vous souhaitez postuler ?<br><br>
-                  
-                  <input type="text" placeholder="Nom du métier" id="metier_all"><br><br>
-                  développeur web python
-                  <br><br>
-
-
-                  Quel est la région/ville dans laquelle vous aimeriez avoir un travail ?<br>
-                  <input type="text" placeholder="Ville" id="ville"><br><br>
-                  paris
-              
-                  <input type="button" value="Envoyer !" id="bouton_all"><br><br><br>
-                  
-                  <em>Nous vous enverrons et au recruteur et à vous les demande de cv.</em><br>
-                  <strong>Bien à vous l'équipe de Projetto</strong>
-
-
-                  </section>
+                
+                <input type="button" id="un" style='display:none;'>
+                <input type="button" id="deux" style='display:none;'>
+                <input type="button" id="trois" style='display:none;'>
+                <input type="button" id="quattre" style='display:none;'>
+                <input type="button" id="cinq" style='display:none;'>
+                <input type="button" id="six" style='display:none;'>
+                <input type="button" id="sept" style='display:none;'>
 
 
 
-
-                  </section>
+         
 
 
 
@@ -236,8 +243,7 @@ jQuery("#bouton_all").on("click", function(e){
           document.getElementById("#Alert").inner.html = "aie"; 
       }
       else{
-        reponse_premiere_partie(data)
-        document.getElementById("declencheur_reponse_deux").click()
+        document.getElementById("un").click()
       };
       
   });
@@ -251,7 +257,219 @@ jQuery("#bouton_all").on("click", function(e){
 
 
 
+
+
+jQuery("#un").on("click", function(e){
+
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+          "un":"un",
+          'csrfmiddlewaretoken': '{{csrf_token}}',
+      },
+      type:"POST",
+      url:"questionnaire_email"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+        document.getElementById("deux").click()
+      };
+      
+  });
+});
+
+
+
+
+
+jQuery("#deux").on("click", function(e){
+
+
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+          "deux":"deux",
+          'csrfmiddlewaretoken': '{{csrf_token}}',
+      },
+      type:"POST",
+      url:"questionnaire_email"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+        document.getElementById("trois").click()
+      };
+      
+  });
+});
+
+
+
+
+jQuery("#trois").on("click", function(e){
+
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+          "trois":"trois",
+          "recherche":String(recherche),
+          'csrfmiddlewaretoken': '{{csrf_token}}',
+      },
+      type:"POST",
+      url:"questionnaire_email"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+        reponse_premiere_partie(data)
+        document.getElementById("declencheur_reponse_deux").click()
+      };
+      
+  });
+});
+
+
+
+jQuery("#quattre").on("click", function(e){
+
+ recherche = recup_mail_all()
+
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+          "all_function":"all_function",
+          "recherche":String(recherche),
+          'csrfmiddlewaretoken': '{{csrf_token}}',
+      },
+      type:"POST",
+      url:"questionnaire_email"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+        reponse_premiere_partie(data)
+        document.getElementById("declencheur_reponse_deux").click()
+      };
+      
+  });
+});
+
+
+
+
+jQuery("#cinq").on("click", function(e){
+
+ recherche = recup_mail_all()
+
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+          "all_function":"all_function",
+          "recherche":String(recherche),
+          'csrfmiddlewaretoken': '{{csrf_token}}',
+      },
+      type:"POST",
+      url:"questionnaire_email"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+        reponse_premiere_partie(data)
+        document.getElementById("declencheur_reponse_deux").click()
+      };
+      
+  });
+});
+
+
+
+jQuery("#six").on("click", function(e){
+
+ recherche = recup_mail_all()
+
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+          "all_function":"all_function",
+          "recherche":String(recherche),
+          'csrfmiddlewaretoken': '{{csrf_token}}',
+      },
+      type:"POST",
+      url:"questionnaire_email"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+        reponse_premiere_partie(data)
+        document.getElementById("declencheur_reponse_deux").click()
+      };
+      
+  });
+});
+
+
+
+
+jQuery("#sept").on("click", function(e){
+
+ recherche = recup_mail_all()
+
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+          "all_function":"all_function",
+          "recherche":String(recherche),
+          'csrfmiddlewaretoken': '{{csrf_token}}',
+      },
+      type:"POST",
+      url:"questionnaire_email"
+  })
+  .done(function(data){
+      if (data.error){
+          document.getElementById("#Alert").inner.html = "aie"; 
+      }
+      else{
+        reponse_premiere_partie(data)
+        document.getElementById("declencheur_reponse_deux").click()
+      };
+      
+  });
+});
+
+
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
