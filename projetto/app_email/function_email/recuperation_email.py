@@ -54,7 +54,7 @@ def ETAPE_DEUX(liste):
 
     recuperation_info = []
 
-    for i in liste:
+    for i in liste[0]:
         path = PATH_POLE_2.format(i)
         recuperation_info.append(path)
 
@@ -68,7 +68,8 @@ def ETAPE_DEUX(liste):
 
 from .site_scrap import verification_metier
 def ETAPE_TROIS(liste, ville, LISTE_EMPLOI_UTILISATEUR):
-
+    print(ville)
+    print(LISTE_EMPLOI_UTILISATEUR)
     print("ETAPE trois")
     print("")
 
