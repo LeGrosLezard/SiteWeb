@@ -169,7 +169,7 @@
 
                   Quel est la région/ville dans laquelle vous aimeriez avoir un travail ?<br>
                   <input type="text" placeholder="Ville" id="ville"><br><br>
-                  valence
+                  paris
               
                   <input type="button" value="Envoyer !" id="bouton_all"><br><br><br>
                   
@@ -188,9 +188,8 @@
                   <!-- ICI C LA REPONSE POUR EVITER LES TIME OUTS -->
                   <section id="seconde_partie_all">
                     <br><br><br><br>
-                    <div id="premiere_reponse"></div>
-                    <div id="deuxieme_reponse"></div>
-                    <div id="troisieme_reponse"></div>
+                    <div id="reponse"></div>
+
 
                   </section>
 
@@ -230,7 +229,7 @@ function reponse_premiere_partie(data){
 
   if (data == ""){
     data = "Rien trouvé essayez avec un autre nom d'emploi. Professeur -> Professeur francais"
-    document.getElementById("premiere_reponse").innerHTML = data;
+    document.getElementById("reponse").innerHTML = data;
   }
   else{
 
@@ -250,7 +249,7 @@ function reponse_premiere_partie(data){
       };
       ligne += data[i]
     }; 
-    document.getElementById("premiere_reponse").innerHTML = "Etape 1 : Done" + "<br><br>Recherche des offres<br><br>" + liste + "<br><br> Etape 2 : Initialisation";
+    document.getElementById("reponse").innerHTML = "Etape 1 : Done" + "<br><br>Recherche des offres<br><br>" + liste + "<br><br> Etape 2 : Initialisation";
   };
 }
 
@@ -305,7 +304,7 @@ function traitement_reponse_deux(data){
 
   if (data == ""){
     data = "Rien trouvé essayez avec un autre nom d'emploi. Professeur -> Professeur francais"
-    document.getElementById("deuxieme_reponse").innerHTML = data;
+    document.getElementById("reponse").innerHTML = data;
   }
   else{
 
@@ -325,7 +324,7 @@ function traitement_reponse_deux(data){
       };
       ligne += data[i]
     }; 
-    document.getElementById("deuxieme_reponse").innerHTML = "Etape 2 : Done" + "<br><br> Constitution de l'offre complete <br><br>" + liste + "<br><br> Etape 3 : Initialisation";
+    document.getElementById("reponse").innerHTML = "Etape 2 : Done" + "<br><br> Constitution de l'offre complete <br><br>" + liste + "<br><br> Etape 3 : Initialisation";
   };
 }
 
@@ -363,6 +362,33 @@ jQuery("#declencheur_reponse_deux").on("click", function(e){
 
 //---------------------------------------------------------------------TROISIEME PARTIE
 
+function traitement_reponse_trois(data){
+  
+  if (data == ""){
+    data = "Rien trouvé essayez avec un autre nom d'emploi. Professeur -> Professeur francais"
+    document.getElementById("reponse").innerHTML = data;
+  }
+  else{
+    var liste = []
+    var slash = 0
+    var ligne = ""
+    
+    for(var i = 0; i < data.length; i++){
+      if(data[i] == "/"){
+        slash += 1
+      };
+      if (slash == 7){
+        liste.push(ligne)
+        liste.push("<br>")
+        ligne = ""
+        slash = 0
+      };
+      ligne += data[i]
+    }; 
+    document.getElementById("reponse").innerHTML = "Etape 3 : Done" + "<br><br> Vérification matching emploi chercher, offre <br><br>" + liste + "<br><br> Etape 4 : Initialisation";
+  };
+}
+
 jQuery("#declencheur_reponse_trois").on("click", function(e){
 
 
@@ -381,7 +407,8 @@ jQuery("#declencheur_reponse_trois").on("click", function(e){
           document.getElementById("#Alert").inner.html = "aie"; 
       }
       else{
-        {}
+        alert(data)
+        document.getElementById("declencheur_reponse_trois").click()
       };
       
   });
