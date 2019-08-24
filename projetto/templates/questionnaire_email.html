@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -164,7 +165,7 @@
 
                     Quel est la région/ville dans laquelle vous aimeriez avoir un travail ?<br>
                     <input type="text" placeholder="Ville" id="ville"><br><br>
-                    paris
+                    lyon
                 
                     <input type="button" value="Envoyer !" id="bouton_all"><br><br><br>
                     
@@ -302,7 +303,13 @@ jQuery("#deux").on("click", function(e){
           document.getElementById("#Alert").inner.html = "aie"; 
       }
       else{
-        document.getElementById("trois").click()
+
+        if (data == "fini"){
+          document.getElementById("trois").click()
+        }
+        else{
+          document.getElementById("deux").click()
+        };
       };
       
   });
@@ -317,7 +324,6 @@ jQuery("#trois").on("click", function(e){
   jQuery.ajax({
       data:{
           "trois":"trois",
-          "recherche":String(recherche),
           'csrfmiddlewaretoken': '{{csrf_token}}',
       },
       type:"POST",
@@ -328,10 +334,13 @@ jQuery("#trois").on("click", function(e){
           document.getElementById("#Alert").inner.html = "aie"; 
       }
       else{
-        reponse_premiere_partie(data)
-        document.getElementById("declencheur_reponse_deux").click()
+        if (data == "fini"){
+          document.getElementById("quattre").click()
+        }
+        else{
+          document.getElementById("trois").click()
+        };
       };
-      
   });
 });
 
@@ -339,13 +348,10 @@ jQuery("#trois").on("click", function(e){
 
 jQuery("#quattre").on("click", function(e){
 
- recherche = recup_mail_all()
-
  e.preventDefault();
   jQuery.ajax({
       data:{
-          "all_function":"all_function",
-          "recherche":String(recherche),
+          "quattre":"quattre",
           'csrfmiddlewaretoken': '{{csrf_token}}',
       },
       type:"POST",
@@ -356,8 +362,12 @@ jQuery("#quattre").on("click", function(e){
           document.getElementById("#Alert").inner.html = "aie"; 
       }
       else{
-        reponse_premiere_partie(data)
-        document.getElementById("declencheur_reponse_deux").click()
+        if (data == "fini"){
+          document.getElementById("cinq").click()
+        }
+        else{
+          document.getElementById("quattre").click()
+        }
       };
       
   });
@@ -368,13 +378,11 @@ jQuery("#quattre").on("click", function(e){
 
 jQuery("#cinq").on("click", function(e){
 
- recherche = recup_mail_all()
 
  e.preventDefault();
   jQuery.ajax({
       data:{
-          "all_function":"all_function",
-          "recherche":String(recherche),
+          "cinq":"cinq",
           'csrfmiddlewaretoken': '{{csrf_token}}',
       },
       type:"POST",
@@ -385,8 +393,12 @@ jQuery("#cinq").on("click", function(e){
           document.getElementById("#Alert").inner.html = "aie"; 
       }
       else{
-        reponse_premiere_partie(data)
-        document.getElementById("declencheur_reponse_deux").click()
+        if (data == "fini"){
+          document.getElementById("six").click()
+        }
+        else{
+          document.getElementById("cinq").click()
+        }
       };
       
   });
@@ -396,13 +408,10 @@ jQuery("#cinq").on("click", function(e){
 
 jQuery("#six").on("click", function(e){
 
- recherche = recup_mail_all()
-
  e.preventDefault();
   jQuery.ajax({
       data:{
-          "all_function":"all_function",
-          "recherche":String(recherche),
+          "six":"six",
           'csrfmiddlewaretoken': '{{csrf_token}}',
       },
       type:"POST",
@@ -413,8 +422,7 @@ jQuery("#six").on("click", function(e){
           document.getElementById("#Alert").inner.html = "aie"; 
       }
       else{
-        reponse_premiere_partie(data)
-        document.getElementById("declencheur_reponse_deux").click()
+        document.getElementById("sept").click()
       };
       
   });
@@ -425,13 +433,11 @@ jQuery("#six").on("click", function(e){
 
 jQuery("#sept").on("click", function(e){
 
- recherche = recup_mail_all()
 
  e.preventDefault();
   jQuery.ajax({
       data:{
-          "all_function":"all_function",
-          "recherche":String(recherche),
+          "sept":"sept",
           'csrfmiddlewaretoken': '{{csrf_token}}',
       },
       type:"POST",
@@ -442,8 +448,7 @@ jQuery("#sept").on("click", function(e){
           document.getElementById("#Alert").inner.html = "aie"; 
       }
       else{
-        reponse_premiere_partie(data)
-        document.getElementById("declencheur_reponse_deux").click()
+        {}
       };
       
   });
