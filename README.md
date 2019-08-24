@@ -2,6 +2,10 @@
 
 ----------------------------------------------------
 
+- ok refaire mail all
+
+
+
 - cv a faire (longueur selon la longueur)
 
 - les messages a faire pour mail all
