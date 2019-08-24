@@ -2,7 +2,7 @@
 
 ----------------------------------------------------
 
-- non ca fait meme pas 5 minutes dattente sté a cause de la musique mais la en vrai c ok
+- utiliser celery go serie
 
 
 
