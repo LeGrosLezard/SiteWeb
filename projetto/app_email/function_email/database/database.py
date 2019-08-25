@@ -1,9 +1,9 @@
 import psycopg2
 
-from .CONFIG import DATABASE
-from .CONFIG import USER
-from .CONFIG import HOST
-from .CONFIG import PASSWORD
+from CONFIG import DATABASE
+from CONFIG import USER
+from CONFIG import HOST
+from CONFIG import PASSWORD
 
 def recup_user(pseudo):
 
@@ -59,10 +59,58 @@ def recup_message(pseudo):
                 liste[0][2], liste[0][3], liste[0][4], liste[0][5]
 
 
+def mail_verification(pseudo):
 
-print(recup_message("Jbaw"))
+    id_user, _, _, _, _, _, _ = recup_user(pseudo)
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD) 
 
 
+    cur = conn.cursor()
+
+    cur.execute("""
+                SELECT
+                poste_demandee, url
+                FROM site_emploie
+                where id_user = %s;""", (id_user, ))
+
+    conn.commit()
+
+    rows = cur.fetchall()
+    liste = [i for i in rows]
+
+    print(liste)
+    return liste
+
+mail_verification("Jbaw")
+
+def mail_stock(pseudo, poste, url, date):
+
+    id_user, _, _, _, _, _, _ = recup_user(pseudo)
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD) 
+
+
+    cur = conn.cursor()
+
+    cur.execute("""
+                INSERT INTO site_emploie
+                (id_user, poste_demandee, url, date)
+                VALUES(%s, %s, %s, %s)""", (id_user, poste, url, date))
+
+    conn.commit() 
+
+
+
+
+
+
+    
+    
 
 
 
