@@ -2,16 +2,11 @@
 
 ----------------------------------------------------
 
-bon ca renvoie tj les memes mails ca ca veut dire tout refaire 
+database non spam
 
+les tests
 
-- cv a faire (longueur selon la longueur)
-
-- les messages a faire pour mail all
-
-- le question/reponse pour le timeout au pire si la liste dépasse les 20 recherches ont fait retour et on reprend d'ou on était
-
-
+faire les tiens (bien sur j'ai le droit de tricher c mon site)
 
 
 --------------------------------------------------------
