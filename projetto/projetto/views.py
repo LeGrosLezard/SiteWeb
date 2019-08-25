@@ -70,7 +70,6 @@ def page_bilan_pdf(request):
     path3 = path_dossier_document(request, "\partie_trois_bilan_grossebouille.pdf")
 
 
-    
     return render(request, 'page_bilan_pdf.html', {"path1":path1,
                                                    "path2":path2,
                                                    "path3":path3})
@@ -81,7 +80,7 @@ from .views_function import document
 def home(request):
 
 
-    try:
+    try:#In case user is connected
         pseudo = request.user
 
         cv, motivation, message, bilan1, bilan2, bilan3 = document(str(pseudo))
@@ -95,34 +94,36 @@ def home(request):
 
         return render(request, 'home.html', data)
 
-    except:
+    except:#In case user is not connected
         return render(request, 'home.html')
 
 
 from .compte.compte import compte_function
 def compte(request):
-    pseudo = request.user
 
-    info = compte_function(pseudo)
+    try:
+        pseudo = request.user
+        info = compte_function(pseudo)
 
-    dico_info = {"nom":"", "prenom":"", "sexe":"", "address_email":"",
-                 "fixe":"", "portable":"", "mot_de_passe":"", "pseduo":"",
-                 "adresse":"", "naissance":""}   
+        dico_info = {"nom":"", "prenom":"", "sexe":"", "address_email":"",
+                     "fixe":"", "portable":"", "mot_de_passe":"", "pseduo":"",
+                     "adresse":"", "naissance":""}   
 
-    c = 1
+        c = 1
 
-    for cle, valeur in dico_info.items():
-        dico_info[cle] = info[0][c]
-        c += 1
-    
-    if request.method == "POST":
+        for cle, valeur in dico_info.items():
+            dico_info[cle] = info[0][c]
+            c += 1
         
-        pass
+        if request.method == "POST":
+            
+            pass
 
 
-    return render(request, 'compte.html', {"info":dico_info})
+        return render(request, 'compte.html', {"info":dico_info})
 
-
+    except:
+        return render(request, 'compte.html')
 
 
 
@@ -144,32 +145,17 @@ from .cv.traitement_document import traitement_motivation
 from .cv.traitement_document import traitement_message
 
 #
-from .cv.database.insertion_document_cv import insertion_part_cv
-from .cv.database.insertion_document_motivation import insertion_part_motivation
-from .cv.database.insertion_document_message import insertion_part_message
 
-#We recup traitment data
-from .cv.database.recuperation_document import recuperation_bilan
-from .cv.database.recuperation_document import recuperation_nom
-from .cv.database.recuperation_document import recuperation_bilan
-from .cv.database.recuperation_document import recuperation_motivation
 
+from .views_function import documents_user_views
+from .views_function import insertion_message_views
+from .views_function import insertion_cv_views
 def comment_faire_mon_cv(request):
 
     try:
-
+        #Trying to recup data of user
         pseudo = request.user
-
-        nom, prenom = recuperation_nom(pseudo)
-        
-        cv = traitement_cv(pseudo)
-
-
-        motivation = traitement_motivation(pseudo)
-        message = traitement_message(pseudo)
-
-        
-        bilan = recuperation_bilan(pseudo)
+        nom, cv, motivation, message, bilan = documents_user_views(pseudo)
 
     except IndexError:
         pass
@@ -177,175 +163,53 @@ def comment_faire_mon_cv(request):
 
     if request.method == "POST":
         
-        
         motive = request.POST.get('motive')
         message_requete = request.POST.get('message')
 
-        
-
         if message_requete:
             #PARTIE MESSAGE RECRUTEUR
-            print("OUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII")
-            un = request.POST.get('un')
-            if un:
-                insertion_part_message(pseudo, un, "un")
-            
-            deux = request.POST.get('deux')
-            if deux:
-                insertion_part_message(pseudo, deux, "deux")
-            
-            trois = request.POST.get('trois')
-            if trois:
-                insertion_part_message(pseudo, trois, "trois")
-            
-            quattre = request.POST.get('quattre')
-            if quattre:
-                insertion_part_message(pseudo, quattre, "quattre")
-            
-            cinq = request.POST.get('cinq')
-            if cinq:
-                insertion_part_message(pseudo, cinq, "cinq")
-            
-            six = request.POST.get('six')
-            if six:
-                insertion_part_message(pseudo, six, "six")
-
-
-
-
+            insertion_message_views(request, pseudo)
 
         elif motive:
             #PARTIE LETTRE DE MOTIVATION
+            insertion_motivation_views(request, pseudo)
 
-            poste_motivation = request.POST.get('poste_motivation')
-            if poste_motivation:
-
-                insertion_part_motivation(pseudo, poste_motivation, "poste_motivation")
-
-
-            ville = request.POST.get('ville')
-            if ville:
-                insertion_part_motivation(pseudo, ville, "ville")
-
-            code = request.POST.get('code')
-            if code:
-                insertion_part_motivation(pseudo, code, "code")
-
-            un = request.POST.get('un')
-            if un:
-                insertion_part_motivation(pseudo, un, "un")
-            
-            deux = request.POST.get('deux')
-            if deux:
-                insertion_part_motivation(pseudo, deux, "deux")
-            
-            trois = request.POST.get('trois')
-            if trois:
-                insertion_part_motivation(pseudo, trois, "trois")
-            
-            quattre = request.POST.get('quattre')
-            if quattre:
-                insertion_part_motivation(pseudo, quattre, "quattre")
-            
-            cinq = request.POST.get('cinq')
-            if cinq:
-                insertion_part_motivation(pseudo, cinq, "cinq")
-            
-            six = request.POST.get('six')
-            if six:
-                insertion_part_motivation(pseudo, six, "six")
-
-
-
-        
         else:
-            #PARTIE CURRICULUM VITAE
-            #On récupere l'étape qui correspond au cv
-            #et on l'insert dans la database cv, cv1, cv2 ect...
-            #Par contre blem : si le mec commence a l'étape 2 ?
-            un = request.POST.get('un')
-            if un:
-                insertion_part_cv(pseudo, un, "un")
-                verify_document_cv(pseudo)
-             
-                
-            metier = request.POST.get('metier')
-            if metier:
-                insertion_part_cv(pseudo, metier, "metier")
-
-                
-            formation = request.POST.get('formation')
-            if formation:
-                insertion_part_cv(pseudo, formation, "formation")
-
-  
-            deux = request.POST.get('deux')
-            if deux:
-                insertion_part_cv(pseudo, deux, "deux")
-                verify_document_cv(pseudo)
-   
-            
-            trois = request.POST.get('trois')
-            if trois:
-                insertion_part_cv(pseudo, trois, "trois")
-                verify_document_cv(pseudo)
-               
-            
-            quattre = request.POST.get('quattre')
-            if quattre:
-                insertion_part_cv(pseudo, quattre, "quattre")
-                verify_document_cv(pseudo)
-          
-            
-            cinq = request.POST.get('cinq')
-            if cinq:
-                insertion_part_cv(pseudo, cinq, "cinq")
-                verify_document_cv(pseudo)
-           
-            
-            six_un = request.POST.get('six_un')
-            if six_un:
-                insertion_part_cv(pseudo, six_un, "six_un")
-                verify_document_cv(pseudo)
-                
-
-            poste1 = request.POST.get('poste1')
-            if poste1:
-                insertion_part_cv(pseudo, poste1, "poste1")
-
-            six_deux = request.POST.get('six_deux')
-            if six_deux:
-                insertion_part_cv(pseudo, six_deux, "six_deux")
-                verify_document_cv(pseudo)
-             
-
-            poste2 = request.POST.get('poste2')
-            if poste2:
-                insertion_part_cv(pseudo, poste2, "poste2")
-
-
-            six_trois = request.POST.get('six_trois')
-            if six_trois:
-                insertion_part_cv(pseudo, six_trois, "six_trois")
-                verify_document_cv(pseudo)
-           
-
-            poste3 = request.POST.get('poste3')
-            if poste3:
-                insertion_part_cv(pseudo, poste3, "poste3")
-
-            sept = request.POST.get('sept')
-            if sept:
-                insertion_part_cv(pseudo, sept, "sept")
-                verify_document_cv(pseudo)
-          
-
-
-
+            #PARTIE CV
+            insertion_cv_views(request, pseudo)
 
     try:
+#A ESSAYER 
+##        data = {"nom" : nom, "prenom": prenom, "cv1": cv[0],
+##                 "cv2": cv[1],
+##                 "cv3": cv[2],
+##                 "cv4": cv[3],
+##                 "cv5": cv[4],
+##                 "cv6_1": cv[5],
+##                 "cv6_2": cv[6],
+##                 "cv6_3": cv[7],
+##                 "cv7": cv[8],
+##                 "metier": cv[9],
+##                 "formation":cv[10],
+##                 "poste1":cv[11],
+##                 "poste2":cv[12],
+##                 "poste3":cv[13],
+##                 "bilan": bilan,
+##                 "motiv1": motivation[0],
+##                 "motiv2": motivation[1],
+##                 "motiv3": motivation[2],
+##                 "motiv4": motivation[3],
+##                 "motiv5": motivation[4],
+##                 "motiv6": motivation[5],
+##                 "code":  motivation[6],
+##                 "ville":  motivation[7],
+##                 "poste_motivation":  motivation[8],
+##                 "mess1": message[0],
+##                 "mess2": message[1],
+##                 "mess3": message[2],
+##                 "mess4": message[3]}
 
-    
+                                                             
         return render(request, 'comment_faire_mon_cv.html', {"nom" : nom,
                                                              "prenom": prenom,
                                                              "cv1": cv[0],
@@ -379,9 +243,11 @@ def comment_faire_mon_cv(request):
                                                              
                                                              })
 
-
     except:
         return render(request, 'comment_faire_mon_cv.html')
+
+
+
 
 
 def ma_demarche(request):
