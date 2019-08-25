@@ -858,3 +858,52 @@ def recherche_google(recherche, lieu):
     return final
 
 
+def liste_1(a):
+    liste = []
+    adresse = ""
+    verif = ""
+    for i in a:
+        for j in i[0]:
+
+            if type(j) == list:
+                for k in j:
+                    a.append([[k]])
+            else:
+                
+                find1 = str(j).find(str(".fr"))
+                find2 = str(j).find(str(".com"))
+                find3 = str(j).find(str(".org"))
+
+                try:
+                
+                    if find1 >= 0:
+                        liste.append([j[:find1 + 3], i[1]])
+                        
+                    elif find2 >= 0:
+                        liste.append([j[:find2 + 4], i[1]])
+                        
+                    elif find3 >= 0:
+                        liste.append([j[:find3 + 4], i[1]])
+
+                    
+                except:
+                    pass
+
+    for i in liste:
+        print(i)
+    return liste
+
+
+
+def liste_2(b):
+
+    liste = []
+    
+    for i in b[0]:
+
+        liste.append([i[0][0], i[1][0]])
+
+    
+    for i in liste:
+        print(i)
+    return liste
