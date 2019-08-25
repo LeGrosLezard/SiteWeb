@@ -3,8 +3,6 @@ from bs4 import BeautifulSoup
 
 
 
-
-
 from site_scrap import pole_emploi
 def etape_UNE(lieu, emploi, rayon):
     """Dans un premier temps on cherche
@@ -24,6 +22,8 @@ def etape_UNE(lieu, emploi, rayon):
 
     print(liste_path)
     return liste_path
+
+
 
 
 from CONFIG import PATH_POLE_2
@@ -74,11 +74,8 @@ def ETAPE_TROIS(liste, ville, LISTE_EMPLOI_UTILISATEUR):
     print(out)
     return out
          
+
     
-
-
-
-
 from site_scrap import recherche_email
 def ETAPE_QUATTRE(liste):
     """Maintenant on essais de chercher un
@@ -242,6 +239,7 @@ def ETAPE_HUIT(liste_email):
     return mail
 
 
+
 from site_scrap import liste_1
 from site_scrap import liste_2
 def ETAPE_NEUF(liste_a, liste_b):
@@ -250,15 +248,23 @@ def ETAPE_NEUF(liste_a, liste_b):
 
     return mail1, mail2
 
+from database.database import mail_verification
+from database.database import mail_stock
+def data(pseudo):
+    
+    liste = mail_verification
 
-
-
+    #AFAIRE
 
     
+    for i in mail1: 
+        mail_stock(pseudo, i[0], i[1], "")
+
+    for i in mail2:
+        mail_stock(pseudo, i[0], i[1], "")
     
-#l'offre
-#l'email
-#la date
+    
+
 if __name__ == "__main__":
 
     EMAIL = []
@@ -267,7 +273,8 @@ if __name__ == "__main__":
     rayon = "60"
     lieu = "valence"
     emploi = "Développeur web python"
-    
+    pseudo = ""
+
     liste = etape_UNE(lieu, emploi, rayon)
     liste = ETAPE_DEUX(liste)
     liste = ETAPE_TROIS(liste, lieu, emploi)
@@ -284,9 +291,7 @@ if __name__ == "__main__":
 
     final = ETAPE_HUIT(ENTREPRISE)
 
-    ETAPE_NEUF(final, EMAIL)
-
-        
+    mail1, mail2 = ETAPE_NEUF(final, EMAIL)
 
 
 
