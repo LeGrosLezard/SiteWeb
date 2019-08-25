@@ -1,27 +1,12 @@
 import requests
 from bs4 import BeautifulSoup
 
+
+
+
+
 from site_scrap import pole_emploi
-
-
-from site_scrap import recherche_via_image
-from site_scrap import recherche_CARRERBUILDER
-from site_scrap import recherche_CARRERONLINE
-from site_scrap import recherche_CARRERONLINE2
-from site_scrap import recherche_CARRERONLINE3
-from site_scrap import recherche_TALENTPLUG
-from site_scrap import recherche_STEPSTONE
-from site_scrap import recherche_MONSTER
-from site_scrap import recherche_JOBCOLO
-from site_scrap import recherche_INZEJOB
-from site_scrap import traitement
-from site_scrap import recherche_google
-from site_scrap import nettoyage_email
-
-
-
-
-def etape_UNE(lieu, LISTE_EMPLOI_UTILISATEUR, rayon):
+def etape_UNE(lieu, emploi, rayon):
     """Dans un premier temps on cherche
     toutes les url de DESCRIPTION
     de pole qui match avec notre
@@ -32,17 +17,13 @@ def etape_UNE(lieu, LISTE_EMPLOI_UTILISATEUR, rayon):
     print("")
 
     liste_path = []
-    for i in LISTE_EMPLOI_UTILISATEUR:
 
-        liste_w1, lieu = pole_emploi(lieu, i, rayon)
+    liste_w1, lieu = pole_emploi(lieu, emploi, "60")
+    for i in liste_w1:
+        liste_path.append(i)
 
-        for i in liste_w1:
-            liste_path.append(i)
-
+    print(liste_path)
     return liste_path
-
-
-
 
 
 from CONFIG import PATH_POLE_2
@@ -61,16 +42,16 @@ def ETAPE_DEUX(liste):
         path = PATH_POLE_2.format(i)
         recuperation_info.append(path)
 
-
+    print(recuperation_info)
     return recuperation_info
-
-
 
 
 
 
 from site_scrap import verification_metier
 def ETAPE_TROIS(liste, ville, LISTE_EMPLOI_UTILISATEUR):
+    """On verifie le titre de l'offre et la recherche de la
+    personne pour etre sur de postuler au bon endroit"""
 
     print("ETAPE trois")
     print("")
@@ -89,10 +70,13 @@ def ETAPE_TROIS(liste, ville, LISTE_EMPLOI_UTILISATEUR):
         out = None
     else:
         out = liste1
+        
     print(out)
     return out
          
-    #return verification_metier_titre
+    
+
+
 
 
 from site_scrap import recherche_email
@@ -109,12 +93,13 @@ def ETAPE_QUATTRE(liste):
     
 
     for i in liste:
-        print(i)
+
         email_trouvee = recherche_email(i)
         if email_trouvee != "":
             emails.append([email_trouvee, i])
         else:
             liste_no_mail.append(i)
+            
 
     return emails, liste_no_mail
 
@@ -122,6 +107,10 @@ def ETAPE_QUATTRE(liste):
 
 from site_scrap import recherche_entreprise_bas_de_page
 def ETAPE_CINQ(liste_no_mail):
+    """Nous n'avons pas trouvé demail pour ces demandes
+    nous recherchons alors le nom de l'entreprise en bas de page
+    (ibnformation donnée par pole emploi)
+    pour rechercher ensuite son email"""
 
     print("ETAPE cinq")
     print("")
@@ -129,7 +118,7 @@ def ETAPE_CINQ(liste_no_mail):
     liste = []
     liste_non_trouvee = []
     for i in liste_no_mail:
-        print(i)
+
         entreprise_bas_page = recherche_entreprise_bas_de_page(i)
 
         if entreprise_bas_page != None:
@@ -141,9 +130,16 @@ def ETAPE_CINQ(liste_no_mail):
 
 
 
-
 from site_scrap import identification_du_site
 def ETAPE_SIX(liste):
+    """Nous n'avons pas trouvé d'entreprise
+    pour la recherche d'email.
+    Donc nous allons sur le site partenaire
+    chercher le nom de l'entreprise. Pour cela
+    nous prenons le nom du site partenaire
+    et pour chaque site on cherche le nom
+    de l'entreprise demandeur
+    """
 
     print("ETAPE six")
     print("")
@@ -151,15 +147,12 @@ def ETAPE_SIX(liste):
 
     liste1 = []
     for i in liste:
-        print(i)
         try:
             identification_site = identification_du_site(i)
-            print(identification_site)
             if identification_site != None:
                 liste1.append([[identification_site], i])
         except:
             identification_site = identification_du_site(i[0])
-            print(identification_site)
             if identification_site != None:
                 liste1.append([[identification_site], i[0]])
 
@@ -169,64 +162,30 @@ def ETAPE_SIX(liste):
 
 
 
+from site_scrap import recherche_via_image
+from site_scrap import recherche_CARRERBUILDER
+from site_scrap import recherche_CARRERONLINE
+from site_scrap import recherche_CARRERONLINE2
+from site_scrap import recherche_CARRERONLINE3
+from site_scrap import recherche_TALENTPLUG
+from site_scrap import recherche_STEPSTONE
+from site_scrap import recherche_MONSTER
+from site_scrap import recherche_JOBCOLO
+from site_scrap import recherche_INZEJOB
+from site_scrap import recherche_google
 
-def recherche_email_final(emploi, lieu, rayon):
+def ETAPE_SEPT(liste):
 
-
-    #def etape_mail():
-
-    ENTREPRISE = []
-
-    LISTE_EMPLOI_UTILISATEUR = [emploi]
-
-    lieu = lieu
-    rayon = rayon
-    liste_path = []
-
-
-    liste_url = etape_UNE(lieu, LISTE_EMPLOI_UTILISATEUR, rayon)
-    print(liste_url)
-    print("\n")
-
-    liste_description = ETAPE_DEUX(liste_url)
-    print(liste_description)
-    print("\n")
-    
-    #liste_description = [liste_description[0]]#a effacer
-    verification_metier_titre = ETAPE_TROIS(liste_description, lieu,
-                                            LISTE_EMPLOI_UTILISATEUR)
-
-    print(verification_metier_titre)
-    print("\n")
-    
-
-
-
-    emails, liste_no_mail = ETAPE_QUATTRE(verification_metier_titre)
-    print(emails)
-    print("\n")
-    print(liste_no_mail)
-
-
-
-    print("\n")
-    entreprise_bas_page, no_found = ETAPE_CINQ(liste_no_mail)
-    print(entreprise_bas_page)
-    print("")
-    print(no_found)
-    print("\n")
-
-
-
-
-    site = ETAPE_SIX(no_found)
-    print(site)
-
-    print("\n")
     print("ETAPE SEPT")
-    print("\n")
+    print("")
+
+
+    entreprise = ""
+    url = ""
+
+    liste_ok = []
     
-    for i in site:
+    for i in liste:
         print(i)
         
         url = recherche_via_image(i[1])
@@ -255,45 +214,107 @@ def recherche_email_final(emploi, lieu, rayon):
         elif i[0][0].lower() == "inzejob":
             entreprise = recherche_INZEJOB(url)
 
-
-        print(entreprise)
-        ENTREPRISE.append([[entreprise], [url]])
+        if entreprise == "":
+            pass
+        else:
+            liste_ok.append([entreprise, url])
         
+    return liste_ok
+
+
+
+
+def ETAPE_HUIT(liste_email):
+    print("ETAPE HUIT")
     print("")
-    print(emails)
-    print("")
-    print("")
-    print("")
-    print("")
+
+    liste = []
+    for i in liste_email:
+        for j in i:
+            liste.append([j[0], j[1][0]])
+
+    mail = []
+    for i in liste:
+
+        m = recherche_google(i[0], "valence")
+        mail.append([m, i[1]])
+
+    return mail
+
+
+from site_scrap import liste_1
+from site_scrap import liste_2
+def ETAPE_NEUF(liste_a, liste_b):
+    mail1 = liste_1(liste_a)
+    mail2 = liste_2(liste_b)
+
+    return mail1, mail2
+
+
+
+
+
     
-
     
-
-
-
-    #print(lieu)
-
-    oki = []
-    for i in entreprise_bas_page:
-        print(i)
-
-        liste = recherche_google(i[0], lieu)
-
-        oki.append(liste)
-        print("")
-        print("")
-
-    for i in ENTREPRISE:
-        print(i)
-
-        liste = recherche_google(i[0][0], lieu)
-
-        oki.append(liste)
-        print("")
-        print("")
-
-    print(oki)
-
-
+#l'offre
+#l'email
+#la date
 if __name__ == "__main__":
-    recherche_email_final("développeur web python", "valence", "60")
+
+    EMAIL = []
+    ENTREPRISE = []
+    
+    rayon = "60"
+    lieu = "valence"
+    emploi = "Développeur web python"
+    
+    liste = etape_UNE(lieu, emploi, rayon)
+    liste = ETAPE_DEUX(liste)
+    liste = ETAPE_TROIS(liste, lieu, emploi)
+    email, liste = ETAPE_QUATTRE(liste)
+    EMAIL.append(email)
+
+    entreprise, liste = ETAPE_CINQ(liste)
+    ENTREPRISE.append(entreprise)
+
+    liste = ETAPE_SIX(liste)
+    liste = ETAPE_SEPT(liste)
+
+    ENTREPRISE.append(liste)
+
+    final = ETAPE_HUIT(ENTREPRISE)
+
+    ETAPE_NEUF(final, EMAIL)
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
