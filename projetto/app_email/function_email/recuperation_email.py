@@ -248,6 +248,8 @@ def ETAPE_NEUF(liste_a, liste_b):
 
     return mail1, mail2
 
+
+
 from database.database import mail_verification
 from database.database import mail_stock
 def data(pseudo):
@@ -292,7 +294,7 @@ if __name__ == "__main__":
     final = ETAPE_HUIT(ENTREPRISE)
 
     mail1, mail2 = ETAPE_NEUF(final, EMAIL)
-
+    print(mail1, mail2)
 
 
 
