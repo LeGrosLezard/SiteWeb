@@ -38,64 +38,27 @@ from .cv.verify_document import verify_document_cv
 
 
 
-from .CONFIG import PATH_DOSSIER_DOCUMENT
-def path_dossier_document(request, nom):
-    pseudo = request.user
-    fichier_uti = str(pseudo) + nom
-    return PATH_DOSSIER_DOCUMENT.format(fichier_uti)
-
-
-def page_cv_pdf(request):
-    path = path_dossier_document(request, "\cv.pdf")
-
-    return render(request, 'page_cv_pdf.html', {"path":path})
-
-
-def page_motivation_pdf(request):
-    path = path_dossier_document(request, "\motivation.pdf")
-    
-    return render(request, 'page_motivation_pdf.html', {"path":path})
-
-
-def page_message_pdf(request):
-    path = path_dossier_document(request, "\message.pdf")
-    
-    return render(request, 'page_message_pdf.html', {"path":path})
-
-
-
-def page_bilan_pdf(request):
-    path1 = path_dossier_document(request, "\partie_une_bilan_grossebouille.pdf")
-    path2 = path_dossier_document(request, "\partie_deux_bilan_grossebouille.pdf")
-    path3 = path_dossier_document(request, "\partie_trois_bilan_grossebouille.pdf")
-
-
-    return render(request, 'page_bilan_pdf.html', {"path1":path1,
-                                                   "path2":path2,
-                                                   "path3":path3})
-
-
 
 from .views_function import document
 def home(request):
+    """Home template"""
+    #In case user is connected
+    try:
 
-
-    try:#In case user is connected
         pseudo = request.user
-
+        #Ask data from database
         cv, motivation, message, bilan1, bilan2, bilan3 = document(str(pseudo))
-
-        data = {"cv":cv,
-                "motivation":motivation,
-                "message":message,
-                "bilan1":bilan1,
-                "bilan2":bilan2,
-                "bilan3":bilan3}
-
+        #We need this for inform user if he has completed this or not
+        data = {"cv":cv, "motivation":motivation,  "message":message,
+                "bilan1":bilan1, "bilan2":bilan2,  "bilan3":bilan3}
+        
         return render(request, 'home.html', data)
-
-    except:#In case user is not connected
+    #In case user is not connected
+    except:
         return render(request, 'home.html')
+
+
+
 
 
 from .compte.compte import compte_function
@@ -103,6 +66,7 @@ def compte(request):
 
     try:
         pseudo = request.user
+        #We ask database for information from the current user.
         info = compte_function(pseudo)
 
         dico_info = {"nom":"", "prenom":"", "sexe":"", "address_email":"",
@@ -139,114 +103,40 @@ def questionnaire(request):
 
 
 
-#We insert document into database here
-from .cv.traitement_document import traitement_cv
-from .cv.traitement_document import traitement_motivation
-from .cv.traitement_document import traitement_message
-
-#
-
-
 from .views_function import documents_user_views
 from .views_function import insertion_message_views
 from .views_function import insertion_cv_views
+from .views_function import insertion_motivation_views
 def comment_faire_mon_cv(request):
 
     try:
         #Trying to recup data of user
         pseudo = request.user
-        nom, cv, motivation, message, bilan = documents_user_views(pseudo)
-
-    except IndexError:
+        nom, prenom, cv, motivation, message, data = documents_user_views(pseudo)
+    except:
         pass
-    
 
     if request.method == "POST":
-        
         motive = request.POST.get('motive')
         message_requete = request.POST.get('message')
 
         if message_requete:
-            #PARTIE MESSAGE RECRUTEUR
+            #Insertion message
             insertion_message_views(request, pseudo)
 
         elif motive:
-            #PARTIE LETTRE DE MOTIVATION
+            #Insertion motication
             insertion_motivation_views(request, pseudo)
 
         else:
-            #PARTIE CV
+            #Insertion Cv
             insertion_cv_views(request, pseudo)
 
-    try:
-#A ESSAYER 
-##        data = {"nom" : nom, "prenom": prenom, "cv1": cv[0],
-##                 "cv2": cv[1],
-##                 "cv3": cv[2],
-##                 "cv4": cv[3],
-##                 "cv5": cv[4],
-##                 "cv6_1": cv[5],
-##                 "cv6_2": cv[6],
-##                 "cv6_3": cv[7],
-##                 "cv7": cv[8],
-##                 "metier": cv[9],
-##                 "formation":cv[10],
-##                 "poste1":cv[11],
-##                 "poste2":cv[12],
-##                 "poste3":cv[13],
-##                 "bilan": bilan,
-##                 "motiv1": motivation[0],
-##                 "motiv2": motivation[1],
-##                 "motiv3": motivation[2],
-##                 "motiv4": motivation[3],
-##                 "motiv5": motivation[4],
-##                 "motiv6": motivation[5],
-##                 "code":  motivation[6],
-##                 "ville":  motivation[7],
-##                 "poste_motivation":  motivation[8],
-##                 "mess1": message[0],
-##                 "mess2": message[1],
-##                 "mess3": message[2],
-##                 "mess4": message[3]}
-
-                                                             
-        return render(request, 'comment_faire_mon_cv.html', {"nom" : nom,
-                                                             "prenom": prenom,
-                                                             "cv1": cv[0],
-                                                             "cv2": cv[1],
-                                                             "cv3": cv[2],
-                                                             "cv4": cv[3],
-                                                             "cv5": cv[4],
-                                                             "cv6_1": cv[5],
-                                                             "cv6_2": cv[6],
-                                                             "cv6_3": cv[7],
-                                                             "cv7": cv[8],
-                                                             "metier": cv[9],
-                                                             "formation":cv[10],
-                                                             "poste1":cv[11],
-                                                             "poste2":cv[12],
-                                                             "poste3":cv[13],
-                                                             "bilan": bilan,
-                                                             "motiv1": motivation[0],
-                                                             "motiv2": motivation[1],
-                                                             "motiv3": motivation[2],
-                                                             "motiv4": motivation[3],
-                                                             "motiv5": motivation[4],
-                                                             "motiv6": motivation[5],
-                                                             "code":  motivation[6],
-                                                             "ville":  motivation[7],
-                                                             "poste_motivation":  motivation[8],
-                                                             "mess1": message[0],
-                                                             "mess2": message[1],
-                                                             "mess3": message[2],
-                                                             "mess4": message[3],
-                                                             
-                                                             })
+    try:#In case we can't recup data from user                               
+        return render(request, 'comment_faire_mon_cv.html', data)
 
     except:
         return render(request, 'comment_faire_mon_cv.html')
-
-
 
 
 
@@ -256,6 +146,30 @@ def ma_demarche(request):
 def le_questionnaire(request):
     return render(request, 'le_questionnaire.html')
 
+from .CONFIG import PATH_DOSSIER_DOCUMENT
+def path_dossier_document(request, nom):
+    pseudo = request.user
+    fichier_uti = str(pseudo) + nom
+    return PATH_DOSSIER_DOCUMENT.format(fichier_uti)
+
+def page_cv_pdf(request):
+    path = path_dossier_document(request, "\cv.pdf")
+    return render(request, 'page_cv_pdf.html', {"path":path})
+
+def page_motivation_pdf(request):
+    path = path_dossier_document(request, "\motivation.pdf")
+    return render(request, 'page_motivation_pdf.html', {"path":path})
+
+def page_message_pdf(request):
+    path = path_dossier_document(request, "\message.pdf")
+    return render(request, 'page_message_pdf.html', {"path":path})
+
+def page_bilan_pdf(request):
+    path1 = path_dossier_document(request, "\partie_une_bilan_grossebouille.pdf")
+    path2 = path_dossier_document(request, "\partie_deux_bilan_grossebouille.pdf")
+    path3 = path_dossier_document(request, "\partie_trois_bilan_grossebouille.pdf")
+    data = {"path1":path1, "path2":path2, "path3":path3}
+    return render(request, 'page_bilan_pdf.html', data)
 
 
 from .questionnaire.questionnaire import question_reponse
@@ -273,89 +187,80 @@ def le_questionnaire_premiere_partie(request):
 
     pseudo = request.user
 
+    #Here we verify if user hsn't passed the form
     ok = accord(pseudo, "un")
+
     if ok == 1:
-
+        
         cv, motivation, message, bilan1, bilan2, bilan3 = document(str(pseudo))
-
-        data = {"cv":cv,
-                "motivation":motivation,
-                "message":message,
-                "bilan1":bilan1,
-                "bilan2":bilan2,
-                "bilan3":bilan3,
+        data = {"cv":cv,  "motivation":motivation, "message":message,
+                "bilan1":bilan1, "bilan2":bilan2, "bilan3":bilan3,
                 "avertisseur":"Vous avez déja valider votre bilan psychologique !"}
 
-
         return render(request, 'home.html', data)
-    
+
 
     if request.method == "POST":
 
+        #- First - We recup POST request
         questionnaire = request.POST.get('questionnaire')
         questionnaire_traitee = question_reponse(questionnaire)
+
+        # - Second - We analysing it (trait respons, just or false)
         analyse = analyse_questionnaire(questionnaire_traitee)
         reponse = association_definition(analyse)
-        
         reponse_associee = association_definition1(reponse)
         reponse_associee2 = association_definition2(reponse)
-        
+
+        # - Third - We constituing analysis
         grande_cat = assoc_grande_categorie(reponse_associee2)
         pagination = mise_en_page(reponse_associee, grande_cat)
-        #print(pagination)
-        insertion_bilan_premiere_partie(pseudo, pagination)
-        
 
+        # - Fourth - We insert it into database
+        insertion_bilan_premiere_partie(pseudo, pagination)
 
     return render(request, 'le_questionnaire_premiere_partie.html')
 
 
 
-
+from .views_function import document
+from .questionnaire.CONFIG import DICTEE
+from .questionnaire.database.database import accord
 from .questionnaire.questionnaire_deux import traitement_DICTEE
 from .questionnaire.questionnaire_deux import traitement_texte_utilisateur
 from .questionnaire.database.database import insertion_bilan_seconde_partie
-from .questionnaire.CONFIG import DICTEE
-from .questionnaire.database.database import accord
-
-from .views_function import document
-
 def le_questionnaire_seconde_partie(request):
 
     pseudo = request.user
 
-
+    #Here we verify if user hsn't passed the form
     ok = accord(pseudo, "deux")
 
     if ok == 1:
-
         cv, motivation, message, bilan1, bilan2, bilan3 = document(str(pseudo))
-
-        data = {"cv":cv,
-                "motivation":motivation,
-                "message":message,
-                "bilan1":bilan1,
-                "bilan2":bilan2,
-                "bilan3":bilan3,
+        data = {"cv":cv, "motivation":motivation, "message":message,
+                "bilan1":bilan1,  "bilan2":bilan2, "bilan3":bilan3,
                 "avertisseur":"Vous avez déja valider votre bilan psychologique !"}
 
-        
         return render(request, 'home.html', data)
     
 
     if request.method == "POST":
 
         texte = request.POST.get('texte')
-        if texte:
-            dictee = traitement_DICTEE(DICTEE)
-            faute = traitement_texte_utilisateur(texte, dictee)
 
-            if faute == None:
+        if texte:
+            #Traiting the test
+            dictee = traitement_DICTEE(DICTEE)
+            
+            #Verify the fault
+            faute = traitement_texte_utilisateur(texte, dictee)
+        
+            if faute == None:#There are so many fault we insert no to this test
                 insertion_bilan_seconde_partie(pseudo, "non")
-            else:
+            else:#We insert ok to this test
                 insertion_bilan_seconde_partie(pseudo, faute)
             
-
     return render(request, 'le_questionnaire_seconde_partie.html')
 
 
@@ -370,27 +275,18 @@ def le_questionnaire_troisieme_partie(request):
 
     pseudo = request.user
 
-
+    #Here we verify if user hsn't passed the form
     acc = accord(pseudo, "trois")
+
     if acc == 1:
-
-
         cv, motivation, message, bilan1, bilan2, bilan3 = document(str(pseudo))
-
-        data = {"cv":cv,
-                "motivation":motivation,
-                "message":message,
-                "bilan1":bilan1,
-                "bilan2":bilan2,
-                "bilan3":bilan3,
+        data = {"cv":cv,  "motivation":motivation, "message":message,
+                "bilan1":bilan1, "bilan2":bilan2, "bilan3":bilan3,
                 "avertisseur":"Vous avez déja valider votre bilan psychologique !"}
 
-        
         return render(request, 'home.html', data)
     
 
-
-    
     ok = ""
     if request.method == "POST":
         resultat = request.POST.get('resultat')
@@ -417,25 +313,16 @@ from .questionnaire.database.database import accord
 from .views_function import document
 def le_questionnaire_quatrieme_partie(request):
 
-
+    #Here we verify if user hsn't passed the form
     acc = accord(pseudo, "quattre")
     if acc == 1:
-
         cv, motivation, message, bilan1, bilan2, bilan3 = document(str(pseudo))
-
-        data = {"cv":cv,
-                "motivation":motivation,
-                "message":message,
-                "bilan1":bilan1,
-                "bilan2":bilan2,
-                "bilan3":bilan3,
+        data = {"cv":cv, "motivation":motivation, "message":message,
+                "bilan1":bilan1, "bilan2":bilan2, "bilan3":bilan3,
                 "avertisseur":"Vous avez déja valider votre bilan psychologique !"}
 
-        
         return render(request, 'home.html', data)
     
-
-
 
     ok = ""
     pseudo = request.user
@@ -445,7 +332,7 @@ def le_questionnaire_quatrieme_partie(request):
         if resultat:
             result = resultat_function(resultat)
             correct =  correction(result)
-            print(correct)
+
             if correct >= 15:
                 ok = "La personne a eu plus que la moyenne dans le test de la mémoire ce qui..."
             else:
@@ -500,30 +387,17 @@ def page_cv(request):
         nom = nom.upper()
         prenom = prenom.upper()
 
+        data = {"cv1" : cv[0], "cv2" : cv[1], "cv3" : cv[2],
+                "cv4" : cv[3], "cv5" : cv[4], "cv6" : cv[5],
+                "nom": nom, "prenom": prenom, "addresse": addresse,
+                "fixe": fixe, "portable": portable, "email": email,
+                "form":form}
 
-        return render(request, 'page_cv.html',
-                      {"cv1" : cv[0],
-                       "cv2" : cv[1],
-                       "cv3" : cv[2],
-                       "cv4" : cv[3],
-                       "cv5" : cv[4],
-                       "cv6" : cv[5],
-                       "nom": nom,
-                       "prenom": prenom,
-                       "addresse": addresse,
-                       "fixe": fixe,
-                       "portable": portable,
-                       "email": email,
-                       "form":form}
-                      )
+        return render(request, 'page_cv.html', data)
 
     except IndexError :
         return render(request, 'page_cv.html', {"form":form})
             
-
-
-
-
     return render(request, 'page_cv.html')
 
 
@@ -533,9 +407,7 @@ from .models import Document_motivation
 from .cv.document_user import document_motivation_download
 def page_motivation(request):
 
-
     form = DocumentForm_motivation(request.POST, request.FILES)
-
     pseudo = request.user
     ok = False
 
@@ -551,31 +423,12 @@ def page_motivation(request):
         else:
             pass
 
-
     if ok is True:
         document_motivation_download(pseudo)
         ok = False
 
         
     return render(request, 'page_motivation.html', {"form":form})
-
-
-
-##    motivation = traitement_motivation(pseudo)
-##    mesasge = traitement_message(pseudo)
-##                   "motvation1" : motivation[0],
-##                   "motvation2" : motivation[1],
-##                   "motvation3" : motivation[2],
-##                   "motvation4" : motivation[3],
-##                   "motvation5" : motivation[4],
-##                   "motvation6" : motivation[5],
-##                   "message1" : mesasge[0],
-##                   "message2" : mesasge[1],
-##                   "message3" : mesasge[2],
-##                   "message4" : mesasge[3],
-##                   "message5" : mesasge[4],
-##                   "message6" : mesasge[5],
-
 
 
 
@@ -598,14 +451,8 @@ def page_message(request):
                 ok = True
                 newdoc = Document_message(docfile = request.FILES['docfile'])
                 newdoc.save()
-            
-
-                
             except:
                 pass
-        else:
-            pass
- 
 
     if ok is True:
         document_message_download(pseudo)
@@ -637,26 +484,10 @@ def page_bilan(request):
 
     form = DocumentForm_message(request.POST, request.FILES)
 
-    data = {"nom":nom,
-            "prenom":prenom,
-            "bilan1":bilan1,
-            "bilan2":bilan2,
-            "bilan3":bilan3,
-            "bilan4":bilan4,
-            "pseudo":pseudo,
-            "form":form}
+    data = {"nom":nom, "prenom":prenom, "bilan1":bilan1, "bilan2":bilan2,
+            "bilan3":bilan3, "bilan4":bilan4, "pseudo":pseudo, "form":form}
 
-
-    
     return render(request, 'page_bilan.html', data)
-
-
-
-
-
-
-
-
 
 
 
@@ -686,14 +517,8 @@ def page_bilan1(request):
                 ok = True
                 newdoc = Document_bilan(docfile = request.FILES['docfile'])
                 newdoc.save()
-            
-
-                
             except:
                 pass
-        else:
-            pass
- 
 
     if ok is True:
         document_bilan_download(pseudo, "partie_une_bilan_" + str(pseudo) + ".pdf")
@@ -701,18 +526,9 @@ def page_bilan1(request):
     
 
 
-    data = {"nom":nom,
-            "prenom":prenom,
-            "bilan1":bilan1,
-            "bilan2":bilan2,
-            "bilan3":bilan3,
-            "bilan4":bilan4,
-            "pseudo":pseudo,
-            "form":form
-            }
+    data = {"nom":nom, "prenom":prenom, "bilan1":bilan1, "bilan2":bilan2,
+            "bilan3":bilan3, "bilan4":bilan4, "pseudo":pseudo, "form":form}
 
-
-    
     return render(request, 'page_bilan.html', data)
 
 
@@ -744,14 +560,8 @@ def page_bilan2(request):
                 ok = True
                 newdoc = Document_bilan(docfile = request.FILES['docfile'])
                 newdoc.save()
-            
-
-                
             except:
                 pass
-        else:
-            pass
- 
 
     if ok is True:
         document_bilan_download(pseudo, "partie_deux_bilan_" + str(pseudo) + ".pdf")
@@ -759,18 +569,9 @@ def page_bilan2(request):
     
 
 
-    data = {"nom":nom,
-            "prenom":prenom,
-            "bilan1":bilan1,
-            "bilan2":bilan2,
-            "bilan3":bilan3,
-            "bilan4":bilan4,
-            "pseudo":pseudo,
-            "form":form
-            }
+    data = {"nom":nom, "prenom":prenom, "bilan1":bilan1, "bilan2":bilan2,
+            "bilan3":bilan3, "bilan4":bilan4, "pseudo":pseudo, "form":form}
 
-
-    
     return render(request, 'page_bilan.html', data)
 
 
@@ -801,14 +602,8 @@ def page_bilan3(request):
                 ok = True
                 newdoc = Document_bilan(docfile = request.FILES['docfile'])
                 newdoc.save()
-            
-
-                
             except:
                 pass
-        else:
-            pass
- 
 
     if ok is True:
         document_bilan_download(pseudo, "partie_trois_bilan_" + str(pseudo) + ".pdf")
@@ -816,18 +611,9 @@ def page_bilan3(request):
     
 
 
-    data = {"nom":nom,
-            "prenom":prenom,
-            "bilan1":bilan1,
-            "bilan2":bilan2,
-            "bilan3":bilan3,
-            "bilan4":bilan4,
-            "pseudo":pseudo,
-            "form":form
-            }
+    data = {"nom":nom, "prenom":prenom, "bilan1":bilan1, "bilan2":bilan2,
+            "bilan3":bilan3, "bilan4":bilan4, "pseudo":pseudo, "form":form}
 
-
-    
     return render(request, 'page_bilan.html', data)
 
 
