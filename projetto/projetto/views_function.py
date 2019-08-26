@@ -15,7 +15,6 @@ def controle(dictionnaire_document):
     return liste
 
 
-
 def document(user):
     """Each users have 4 documents, each user have a folder
     so we go found it !"""
@@ -26,7 +25,8 @@ def document(user):
     doc = ["cv.pdf", "bilan.pdf", "message.pdf",
            "partie_une_bilan_" + user + ".pdf",
            "partie_deux_bilan_" + user + ".pdf",
-           "partie_trois_bilan_" + user + ".pdf",]
+           "partie_trois_bilan_" + user + ".pdf",
+           "partie_quattre_bilan_" + user + ".pdf"]
 
     dictionnaire_document = {}
 
@@ -44,9 +44,7 @@ def document(user):
     #if yes he can't passe it
     liste = controle(dictionnaire_document)
 
-    return liste[0], liste[1], liste[2], liste[3], liste[4], liste[5]
-
-
+    return liste[0], liste[1], liste[2], liste[3], liste[4], liste[5], liste[6]
 
 
 
@@ -86,8 +84,6 @@ def documents_user_views(pseudo):
 
 
 
-
-
 from .cv.database.insertion_document_message import insertion_part_message
 def insertion_message_views(request, pseudo):
 
@@ -114,10 +110,8 @@ def insertion_motivation_views(request, pseudo):
         demande = request.POST.get(str(i))
         if demande:
             insertion_part_motivation(pseudo, demande, str(i))
+
  
-
-
-
 from .cv.database.insertion_document_cv import insertion_part_cv
 def insertion_cv_views(request, pseudo):
     """Insertion CV in database"""
@@ -130,4 +124,3 @@ def insertion_cv_views(request, pseudo):
         demande = request.POST.get(str(i))
         if demande:
             insertion_part_cv(pseudo, demande, str(i))
-            
