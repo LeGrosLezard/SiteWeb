@@ -2,14 +2,27 @@ import os
 
 path_doc = r"C:\Users\jeanbaptiste\Desktop\site_travail\environement_virtuel\projetto\static\espace_user\{}"
 
+def controle(dictionnaire_document):
+    """We controlling documents of user"""
+
+    liste = []
+    for cle, valeur in dictionnaire_document.items():
+        if valeur == 1:
+            liste.append(1)
+        else:
+            liste.append(0)
+            
+    return liste
+
+
 
 def document(user):
     """Each users have 4 documents, each user have a folder
     so we go found it !"""
 
-    #We inform 
+    #we dress list of this folder
     liste_os = os.listdir(path_doc.format(user))
-
+    #We dress list of all document
     doc = ["cv.pdf", "bilan.pdf", "message.pdf",
            "partie_une_bilan_" + user + ".pdf",
            "partie_deux_bilan_" + user + ".pdf",
@@ -17,16 +30,20 @@ def document(user):
 
     dictionnaire_document = {}
 
+    #We initializing dictionnary of the "all document"
     for i in doc:
         dictionnaire_document[i[:-4]] = 0
-
+    #If list of path user and list of all doc matching
+    #We add + 1 do dictionnary
     for i in liste_os:
         for cle, valeur in dictionnaire_document.items():
             if i[:-4] == cle:
                 dictionnaire_document[cle] += 1
-
+                
+    #Thx to that we can say if user has passed or not test
+    #if yes he can't passe it
     liste = controle(dictionnaire_document)
-    
+
     return liste[0], liste[1], liste[2], liste[3], liste[4], liste[5]
 
 
@@ -42,7 +59,6 @@ from .cv.database.recuperation_document import recuperation_motivation
 from .cv.traitement_document import traitement_cv
 from .cv.traitement_document import traitement_motivation
 from .cv.traitement_document import traitement_message
-
 
 #- Third - we group it
 def documents_user_views(pseudo):
@@ -89,7 +105,7 @@ def insertion_message_views(request, pseudo):
 
 from .cv.database.insertion_document_motivation import insertion_part_motivation
 def insertion_motivation_views(request, pseudo):
-
+    """Insertion motvation in database"""
 
     liste = ["poste_motivation", "ville", "code", "un",
              "deux", "trois", "quattre", "cinq", "six"]
@@ -104,7 +120,7 @@ def insertion_motivation_views(request, pseudo):
 
 from .cv.database.insertion_document_cv import insertion_part_cv
 def insertion_cv_views(request, pseudo):
-
+    """Insertion CV in database"""
 
     liste = ["un", "metier", "formation", "deux", "trois", "quattre", "cinq",
              "six_un", "poste1", "six_deux", "poste2", "six_trois", "poste3",
@@ -115,22 +131,3 @@ def insertion_cv_views(request, pseudo):
         if demande:
             insertion_part_cv(pseudo, demande, str(i))
             
-
-def controle(dictionnaire_document):
-
-    liste = []
-    
-    for cle, valeur in dictionnaire_document.items():
-        if valeur == 1:
-            liste.append(1)
-        else:
-            liste.append(0)
-            
-    return liste
-
-
-
-
-
-
-
