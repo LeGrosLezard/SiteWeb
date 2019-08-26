@@ -1,3 +1,5 @@
+"""Database configuration"""
+
 DATABASE = "de9ed4bj77aj4h"
 USER = "pyrrjcrzmnejtt"
 HOST = "ec2-54-246-84-100.eu-west-1.compute.amazonaws.com"
