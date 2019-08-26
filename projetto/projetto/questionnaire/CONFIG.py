@@ -210,7 +210,7 @@ NOMBRE = {"Anxiete":4,
 #1 nom 2 il ou elle
 SPHERE = {"Ouverture_a_l_experience":
           """\nLe participant à eu un score supérieur à la moyenne dans \
-l'ouverture à l'expérience.
+l'OUVERTURE A L'EXPERIENCE.
 Cela indique que c'est \
 une personne qui recherche l'expérience en tant que telle. \
 Cela s'accompagne d'une très grande imagination \
@@ -220,7 +220,7 @@ meme une source de stimulation.""",
           
           "Conscience_professionnelle":
           """\nLe participant à eu un score supérieur à la moyenne dans \
-la conscience professionnelle.
+la CONSCIENCE PROFESSIONELLE.
 Cela montre que la personne à un haut degré d’organisation, \
 de motivation et de minutie dans \
 sa vie et dans la poursuite de ses objectifs. \
@@ -228,7 +228,7 @@ Cela fait d'elle une personne méthodique, motivé et organisé.""",
 
           "Extraversion":
           """\nLe participant à eu un score supérieur à la moyenne dans \
-Extraversion.
+EXTRAVERSION.
 Cela décrit l’énergie et \
 l’enthousiasme d’une personne dans ses \
 rapports avec les gens. Elle fait référence aux \
@@ -239,7 +239,7 @@ activement la compagnie des autres.""",
           
             "Agréabilité":
           """\nLe participant à eu un score supérieur à la moyenne dans \
-l'agréabilité.
+l'AGREABILITE.
 Le caractère agréable d'une personne fait \
 référence aux attitudes qu'elle adopte vis-à-vis des autres. \
 Les personnes qui marquent un score élevé sont douées de compassion, \
@@ -249,7 +249,7 @@ foncièrement honnêtes, respectueux et dignes de confiance.""",
           
             "Réactions Naturelles":
           """\nLe participant à eu un score supérieur à la moyenne dans \
-les réactions Naturelles.
+les REACTION NATURELLE.
 Les gens qui marquent un score \
 élevé sont dotés de \
 sensibilité. Cela marque peut etre négatif pour les uns mais une force pour \
@@ -260,23 +260,23 @@ Une personne sensible peut etre synonyme de grand analyste de situation."""
 
 
 SOUS_CLASSE = {"Imagination":
-               """\nLe participant à eu un score positif dans l'imagination.
+               """\nLe participant à eu un score positif dans l'imagination. \
 Cela Signifie que la personne a un sens poussé de l'immagination.\
 Sa capacité à immaginer lui permet de créer des mondes intérieurs\
 puissants, riches et très interressant.""",
                
-               "Interets_artistiques": """\nNous pouvons confirmer que le participant a un
-senes poussé vers les intérêts artistiques.
+               "Interets_artistiques": """\nNous pouvons confirmer que le participant a un \
+sens poussé vers les intérêts artistiques.
 Ces personnes se laissent facilement absorber \
 par les événements artistiques et naturels.""",
                
                "Profondeur_des_emotions":
-               """\nLe participant à eu un score positif dans la profondeur des émotions.
-Ces personnes la sollicitent et perçoivent\
+               """\nLe participant à eu un score positif dans la profondeur des émotions. \
+Ces personnes la sollicitent et perçoivent \
 facilement leurs propres sentiments. """,
                
                 "Volonte_expérimenter":
-               """\nLe participant à eu un score positif dans la volonté d'exprimer.
+               """\nLe participant à eu un score positif dans la volonté d'exprimer. \
 elle aime découvrir de nouvelles \
 activités, à voyager à l’étranger, \
 à expérimenter de nouvelles choses. \
@@ -284,7 +284,7 @@ La familiarité et la routine les ennuient. \
 Cet aspect de personnalité est un vrai atout.""",
                
                 "Curiosite_intellectuelle":
-               """\nLe participant à eu un score positif dans la curiosité intellectuelle.
+               """\nLe participant à eu un score positif dans la curiosité intellectuelle. \
 elle appréci de jongler \
 avec les idées  ouverts aux idées nouvelles et \
 inhabituelles et apprécient les débats et \
@@ -292,13 +292,13 @@ questionnements intellectuels. Il apprécie \
 les problèmes, réflexions, puzzles et énigmes de l’esprit.""",
                
                 "Tolerance_a_la_diversite":
-               """\nLe participant à la qualité de la tolérance à la diversité.
+               """\nLe participant à la qualité de la tolérance à la diversité. \
 Elle accepte l’autorité et \
 préfèrent la stabilité \
 et la sécurité de la conformité à la tradition.""",
                
                 "Sens_des_competences":
-               """\nLe participant à le sens des compétences.
+               """\nLe participant à le sens des compétences. \
 Le sens des compétences décrit la confiance \
 que la personne a en sa capacité d’accomplir les choses. Les scores élevés \
 pensent qu’ils possèdent l’intelligence (le bon sens), la force \
@@ -311,114 +311,114 @@ Les scores élevés sont des personnes très organisées, \
 ordonnées et propres. Elles aiment la routine et une vie programmée. \
 Elles tiennent des listes et planifient leur vie""",
                
-                        "Sens_des_responsabilites" : """\nCette facette reflète la force,
-chez une personne, de son sens du devoir et de l’obligation.
-Les scores élevés possèdent un solide sens de l’obligation morale.
-Ces personnes tendent à avoir un sens aigu de
+                        "Sens_des_responsabilites" : """\nCette facette reflète la force, \
+chez une personne, de son sens du devoir et de l’obligation. \
+Les scores élevés possèdent un solide sens de l’obligation morale. \
+Ces personnes tendent à avoir un sens aigu de \
 l’éthique et des principes stricts.""",
                
-                        "Combativite_Recherche_de_resultats": """\nLes gens qui ont un score 
-élevé pour cette facette se battent pour atteindre l’excellence. Leur
-combat pour que leurs succès soient reconnus les tient toujours en haleine
-; ils travaillent dur pour atteindre leurs objectifs. Ils
-ont des aspirations élevées et savent donner une direction 
-à leur vie. Toutefois, des scores très élevés peuvent s’avérer
-obtus et obsédés par le travail. Ils peuvent même devenir des
-accros du travail. Les scores faibles ne sont pas poussés par
-la nécessité de réussir ; ils ont tendance à se contenter
-d’un minimum d’efforts et de travail. Bien qu’ils puissent
-ne pas éprouver la nécessité de réussir, ils sont souvent
+                        "Combativite_Recherche_de_resultats": """\nLes gens qui ont un score  \
+élevé pour cette facette se battent pour atteindre l’excellence. Leur \
+combat pour que leurs succès soient reconnus les tient toujours en haleine \
+; ils travaillent dur pour atteindre leurs objectifs. Ils \
+ont des aspirations élevées et savent donner une direction  \
+à leur vie. Toutefois, des scores très élevés peuvent s’avérer \
+obtus et obsédés par le travail. Ils peuvent même devenir des \
+accros du travail. Les scores faibles ne sont pas poussés par \
+la nécessité de réussir ; ils ont tendance à se contenter \
+d’un minimum d’efforts et de travail. Bien qu’ils puissent \
+ne pas éprouver la nécessité de réussir, ils sont souvent \
 très heureux des résultats qu’ils obtiennent.""",
                
-                        "Autodiscipline": """\nL’autodiscipline, souvent appelée 
-« force de volonté », est définie comme l’habileté à 
-persister dans des tâches difficiles ou déplaisantes 
-jusqu’à ce qu’elles soient terminées. Les personnes 
-ayant un niveau élevé d’autodiscipline sont capables de surmonter leur répugnance à entamer des tâches et de ne pas
-succomber aux distractions. 
+                        "Autodiscipline": """\nL’autodiscipline, souvent appelée  \
+« force de volonté », est définie comme l’habileté à \
+persister dans des tâches difficiles ou déplaisantes \
+jusqu’à ce qu’elles soient terminées. Les personnes \
+ayant un niveau élevé d’autodiscipline sont capables de surmonter leur répugnance à entamer des tâches et de ne pas \
+succomber aux distractions. \
 Elles sont mues par une forte motivation à terminer leur travail.""",
                
-                        "Circonspection" : """\nLa circonspection décrit la disposition à réfléchir soigneusement
-à toutes les options possibles avant d’agir.
-Les scores élevés pour la facette
+                        "Circonspection" : """\nLa circonspection décrit la disposition à réfléchir soigneusement \
+à toutes les options possibles avant d’agir. \
+Les scores élevés pour la facette \
 Circonspection sont minutieux et prennent leur temps avant de se décider.""",
                
-                        "Amenite" : """\nLes scores élevés aiment
-naturellement parler avec les autres et expriment
-ouvertement des sentiments positifs à l’égard des autres.
+                        "Amenite" : """\nLes scores élevés aiment \
+naturellement parler avec les autres et expriment \
+ouvertement des sentiments positifs à l’égard des autres. \
 Ils se lient vite d’amitié et il leur est facile de nouer des relations intimes et proches.""",
                
-                        "Sociabilite" : """\nLes gens sociables trouvent la
-compagnie des autres plaisante, stimulante et valorisante.
+                        "Sociabilite" : """\nLes gens sociables trouvent la \
+compagnie des autres plaisante, stimulante et valorisante. \
 Ils apprécient l’excitation provoquée par les foules.""",
                
-                        "Assertivite" : """\nLes scores élevés en Assertivité apprécient
-de prendre la parole, de prendre en charge et diriger les activités des autres.
+                        "Assertivite" : """\nLes scores élevés en Assertivité apprécient \
+de prendre la parole, de prendre en charge et diriger les activités des autres. \
 Ils ont tendance à être les meneurs dans les groupes.""",
                
-                        "Niveau_activite" : """\nLes personnes actives mènent une vie
-rythmée et occupée. Ils sont toujours dans l’action, leurs gestes
+                        "Niveau_activite" : """\nLes personnes actives mènent une vie \
+rythmée et occupée. Ils sont toujours dans l’action, leurs gestes \
 sont rapides, ils sont dynamiques, vigoureux et s’impliquent dans de nombreuses activités.""",
                
-                        "Recherche_de_stimulation" : """\nLes scores élevés pour cette
-facette de personnalité s’ennuient facilement si le taux de stimulation
-n’est pas important. Ils apprécient l’éclat, le tourbillon d’activités.
+                        "Recherche_de_stimulation" : """\nLes scores élevés pour cette \
+facette de personnalité s’ennuient facilement si le taux de stimulation \
+n’est pas important. Ils apprécient l’éclat, le tourbillon d’activités. \
 Ils ont tendance à prendre des risques et à chercher les frissons.""",
                
-                        "Emotions_positives" : """\nCette facette mesure les humeurs et
-sentiments positifs. Les gens qui marquent un score élevé éprouvent
-généralement une palette de sentiments positifs dont l’allégresse,
+                        "Emotions_positives" : """\nCette facette mesure les humeurs et \
+sentiments positifs. Les gens qui marquent un score élevé éprouvent \
+généralement une palette de sentiments positifs dont l’allégresse, \
 l’enthousiasme, l’optimisme et la joie.""",
                
-                        "Confiance_en_autre" : """\nLes personnes à score élevé dans
-cette facette estiment fondamentalement que les gens sont en
-général honnêtes, francs et bien intentionnés. Elles jugent
+                        "Confiance_en_autre" : """\nLes personnes à score élevé dans \
+cette facette estiment fondamentalement que les gens sont en \
+général honnêtes, francs et bien intentionnés. Elles jugent \
 les gens sur leur apparence et sont prompts à pardonner et à oublier.""",
                
-                        "Sincerite" : """\nLes scores élevés pour cette facette ne ressentent
-pas le besoin de faire semblant ou de manipuler dans les
+                        "Sincerite" : """\nLes scores élevés pour cette facette ne ressentent \
+pas le besoin de faire semblant ou de manipuler dans les \
 relations aux autres et sont dès lors candides, francs et authentiques. """,
                
-                        "Altruisme" : """\nLes gens altruistes trouvent une réelle valorisation
-dans le fait d’aider les autres. Dès lors, ils apprécient généralement
-d’aider les gens dans le besoin. Les gens altruistes estiment qu’aider
+                        "Altruisme" : """\nLes gens altruistes trouvent une réelle valorisation \
+dans le fait d’aider les autres. Dès lors, ils apprécient généralement \
+d’aider les gens dans le besoin. Les gens altruistes estiment qu’aider \
 les autres est une forme d’auto-accomplissement plutôt que de sacrifice.""",
                
-                        "Conformite": """\nLes scores élevés dans cette facette concernent
-des gens qui n’aiment pas les confrontations. Ils sont parfaitement
-disposés à compromettre ou à nier leurs propres
+                        "Conformite": """\nLes scores élevés dans cette facette concernent \
+des gens qui n’aiment pas les confrontations. Ils sont parfaitement \
+disposés à compromettre ou à nier leurs propres \
 besoins pour bien s’entendre avec les autres.""",
                
-                        "Modestie" : """\nLes scores élevés sont des
-gens modestes, plutôt effacés et humbles. Il est 
-toutefois important de comprendre qu’ils ne manquent 
+                        "Modestie" : """\nLes scores élevés sont des \
+gens modestes, plutôt effacés et humbles. Il est  \
+toutefois important de comprendre qu’ils ne manquent  \
 pas pour autant de confiance en soi ni d’estime de soi.""",
                
-                        "Sympathie" : """\nLes scores élevés sont des
-personnes au cœur tendre et compatissantes. Elles éprouvent
+                        "Sympathie" : """\nLes scores élevés sont des \
+personnes au cœur tendre et compatissantes. Elles éprouvent \
 viscéralement la peine des autres, sont empathiques et facilement pétries de pitié.""",
                
-                        "Anxiete" : """\ngénéralement décontractés, calmes et
+                        "Anxiete" : """\ngénéralement décontractés, calmes et \
 sans peur. Ils ont tendance à ne pas s’effrayer lorsque les choses pourraient mal tourner.""",
                
-                        "Colere_et_hostilite" : """\nsont plus souples et moins
+                        "Colere_et_hostilite" : """\nsont plus souples et moins \
 susceptibles d’être irrités. Ils ne se fâchent pas souvent ni facilement.""",
                
-                        "Morosite_contentement": """\nLes gens qui ont un
-score bas sont moins susceptibles d’éprouver ces émotions.
-Cela ne veut pas dire pour autant qu’ils sont plus vigoureux,
+                        "Morosite_contentement": """\nLes gens qui ont un \
+score bas sont moins susceptibles d’éprouver ces émotions. \
+Cela ne veut pas dire pour autant qu’ils sont plus vigoureux, \
 plus allègres ou légers (ces comportements-là étant associés à l’extraversion).""",
                
-                        "Affectation": """\nPar contraste, les scores
-faibles ne souffrent pas de cette fausse impression que tout
-le monde les regarde et les juge. Ils ne sont pas nécessairement 
+                        "Affectation": """\nPar contraste, les scores \
+faibles ne souffrent pas de cette fausse impression que tout \
+le monde les regarde et les juge. Ils ne sont pas nécessairement \
 dotés de bonnes aptitudes sociales mais ils se sentent simplement moins nerveux en société.""",
                
-                        "Indolence":  """\nLes scores bas n’éprouvent pas de besoins fulgurants,
+                        "Indolence":  """\nLes scores bas n’éprouvent pas de besoins fulgurants, \
 irrésistibles et, par conséquent, ne sont pas tentés par les excès.""",
                
-                        "Sensibilite_au_stress": """\nLes scores bas se sentent
-plus capables et aptes à ne pas perdre leur
+                        "Sensibilite_au_stress": """\nLes scores bas se sentent \
+plus capables et aptes à ne pas perdre leur \
 sang-froid en situation difficile ou sous la pression."""
                         }
 
