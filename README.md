@@ -1,29 +1,26 @@
 # SiteWeb
 
--------------------------------------------------------
+finir le crop et c bon
 
-cv -> dire de dézoomé au pire le mec met le sien
+ensuite ppluca envoyer
 
-faut faire les mise en database de ce qui a été fait pour ne pas spam (emploi + adresse mail du genre dev python ref 18498498456456498 mail == dawan ne pas lui envoyer mais si ref dzadazddazdaz envoyer
+les redirections et la navebarre connexion/pas connexion
 
-les textes des tests
+essayer en tant que nouvelle utilisateur et c bon jcrois ya un truk bancale mais chai pas
 
-----------------------------------------
+les tests sont trop petit a coché ce qui peut amené a une fatigue et a biaisé les resultats ou les augmentés mais on s'en fou y'a que le positif
+
+ya le screen js qui est mal fait
+
+pour la dictée prevenir quelle met sa vie a commencer
+
+redirection bilan 3 et 4 a la fin
+
+faut faire l'envoie d'email pour all
 
 remplacer tous les path par celui du serveur
 
-
-
------------------------------------------
-
-----------------------------------------------------
-
-database non spam
-
-les tests
-
 faire les tiens (bien sur j'ai le droit de tricher c mon site)
-
 
 --------------------------------------------------------
 
@@ -33,7 +30,7 @@ Jeune developpeur web sortant de la formation OpenClassrooms
 
 # Quoi ?
 
-Projetto est un site en logne qui permet aux chercheurs d'emploi de trouver un travail plus rapidement et plus efficacement.
+Projetto est un site en ligne qui permet aux chercheurs d'emploi de trouver un travail plus rapidement et plus efficacement.
 
 Projetto aide aussi les personnes ne sachant pas faire de CV, de lettre de motivation en leur proposant un tutoriel.
 
@@ -59,8 +56,6 @@ Bien sur des fois la nombre d'email n'est pas tres grand (métier rare, petite v
 Afin de ne pas spammer nous mettons en database les sites et référence de la demande en database.
 
 Nous effectuons cela via une tache cron depuis un serveur hébergé par digital océan car notre site web est sur heroku qui impose un time out d'au maximum 30 secondes. Notre opération de mail peut prendre plusieurs minutes
-
-
 
 
 
