@@ -1,5 +1,21 @@
 # SiteWeb
 
+-------------------------------------------------------
+
+cv -> dire de dézoomé au pire le mec met le sien
+
+faut faire les mise en database de ce qui a été fait pour ne pas spam (emploi + adresse mail du genre dev python ref 18498498456456498 mail == dawan ne pas lui envoyer mais si ref dzadazddazdaz envoyer
+
+les textes des tests
+
+----------------------------------------
+
+remplacer tous les path par celui du serveur
+
+
+
+-----------------------------------------
+
 ----------------------------------------------------
 
 database non spam
@@ -44,6 +60,10 @@ Afin de ne pas spammer nous mettons en database les sites et référence de la d
 
 Nous effectuons cela via une tache cron depuis un serveur hébergé par digital océan car notre site web est sur heroku qui impose un time out d'au maximum 30 secondes. Notre opération de mail peut prendre plusieurs minutes
 
+
+
+
+
 # ARCHITECTURE
 
 la meme des fois je comprend pas et les erreurs faut les cherchers dans 4 trucks différents ^^ mais jadore comme ca
@@ -57,6 +77,8 @@ On apel la database, on traite la réponse, on combine toutes ces réponses pour
 
 
 # ALGORYTHME
+
+Afin de séduire le client nous ne le feront pas venir chaque jour demandé d'envoyer des émails. C'est pour cela que nous effectuons une tache cron. Chaque jour nous enverrons des emails à de nouvelles annonces. Un système de non spam à été mis en oeuvre
 
 a faire + vidéo
 
@@ -72,18 +94,6 @@ a faire + vidéo
 - truk balade site ect
 
 
--------------------------------------------------------
 
-cv -> dire de dézoomé au pire le mec met le sien
 
-faut faire les mise en database de ce qui a été fait pour ne pas spam (emploi + adresse mail du genre dev python ref 18498498456456498 mail == dawan ne pas lui envoyer mais si ref dzadazddazdaz envoyer
-
-les textes des tests
-
-----------------------------------------
-
-remplacer tous les path par celui du serveur
-
-essayer linux avec le nouvel agent
-
------------------------------------------
+#si quelqu'un à vus ce projet et que tu veux l'essayer envoie moi un msg a jb26400@hotmail.fr pcque aucunes taches cron ne sera mise en place sans utilisateur je lance le script pour moi mais je vais pas le faire chaque jour enfete et du coup je mettrai une tache cron pour toi
