@@ -1,3 +1,5 @@
+"""Database for documents + test"""
+
 import psycopg2
 
 from .CONFIG import DATABASE
@@ -31,49 +33,25 @@ def recuperation_id_pseudo(pseudo):
 
 
 def accord(pseudo, mode):
-    
+
+    #We recup id user from users
     id_user = recuperation_id_pseudo(pseudo)
     id_user = id_user[0][0]
-
 
     conn = psycopg2.connect(database=DATABASE,
                             user=USER,
                             host=HOST,
                             password=PASSWORD) 
-
     cur = conn.cursor()
 
-    if mode == "un":
 
-        cur.execute("""select un from bilan
-                    WHERE (id_user = {0});""".format(id_user))
-                           
-
-        conn.commit()  
-
-    elif mode == "deux":
-        
-        cur.execute("""select deux from bilan
-                    WHERE (id_user = {0});""".format(id_user))
-                           
-
-        conn.commit()
-
-    elif mode == "trois":
-        cur.execute("""select trois from bilan
-                    WHERE (id_user = {0});""".format(id_user))
-                           
-
-        conn.commit()
-
-    elif mode == "quattre":
-        cur.execute("""select quattre from bilan
-                    WHERE (id_user = {0});""".format(id_user))
-                           
-
-        conn.commit()  
-
-
+    liste = ["un", "deux", "trois", "quattre"]
+    for i in liste:
+        if mode == i:
+            
+            cur.execute("""SELECT {} FROM {}
+                        WHERE (id_user = {});""".format(str(i), "bilan", id_user))
+            conn.commit() 
 
     rows = cur.fetchall()
     liste = [i for i in rows]
