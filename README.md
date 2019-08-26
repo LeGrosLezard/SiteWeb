@@ -44,6 +44,17 @@ Afin de ne pas spammer nous mettons en database les sites et référence de la d
 
 Nous effectuons cela via une tache cron depuis un serveur hébergé par digital océan car notre site web est sur heroku qui impose un time out d'au maximum 30 secondes. Notre opération de mail peut prendre plusieurs minutes
 
+# ARCHITECTURE
+
+la meme des fois je comprend pas et les erreurs faut les cherchers dans 4 trucks différents ^^ mais jadore comme ca
+
+Le site est codé de cette facon:
+
+views -> views_functions -> fichier de traitement -> database
+
+On apel la database, on traite la réponse, on combine toutes ces réponses pour l'appeler dans la views ou recevoir l'apel
+
+
 
 # ALGORYTHME
 
