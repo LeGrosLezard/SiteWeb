@@ -40,10 +40,11 @@ def home(request):
 
         pseudo = request.user
         #Ask data from database
-        cv, motivation, message, bilan1, bilan2, bilan3 = document(str(pseudo))
+        cv, motivation, message, bilan1, bilan2, bilan3, bilan4 = document(str(pseudo))
         #We need this for inform user if he has completed this or not
         data = {"cv":cv, "motivation":motivation,  "message":message,
-                "bilan1":bilan1, "bilan2":bilan2,  "bilan3":bilan3}
+                "bilan1":bilan1, "bilan2":bilan2,  "bilan3":bilan3,
+                "bilan4":bilan4}
         
         return render(request, 'home.html', data)
     #In case user is not connected
@@ -175,9 +176,10 @@ def le_questionnaire_premiere_partie(request):
 
     if ok == 1:
         #If user has passed tesr we give him error message
-        cv, motivation, message, bilan1, bilan2, bilan3 = document(str(pseudo))
+        cv, motivation, message, bilan1, bilan2, bilan3, bilan4 = document(str(pseudo))
         data = {"cv":cv,  "motivation":motivation, "message":message,
                 "bilan1":bilan1, "bilan2":bilan2, "bilan3":bilan3,
+                "bilan4":bilan4,
                 "avertisseur":"Vous avez déja valider votre bilan psychologique !"}
 
         return render(request, 'home.html', data)
@@ -223,10 +225,11 @@ def le_questionnaire_seconde_partie(request):
     #If user has passed tesr we give him error message
     if ok == 1:
         #We ask database
-        cv, motivation, message, bilan1, bilan2, bilan3 = document(str(pseudo))
+        cv, motivation, message, bilan1, bilan2, bilan3, bilan4 = document(str(pseudo))
         data = {"cv":cv, "motivation":motivation, "message":message,
                 "bilan1":bilan1,  "bilan2":bilan2, "bilan3":bilan3,
-                "avertisseur":"Vous avez déja valider votre bilan psychologique !"}
+                "bilan4":bilan4,
+                "avertisseur":"Vous avez déja valider la dictée !"}
 
         return render(request, 'home.html', data)
     
@@ -267,10 +270,11 @@ def le_questionnaire_troisieme_partie(request):
     #If user has passed tesr we give him error message
     if acc == 1:
         #We ask database
-        cv, motivation, message, bilan1, bilan2, bilan3 = document(str(pseudo))
+        cv, motivation, message, bilan1, bilan2, bilan3, bilan4 = document(str(pseudo))
         data = {"cv":cv,  "motivation":motivation, "message":message,
                 "bilan1":bilan1, "bilan2":bilan2, "bilan3":bilan3,
-                "avertisseur":"Vous avez déja valider votre bilan psychologique !"}
+                "bilan4":bilan4,
+                "avertisseur":"Vous avez déja valider la troisième partie !"}
 
         return render(request, 'home.html', data)
     
@@ -307,10 +311,11 @@ def le_questionnaire_quatrieme_partie(request):
     #If user has passed tesr we give him error message
     if acc == 1:
         #We ask database
-        cv, motivation, message, bilan1, bilan2, bilan3 = document(str(pseudo))
+        cv, motivation, message, bilan1, bilan2, bilan3, bilan4 = document(str(pseudo))
         data = {"cv":cv, "motivation":motivation, "message":message,
                 "bilan1":bilan1, "bilan2":bilan2, "bilan3":bilan3,
-                "avertisseur":"Vous avez déja valider votre bilan psychologique !"}
+                "bilan4":bilan4,
+                "avertisseur":"Vous avez déja valider le test de la mémoire !"}
 
         return render(request, 'home.html', data)
     
@@ -620,3 +625,11 @@ def page_bilan3(request):
             "bilan3":bilan3, "bilan4":bilan4, "pseudo":pseudo, "form":form}
 
     return render(request, 'page_bilan.html', data)
+
+
+
+
+
+
+
+
