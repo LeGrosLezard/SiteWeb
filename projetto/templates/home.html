@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,7 +29,7 @@
 <body id="page-top">
 
 
-
+  {% if user.is_authenticated %}
   <!-- Navigation -->
   <a class="menu-toggle rounded" href="#">
     <i class="fas fa-bars"></i>
@@ -53,9 +54,49 @@
       <li class="sidebar-nav-item">
         <a class="js-scroll-trigger" href="app_email/questionnaire_email">Ma démarche</a>
       </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="account/logout">déconnexion</a>
+      </li>
     </ul>
   </nav>
 
+  
+  {% else %}
+  
+  <!-- Navigation -->
+  <a class="menu-toggle rounded" href="#">
+    <i class="fas fa-bars"></i>
+  </a>
+  <nav id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand">
+        <a class="js-scroll-trigger" href="#page-top">Menu</a>
+      </li>
+      <li class="sidebar-brand">
+        <a class="js-scroll-trigger" href="#compte">Inscription</a>
+      </li>
+      <li class="sidebar-brand">
+        <a class="js-scroll-trigger" href="#compte">Connexion</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="compte">Mon Compte</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="compte#cv_icone">Mes Documents</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="comment_faire_mon_cv">Composez !</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="le_questionnaire">Le Questionnaire</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="app_email/questionnaire_email">Ma démarche</a>
+      </li>
+    </ul>
+  </nav>
+
+  {% endif %}
 
 
 
@@ -90,7 +131,7 @@
             {% if user.is_authenticated %}
                 <h3>Bonjour <strong>{{user}}</strong></h3><br><br>
 
-                {{avertisseur}}<br><br>
+                <h3 style="color:red;">{{avertisseur}}</h3><br><br>
 
               <div class="container">
                 <div class="row">
@@ -170,6 +211,26 @@
                 </div>
               </div>
 
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm">
+                    Bilan Partie quattre <p id="bilan4"></p>
+                  </div>
+                  <div class="col-sm">
+                    <div id="done7">Fait</div>
+                  </div>
+                </div>
+              </div>
+
+
+          <br><br>
+          <center><strong><em>Afin de pouvoir valider vos élements. S'il vous plait
+          rendez-vous sur <a href="compte">compte</a>, Mes documents à télécharger, téléchargez les s'il vous plait
+          et uploadez le ! vous verrez tout est expliqué.</em></strong></center>
+
+
+
+
           
           <script>
             function ok(id_balise, doc){
@@ -187,6 +248,7 @@
             ok("done4", "{{bilan1}}");
             ok("done5", "{{bilan2}}");
             ok("done6", "{{bilan3}}");
+            ok("done7", "{{bilan4}}");
           </script>
 
 
@@ -370,7 +432,7 @@
       {% if user.is_authenticated %}
       
           <a class="btn btn-primary btn-xl"
-            onclick="redirection_questionnaire()" id="passer">Le passer!</a>
+            onclick="document.location.href='le_questionnaire'" id="passer">Le passer!</a>
 
       {% else %}
       
