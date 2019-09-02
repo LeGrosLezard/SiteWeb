@@ -1,26 +1,14 @@
 # SiteWeb
 
-finir le crop et c bon
+refaire le cv
 
-ensuite ppluca envoyer
+faire les test
 
-les redirections et la navebarre connexion/pas connexion
+trouve un moyen d'adapter le cv en prenant en compte le résumé de l'intitulé pour message recruteur
 
-essayer en tant que nouvelle utilisateur et c bon jcrois ya un truk bancale mais chai pas
+structure synergo
 
-les tests sont trop petit a coché ce qui peut amené a une fatigue et a biaisé les resultats ou les augmentés mais on s'en fou y'a que le positif
-
-ya le screen js qui est mal fait
-
-pour la dictée prevenir quelle met sa vie a commencer
-
-redirection bilan 3 et 4 a la fin
-
-faut faire l'envoie d'email pour all
-
-remplacer tous les path par celui du serveur
-
-faire les tiens (bien sur j'ai le droit de tricher c mon site)
+mail_all
 
 --------------------------------------------------------
 
